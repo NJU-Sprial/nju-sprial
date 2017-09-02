@@ -34,11 +34,11 @@ public interface OnlineDesignService {
     public ProjectInfoVO searchLoan(String loanCode);
 
     /**
-     * 修改一笔贷款信息
-     * @param projectInfoVO
+     * 修改一笔或多笔贷款信息
+     * @param projectInfoVOList
      * @return
      */
-    public boolean alterLoan(ProjectInfoVO projectInfoVO);
+    public boolean alterLoan(List<ProjectInfoVO> projectInfoVOList);
 
     /**
      * 删除一笔贷款信息
