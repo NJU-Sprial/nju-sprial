@@ -16,12 +16,7 @@ public enum UserType {
     Investor,
 
     /**
-     * 法律事务所
+     * 中介
      */
-    LawFirm,
-
-    /**
-     * 律师事务所
-     */
-    LawyerFirm,
+    Intermediary,
 }
