@@ -2,11 +2,9 @@ package blservice;
 
 import constranst.CashUnit;
 import constranst.CycleUnit;
-import vo.AnalysisDataVO;
-import vo.CashFlowDataVO;
-import vo.ProjectInfoVO;
-import vo.PropertyPackageVO;
+import vo.*;
 
+import java.time.LocalDate;
 import java.util.List;
 
 /**
@@ -121,5 +119,47 @@ public interface OnlineDesignService {
      * @param cashUnit
      * @return
      */
-    public CashFlowDataVO getCashFlowDataVO(String pname, String packageNumber, int cycle, CycleUnit cycleUnit, int payDay, CashUnit cashUnit);
+    public CashFlowDataVO getCashFlowDataVO(String pname, String packageNumber, int cycle, CycleUnit cycleUnit,
+                                            int payDay, CashUnit cashUnit);
+
+    /**
+     * 根据项目名称、资产包编号、评估日期、累计违约率、违约本金回收率，返回项目情景信息包括现金流对比分析图、本金现金流明细、
+     * 利息现金流明细、本息现金流明细
+     * @param pname
+     * @param packageNumber
+     * @param assessDate
+     * @param TotalBreakOffRate
+     * @param BreakOffCapitalRecoverRate
+     * @return
+     */
+    public SceneAnalysisVO getSceneAnalysisVO(String pname, String packageNumber, LocalDate assessDate,
+                                              double TotalBreakOffRate, double BreakOffCapitalRecoverRate);
+
+    /**
+     * 返回试算的封包日期
+     * 目前待定，需求不明
+     * @return
+     */
+    public LocalDate getEstimatedPackageDate();
+
+    /**
+     * 根据成立日（起息日）、首次兑付日、法定到期日返回证券类型、试算优先级、证券简称、发行金额占比（%）、发行金额、付息频率、试算利率
+     * 目前待定，不知道是否要使用到封包日期
+     * @param startDate
+     * @param firstPayDate
+     * @param lawEndDate
+     * @return
+     */
+    public ProductStrategyVO getProductStrategy(LocalDate startDate,LocalDate firstPayDate,LocalDate lawEndDate);
+
+    /**
+     * 保存产品方案,如果方案名已存在代表修改，如果未存在代表添加
+     * 目前待定，不知道是否要使用到封包日期
+     * @param sname
+     * @param startDate
+     * @param firstPayDate
+     * @param lawEndDate
+     * @return
+     */
+    public boolean saveProductStrategy(String sname,LocalDate startDate,LocalDate firstPayDate,LocalDate lawEndDate);
 }
