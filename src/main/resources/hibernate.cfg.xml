@@ -13,8 +13,6 @@
 		<property name="connection.autoReconnect">true</property>
 		<property name="connection.autoReconnectForPools">true</property>
 		<property name="connection.is-connection-validation-required">true</property>
-		<property name="connection.url">jdbc:mysql://yinywf17.mysql.rds.aliyuncs.com:3306/sprial</property>
-		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
 
 	</session-factory>
 </hibernate-configuration>

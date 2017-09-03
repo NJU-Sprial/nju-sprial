@@ -4,6 +4,7 @@ import blservice.ProductManageService;
 import dataservice.ProductDataService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import po.ProductPO;
 import po.RecruitmentSituationPO;
 import vo.ProductVO;
 import vo.RecruitmentSituationVO;
@@ -30,7 +31,15 @@ public class ProductManageServiceImpl implements ProductManageService {
      */
     @Override
     public List<ProductVO> getProductList() {
-        return null;
+        List<ProductPO> productPOs = productDataService.getProductList();
+        List<ProductVO> productVOs = new ArrayList<>();
+        String ignoreProperty = "serialVersionUID";
+        for(ProductPO po : productPOs) {
+            ProductVO vo = new ProductVO();
+            BeanUtils.copyProperties(po, vo, ignoreProperty);
+            productVOs.add(vo);
+        }
+        return productVOs;
     }
 
     /**
@@ -43,9 +52,10 @@ public class ProductManageServiceImpl implements ProductManageService {
     public List<RecruitmentSituationVO> getRecruitmentSituation(String productID) {
         List<RecruitmentSituationPO> situationPOs = productDataService.getRecruitmentSituation(productID);
         List<RecruitmentSituationVO> situationVOs = new ArrayList<>();
+        String ignoreProperty = "serialVersionUID";
         for(RecruitmentSituationPO po : situationPOs) {
             RecruitmentSituationVO vo = new RecruitmentSituationVO();
-            BeanUtils.copyProperties(po, vo);
+            BeanUtils.copyProperties(po, vo, ignoreProperty);
             situationVOs.add(vo);
         }
         return situationVOs;

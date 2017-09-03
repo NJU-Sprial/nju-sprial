@@ -2,7 +2,7 @@ package po;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.sql.Timestamp;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "product", schema = "sprial")
@@ -18,8 +18,8 @@ public class ProductPO implements Serializable {
     private String issuer;
     private String assetType;
     private String tradingPlace;
-    private Timestamp estimatedMaturityDate;
-    private Timestamp termOfRecruitment;
+    private LocalDate estimatedMaturityDate;
+    private LocalDate termOfRecruitment;
 
     @Id
     @Column(name = "product_id")
@@ -123,21 +123,21 @@ public class ProductPO implements Serializable {
 
     @Basic
     @Column(name = "estimated_maturity_date")
-    public Timestamp getEstimatedMaturityDate() {
+    public LocalDate getEstimatedMaturityDate() {
         return estimatedMaturityDate;
     }
 
-    public void setEstimatedMaturityDate(Timestamp estimatedMaturityDate) {
+    public void setEstimatedMaturityDate(LocalDate estimatedMaturityDate) {
         this.estimatedMaturityDate = estimatedMaturityDate;
     }
 
     @Basic
     @Column(name = "term_of_recruitment")
-    public Timestamp getTermOfRecruitment() {
+    public LocalDate getTermOfRecruitment() {
         return termOfRecruitment;
     }
 
-    public void setTermOfRecruitment(Timestamp termOfRecruitment) {
+    public void setTermOfRecruitment(LocalDate termOfRecruitment) {
         this.termOfRecruitment = termOfRecruitment;
     }
 
