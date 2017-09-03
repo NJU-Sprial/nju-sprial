@@ -19,4 +19,11 @@ public interface SignUpService {
      * @throws SignUpException 注册失败时提示原因
      */
     public boolean signUp(SignUpVO signUpVO) throws SignUpException;
+
+    /**
+     * 给邮箱发送验证邮件
+     * @param e_mail 邮箱地址
+     * @return 发送成功返回true，发送失败（如邮箱已注册）返回false
+     */
+    public boolean sendAuthenticationCode(String e_mail);
 }

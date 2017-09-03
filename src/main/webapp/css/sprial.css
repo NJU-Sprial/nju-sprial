@@ -1,0 +1,14 @@
+
+.select-item{
+    display: inline-flex;
+    border-radius: 0px;
+    min-width: 80px;
+}
+.select-item:hover{
+    background: #33cde5;
+    color: #fff;
+}
+.select-item.selected{
+    background: #00c1de;
+    color: #fff;
+}
