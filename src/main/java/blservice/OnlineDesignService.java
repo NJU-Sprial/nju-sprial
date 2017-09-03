@@ -136,15 +136,7 @@ public interface OnlineDesignService {
                                               double TotalBreakOffRate, double BreakOffCapitalRecoverRate);
 
     /**
-     * 返回试算的封包日期
-     * 目前待定，需求不明
-     * @return
-     */
-    public LocalDate getEstimatedPackageDate();
-
-    /**
      * 根据成立日（起息日）、首次兑付日、法定到期日返回证券类型、试算优先级、证券简称、发行金额占比（%）、发行金额、付息频率、试算利率
-     * 目前待定，不知道是否要使用到封包日期
      * @param startDate
      * @param firstPayDate
      * @param lawEndDate
@@ -154,12 +146,12 @@ public interface OnlineDesignService {
 
     /**
      * 保存产品方案,如果方案名已存在代表修改，如果未存在代表添加
-     * 目前待定，不知道是否要使用到封包日期
      * @param sname
+     * @param packageDate 封包日期
      * @param startDate
      * @param firstPayDate
      * @param lawEndDate
      * @return
      */
-    public boolean saveProductStrategy(String sname,LocalDate startDate,LocalDate firstPayDate,LocalDate lawEndDate);
+    public boolean saveProductStrategy(String sname,LocalDate packageDate,LocalDate startDate,LocalDate firstPayDate,LocalDate lawEndDate);
 }
