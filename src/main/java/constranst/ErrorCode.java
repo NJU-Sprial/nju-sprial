@@ -3,7 +3,7 @@ package constranst;
 /**
  * 错误码
  *
- * @author Alan on 2017/3/14
+ * Created by 铠联 on 2017/9/2.
  */
 public class ErrorCode {
     /**
