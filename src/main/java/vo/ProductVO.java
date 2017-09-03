@@ -10,7 +10,7 @@ import java.time.LocalDate;
  */
 @Data
 public class ProductVO {
-    private int productID;
+    private String productID;
     private String productName;//产品名称
     private String quantity;//发行总额
     private Double interestUpperBound;//利率区间上界

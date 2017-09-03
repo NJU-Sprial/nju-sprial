@@ -34,9 +34,11 @@ public class ProductManageServiceImpl implements ProductManageService {
         List<ProductPO> productPOs = productDataService.getProductList();
         List<ProductVO> productVOs = new ArrayList<>();
         String ignoreProperty = "serialVersionUID";
+        String ignoreProperty2 = "productId";
         for(ProductPO po : productPOs) {
             ProductVO vo = new ProductVO();
-            BeanUtils.copyProperties(po, vo, ignoreProperty);
+            BeanUtils.copyProperties(po, vo, ignoreProperty, ignoreProperty2);
+            vo.setProductID(String.valueOf(po.getProductId()));
             productVOs.add(vo);
         }
         return productVOs;
