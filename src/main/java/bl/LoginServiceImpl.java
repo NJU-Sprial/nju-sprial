@@ -1,12 +1,20 @@
 package bl;
 
 import blservice.LoginService;
+import constranst.LoginCode;
+import dataservice.UserDataService;
 import exception.LoginException;
+import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  * Created by Water on 2017/9/3.
  */
 public class LoginServiceImpl implements LoginService{
+    private UserDataService userDataService;
+    @Autowired
+    public LoginServiceImpl(UserDataService userDataService) {
+        this.userDataService = userDataService;
+    }
     /**
      * 用户登录
      *
@@ -17,7 +25,12 @@ public class LoginServiceImpl implements LoginService{
      */
     @Override
     public boolean login(String username, String password) throws LoginException {
-        return false;
+        String result = userDataService.login(username, password);
+        if(result.equals(LoginCode.LOGIN_SUCCESS)) {
+            return true;
+        } else {
+            throw new LoginException(result);
+        }
     }
 
     /**
@@ -28,6 +41,6 @@ public class LoginServiceImpl implements LoginService{
      */
     @Override
     public boolean logout(String username) {
-        return false;
+        return userDataService.logout(username);
     }
 }
