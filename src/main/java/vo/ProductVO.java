@@ -2,7 +2,7 @@ package vo;
 
 import lombok.Data;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 /**
  * Created by zjy on 2017/9/2.
@@ -20,6 +20,6 @@ public class ProductVO {
     private String issuer;//发行机构
     private String assetType;//资产类型
     private String tradingPlace;//交易场所
-    private LocalDate estimatedMaturityDate;//预计到期日
-    private LocalDate termOfRecruitment;//募集期限
+    private LocalDateTime estimatedMaturityDate;//预计到期日
+    private LocalDateTime termOfRecruitment;//募集期限
 }
