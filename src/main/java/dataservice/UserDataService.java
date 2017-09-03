@@ -6,6 +6,7 @@ package dataservice;
 public interface UserDataService {
     /**
      * 用户登录
+     *
      * @param username 用户名
      * @param password 密码
      * @return 详情参考constranst.LoginCode
@@ -15,8 +16,22 @@ public interface UserDataService {
 
     /**
      * 用户登出
+     *
      * @param username 用户名
      * @return 成功返回true，失败返回false
      */
     boolean logout(String username);
+
+    /**
+     * TODO:需要改接口的参数
+     * 用户注册
+     * <p>
+     * 注意：如果注册成功，账号还不能使用。在注册成功后三个工作日内工作人员会打电话给用户，核实信息，如果通过，
+     * 会发一封邮件给用户，然后账号才能使用
+     * </p>
+     *
+     * @return 参考constranst.SignUpCode
+     * @see constranst.SignUpCode
+     */
+    String signUp();
 }
