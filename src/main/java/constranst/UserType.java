@@ -1,4 +1,4 @@
-package vo;
+package constranst;
 
 /**
  * Created by zjy on 2017/9/2.

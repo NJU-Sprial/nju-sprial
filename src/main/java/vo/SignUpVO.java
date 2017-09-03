@@ -1,5 +1,7 @@
 package vo;
 
+import constranst.UserType;
+
 /**
  * Created by zjy on 2017/9/2.
  * 用户注册时填写的信息
