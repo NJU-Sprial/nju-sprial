@@ -7,13 +7,13 @@ import java.time.LocalDate;
  * 属性安序分别代表“贷款合同编号”、“提取日本金余额“、”当期年华利率“、”提取日期“、“到期日期”、“利率类型”、“还款方式”
  */
 public class ProjectInfoVO {
-    public String loanCode;
-    public double balance;
-    public double rate;
-    public LocalDate fetchDate;
-    public LocalDate endDate;
-    public String rateType;
-    public String returnWay;
+    private String loanCode;
+    private double balance;
+    private double rate;
+    private LocalDate fetchDate;
+    private LocalDate endDate;
+    private String rateType;
+    private String returnWay;
 
     public ProjectInfoVO(String loanCode, double balance, double rate, LocalDate fetchDate, LocalDate endDate, String rateType, String returnWay) {
         this.loanCode = loanCode;
