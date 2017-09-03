@@ -1,6 +1,6 @@
 package vo;
 
-import constranst.UserType;
+import enums.UserType;
 
 /**
  * Created by zjy on 2017/9/2.
