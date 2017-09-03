@@ -4,6 +4,7 @@ import blservice.OnlineDesignService;
 import constranst.CashUnit;
 import constranst.CycleUnit;
 import dataservice.ProjectDataService;
+import dataservice.PropertyPackageDataService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -20,9 +21,10 @@ import java.util.List;
  */
 public class OnlineDesignServiceImpl implements OnlineDesignService{
     private ProjectDataService projectDataService;
+    private PropertyPackageDataService propertyPackageDataService;
 
     @Autowired
-    public OnlineDesignServiceImpl(ProjectDataService projectDataService){
+    public OnlineDesignServiceImpl(ProjectDataService projectDataService,PropertyPackageDataService propertyPackageDataService){
         this.projectDataService = projectDataService;
     }
 
@@ -135,7 +137,7 @@ public class OnlineDesignServiceImpl implements OnlineDesignService{
      */
     @Override
     public PropertyPackageVO createPropertyPackage(String username, String pname) {
-        PropertyPackagePO po = projectDataService.createPropertyPackage(username, pname);
+        PropertyPackagePO po = propertyPackageDataService.createPropertyPackage(username, pname);
         PropertyPackageVO vo = new PropertyPackageVO();
         BeanUtils.copyProperties(po,vo);
         return vo;
@@ -148,7 +150,7 @@ public class OnlineDesignServiceImpl implements OnlineDesignService{
      */
     @Override
     public PropertyPackageVO searchPropertyPackage(String username, String packageNumber) {
-        PropertyPackagePO po = projectDataService.searchPropertyPackage(username, packageNumber);
+        PropertyPackagePO po = propertyPackageDataService.searchPropertyPackage(username, packageNumber);
         PropertyPackageVO vo = new PropertyPackageVO();
         BeanUtils.copyProperties(po,vo);
         return vo;
@@ -163,7 +165,7 @@ public class OnlineDesignServiceImpl implements OnlineDesignService{
     public boolean alterPropertyPackage(String username, PropertyPackageVO propertyPackageVO) {
         PropertyPackagePO po = new PropertyPackagePO();
         BeanUtils.copyProperties(propertyPackageVO,po);
-        boolean result = projectDataService.alterPropertyPackage(username, po);
+        boolean result = propertyPackageDataService.alterPropertyPackage(username, po);
         return result;
     }
 
@@ -174,7 +176,7 @@ public class OnlineDesignServiceImpl implements OnlineDesignService{
      */
     @Override
     public boolean deletePropertyPackage(String username, String packageNumber) {
-        return projectDataService.deletePropertyPackage(username, packageNumber);
+        return propertyPackageDataService.deletePropertyPackage(username, packageNumber);
     }
 
     /**
