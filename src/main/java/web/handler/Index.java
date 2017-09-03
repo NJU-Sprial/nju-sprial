@@ -2,11 +2,9 @@ package web.handler;
 
 import blservice.LoginService;
 import blservice.SignUpService;
-import constranst.UserType;
+import enums.UserType;
 import exception.LoginException;
 import exception.SignUpException;
-import handler.Login;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
