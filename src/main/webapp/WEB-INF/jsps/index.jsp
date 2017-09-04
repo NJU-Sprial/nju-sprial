@@ -30,8 +30,7 @@
                                                     title="email">support24-7@gmail.com</a></li>
                     </ul><!-- /flat-infomation -->
                     <div class="flat-questions">
-                        <a href="#" title="" class="questions">Have any questions?</a>
-                        <a href="#" title="" class="appointment">GET AN APPOINTMENT</a>
+                        <a href="#" title="" class="appointment">获得帮助</a>
                     </div><!-- /.flat-questions -->
                     <div class="clearfix"></div><!-- /.clearfix -->
                 </div>
