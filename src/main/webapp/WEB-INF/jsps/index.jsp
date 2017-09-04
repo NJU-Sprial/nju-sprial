@@ -1,3 +1,4 @@
+<%@ page import="web.security.WebSecurityConfig" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -29,8 +30,7 @@
                                                     title="email">support24-7@gmail.com</a></li>
                     </ul><!-- /flat-infomation -->
                     <div class="flat-questions">
-                        <a href="#" title="" class="questions">Have any questions?</a>
-                        <a href="#" title="" class="appointment">GET AN APPOINTMENT</a>
+                        <a href="#" title="" class="appointment">获得帮助</a>
                     </div><!-- /.flat-questions -->
                     <div class="clearfix"></div><!-- /.clearfix -->
                 </div>
@@ -70,7 +70,17 @@
                             <nav id="mainnav" class="mainnav">
                                 <ul class="menu">
                                     <li><a href="#" title="">首页</a></li>
-                                    <li><a href="login" title="">登录</a></li>
+
+                                    <% if (session.getAttribute(WebSecurityConfig.SESSION_KEY)==null) { %>
+                                    <li><a href="/login" title="">登录</a></li>
+
+                                    <% } else { %>
+                                    <li><a href="#" title="">产品在线设计</a></li>
+                                    <li><a href="#" title="">发行协作平台</a></li>
+                                    <li><a href="#" title="">募集期管理平台</a></li>
+                                    <li><a href="/logout" title="">注销</a></li>
+                                    <% } %>
+
                                 </ul><!-- /.menu -->
                             </nav><!-- /#mainnav -->
                         </div><!-- /.nav-wrap -->
