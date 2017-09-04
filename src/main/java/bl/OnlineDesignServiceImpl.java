@@ -186,6 +186,7 @@ public class OnlineDesignServiceImpl implements OnlineDesignService{
     }
 
     /**
+     * TODO Vo还没确定
      * 根据项目名称、资产包编号返回资产池基本情况和资产分类统计的信息
      *
      * @param pname
@@ -198,6 +199,7 @@ public class OnlineDesignServiceImpl implements OnlineDesignService{
     }
 
     /**
+     * TODO 算法
      * 根据项目名称、资产包编号、统计周期（月／季／年）、每期偿付日（1-31中任一天或者每期最后一日）、金额单位（元／万元／亿元）
      * 返回“现金流汇总”和“各期现金流明细”的信息
      *
@@ -211,10 +213,13 @@ public class OnlineDesignServiceImpl implements OnlineDesignService{
      */
     @Override
     public CashFlowDataVO getCashFlowDataVO(String username, String pname, String packageNumber, int cycle, CycleUnit cycleUnit, int payDay, CashUnit cashUnit) {
+        PropertyPackagePO po = propertyPackageDataService.searchPropertyPackage(username,packageNumber);
+
         return null;
     }
 
     /**
+     * TODO 算法
      * 根据项目名称、资产包编号、评估日期、累计违约率、违约本金回收率，返回项目情景信息包括现金流对比分析图、本金现金流明细、
      * 利息现金流明细、本息现金流明细
      *
@@ -227,11 +232,14 @@ public class OnlineDesignServiceImpl implements OnlineDesignService{
      */
     @Override
     public SceneAnalysisVO getSceneAnalysisVO(String username, String pname, String packageNumber, LocalDate assessDate, double TotalBreakOffRate, double BreakOffCapitalRecoverRate) {
+        PropertyPackagePO po = propertyPackageDataService.searchPropertyPackage(username,packageNumber);
+
         return null;
     }
 
     /**
-     * 根据成立日（起息日）、首次兑付日、法定到期日返回证券类型、试算优先级、证券简称、发行金额占比（%）、发行金额、付息频率、试算利率
+     * TODO 算法
+     * 根据成立日（起息日）、首次兑付日、法定到期日 返回 证券类型、试算优先级、证券简称、发行金额占比（%）、发行金额、付息频率、试算利率
      *
      * @param startDate
      * @param firstPayDate
@@ -244,6 +252,7 @@ public class OnlineDesignServiceImpl implements OnlineDesignService{
     }
 
     /**
+     * TODO 只保存基本信息？
      * 保存产品方案,如果方案名已存在代表修改，如果未存在代表添加
      *
      * @param sname
