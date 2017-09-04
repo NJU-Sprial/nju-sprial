@@ -6,7 +6,7 @@ import dataservice.UserDataService;
 import exception.SignUpException;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import po.SignUpPO;
+import po.UserDataPO;
 import vo.SignUpVO;
 
 /**
@@ -25,14 +25,14 @@ public class SignUpServiceImpl implements SignUpService{
      * 注意：如果注册成功，账号还不能使用。在注册成功后三个工作日内工作人员会打电话给用户，核实信息，如果通过，
      * 会发一封邮件给用户，然后账号才能使用
      * </p>
-     *
+     * TODO:改过接口
      * @param signUpVO 用户填写的注册信息
      * @return 成功返回true，失败返回false
      * @throws SignUpException 注册失败时提示原因
      */
     @Override
-    public boolean signUp(SignUpVO signUpVO) throws SignUpException {
-        if(!signUpVO.getPassword().equals(signUpVO.getPassword_confirm())) {
+    public boolean signUp(SignUpVO  signUpVO) throws SignUpException {
+       /* if(!signUpVO.getPassword().equals(signUpVO.getPassword_confirm())) {
             throw new SignUpException(SignUpCode.PASSWORD_NOT_SAME);
         }
         SignUpPO signUpPO = new SignUpPO();
@@ -43,7 +43,8 @@ public class SignUpServiceImpl implements SignUpService{
             return true;
         } else {
             throw new SignUpException(result);
-        }
+        }*/
+       return  false;
     }
 
     /**
