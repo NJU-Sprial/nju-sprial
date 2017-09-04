@@ -26,6 +26,7 @@ public class OnlineDesignServiceImpl implements OnlineDesignService{
     @Autowired
     public OnlineDesignServiceImpl(ProjectDataService projectDataService,PropertyPackageDataService propertyPackageDataService){
         this.projectDataService = projectDataService;
+        this.propertyPackageDataService = propertyPackageDataService;
     }
 
     /**
@@ -130,6 +131,7 @@ public class OnlineDesignServiceImpl implements OnlineDesignService{
     }
 
     /**
+     * TODO
      * 资产包创建,后台自动根据模型筛选基础资产，生成资产包，并自动生成资产包编号、资产数量、封包日期、资产包封包本金金额、封包利率
      * 每个项目最多只能有5个资产包(交给前端判断)
      * @param pname
@@ -137,7 +139,11 @@ public class OnlineDesignServiceImpl implements OnlineDesignService{
      */
     @Override
     public PropertyPackageVO createPropertyPackage(String username, String pname) {
-        PropertyPackagePO po = propertyPackageDataService.createPropertyPackage(username, pname);
+        PropertyPackagePO po = new PropertyPackagePO();
+        //TODO 生成资产包PropertyPackagePO的各项属性
+        //TODO 设置属性
+        //资产包编号在数据库？
+        po = propertyPackageDataService.createPropertyPackage(username, po);
         PropertyPackageVO vo = new PropertyPackageVO();
         BeanUtils.copyProperties(po,vo);
         return vo;
