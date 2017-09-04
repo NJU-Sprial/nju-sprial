@@ -9,7 +9,7 @@
 @import url("font-awesome.css");
 @import url("ionicons.css");
 @import url("shortcodes.css");
-@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700");
+/*@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700");*/
 /**
   *	Reset
   *	Repeatable Patterns
@@ -279,7 +279,7 @@ input[type="email"] {
     height: 45px;
     background-color: #d8e7ef;
     border-radius: 3px;   
-    margin-bottom: 20px;
+    /*margin-bottom: 20px;*/
 	-webkit-transition: all 0.3s ease-in-out;
 	   -moz-transition: all 0.3s ease-in-out;
 	    -ms-transition: all 0.3s ease-in-out;
@@ -295,11 +295,11 @@ input[type="search"] {
 }
 
 input[type="email"] {
-    padding: 8px 16px;
-    color: #555555;
-    border: 1px solid #2e363a;
-    height: 47px;
-    margin-bottom: 19px;
+    /*padding: 8px 16px;*/
+    /*color: #555555;*/
+    /*border: 1px solid #2e363a;*/
+    /*height: 47px;*/
+    /*margin-bottom: 19px;*/
 }
 
 textarea:focus,

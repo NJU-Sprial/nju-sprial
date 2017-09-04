@@ -76,9 +76,14 @@
 				<div class="row control-group">
 					<div class="form-group col-xs-12 floating-label-form-group controls">
 						<label>工作邮箱</label>
-						<input type="text" class="form-control" placeholder=""
-							   id="e_mail_field" name="e_mail"
-							   required="required" title="在这里输入工作邮箱"/>
+						<div class="form-inline">
+							<input type="email" class="form-control" style="min-width: 300px;" placeholder=""
+								   id="e_mail_field" name="e_mail"
+								   required="required" title="在这里输入工作邮箱"/>
+							<a class="btn btn-info pull-right" style="margin-top: 5px;" href="/signUp/sendAuthenticationCode">
+								发送验证码
+							</a>
+						</div>
 					</div>
 				</div>
 				<div class="row control-group">
@@ -92,7 +97,7 @@
 				<div class="row control-group">
 					<div class="form-group col-xs-12 floating-label-form-group controls">
 						<label>工作电话</label>
-						<input type="text" class="form-control" placeholder=""
+						<input type="tel" class="form-control" placeholder=""
 							   id="phoneNumber_field" name="phoneNumber"
 							   required="required" title="在这里输入工作电话"/>
 					</div>

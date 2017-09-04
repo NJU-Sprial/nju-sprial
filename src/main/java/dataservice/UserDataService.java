@@ -1,6 +1,6 @@
 package dataservice;
 
-import po.SignUpPO;
+import po.UserDataPO;
 
 /**
  * Created by Water on 2017/9/3.
@@ -34,5 +34,5 @@ public interface UserDataService {
      * @return 参考constranst.SignUpCode
      * @see constranst.SignUpCode
      */
-    String signUp(SignUpPO signUpPO);
+    String signUp(UserDataPO userDataPO);
 }

@@ -25,7 +25,6 @@ public class ProductManageServiceImpl implements ProductManageService {
 
     /**
      * 获取用户所有的产品
-     * TODO: 需要解决PO与VO数据类型不一致的问题
      *
      * @return 产品列表
      */
