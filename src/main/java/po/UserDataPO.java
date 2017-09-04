@@ -2,12 +2,14 @@ package po;
 
 import enums.UserState;
 import enums.UserType;
+import org.hibernate.annotations.DynamicInsert;
 
 import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
 @Table(name = "user_data", schema = "sprial")
+@DynamicInsert
 public class UserDataPO implements Serializable {
     private static final long serialVersionUID = 5748532289010606834L;
     private String username;
