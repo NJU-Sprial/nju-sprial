@@ -2,13 +2,13 @@
          pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <!--[if IE 8 ]>
-<%--<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US"/> <![endif]-->--%>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US"/> <![endif]-->
 <!--[if (gte IE 9)|!(IE)]><!-->
-<%--<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US"><!--<![endif]-->--%>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US"><!--<![endif]-->
 
 <%@ include file="/WEB-INF/jsps/components/head.jsp" %>
 <head>
-    <title>Home Page</title>
+    <title>首页</title>
 </head>
 <body>
 <div class="boxed">
@@ -45,7 +45,7 @@
                     <div class="col-md-2">
                         <div id="logo" class="logo">
                             <a href="#" title="">
-                                <img src="../../images/logo-blog.png" alt="logo Finance Business"/>
+                                <img src="/images/logo-blog.png" alt="logo Finance Business"/>
                             </a>
                         </div><!-- /#logo -->
                     </div><!-- /.col-md-2 -->
@@ -99,7 +99,7 @@
                     data-param9="" data-param10="" data-description="">
 
                     <!-- MAIN IMAGE -->
-                    <img src="../../images/slides/slide1.png" alt="" data-bgposition="center center" data-kenburns="off"
+                    <img src="/images/slides/slide1.png" alt="" data-bgposition="center center" data-kenburns="off"
                          data-duration="30000" data-ease="Linear.easeNone" data-scalestart="100" data-scaleend="120"
                          data-rotatestart="0" data-rotateend="0" data-offsetstart="0 0" data-offsetend="0 0"
                          data-bgparallax="10" class="rev-slidebg"/>
@@ -188,7 +188,7 @@
                     data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7=""
                     data-param8="" data-param9="" data-param10="" data-description="">
                     <!-- MAIN IMAGE -->
-                    <img src="../../images/slides/slide1.png" alt="" data-bgposition="center center" data-bgfit="cover"
+                    <img src="/images/slides/slide1.png" alt="" data-bgposition="center center" data-bgfit="cover"
                          data-bgparallax="10" class="rev-slidebg"/>
 
                     <!-- BACKGROUND VIDEO LAYER -->
@@ -284,7 +284,7 @@
                     <div class="imagebox-item">
                         <div class="imagebox style1">
                             <div class="imagebox-image">
-                                <img src="../../images/imagebox/001.jpg" alt=""/>
+                                <img src="/images/imagebox/001.jpg" alt=""/>
                             </div><!-- /.imagebox-image -->
 
                             <div class="imagebox-title">
@@ -307,7 +307,7 @@
                     <div class="imagebox-item">
                         <div class="imagebox style1">
                             <div class="imagebox-image">
-                                <img src="../../images/imagebox/002.jpg" alt=""/>
+                                <img src="/images/imagebox/002.jpg" alt=""/>
                             </div><!-- /.imagebox-image -->
                             <div class="imagebox-title">
                                 <h3><a href="#" title="">Business Ideas And Innovation</a></h3>
@@ -329,7 +329,7 @@
                     <div class="imagebox-item">
                         <div class="imagebox style1">
                             <div class="imagebox-image">
-                                <img src="../../images/imagebox/003.jpg" alt=""/>
+                                <img src="/images/imagebox/003.jpg" alt=""/>
                             </div><!-- /.imagebox-image -->
                             <div class="imagebox-title">
                                 <h3><a href="#" title="">Directory Of Finance Businesses</a></h3>
@@ -512,8 +512,8 @@
                         <ul class="slides" data-item="3" data-nav="false" data-dots="false" data-auto="true">
                             <li class="item">
                                 <div class="featured-post">
-                                    <img src="../../images/stage/image-01.png" alt=""/>
-                                    <a href="../../images/stage/image-01.png"><i class="fa fa-arrows-alt"></i></a>
+                                    <img src="/images/stage/image-01.png" alt=""/>
+                                    <a href="/images/stage/image-01.png"><i class="fa fa-arrows-alt"></i></a>
                                 </div>
                                 <div class="title-post">
                                     <a href="blog.html" title="">event finder</a>
@@ -525,8 +525,8 @@
 
                             <li class="item">
                                 <div class="featured-post">
-                                    <img src="../../images/stage/image-02.png" alt=""/>
-                                    <a href="../../images/stage/image-02.png"><i class="fa fa-arrows-alt"></i></a>
+                                    <img src="/images/stage/image-02.png" alt=""/>
+                                    <a href="/images/stage/image-02.png"><i class="fa fa-arrows-alt"></i></a>
                                 </div>
                                 <div class="title-post">
                                     <a href="blog.html" title="">business solutions</a>
@@ -539,8 +539,8 @@
 
                             <li class="item">
                                 <div class="featured-post">
-                                    <img src="../../images/stage/image-03.png" alt=""/>
-                                    <a href="../../images/stage/image-03.png"><i class="fa fa-arrows-alt"></i></a>
+                                    <img src="/images/stage/image-03.png" alt=""/>
+                                    <a href="/images/stage/image-03.png"><i class="fa fa-arrows-alt"></i></a>
                                 </div>
                                 <div class="title-post">
                                     <a href="blog.html" title="">money market</a>
@@ -627,7 +627,7 @@
                     <article class="post style2">
                         <div class="featured-post">
                             <a href="blog.html" title="" class="post-image">
-                                <img src="../../images/news/large-01.jpg" alt=""/>
+                                <img src="/images/news/large-01.jpg" alt=""/>
                             </a>
                             <ul class="post-date">
                                 <li class="day">11</li>
@@ -651,7 +651,7 @@
                     <article class="post style2">
                         <div class="featured-post">
                             <a href="blog.html" title="" class="post-image">
-                                <img src="../../images/news/large-02.jpg" alt=""/>
+                                <img src="/images/news/large-02.jpg" alt=""/>
                             </a>
                             <ul class="post-date">
                                 <li class="day">11</li>
@@ -680,7 +680,7 @@
                                     <div class="thumb">
                                         <span class="overlay-pop"></span>
                                         <a href="blog.html">
-                                            <img src="../../images/news/image-small-01.png" alt=""/>
+                                            <img src="/images/news/image-small-01.png" alt=""/>
                                         </a><!-- /.thumb -->
                                     </div><!-- /.row -->
                                     <div class="text">
@@ -697,7 +697,7 @@
                                     <div class="thumb">
                                         <span class="overlay-pop"></span>
                                         <a href="blog.html">
-                                            <img src="../../images/news/image-small-02.png" alt=""/>
+                                            <img src="/images/news/image-small-02.png" alt=""/>
                                         </a><!-- /.thumb -->
                                     </div><!-- /.row -->
                                     <div class="text">
@@ -714,7 +714,7 @@
                                     <div class="thumb">
                                         <span class="overlay-pop"></span>
                                         <a href="blog.html">
-                                            <img src="../../images/news/image-small-03.png" alt=""/>
+                                            <img src="/images/news/image-small-03.png" alt=""/>
                                         </a><!-- /.thumb -->
                                     </div><!-- /.row -->
                                     <div class="text">
@@ -731,7 +731,7 @@
                                     <div class="thumb">
                                         <span class="overlay-pop"></span>
                                         <a href="blog.html">
-                                            <img src="../../images/news/image-small-04.png" alt=""/>
+                                            <img src="/images/news/image-small-04.png" alt=""/>
                                         </a><!-- /.thumb -->
                                     </div><!-- /.row -->
                                     <div class="text">
@@ -760,19 +760,19 @@
                 <div class="col-md-12">
                     <ul class="flat-carousel" data-item="5" data-nav="false" data-dots="false" data-auto="true">
                         <li class="item">
-                            <img src="../../images/client/logo-slide-05.png" alt="img"/>
+                            <img src="/images/client/logo-slide-05.png" alt="img"/>
                         </li>
                         <li class="item">
-                            <img src="../../images/client/logo-slide-03.png" alt="img"/>
+                            <img src="/images/client/logo-slide-03.png" alt="img"/>
                         </li>
                         <li class="item">
-                            <img src="../../images/client/logo-slide-04.png" alt="img"/>
+                            <img src="/images/client/logo-slide-04.png" alt="img"/>
                         </li>
                         <li class="item">
-                            <img src="../../images/client/logo-slide-02.png" alt="img"/>
+                            <img src="/images/client/logo-slide-02.png" alt="img"/>
                         </li>
                         <li class="item">
-                            <img src="../../images/client/logo-slide-01.png" alt="img"/>
+                            <img src="/images/client/logo-slide-01.png" alt="img"/>
                         </li>
                     </ul>
                 </div> <!-- /.col-md-12 -->
@@ -874,32 +874,32 @@
 </div> <!-- /.boxed -->
 
 <!-- Javascript -->
-<script type="text/javascript" src="../../js/jquery.min.js"></script>
-<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
-<script type="text/javascript" src="../../js/owl.carousel.js"></script>
-<script type="text/javascript" src="../../js/jquery.easing.js"></script>
-<script type="text/javascript" src="../../js/jquery.flexslider-min.js"></script>
-<script type="text/javascript" src="../../js/waypoints.min.js"></script>
+<script type="text/javascript" src="/js/jquery.min.js"></script>
+<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/js/owl.carousel.js"></script>
+<script type="text/javascript" src="/js/jquery.easing.js"></script>
+<script type="text/javascript" src="/js/jquery.flexslider-min.js"></script>
+<script type="text/javascript" src="/js/waypoints.min.js"></script>
 
-<script type="text/javascript" src="../../js/jquery.cookie.js"></script>
-<script type="text/javascript" src="../../js/main.js"></script>
+<script type="text/javascript" src="/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="/js/main.js"></script>
 
 
 <!-- Revolution Slider -->
-<script type="text/javascript" src="../../revolution/js/jquery.themepunch.tools.min.js"></script>
-<script type="text/javascript" src="../../revolution/js/jquery.themepunch.revolution.min.js"></script>
-<script type="text/javascript" src="../../revolution/js/slider_v1.js"></script>
+<script type="text/javascript" src="/revolution/js/jquery.themepunch.tools.min.js"></script>
+<script type="text/javascript" src="/revolution/js/jquery.themepunch.revolution.min.js"></script>
+<script type="text/javascript" src="/revolution/js/slider_v1.js"></script>
 
 SLIDER REVOLUTION 5.0 EXTENSIONS  (Load Extensions only on Local File Systems !  The following part can be removed on Server for On Demand Loading)
-<script type="text/javascript" src="../../revolution/js/extensions/revolution.extension.actions.min.js"></script>
-<script type="text/javascript" src="../../revolution/js/extensions/revolution.extension.carousel.min.js"></script>
-<script type="text/javascript" src="../../revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
-<script type="text/javascript" src="../../revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
-<script type="text/javascript" src="../../revolution/js/extensions/revolution.extension.migration.min.js"></script>
-<script type="text/javascript" src="../../revolution/js/extensions/revolution.extension.navigation.min.js"></script>
-<script type="text/javascript" src="../../revolution/js/extensions/revolution.extension.parallax.min.js"></script>
-<script type="text/javascript" src="../../revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
-<script type="text/javascript" src="../../revolution/js/extensions/revolution.extension.video.min.js"></script>
+<script type="text/javascript" src="/revolution/js/extensions/revolution.extension.actions.min.js"></script>
+<script type="text/javascript" src="/revolution/js/extensions/revolution.extension.carousel.min.js"></script>
+<script type="text/javascript" src="/revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
+<script type="text/javascript" src="/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
+<script type="text/javascript" src="/revolution/js/extensions/revolution.extension.migration.min.js"></script>
+<script type="text/javascript" src="/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
+<script type="text/javascript" src="/revolution/js/extensions/revolution.extension.parallax.min.js"></script>
+<script type="text/javascript" src="/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
+<script type="text/javascript" src="/revolution/js/extensions/revolution.extension.video.min.js"></script>
 
 </body>
 
