@@ -12,3 +12,7 @@
     background: #00c1de;
     color: #fff;
 }
+
+.table-text-center > thead th{
+    text-align: center;
+}

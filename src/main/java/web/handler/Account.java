@@ -136,8 +136,6 @@ public class Account {
             @RequestParam(value = "phoneNumber", required = true) String phoneNumber,
             HttpSession session, RedirectAttributesModelMap modelMap) {
 
-        System.out.println("UserType");
-        System.out.println(userType);
         try {
             if(signUpService.signUp(new SignUpVO(UserType.valueOf(userType),
                     username,password,password_confirm,name,company,e_mail,authenticationCode,phoneNumber))){
