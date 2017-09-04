@@ -101,52 +101,73 @@
     <section class="flat-row pd-contact-v1">
         <div class="container">
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-2">
                     <div class="contact-info">
                         <div class="info info-address">
-                            <div class="title">项目名称</div>
+                            <div class="title name-div" id="pname-div">项目名称</div>
+                        </div>
+
+                        <div class="info info-address" id="basic-div">
+                            <div class="title name-div">基础资产类型</div>
                         </div>
 
                         <div class="info info-address">
-                            <div class="title">基础资产类型</div>
-                        </div>
-
-                        <div class="info info-address">
-                            <div class="title">消费用途</div>
+                            <div class="title name-div">消费用途</div>
                         </div>
                     </div>
                 </div> <!-- /.col-md-4 -->
 
-                <div class="col-md-8">
+                <div class="col-md-10">
                     <div class="flat-form-info">
                         <form action="#" method="post" class="form-info">
-                            <div class="one-half v3">
-                                <p class="input-info"><input type="text" name="your-name" value="" placeholder="项目名称"></p>
+                            <div class="v3">
+                                <p class="input-info"><input type="text" name="your-name" value="" placeholder="项目名称">
+                                </p>
                                 <p class="input-info"><input type="email" name="your-email" value="" placeholder="消费金融"
                                                              disabled="true"></p>
-                                <p class="input-info"><input type="text" name="your-subject" value=""
-                                                             placeholder="Subject"></p>
-                                <p class="input-info"><input type="button" value="下载数据模板"></p>
+                                <p class="input-info"><label>个人消费贷款、信用卡分期付款、国家助学贷款
+                                    <input type="radio" name="your-subject" value="" checked="" placeholder="Subject"></label>
+                                    </p>
+                                <p class="input-info"><label>个人汽车贷款
+                                    <input type="radio" name="your-subject" value="" placeholder="Subject"></label>
+                                    </p>
+                                <p class="input-info"><label>个人住房贷款（包含装修、租借、购买）
+                                    <input type="radio" name="your-subject" value="" placeholder="Subject"></label>
+                                    </p>
+                                <p class="input-info"><input id="input-data-button" type="button" value="下载数据模板"></p>
                                 <%--<p class="input-info"><input type="file" name="file" id="input-file" accept="text/xml" --%>
                                 <%--value="导入数据" onchange="fileChange()"></p>--%>
                                 <%--<div class="form-group has-success">--%>
                                 <!--使用label元素与file控件关联，input被隐藏，用户点的实际上是label-->
-                                <label for="input-file" class="btn btn-info">导入数据</label>
-                                <input type="file" name="file" id="input-file" accept="text/xml"
-                                       style="position:absolute;clip:rect(0 0 0 0);" onchange="fileChange()"/>
-                                <button type="submit" disabled="disabled" class="btn btn-special btn-success">
-                                    上传
-                                </button>
+                                <p class="input-info">
+                                    <label for="input-file" class="btn btn-info one-half">导入数据</label>
+                                    <input type="file" name="file" id="input-file" accept="text/xml"
+                                           style="position:absolute;clip:rect(0 0 0 0);" onchange="fileChange()"/>
+                                    <button id="submit-button" type="submit" disabled="disabled" class="btn btn-special btn-success one-half">
+                                        上传
+                                    </button>
+                                </p>
                                 <p class="help-block">添加一个XML文件</p>
+
                                 <%--</div>--%>
                             </div>
-                            <div class="one-half v4">
+                            <script>
+                                $("#input-data-button").css("margin-bottom", "30px").css("font-size","15px").css("margin-top","30px");
+                                $("#pname-div").css("margin-top", "11px").css("margin-bottom", "56px");
+//                                $(".title.name-div");
+                                $("#basic-div").css("margin-bottom", "47px");
+                                $(".btn.btn-info").css("padding","10px 12px").css("padding-bottom","13px").css("font-weight","600");
+                                $("#submit-button").css("font-weight","600");
+                                $(".form-info label input").css("height","inherit").css("width","inherit");
+                                $(".input-info label").css("font-weight","bold");
+                            </script>
+                            <%--<div class="one-half v4">--%>
 
-                                <form id="form" method='post' target='_blank' action="/showCase"
-                                      enctype="multipart/form-data">
+                                <%--<form id="form" method='post' target='_blank' action="/showCase"--%>
+                                      <%--enctype="multipart/form-data">--%>
 
-                                </form>
-                            </div>
+                                <%--</form>--%>
+                            <%--</div>--%>
                         </form> <!-- /.flat-form-info -->
                     </div>
                 </div> <!-- /.col-md-8 -->
