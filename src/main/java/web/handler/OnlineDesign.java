@@ -10,9 +10,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class OnlineDesign {
 
 
-    @GetMapping("/onlineDesign")
+    @GetMapping("/onlineDesign/importData")
     public String onlineDesign(){
-        return "importData";
+        return "onlineDesign/importData";
+    }
+
+    @GetMapping("/onlineDesign/browseAndKeep")
+    public String browseAndKeep(){
+        return "onlineDesign/browseAndKeep";
     }
 
 }
