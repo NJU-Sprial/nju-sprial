@@ -141,6 +141,9 @@ public interface OnlineDesignService {
      * @param TotalBreakOffRate
      * @param BreakOffCapitalRecoverRate
      * @return
+     *
+     * @deprecated 该接口已移植到ProductDesgin_ScenarioAnalysis中
+     * @see ProductDesgin_ScenarioAnalysis
      */
     public SceneAnalysisVO getSceneAnalysisVO(String username, String pname, String packageNumber, LocalDate assessDate,
                                               double TotalBreakOffRate, double BreakOffCapitalRecoverRate);
