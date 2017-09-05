@@ -102,8 +102,9 @@ public class Account {
     @RequestMapping(value= {"/signUp/sendAuthenticationCode"},method= RequestMethod.POST)
     public @ResponseBody String sendAuthenticationCode(
             @RequestParam(value = "e_mail", required = true) String e_mail) {
+        System.out.println("email:"+e_mail);
         if(signUpService.sendAuthenticationCode(e_mail)){
-            return "验证邮件已发送";
+            return "SUCESS";
         }
 
         return "该邮箱已被注册";

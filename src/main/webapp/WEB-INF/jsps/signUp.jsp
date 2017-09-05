@@ -81,8 +81,31 @@
 							<input type="email" class="form-control" style="min-width: 300px;" placeholder=""
 								   id="e_mail_field" name="e_mail"
 								   required="required" title="在这里输入工作邮箱"/>
-							<a class="btn btn-info pull-right" style="margin-top: 5px;" href="/signUp/sendAuthenticationCode">
+							<a class="btn btn-info pull-right" style="margin-top: 5px;" id="sendAuthenticationCode">
 								发送验证码
+								<script type="text/javascript">
+                                    $("#sendAuthenticationCode").click(function () {
+                                        $.ajax({
+                                            type: "post",
+                                            async: true, //异步请求（同步请求将会锁住浏览器，用户其他操作必须等待请求完成才可以执行）
+                                            url: "/signUp/sendAuthenticationCode", //请求发送到TestServlet处
+											data: {
+                                                "e_mail": $("#e_mail_field").val()
+											},
+                                            dataType: "text", //返回数据形式为text
+                                            success: (result) => {
+                                                if("SUCESS" === result){
+                                                    $('body').after('<div id="bottom-alert" class="text-center alert alert-dismissible alert-success fade in navbar-fixed-bottom" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button> <strong>验证邮件已发送</strong> </div>');
+												}else {
+                                                    $('body').after('<div id="bottom-alert" class="text-center alert alert-dismissible alert-danger fade in navbar-fixed-bottom" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button> <strong>'+result+'</strong> </div>');
+                                                }
+                                                window.setTimeout(function () {
+                                                    $('#bottom-alert').alert('close');
+                                                }, 3000);
+                                            },
+                                        });
+                                    });
+								</script>
 							</a>
 						</div>
 					</div>
