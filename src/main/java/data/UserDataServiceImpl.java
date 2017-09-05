@@ -32,6 +32,10 @@ public class UserDataServiceImpl implements UserDataService{
         if (!userDataPO.getPassword().equals(getMD5(password))){
             return LoginCode.WRONG_PSW;
         }
+
+        userDataPO.setOffline(false);
+
+        userdao.save(userDataPO);
         return LoginCode.LOGIN_SUCCESS;
     }
 
