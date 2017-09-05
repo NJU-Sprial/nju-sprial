@@ -10,6 +10,7 @@
 <title>募集期管理平台</title>
 </head>
 <body>
+<%@ include file="/WEB-INF/jsps/components/top_components.jsp" %>
 <div class="container">
 	<table class="table table-bordered table-text-center" style="font-size: 10px;">
 		<thead>
@@ -89,5 +90,7 @@
 		</tbody>
 	</table>
 </div>
+
+<%@ include file="/WEB-INF/jsps/components/message.jsp" %>
 </body>
 </html>

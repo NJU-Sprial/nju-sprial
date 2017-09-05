@@ -9,6 +9,7 @@
 <title>注册</title>
 </head>
 <body>
+<%@ include file="/WEB-INF/jsps/components/top_components.jsp" %>
 <div class="container">
 	<div class="content">
 		<form action="/signUpPost" method="post" name="signUp" autocomplete="true">
@@ -119,7 +120,7 @@
 
                             let cpwd = $('#password_confirm_field').val();
                             if (pwd !== cpwd) {
-                                $('body').after('<div id="bottom-alert" class="text-center alert alert-dismissible alert-danger fade in navbar-fixed-bottom" style="bottom: -20px;" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button> <strong>两次输入的密码不一致！</strong> </div>');
+                                $('body').after('<div id="bottom-alert" class="text-center alert alert-dismissible alert-danger fade in navbar-fixed-bottom" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button> <strong>两次输入的密码不一致！</strong> </div>');
 
                                 window.setTimeout(function () {
                                     $('#bottom-alert').alert('close');
@@ -134,5 +135,7 @@
 		</form>
 	</div>
 </div>
+
+<%@ include file="/WEB-INF/jsps/components/message.jsp" %>
 </body>
 </html>

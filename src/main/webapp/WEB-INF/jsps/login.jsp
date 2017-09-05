@@ -9,6 +9,7 @@
 <title>登录</title>
 </head>
 <body>
+<%@ include file="/WEB-INF/jsps/components/top_components.jsp" %>
 <div class="container">
 	<div class="content">
 		<form action="/loginPost" method="post" autocomplete="true">
@@ -38,5 +39,7 @@
 		</div>
 	</div>
 </div>
+
+<%@ include file="/WEB-INF/jsps/components/message.jsp" %>
 </body>
 </html>

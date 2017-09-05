@@ -16,3 +16,11 @@
 .table-text-center > thead th{
     text-align: center;
 }
+
+.alert {
+    bottom: -20px;
+    height: 60px;
+}
+.alert-dismissible .close {
+    top: -10px;
+}
