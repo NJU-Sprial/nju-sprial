@@ -10,6 +10,10 @@ import java.util.List;
  * 现金流对比分析图为一张折线图，横轴为时间，纵轴为现金流，以一期为一单位
  */
 public class SceneAnalysisVO {
+
+    /**
+     * 注意：List<CashFlowComparativeAnalysisPoint> 这个数据的格式将来很有可能会改
+     */
     private List<CashFlowComparativeAnalysisPoint> cashFlowComparativeAnalysisList;
     private List<CapitalCashFlowDetail> capitalCashFlowDetailList;
     private List<InterestCashFlowDetail> interestCashFlowDetailList;
