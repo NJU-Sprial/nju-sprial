@@ -61,7 +61,7 @@
                                 <li><a href="/login" title="">登录</a></li>
 
                                 <% } else { %>
-                                <li><a href="/onlineDesign/importData" title="">产品在线设计</a></li>
+                                <li><a href="/user/onlineDesign/importData" title="">产品在线设计</a></li>
                                 <li><a href="#" title="">发行协作平台</a></li>
                                 <li><a href="/user/ManagementPlatform" title="">募集期管理平台</a></li>
                                 <li><a href="/logout" title="">注销</a></li>
