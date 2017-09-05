@@ -28,3 +28,33 @@
 .contentFontSize{
     font-size: medium;
 }
+
+.table tbody tr td{
+    vertical-align:middle;
+    text-align: center;
+}
+
+.packageCreateFont{
+    font-size: large;
+    font-family: "Poppins", sans-serif;
+}
+
+.projectSelect{
+    background:transparent;
+    width: 170px;
+    padding: 2px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:11px;
+    font-weight:600;
+    color:#fff;
+    line-height: 1;
+    border: 0;
+    border-radius: 0;
+    height: 22px;
+    -webkit-appearance: none;
+}
+.select option{
+    background: pink;
+}
+
+
