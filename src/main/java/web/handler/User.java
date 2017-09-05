@@ -33,11 +33,11 @@ public class User {
 	}
 
 	@RequestMapping(value = "/user/ManagementPlatform", method= RequestMethod.GET)
-	public String managementPlatform(Model model) {
-//		List<ProductVO> productList = productManageService.getProductList();
+	public String managementPlatform(@SessionAttribute(WebSecurityConfig.SESSION_KEY) String username, Model model) {
+//		List<ProductVO> productList = productManageService.getProductList(username);
 //		List<List<RecruitmentSituationVO>> sponsorList = new ArrayList<>();
 //		for(ProductVO productVO:productList){
-//			sponsorList.add(productManageService.getRecruitmentSituation(productVO.getProductID()));
+//			sponsorList.add(productManageService.getRecruitmentSituation(username, productVO.getProductID()));
 //		}
 //		model.addAttribute("productList",productList);
 //		model.addAttribute("sponsorList",sponsorList);

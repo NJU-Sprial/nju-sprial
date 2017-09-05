@@ -31,7 +31,7 @@ public class ProductManageServiceImpl implements ProductManageService {
      * @return 产品列表
      */
     @Override
-    public List<ProductVO> getProductList() {
+    public List<ProductVO> getProductList(String username) {
         List<ProductPO> productPOs = productDataService.getProductList();
         List<ProductVO> productVOs = new ArrayList<>();
         String ignoreProperty = "serialVersionUID";
@@ -52,7 +52,7 @@ public class ProductManageServiceImpl implements ProductManageService {
      * @return 投资人的投资信息列表
      */
     @Override
-    public List<RecruitmentSituationVO> getRecruitmentSituation(String productID) {
+    public List<RecruitmentSituationVO> getRecruitmentSituation(String username, String productID) {
         List<RecruitmentSituationPO> situationPOs = productDataService.getRecruitmentSituation(productID);
         List<RecruitmentSituationVO> situationVOs = new ArrayList<>();
         String ignoreProperty = "serialVersionUID";
