@@ -7,7 +7,7 @@ import dataservice.ProjectDataService;
 import dataservice.PropertyPackageDataService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Service;
 import po.ProjectInfoPO;
 import po.PropertyPackagePO;
 import vo.*;
@@ -19,6 +19,7 @@ import java.util.List;
 /**
  * Created by CYF on 2017/9/3.
  */
+@Service
 public class OnlineDesignServiceImpl implements OnlineDesignService{
     private ProjectDataService projectDataService;
     private PropertyPackageDataService propertyPackageDataService;
