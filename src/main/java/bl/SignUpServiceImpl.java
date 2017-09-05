@@ -51,10 +51,7 @@ public class SignUpServiceImpl implements SignUpService{
     }
 
     /**
-     * 给邮箱发送验证邮件
-     * TODO 问一下验证邮件的内容
-     * @param e_mail 邮箱地址
-     * @return 发送成功返回true，发送失败（如邮箱已注册）返回false
+     * @inheritDoc
      */
     @Override
     public boolean sendAuthenticationCode(String e_mail) {

@@ -21,9 +21,9 @@ public interface SignUpService {
     public boolean signUp(SignUpVO signUpVO) throws SignUpException;
 
     /**
-     * 给邮箱发送验证邮件
+     * 给用户的邮箱发送验证码，这个验证码用于注册页面，用户注册时只有提交了正确的验证码才能进入待审核状态
      * @param e_mail 邮箱地址
-     * @return 发送成功返回true，发送失败（如邮箱已注册）返回false
+     * @return 发送成功返回true，发送失败返回false。目前认为只有在邮箱已注册时才会返回false。
      */
     public boolean sendAuthenticationCode(String e_mail);
 }
