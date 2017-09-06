@@ -25,6 +25,14 @@ public interface UserDataService {
     boolean logout(String username);
 
     /**
+     * 用户激活
+     *
+     * @param username 用户名
+     * @return 成功返回true，失败返回false
+     */
+    boolean activate(String username);
+
+    /**
      * 用户注册
      * <p>
      * 注意：如果注册成功，账号还不能使用。在注册成功后三个工作日内工作人员会打电话给用户，核实信息，如果通过，

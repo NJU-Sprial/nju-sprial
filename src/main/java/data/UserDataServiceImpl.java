@@ -4,6 +4,7 @@ import constranst.LoginCode;
 import constranst.SignUpCode;
 import dao.UserDao;
 import dataservice.UserDataService;
+import enums.UserState;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -32,16 +33,24 @@ public class UserDataServiceImpl implements UserDataService{
         if (!userDataPO.getPassword().equals(getMD5(password))){
             return LoginCode.WRONG_PSW;
         }
-
+        if (userDataPO.getUserState()== UserState.Unactivated){
+            return LoginCode.UNACTIVATED;
+        }
         userDataPO.setOffline(false);
 
         userdao.save(userDataPO);
+
         return LoginCode.LOGIN_SUCCESS;
     }
 
     @Override
     public boolean logout(String username) {
         return userdao.logout(username);
+    }
+
+    @Override
+    public boolean activate(String username) {
+        return userdao.activate(username);
     }
 
     @Override

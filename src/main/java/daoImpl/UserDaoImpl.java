@@ -12,4 +12,11 @@ public class UserDaoImpl extends SimpleHibernateDaoImpl<UserDataPO,String> imple
         int result = batchExecute(hql,username);
         return result==1?true:false;
     }
+
+    @Override
+    public boolean activate(String username){
+        String hql = "update UserDataPO user set user.userState = 1 where user.username = ?";
+        int result = batchExecute(hql,username);
+        return result==1?true:false;
+    }
 }
