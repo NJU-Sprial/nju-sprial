@@ -72,5 +72,19 @@
     opacity: 0.8;
 }
 
+.formFont{
+    font-size: large;
+    font-family: "Poppins", sans-serif;
+}
+
+#analysisButton{
+    color: #fff;
+}
+
+#analysisButton:hover{
+    background-color: #2e363a;
+    border-color: #2e363a;
+}
+
 
 

@@ -279,7 +279,7 @@ pre.prettyprint{
 	position: relative;
 	cursor: pointer;
 	font-weight: 200;
-	background: white;
+	background: #f7f7f7;
 	height: 45px;
 	padding: 4px 0px 4px;
 	border: 1px solid #cccccc;
@@ -320,11 +320,11 @@ pre.prettyprint{
 }
 
 .flat:hover .carat:after{
-	border-top-color: #000;
+	border-top-color: #18ba60;
 }
 
 .flat.focus .carat{
-	border-top-color: #000;
+	border-top-color: #18ba60;
 }
 
 .flat.focus .carat:after{
@@ -389,12 +389,12 @@ pre.prettyprint{
 	width: 60px;
 	
 	border-radius: 0 5px 5px 0;
-	box-shadow: inset -55px 0 25px -20px #fff;
+	box-shadow: inset -55px 0 25px -20px #f7f7f7;
 }
 
 .flat:hover .selected::after,
 .flat.focus .selected::after{
-	box-shadow: inset -55px 0 25px -20px #fff;
+	box-shadow: inset -55px 0 25px -20px #f7f7f7;
 }
 
 /* DROP DOWN WRAPPER */
