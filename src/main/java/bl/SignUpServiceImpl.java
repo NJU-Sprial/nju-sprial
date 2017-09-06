@@ -36,7 +36,7 @@ public class SignUpServiceImpl implements SignUpService{
        if(!signUpVO.getPassword().equals(signUpVO.getPassword_confirm())) {
             throw new SignUpException(SignUpCode.PASSWORD_NOT_SAME);
         }
-       UserDataPO userDataPO = new UserDataPO();
+        UserDataPO userDataPO = new UserDataPO();
         String ignoreProperty1 = "serialVersionUID";
         String ignoreProperty2 = "password_confirm";
         String ignoreProperty3 = "userState";
