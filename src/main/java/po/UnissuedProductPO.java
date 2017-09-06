@@ -8,7 +8,6 @@ import java.time.LocalDateTime;
  */
 @Entity
 @Table(name = "unissued_product", schema = "sprial")
-@IdClass(UnissuedProductPOPK.class)
 public class UnissuedProductPO {
     private int projectId;
     private int propertyPackageId;
@@ -17,8 +16,7 @@ public class UnissuedProductPO {
     private String recommendedLevel;
     private String ratingResult;
 
-    @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @Basic
     @Column(name = "project_id")
     public int getProjectId() {
         return projectId;
