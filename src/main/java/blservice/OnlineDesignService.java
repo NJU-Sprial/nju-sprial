@@ -142,8 +142,8 @@ public interface OnlineDesignService {
      * @param BreakOffCapitalRecoverRate
      * @return
      *
-     * @deprecated 该接口已移植到ProductDesgin_ScenarioAnalysis中
-     * @see ProductDesgin_ScenarioAnalysis
+     * @deprecated 该接口已移植到 ProductDesgin_ScenarioAnalysisService 中
+     * @see ProductDesgin_ScenarioAnalysisService
      */
     public SceneAnalysisVO getSceneAnalysisVO(String username, String pname, String packageNumber, LocalDate assessDate,
                                               double TotalBreakOffRate, double BreakOffCapitalRecoverRate);
@@ -167,6 +167,9 @@ public interface OnlineDesignService {
      * @param firstPayDate
      * @param lawEndDate
      * @return
+     *
+     * @deprecated 该接口已移植到 ProductDesgin_ConceptualDesignService 中
+     * @see ProductDesgin_ConceptualDesignService
      */
     public boolean saveProductStrategy(String username, String sname, LocalDate packageDate, LocalDate startDate,
                                        LocalDate firstPayDate, LocalDate lawEndDate);

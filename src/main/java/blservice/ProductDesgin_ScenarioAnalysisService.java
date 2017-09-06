@@ -10,22 +10,7 @@ import java.util.List;
  * Created by zjy on 2017/9/5.
  * 产品在线设计>产品设计>情景分析 的相关接口
  */
-public interface ProductDesgin_ScenarioAnalysis {
-
-    /**
-     * 获取该用户的所有项目的项目名称
-     * @param username 用户名
-     * @return
-     */
-    public List<String> getAllProduct(String username);
-
-    /**
-     * 获取用户单个项目下的所有资产包编号
-     * @param username 用户名
-     * @param pname 项目名称
-     * @return
-     */
-    public List<String> getAllPackageNumber(String username, String pname);
+public interface ProductDesgin_ScenarioAnalysisService {
 
     /**
      * 根据项目名称、资产包编号、评估日期、累计违约率、违约本金回收率，返回项目情景信息包括现金流对比分析图、本金现金流明细、
