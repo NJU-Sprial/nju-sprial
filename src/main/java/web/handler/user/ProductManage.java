@@ -1,4 +1,4 @@
-package web.handler;
+package web.handler.user;
 
 import blservice.ProductManageService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,11 +19,11 @@ import java.util.List;
 
 /**
  * @author zjy
- * 用户登录后才能访问的路由
+ * 募集期管理平台相关路由
  */
 @Controller
-public class User {
-//	@Autowired
+public class ProductManage {
+	@Autowired
 	private ProductManageService productManageService;
 
 	@RequestMapping(value = "/user/name", method= RequestMethod.GET)
