@@ -1,40 +1,75 @@
 package vo;
 
 import java.time.LocalDate;
+import java.util.List;
 
 /**
  * Created by 铠联 on 2017/9/3.
+ * Modified by zjy on 2017/9/5.
  * 项目情景信息，包括现金流对比分析图、本金现金流明细、利息现金流明细、本息现金流明细
- * 目前需求不明，请后端完成现金流对比分析图内容创建
+ * 现金流对比分析图为一张折线图，横轴为时间，纵轴为现金流，以一期为一单位
  */
 public class SceneAnalysisVO {
 
-    //请后端完成现金流对比分析图内容创建
+    /**
+     * 注意：List<CashFlowComparativeAnalysisPoint> 这个数据的格式将来很有可能会改
+     */
+    private List<CashFlowComparativeAnalysisPoint> cashFlowComparativeAnalysisList;
+    private List<CapitalCashFlowDetail> capitalCashFlowDetailList;
+    private List<InterestCashFlowDetail> interestCashFlowDetailList;
+    private List<CapitalAndInterestCashFlowDetail> capitalAndInterestCashFlowDetailList;
 
-
-
-
-    private CapitalCashFlowDetail capitalCashFlowDetail;
-    private InterestCashFlowDetail interestCashFlowDetail;
-    private CapitalAndInterestCashFlowDetail capitalAndInterestCashFlowDetail;
-
-    public SceneAnalysisVO(CapitalCashFlowDetail capitalCashFlowDetail, InterestCashFlowDetail interestCashFlowDetail,
-                           CapitalAndInterestCashFlowDetail capitalAndInterestCashFlowDetail) {
-        this.capitalCashFlowDetail = capitalCashFlowDetail;
-        this.interestCashFlowDetail = interestCashFlowDetail;
-        this.capitalAndInterestCashFlowDetail = capitalAndInterestCashFlowDetail;
+    public SceneAnalysisVO(List<CashFlowComparativeAnalysisPoint> cashFlowComparativeAnalysisList,
+                           List<CapitalCashFlowDetail> capitalCashFlowDetailList,
+                           List<InterestCashFlowDetail> interestCashFlowDetailList,
+                           List<CapitalAndInterestCashFlowDetail> capitalAndInterestCashFlowDetailList) {
+        this.cashFlowComparativeAnalysisList = cashFlowComparativeAnalysisList;
+        this.capitalCashFlowDetailList = capitalCashFlowDetailList;
+        this.interestCashFlowDetailList = interestCashFlowDetailList;
+        this.capitalAndInterestCashFlowDetailList = capitalAndInterestCashFlowDetailList;
     }
 
-    public CapitalCashFlowDetail getCapitalCashFlowDetail() {
-        return capitalCashFlowDetail;
+    public List<CashFlowComparativeAnalysisPoint> getCashFlowComparativeAnalysisList() {
+        return cashFlowComparativeAnalysisList;
     }
 
-    public InterestCashFlowDetail getInterestCashFlowDetail() {
-        return interestCashFlowDetail;
+    public List<CapitalCashFlowDetail> getCapitalCashFlowDetailList() {
+        return capitalCashFlowDetailList;
     }
 
-    public CapitalAndInterestCashFlowDetail getCapitalAndInterestCashFlowDetail() {
-        return capitalAndInterestCashFlowDetail;
+    public List<InterestCashFlowDetail> getInterestCashFlowDetailList() {
+        return interestCashFlowDetailList;
+    }
+
+    public List<CapitalAndInterestCashFlowDetail> getCapitalAndInterestCashFlowDetailList() {
+        return capitalAndInterestCashFlowDetailList;
+    }
+
+
+    /**
+     * 现金流对比分析图上的一个点
+     */
+    public class CashFlowComparativeAnalysisPoint{
+        private int cycleNum;
+        private LocalDate date;
+
+        /**
+         *
+         * @param cycleNum 期数，如3
+         * @param date 日期
+         */
+        public CashFlowComparativeAnalysisPoint(int cycleNum, LocalDate date) {
+            this.cycleNum = cycleNum;
+            this.date = date;
+        }
+
+        public int getCycleNum() {
+            return cycleNum;
+        }
+
+        public LocalDate getDate() {
+            return date;
+        }
     }
 
     /**
@@ -93,9 +128,6 @@ public class SceneAnalysisVO {
 
     /**
      * 本息现金流明细,包括“期数”、“日期”、“本息现金流”
-     */
-    /**
-     * 本金现金流明细,期数”、“日期”、“本金现金流”
      */
     public class CapitalAndInterestCashFlowDetail{
         private int cycleNum;

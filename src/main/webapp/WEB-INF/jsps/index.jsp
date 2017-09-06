@@ -811,6 +811,8 @@
         </a>
     </div>
 
+    <%@ include file="/WEB-INF/jsps/components/message.jsp" %>
+
 </div> <!-- /.boxed -->
 
 <!-- Javascript -->

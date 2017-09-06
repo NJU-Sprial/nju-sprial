@@ -1,0 +1,90 @@
+
+.input-holder{
+    margin-bottom: 30px;
+}
+
+#projectSearchInput{
+    display: inline-block;
+    width:120px;
+    height: 45px;
+    background: transparent;
+    border:1.5px solid #999;
+    border-radius: 40px;
+    font-family:"Open Sans", Arial, Verdana;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    color:#666;
+    padding-right: 40px;
+}
+
+.search-button{
+    display: inline-block;
+    background-color: transparent;
+    height:45px;
+    padding: 0px;
+    color: #666;
+    border: 0px;
+    margin-left: -40px;
+}
+
+#search-icon{
+    font-size: 20px;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.green{
+    color: #18ba60;
+}
+
+.greenBorder{
+    border:1px solid #18ba60;
+}
+
+.table tbody tr td{
+    vertical-align:middle;
+    text-align: center;
+    font-size: medium;
+}
+
+.table thead tr th{
+    font-size: large;
+    vertical-align:middle;
+    text-align: center;
+}
+
+.packageInfoButton:hover{
+    /*background-color: #2e363a;*/
+    /*border-color: #2e363a;*/
+    opacity:0.8;
+}
+
+.packageDeleteButton{
+    background-color: #ff6347;
+    border-color: #ff6347;
+}
+
+.packageDeleteButton:hover{
+    opacity: 0.8;
+}
+
+.formFont{
+    font-size: large;
+    font-family: "Poppins", sans-serif;
+}
+
+#analysisButton{
+    color: #fff;
+}
+
+#analysisButton:hover{
+    background-color: #2e363a;
+    border-color: #2e363a;
+}
+
+
+
