@@ -1,4 +1,4 @@
-package web.handler;
+package web.handler.user;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,14 +10,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class OnlineDesign {
 
 
-    @GetMapping("/onlineDesign/importData")
+    @GetMapping("/user/onlineDesign/importData")
     public String onlineDesign(){
-        return "onlineDesign/importData";
+        return "user/onlineDesign/importData";
     }
 
-    @GetMapping("/onlineDesign/browseAndKeep")
+    @GetMapping("/user/onlineDesign/browseAndKeep")
     public String browseAndKeep(){
-        return "onlineDesign/browseAndKeep";
+        return "user/onlineDesign/browseAndKeep";
     }
 
 }

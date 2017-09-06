@@ -20,7 +20,7 @@ public class UserDataServiceImpl implements UserDataService{
     private UserDao userdao;
 
     //md5盐值字符串
-    private static final String slat = "fdsgewr6t87349n#^R(*WFJ";
+    private static final String salt = "fdsgewr6t87349n#^R(*WFJ";
     @Override
     public String login(String username, String password) {
         UserDataPO userDataPO = userdao.get(username);
@@ -65,8 +65,32 @@ public class UserDataServiceImpl implements UserDataService{
         }
     }
 
+    /**
+     * 保存邮箱和验证码
+     * TODO
+     * @param email    邮箱
+     * @param authCode 验证码
+     * @return
+     */
+    @Override
+    public boolean saveAuthenticationCode(String email, String authCode) {
+        return false;
+    }
+
+    /**
+     * 验证邮箱和验证码
+     * TODO
+     * @param email    邮箱
+     * @param authCode 验证码
+     * @return
+     */
+    @Override
+    public boolean checkAuthenticationCode(String email, String authCode) {
+        return false;
+    }
+
     private String getMD5(String str){
-        String base = str+"/"+slat;
+        String base = str+"/"+ salt;
         String md5 = DigestUtils.md5DigestAsHex(base.getBytes());
 
         return md5;

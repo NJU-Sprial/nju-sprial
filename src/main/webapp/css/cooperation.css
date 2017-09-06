@@ -28,3 +28,19 @@
 .contentFontSize{
     font-size: medium;
 }
+
+.table tbody tr td{
+    vertical-align:middle;
+    text-align: center;
+}
+
+.packageCreateFont{
+    font-size: large;
+    font-family: "Poppins", sans-serif;
+}
+
+.selectBackground{
+    background-color: #ffffff;
+}
+
+

@@ -43,4 +43,21 @@ public interface UserDataService {
      * @see constranst.SignUpCode
      */
     String signUp(UserDataPO userDataPO);
+
+    /**
+     * 保存邮箱和验证码
+     * @param email    邮箱
+     * @param authCode 验证码
+     * @return
+     */
+    boolean saveAuthenticationCode(String email, String authCode);
+
+
+    /**
+     * 验证邮箱和验证码
+     * @param email    邮箱
+     * @param authCode 验证码
+     * @return
+     */
+    boolean checkAuthenticationCode(String email, String authCode);
 }
