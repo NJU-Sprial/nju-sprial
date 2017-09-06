@@ -13,7 +13,7 @@ import java.time.LocalDate;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class ProjectInfoVO {
+public class LoanVO {
     private String loanCode;
     private double balance;
     private double rate;

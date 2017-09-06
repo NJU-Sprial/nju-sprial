@@ -20,8 +20,12 @@ public class ProductPO implements Serializable {
     private String tradingPlace;
     private LocalDateTime estimatedMaturityDate;
     private LocalDateTime termOfRecruitment;
+    private Integer projectId;
+    private Byte finished;
+
 
     @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
     @Column(name = "product_id")
     public int getProductId() {
         return productId;
@@ -141,6 +145,26 @@ public class ProductPO implements Serializable {
         this.termOfRecruitment = termOfRecruitment;
     }
 
+    @Basic
+    @Column(name = "project_id")
+    public Integer getProjectId() {
+        return projectId;
+    }
+
+    public void setProjectId(Integer projectId) {
+        this.projectId = projectId;
+    }
+
+    @Basic
+    @Column(name = "finished")
+    public Byte getFinished() {
+        return finished;
+    }
+
+    public void setFinished(Byte finished) {
+        this.finished = finished;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -167,8 +191,8 @@ public class ProductPO implements Serializable {
             return false;
         if (termOfRecruitment != null ? !termOfRecruitment.equals(productPO.termOfRecruitment) : productPO.termOfRecruitment != null)
             return false;
-
-        return true;
+        if (projectId != null ? !projectId.equals(productPO.projectId) : productPO.projectId != null) return false;
+        return finished != null ? finished.equals(productPO.finished) : productPO.finished == null;
     }
 
     @Override
@@ -185,6 +209,8 @@ public class ProductPO implements Serializable {
         result = 31 * result + (tradingPlace != null ? tradingPlace.hashCode() : 0);
         result = 31 * result + (estimatedMaturityDate != null ? estimatedMaturityDate.hashCode() : 0);
         result = 31 * result + (termOfRecruitment != null ? termOfRecruitment.hashCode() : 0);
+        result = 31 * result + (projectId != null ? projectId.hashCode() : 0);
+        result = 31 * result + (finished != null ? finished.hashCode() : 0);
         return result;
     }
 
@@ -203,6 +229,8 @@ public class ProductPO implements Serializable {
                 ", tradingPlace='" + tradingPlace + '\'' +
                 ", estimatedMaturityDate=" + estimatedMaturityDate +
                 ", termOfRecruitment=" + termOfRecruitment +
+                ", projectId=" + projectId +
+                ", finished=" + finished +
                 '}';
     }
 }

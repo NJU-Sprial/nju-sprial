@@ -1,8 +1,8 @@
 package data;
 
-import dataservice.ProjectDataService;
+import dataservice.LoanDataService;
 import org.springframework.stereotype.Service;
-import po.ProjectInfoPO;
+import po.LoanPO;
 
 import java.util.List;
 
@@ -10,7 +10,7 @@ import java.util.List;
  * Created by Water on 2017/9/5.
  */
 @Service
-public class ProjectDataServiceImpl implements ProjectDataService {
+public class LoanDataServiceImpl implements LoanDataService {
     /**
      * 浏览某项目的贷款信息，一个项目包含至少一笔贷款
      *
@@ -19,7 +19,7 @@ public class ProjectDataServiceImpl implements ProjectDataService {
      * @return
      */
     @Override
-    public List<ProjectInfoPO> browseProject(String username, String pname) {
+    public List<LoanPO> browseProject(String username, String pname) {
         return null;
     }
 
@@ -31,7 +31,7 @@ public class ProjectDataServiceImpl implements ProjectDataService {
      * @return
      */
     @Override
-    public ProjectInfoPO searchLoan(String username, String loanCode) {
+    public LoanPO searchLoan(String username, String loanCode) {
         return null;
     }
 
@@ -39,11 +39,11 @@ public class ProjectDataServiceImpl implements ProjectDataService {
      * 修改一笔或多笔贷款信息
      *
      * @param username
-     * @param projectInfoPOList
+     * @param loanPOList
      * @return
      */
     @Override
-    public boolean alterLoan(String username, List<ProjectInfoPO> projectInfoPOList) {
+    public boolean alterLoan(String username, List<LoanPO> loanPOList) {
         return false;
     }
 

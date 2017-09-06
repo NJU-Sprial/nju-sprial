@@ -1,15 +1,14 @@
 package dataservice;
 
 
-import po.ProjectInfoPO;
-import po.PropertyPackagePO;
+import po.LoanPO;
 
 import java.util.List;
 
 /**
  * Created by CYF on 2017/9/3.
  */
-public interface ProjectDataService {
+public interface LoanDataService {
 
     /**
      * 浏览某项目的贷款信息，一个项目包含至少一笔贷款
@@ -17,7 +16,7 @@ public interface ProjectDataService {
      * @param pname
      * @return
      */
-    public List<ProjectInfoPO> browseProject(String username, String pname);
+    public List<LoanPO> browseProject(String username, String pname);
 
     /**
      * 根据贷款合同编号搜索该贷款信息
@@ -25,15 +24,15 @@ public interface ProjectDataService {
      * @param loanCode
      * @return
      */
-    public ProjectInfoPO searchLoan(String username, String loanCode);
+    public LoanPO searchLoan(String username, String loanCode);
 
     /**
      * 修改一笔或多笔贷款信息
      *
-     * @param projectInfoPOList
+     * @param loanPOList
      * @return
      */
-    public boolean alterLoan(String username, List<ProjectInfoPO> projectInfoPOList);
+    public boolean alterLoan(String username, List<LoanPO> loanPOList);
 
     /**
      * 删除一笔贷款信息

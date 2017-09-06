@@ -30,7 +30,7 @@ public interface OnlineDesignService {
      * @param pname
      * @return
      */
-    public List<ProjectInfoVO> browseProject(String username, String pname);
+    public List<LoanVO> browseProject(String username, String pname);
 
     /**
      * 根据贷款合同编号搜索该贷款信息
@@ -38,15 +38,15 @@ public interface OnlineDesignService {
      * @param loanCode
      * @return
      */
-    public ProjectInfoVO searchLoan(String username, String loanCode);
+    public LoanVO searchLoan(String username, String loanCode);
 
     /**
      * 修改一笔或多笔贷款信息
      *
-     * @param projectInfoVOList
+     * @param loanVOList
      * @return
      */
-    public boolean alterLoan(String username, List<ProjectInfoVO> projectInfoVOList);
+    public boolean alterLoan(String username, List<LoanVO> loanVOList);
 
     /**
      * 删除一笔贷款信息
@@ -61,10 +61,10 @@ public interface OnlineDesignService {
      * “批量导入”：导入批量文件，提供下载数据模板，供券商填写后批量导入数据
      *
      * @param pname
-     * @param projectInfoVOList
+     * @param loanVOList
      * @return
      */
-    public boolean addMultiplePropertyData(String username, String pname, List<ProjectInfoVO> projectInfoVOList);
+    public boolean addMultiplePropertyData(String username, String pname, List<LoanVO> loanVOList);
 
     /**
      * 数据清空，选择项目名称，删除该项目资产池所有数据，包括基础资产数据、资产包、产品设计方案等等
