@@ -4,6 +4,7 @@ import blservice.ProductManageService;
 import dataservice.ProductDataService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import po.ProductPO;
 import po.RecruitmentSituationPO;
 import vo.ProductVO;
@@ -15,6 +16,7 @@ import java.util.List;
 /**
  * Created by Water on 2017/9/3.
  */
+@Service
 public class ProductManageServiceImpl implements ProductManageService {
     private ProductDataService productDataService;
 

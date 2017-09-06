@@ -36,6 +36,10 @@ public class UserDataServiceImpl implements UserDataService{
         if (userDataPO.getUserState()== UserState.Unactivated){
             return LoginCode.UNACTIVATED;
         }
+        userDataPO.setOffline(false);
+
+        userdao.save(userDataPO);
+
         return LoginCode.LOGIN_SUCCESS;
     }
 

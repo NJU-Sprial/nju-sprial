@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 /**
  * Created by Water on 2017/9/3.
  */
-//@Service
+@Service
 public class LoginServiceImpl implements LoginService{
     private UserDataService userDataService;
     @Autowired

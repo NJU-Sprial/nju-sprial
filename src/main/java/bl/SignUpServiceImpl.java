@@ -6,12 +6,14 @@ import dataservice.UserDataService;
 import exception.SignUpException;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import po.UserDataPO;
 import vo.SignUpVO;
 
 /**
  * Created by Water on 2017/9/3.
  */
+@Service
 public class SignUpServiceImpl implements SignUpService{
 
     private UserDataService userDataService;
