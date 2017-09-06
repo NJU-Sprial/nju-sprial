@@ -8,12 +8,14 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import po.UserDataPO;
+import util.CaptchaUtil;
+import util.MailUtil;
 import vo.SignUpVO;
 
 /**
  * Created by Water on 2017/9/3.
  */
-@Service
+@Service("SignUpService")
 public class SignUpServiceImpl implements SignUpService{
 
     private UserDataService userDataService;
@@ -51,6 +53,14 @@ public class SignUpServiceImpl implements SignUpService{
      */
     @Override
     public boolean sendAuthenticationCode(String e_mail) {
-        return false;
+        int capLen = 6;
+        String captcha = CaptchaUtil.generator(capLen);
+        userDataService.saveAuthenticationCode(e_mail, captcha);
+        try {
+            MailUtil.sendMail(e_mail, captcha);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return true;
     }
 }

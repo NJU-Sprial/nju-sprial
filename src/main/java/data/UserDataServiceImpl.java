@@ -65,6 +65,30 @@ public class UserDataServiceImpl implements UserDataService{
         }
     }
 
+    /**
+     * 保存邮箱和验证码
+     * TODO
+     * @param email    邮箱
+     * @param authCode 验证码
+     * @return
+     */
+    @Override
+    public boolean saveAuthenticationCode(String email, String authCode) {
+        return false;
+    }
+
+    /**
+     * 验证邮箱和验证码
+     * TODO
+     * @param email    邮箱
+     * @param authCode 验证码
+     * @return
+     */
+    @Override
+    public boolean checkAuthenticationCode(String email, String authCode) {
+        return false;
+    }
+
     private String getMD5(String str){
         String base = str+"/"+ salt;
         String md5 = DigestUtils.md5DigestAsHex(base.getBytes());
