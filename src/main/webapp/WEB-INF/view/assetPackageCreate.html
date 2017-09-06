@@ -30,6 +30,9 @@
 
 	<link rel="stylesheet" type="text/css" href="../../css/cooperation.css">
 
+	<link rel="stylesheet" type="text/css" href="../../css/demo.css">
+
+
 </head>
 	<body>
 		<div class="boxed blog">
@@ -130,12 +133,26 @@
 								<div class="form-group">
 									<label class="control-label col-sm-5" for="projectName">项目名称：</label>
 									<div class="col-sm-7">
-										<select class="form-control projectSelect" id="projectName">
-											<option class="optionBackground">源计划1</option>
-											<option class="optionBackground">源计划2</option>
-											<option class="optionBackground">源计划3</option>
-											<option class="optionBackground">源计划4</option>
+										<select class="dropdown selectBackground" tabindex="9" data-settings='{"wrapperClass":"flat"}' id="projectName">
+
+											<option value="1">项目1</option>
+
+											<option value="2">项目2</option>
+
+											<option value="3">项目3</option>
+
+											<option value="4">项目4</option>
+
+											<option value="5">项目5</option>
+
 										</select>
+
+										<!--<select class="form-control projectSelect" id="projectName">-->
+											<!--<option><p>源计划1</p></option>-->
+											<!--<option><p>源计划2</p></option>-->
+											<!--<option><p>源计划3</p></option>-->
+											<!--<option><p>源计划4</p></option>-->
+										<!--</select>-->
 									</div>
 								</div>
 								<div class="form-group">
@@ -168,6 +185,12 @@
 										<p class="form-control-static" id="rate">（自动生成）</p>
 									</div>
 								</div>
+								<div>
+									<label class="control-label col-sm-5" for="submit"></label>
+									<div class="col-sm-7">
+										<input class="form-control cooperationConfirmButton" style="color:#ffffff" type="submit" id="submit" value="创建资产包">
+									</div>
+								</div>
 							</form>
 						</div>
 						<div class="col-md-2">
@@ -175,15 +198,7 @@
 						</div>
 					</div><!-- /.row -->
 				</div><!-- /.container -->
-			</section><!-- /.flat-row-iconbox -->  
-
-			<!-- map -->
-	        <section class="flat-row pdmap">
-				<div class="flat-maps" data-address="Thành phố New York, Tiểu bang New York" data-height="454" data-images="images/map/map-1.png" data-name="Themesflat Map"></div>
-	            <div class="gm-map">	            
-	                <div class="map"></div>                        
-	            </div>
-	        </section>
+			</section><!-- /.flat-row-iconbox -->
 
 			<footer id="footer">
 				<div class="footer-widgets">
@@ -286,7 +301,7 @@
     <script type="text/javascript" src="http://ditu.google.cn/maps/api/js?key=AIzaSyAcNjdyQ_xJKXqTnbGIhw7jlls3idn9rZM"></script>-->
     <script type="text/javascript" src="../../js/waypoints.min.js"></script>
     <script type="text/javascript" src="../../js/main.js"></script>
-
+	<script type="text/javascript" src="../../js/jquery.easydropdown.min.js"></script>
 
 	</body>
 </html>
