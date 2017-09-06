@@ -1,0 +1,54 @@
+package po;
+
+import javax.persistence.*;
+
+/**
+ * Created by yinywf on 2017/9/7
+ */
+@Entity
+@Table(name = "project_coordinator", schema = "sprial")
+@IdClass(ProjectCoordinatorPOPK.class)
+public class ProjectCoordinatorPO {
+    private int projectId;
+    private String coordinator;
+
+    @Id
+    @Column(name = "project_id")
+    public int getProjectId() {
+        return projectId;
+    }
+
+    public void setProjectId(int projectId) {
+        this.projectId = projectId;
+    }
+
+    @Id
+    @Column(name = "coordinator")
+    public String getCoordinator() {
+        return coordinator;
+    }
+
+    public void setCoordinator(String coordinator) {
+        this.coordinator = coordinator;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        ProjectCoordinatorPO that = (ProjectCoordinatorPO) o;
+
+        if (projectId != that.projectId) return false;
+        if (coordinator != null ? !coordinator.equals(that.coordinator) : that.coordinator != null) return false;
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = projectId;
+        result = 31 * result + (coordinator != null ? coordinator.hashCode() : 0);
+        return result;
+    }
+}

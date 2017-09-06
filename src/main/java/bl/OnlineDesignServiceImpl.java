@@ -3,12 +3,12 @@ package bl;
 import blservice.OnlineDesignService;
 import constranst.CashUnit;
 import constranst.CycleUnit;
-import dataservice.ProjectDataService;
+import dataservice.LoanDataService;
 import dataservice.PropertyPackageDataService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import po.ProjectInfoPO;
+import po.LoanPO;
 import po.PropertyPackagePO;
 import vo.*;
 
@@ -21,12 +21,12 @@ import java.util.List;
  */
 @Service
 public class OnlineDesignServiceImpl implements OnlineDesignService{
-    private ProjectDataService projectDataService;
+    private LoanDataService loanDataService;
     private PropertyPackageDataService propertyPackageDataService;
 
     @Autowired
-    public OnlineDesignServiceImpl(ProjectDataService projectDataService,PropertyPackageDataService propertyPackageDataService){
-        this.projectDataService = projectDataService;
+    public OnlineDesignServiceImpl(LoanDataService loanDataService, PropertyPackageDataService propertyPackageDataService){
+        this.loanDataService = loanDataService;
         this.propertyPackageDataService = propertyPackageDataService;
     }
 
@@ -52,15 +52,15 @@ public class OnlineDesignServiceImpl implements OnlineDesignService{
      * @return
      */
     @Override
-    public List<ProjectInfoVO> browseProject(String username, String pname) {
-        List<ProjectInfoPO> projectInfoPOList = projectDataService.browseProject(username, pname);
-        List<ProjectInfoVO> projectInfoVOList = new ArrayList<>();
-        for (ProjectInfoPO po:projectInfoPOList) {
-            ProjectInfoVO vo = new ProjectInfoVO();
+    public List<LoanVO> browseProject(String username, String pname) {
+        List<LoanPO> loanPOList = loanDataService.browseProject(username, pname);
+        List<LoanVO> loanVOList = new ArrayList<>();
+        for (LoanPO po:loanPOList) {
+            LoanVO vo = new LoanVO();
             BeanUtils.copyProperties(po,vo);
-            projectInfoVOList.add(vo);
+            loanVOList.add(vo);
         }
-        return projectInfoVOList;
+        return loanVOList;
     }
 
     /**
@@ -70,9 +70,9 @@ public class OnlineDesignServiceImpl implements OnlineDesignService{
      * @return
      */
     @Override
-    public ProjectInfoVO searchLoan(String username, String loanCode) {
-        ProjectInfoPO po = projectDataService.searchLoan(username, loanCode);
-        ProjectInfoVO vo = new ProjectInfoVO();
+    public LoanVO searchLoan(String username, String loanCode) {
+        LoanPO po = loanDataService.searchLoan(username, loanCode);
+        LoanVO vo = new LoanVO();
         BeanUtils.copyProperties(po,vo);
         return vo;
     }
@@ -80,18 +80,18 @@ public class OnlineDesignServiceImpl implements OnlineDesignService{
     /**
      * 修改一笔或多笔贷款信息
      *
-     * @param projectInfoVOList
+     * @param loanVOList
      * @return
      */
     @Override
-    public boolean alterLoan(String username, List<ProjectInfoVO> projectInfoVOList) {
-        List<ProjectInfoPO> poList = new ArrayList<>();
-        for (ProjectInfoVO vo:projectInfoVOList) {
-            ProjectInfoPO po = new ProjectInfoPO();
+    public boolean alterLoan(String username, List<LoanVO> loanVOList) {
+        List<LoanPO> poList = new ArrayList<>();
+        for (LoanVO vo:loanVOList) {
+            LoanPO po = new LoanPO();
             BeanUtils.copyProperties(vo,po);
             poList.add(po);
         }
-        boolean result = projectDataService.alterLoan(username, poList);
+        boolean result = loanDataService.alterLoan(username, poList);
         return result;
     }
 
@@ -103,7 +103,7 @@ public class OnlineDesignServiceImpl implements OnlineDesignService{
      */
     @Override
     public boolean deleteLoan(String username, String loanCode) {
-        boolean result = projectDataService.deleteLoan(username, loanCode);
+        boolean result = loanDataService.deleteLoan(username, loanCode);
         return result;
     }
 
@@ -112,11 +112,11 @@ public class OnlineDesignServiceImpl implements OnlineDesignService{
      * 目前待定，需求不明
      * “批量导入”：导入批量文件，提供下载数据模板，供券商填写后批量导入数据
      * @param pname
-     * @param projectInfoVOList
+     * @param loanVOList
      * @return
      */
     @Override
-    public boolean addMultiplePropertyData(String username, String pname, List<ProjectInfoVO> projectInfoVOList) {
+    public boolean addMultiplePropertyData(String username, String pname, List<LoanVO> loanVOList) {
         return false;
     }
 
@@ -127,7 +127,7 @@ public class OnlineDesignServiceImpl implements OnlineDesignService{
      */
     @Override
     public boolean clearProjectData(String username, String pname) {
-        boolean result = projectDataService.clearProjectData(username, pname);
+        boolean result = loanDataService.clearProjectData(username, pname);
         return result;
     }
 

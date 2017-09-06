@@ -1,20 +1,23 @@
 package po;
 
 import javax.persistence.*;
-import java.io.Serializable;
-import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
+
+/**
+ * Created by yinywf on 2017/9/7
+ */
 @Entity
-@Table(name = "project_info", schema = "sprial")
-public class ProjectInfoPO implements Serializable {
-    private static final long serialVersionUID = 6799548975346354747L;
+@Table(name = "loan", schema = "sprial")
+public class LoanPO {
     private String loanCode;
     private Double balance;
     private Double rate;
-    private Timestamp fetchDate;
-    private Timestamp endDate;
+    private LocalDateTime fetchDate;
+    private LocalDateTime endDate;
     private String rateType;
     private String returnWay;
+    private Integer propertyPackageId;
 
     @Id
     @Column(name = "loan_code")
@@ -48,21 +51,21 @@ public class ProjectInfoPO implements Serializable {
 
     @Basic
     @Column(name = "fetch_date")
-    public Timestamp getFetchDate() {
+    public LocalDateTime getFetchDate() {
         return fetchDate;
     }
 
-    public void setFetchDate(Timestamp fetchDate) {
+    public void setFetchDate(LocalDateTime fetchDate) {
         this.fetchDate = fetchDate;
     }
 
     @Basic
     @Column(name = "end_date")
-    public Timestamp getEndDate() {
+    public LocalDateTime getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(Timestamp endDate) {
+    public void setEndDate(LocalDateTime endDate) {
         this.endDate = endDate;
     }
 
@@ -86,20 +89,32 @@ public class ProjectInfoPO implements Serializable {
         this.returnWay = returnWay;
     }
 
+    @Basic
+    @Column(name = "property_package_id")
+    public Integer getPropertyPackageId() {
+        return propertyPackageId;
+    }
+
+    public void setPropertyPackageId(Integer propertyPackageId) {
+        this.propertyPackageId = propertyPackageId;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        ProjectInfoPO that = (ProjectInfoPO) o;
+        LoanPO loanPO = (LoanPO) o;
 
-        if (loanCode != null ? !loanCode.equals(that.loanCode) : that.loanCode != null) return false;
-        if (balance != null ? !balance.equals(that.balance) : that.balance != null) return false;
-        if (rate != null ? !rate.equals(that.rate) : that.rate != null) return false;
-        if (fetchDate != null ? !fetchDate.equals(that.fetchDate) : that.fetchDate != null) return false;
-        if (endDate != null ? !endDate.equals(that.endDate) : that.endDate != null) return false;
-        if (rateType != null ? !rateType.equals(that.rateType) : that.rateType != null) return false;
-        if (returnWay != null ? !returnWay.equals(that.returnWay) : that.returnWay != null) return false;
+        if (loanCode != null ? !loanCode.equals(loanPO.loanCode) : loanPO.loanCode != null) return false;
+        if (balance != null ? !balance.equals(loanPO.balance) : loanPO.balance != null) return false;
+        if (rate != null ? !rate.equals(loanPO.rate) : loanPO.rate != null) return false;
+        if (fetchDate != null ? !fetchDate.equals(loanPO.fetchDate) : loanPO.fetchDate != null) return false;
+        if (endDate != null ? !endDate.equals(loanPO.endDate) : loanPO.endDate != null) return false;
+        if (rateType != null ? !rateType.equals(loanPO.rateType) : loanPO.rateType != null) return false;
+        if (returnWay != null ? !returnWay.equals(loanPO.returnWay) : loanPO.returnWay != null) return false;
+        if (propertyPackageId != null ? !propertyPackageId.equals(loanPO.propertyPackageId) : loanPO.propertyPackageId != null)
+            return false;
 
         return true;
     }
@@ -113,19 +128,7 @@ public class ProjectInfoPO implements Serializable {
         result = 31 * result + (endDate != null ? endDate.hashCode() : 0);
         result = 31 * result + (rateType != null ? rateType.hashCode() : 0);
         result = 31 * result + (returnWay != null ? returnWay.hashCode() : 0);
+        result = 31 * result + (propertyPackageId != null ? propertyPackageId.hashCode() : 0);
         return result;
-    }
-
-    @Override
-    public String toString() {
-        return "ProjectInfoPO{" +
-                "loanCode='" + loanCode + '\'' +
-                ", balance=" + balance +
-                ", rate=" + rate +
-                ", fetchDate=" + fetchDate +
-                ", endDate=" + endDate +
-                ", rateType='" + rateType + '\'' +
-                ", returnWay='" + returnWay + '\'' +
-                '}';
     }
 }
