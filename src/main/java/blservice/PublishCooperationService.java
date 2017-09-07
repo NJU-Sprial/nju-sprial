@@ -15,7 +15,7 @@ public interface PublishCooperationService {
      * 获取用户所有的项目
      * @return 项目列表
      */
-    public List<ProjectCooperationVO> getCooperationProjectList();
+    public List<ProjectCooperationVO> getCooperationProjectList(String username);
 
 
     /**
@@ -28,6 +28,6 @@ public interface PublishCooperationService {
      * 上传项目文件
      * @return 上传是否成功
      */
-    public boolean uploadProjectFile(File file);
+    public boolean uploadProjectFile(String projectID, File file);
 
 }
