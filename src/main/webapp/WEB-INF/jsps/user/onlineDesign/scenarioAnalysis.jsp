@@ -1,4 +1,4 @@
-<%--
+<%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
   User: zjy
   Date: 2017/9/6
@@ -21,13 +21,11 @@
         <dl class="dl-horizontal">
             <dt>项目名称</dt>
             <dd>
-                <select class="form-control" style="max-width: 120px;" id="pname">
+                <select class="form-control" style="max-width: 200px;" id="pname">
                     <option selected="selected">沪深300</option>
-                    <option >随机500</option>
-                    <option >沪深A股</option>
-                    <option >中小板</option>
-                    <option >创业板</option>
-                    <option >自选股票池</option>
+                    <% for (String pname : (List<String>)request.getAttribute("allProduct")) { %>
+                    <option >${pname}</option>
+                    <% } %>
                 </select>
             </dd>
             <dt>资产包编号</dt>
