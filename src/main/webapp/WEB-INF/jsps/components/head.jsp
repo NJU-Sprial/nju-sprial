@@ -14,6 +14,8 @@
 
     <!-- Boostrap style -->
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.css"/>
+    <!-- Datetimepicker style -->
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap-datetimepicker.css"/>
     <!-- REVOLUTION LAYERS STYLES -->
     <link rel="stylesheet" type="text/css" href="/revolution/css/layers.css"/>
     <link rel="stylesheet" type="text/css" href="/revolution/css/settings.css"/>
@@ -33,6 +35,7 @@
     <script src="/js/jquery.easing.js" type="text/javascript"></script>
     <script src="/js/jquery.flexslider-min.js" type="text/javascript"></script>
     <script src="/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="/js/bootstrap-datetimepicker.js" type="text/javascript"></script>
     <script src="/js/gmap3.min.js" type="text/javascript"></script>
     <script src="/js/owl.carousel.js" type="text/javascript"></script>
     <script src="/js/waypoints.min.js" type="text/javascript"></script>
