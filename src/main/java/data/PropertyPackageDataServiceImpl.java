@@ -4,6 +4,8 @@ import dataservice.PropertyPackageDataService;
 import org.springframework.stereotype.Service;
 import po.PropertyPackagePO;
 
+import java.util.List;
+
 /**
  * Created by Water on 2017/9/5.
  */
@@ -56,5 +58,10 @@ public class PropertyPackageDataServiceImpl implements PropertyPackageDataServic
     @Override
     public boolean deletePropertyPackage(String username, String packageNumber) {
         return false;
+    }
+
+    @Override
+    public List<PropertyPackagePO> findPropertyPackage(String username, String pname) {
+        return null;
     }
 }

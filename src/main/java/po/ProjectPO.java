@@ -7,7 +7,7 @@ import java.io.Serializable;
  * Created by yinywf on 2017/9/7
  */
 @Entity
-@Table(name = "project", schema = "sprial")
+@Table(name = "project", schema = "sprial", uniqueConstraints = {@UniqueConstraint(columnNames={"project_name", "owner"})})
 public class ProjectPO implements Serializable {
     private static final long serialVersionUID = -2412651312013948793L;
     private int id;

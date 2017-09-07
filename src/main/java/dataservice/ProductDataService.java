@@ -21,4 +21,6 @@ public interface ProductDataService {
      * @return 投资人的投资信息列表
      */
     List<RecruitmentSituationPO> getRecruitmentSituation(String username, String productID);
+
+    void test(ProductPO productPO);
 }
