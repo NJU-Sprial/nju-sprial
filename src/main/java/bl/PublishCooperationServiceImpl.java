@@ -8,7 +8,6 @@ import java.io.File;
 import java.util.List;
 
 /**
- * TODO
  * Created by Water on 2017/9/7.
  */
 @Service
@@ -17,7 +16,7 @@ public class PublishCooperationServiceImpl implements PublishCooperationService 
 
     /**
      * 获取用户所有的项目
-     *
+     * TODO
      * @param username
      * @return 项目列表
      */
@@ -28,7 +27,7 @@ public class PublishCooperationServiceImpl implements PublishCooperationService 
 
     /**
      * 获取项目的文件
-     *
+     * TODO
      * @param projectID
      * @return 返回项目文件
      */
@@ -39,7 +38,7 @@ public class PublishCooperationServiceImpl implements PublishCooperationService 
 
     /**
      * 上传项目文件
-     *
+     * TODO
      * @param projectID
      * @param file
      * @return 上传是否成功

@@ -8,7 +8,6 @@ import vo.SceneAnalysisVO;
 import java.time.LocalDate;
 
 /**
- * TODO
  * Created by Water on 2017/9/7.
  */
 @Service
@@ -16,7 +15,7 @@ public class ProductDesign_ScenarioAnalysisServiceImpl implements ProductDesign_
     /**
      * 根据项目名称、资产包编号、评估日期、累计违约率、违约本金回收率，返回项目情景信息包括现金流对比分析图、本金现金流明细、
      * 利息现金流明细、本息现金流明细
-     *
+     * TODO:算法
      * @param username                   用户名
      * @param pname                      项目名称
      * @param packageNumber              资产包编号
