@@ -6,7 +6,7 @@ import java.util.List;
  * Created by zjy on 2017/9/6.
  * 产品在线设计>产品设计 的通用接口
  */
-public interface ProductDesginService {
+public interface ProductDesignService {
 
     /**
      * 获取该用户的所有项目的项目名称

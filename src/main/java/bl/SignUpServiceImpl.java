@@ -34,12 +34,17 @@ public class SignUpServiceImpl implements SignUpService{
        if(!signUpVO.getPassword().equals(signUpVO.getPassword_confirm())) {
             throw new SignUpException(SignUpCode.PASSWORD_NOT_SAME);
         }
+        if(!userDataService.checkAuthenticationCode(signUpVO.getEmail(), signUpVO.getAuthenticationCode())) {
+           throw new SignUpException(SignUpCode.AUTH_ERROR);
+        }
         UserDataPO userDataPO = new UserDataPO();
         String ignoreProperty1 = "serialVersionUID";
         String ignoreProperty2 = "password_confirm";
         String ignoreProperty3 = "userState";
         String ignoreProperty4 = "offline";
-        BeanUtils.copyProperties(signUpVO, userDataPO, ignoreProperty1, ignoreProperty2, ignoreProperty3, ignoreProperty4);
+        String ignoreProperty5 = "authenticationCode";
+        BeanUtils.copyProperties(signUpVO, userDataPO,
+                ignoreProperty1, ignoreProperty2, ignoreProperty3, ignoreProperty4, ignoreProperty5);
         String result = userDataService.signUp(userDataPO);
         if(result.equals(SignUpCode.SIGN_UP_SUCCESS)) {
             return true;

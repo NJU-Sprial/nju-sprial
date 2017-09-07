@@ -8,7 +8,7 @@ import vo.ConceptualVO;
  * Created by zjy on 2017/9/5.
  * 产品在线设计>产品设计>方案设计 的相关接口
  */
-public interface ProductDesgin_ConceptualDesignService {
+public interface ProductDesign_ConceptualDesignService {
 
     /**
      * 获取用户某产品的方案
