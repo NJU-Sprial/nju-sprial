@@ -73,4 +73,16 @@ public class PropertyPackageDataServiceImpl implements PropertyPackageDataServic
     public List<PropertyPackagePO> findPropertyPackage(String username, String pname) {
         return null;
     }
+
+    /**
+     * 用户创建新的资产包时，判断是否有重复名字的资产包
+     * 如果有重复名字 返回false 表示无法创建
+     * @param username
+     * @param newPackageName
+     * @return
+     */
+    @Override
+    public boolean testPropertyPackageName(String username, String newPackageName) {
+        return false;
+    }
 }
