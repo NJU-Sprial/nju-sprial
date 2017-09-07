@@ -1,6 +1,8 @@
 package bl;
 
 import blservice.PublishCooperationService;
+import dataservice.ProjectCooperationDataService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import vo.ProjectCooperationVO;
 
@@ -12,17 +14,20 @@ import java.util.List;
  */
 @Service
 public class PublishCooperationServiceImpl implements PublishCooperationService {
+    private ProjectCooperationDataService projectCooperationDataService;
 
-
+    @Autowired
+    public PublishCooperationServiceImpl(ProjectCooperationDataService projectCooperationDataService) {
+        this.projectCooperationDataService = projectCooperationDataService;
+    }
     /**
      * 获取用户所有的项目
-     * TODO
      * @param username
      * @return 项目列表
      */
     @Override
     public List<ProjectCooperationVO> getCooperationProjectList(String username) {
-        return null;
+        return projectCooperationDataService.findCooperationProjects(username);
     }
 
     /**

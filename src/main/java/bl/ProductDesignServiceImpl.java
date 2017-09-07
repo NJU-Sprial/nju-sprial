@@ -40,7 +40,6 @@ public class ProductDesignServiceImpl implements ProductDesignService {
 
     /**
      * 获取用户单个项目下的所有资产包编号
-     * TODO
      * @param username 用户名
      * @param pname    项目名称
      * @return
