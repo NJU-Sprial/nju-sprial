@@ -34,7 +34,7 @@ public interface LoanDataService {
      */
     //因为loanvo无propertypackageid属性
     //这里不要更改loanpo的propertyPackageId属性
-    public boolean alterLoan(String username, List<LoanPO> loanPOList);
+    public boolean alterLoan(String username, String projectName, List<LoanPO> loanPOList);
 
     /**
      * 删除一笔贷款信息

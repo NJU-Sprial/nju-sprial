@@ -95,7 +95,7 @@ public class OnlineDesignServiceImpl implements OnlineDesignService{
         }
         //因为loanvo缺少loanpo的propertyPackageId属性
         //因此在下面的操作中不要更改propertypackageID这一列属性
-        boolean result = loanDataService.alterLoan(username, poList);
+        boolean result = loanDataService.alterLoan(username,projectName, poList);
         return result;
     }
 

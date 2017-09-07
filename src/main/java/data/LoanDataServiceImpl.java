@@ -43,7 +43,7 @@ public class LoanDataServiceImpl implements LoanDataService {
      * @return
      */
     @Override
-    public boolean alterLoan(String username, List<LoanPO> loanPOList) {
+    public boolean alterLoan(String username, String projectName, List<LoanPO> loanPOList) {
         return false;
     }
 
