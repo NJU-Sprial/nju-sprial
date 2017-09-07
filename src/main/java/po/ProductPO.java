@@ -21,11 +21,11 @@ public class ProductPO implements Serializable {
     private LocalDateTime estimatedMaturityDate;
     private LocalDateTime termOfRecruitment;
     private Integer projectId;
-    private Byte finished;
+    private Boolean finished;
 
 
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name = "product_id")
     public int getProductId() {
         return productId;
@@ -157,11 +157,11 @@ public class ProductPO implements Serializable {
 
     @Basic
     @Column(name = "finished")
-    public Byte getFinished() {
+    public Boolean getFinished() {
         return finished;
     }
 
-    public void setFinished(Byte finished) {
+    public void setFinished(Boolean finished) {
         this.finished = finished;
     }
 

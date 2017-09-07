@@ -1,6 +1,7 @@
 package po;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 /**
@@ -8,7 +9,8 @@ import java.time.LocalDateTime;
  */
 @Entity
 @Table(name = "order", schema = "sprial")
-public class OrderPO {
+public class OrderPO implements Serializable {
+    private static final long serialVersionUID = -2979844900021702033L;
     private int orderId;
     private LocalDateTime orderDate;
     private Integer productId;
@@ -16,12 +18,12 @@ public class OrderPO {
     private String username;
     private Double amount;
     private Double interestRate;
-    private Byte hasDeposit;
-    private Byte bid;
+    private Boolean hasDeposit;
+    private Boolean bid;
     private Double incomeEstimation;
 
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name = "order_id")
     public int getOrderId() {
         return orderId;
@@ -93,21 +95,21 @@ public class OrderPO {
 
     @Basic
     @Column(name = "has_deposit")
-    public Byte getHasDeposit() {
+    public Boolean getHasDeposit() {
         return hasDeposit;
     }
 
-    public void setHasDeposit(Byte hasDeposit) {
+    public void setHasDeposit(Boolean hasDeposit) {
         this.hasDeposit = hasDeposit;
     }
 
     @Basic
     @Column(name = "bid")
-    public Byte getBid() {
+    public Boolean getBid() {
         return bid;
     }
 
-    public void setBid(Byte bid) {
+    public void setBid(Boolean bid) {
         this.bid = bid;
     }
 

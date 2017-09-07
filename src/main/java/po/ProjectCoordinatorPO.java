@@ -1,13 +1,15 @@
 package po;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  * Created by yinywf on 2017/9/7
  */
 @Entity
 @Table(name = "project_coordinator", schema = "sprial")
-public class ProjectCoordinatorPO {
+public class ProjectCoordinatorPO implements Serializable {
+    private static final long serialVersionUID = 3437823402639962217L;
     private int projectId;
     private String coordinator;
     private int id;
@@ -33,6 +35,7 @@ public class ProjectCoordinatorPO {
     }
 
     @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name = "id")
     public int getId() {
         return id;
