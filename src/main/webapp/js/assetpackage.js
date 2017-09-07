@@ -25,9 +25,13 @@ $(function () {
     $("#cashSummaryButton").click(function () {
         $(this).addClass("cashClickButton");
         $("#cashDetailButton").removeClass("cashClickButton");
+        $("#cashSummary").removeClass("displayNone");
+        $("#cashDetail").addClass("displayNone");
     });
     $("#cashDetailButton").click(function () {
         $(this).addClass("cashClickButton");
         $("#cashSummaryButton").removeClass("cashClickButton");
+        $("#cashSummary").addClass("displayNone");
+        $("#cashDetail").removeClass("displayNone");
     })
 })
