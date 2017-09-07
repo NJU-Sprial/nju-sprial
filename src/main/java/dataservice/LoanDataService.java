@@ -32,6 +32,8 @@ public interface LoanDataService {
      * @param loanPOList
      * @return
      */
+    //因为loanvo无propertypackageid属性
+    //这里不要更改loanpo的propertyPackageId属性
     public boolean alterLoan(String username, List<LoanPO> loanPOList);
 
     /**

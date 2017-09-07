@@ -57,6 +57,8 @@ public class OnlineDesignServiceImpl implements OnlineDesignService{
         List<LoanVO> loanVOList = new ArrayList<>();
         for (LoanPO po:loanPOList) {
             LoanVO vo = new LoanVO();
+            //Any bean properties that the source bean exposes but the target bean does not
+            // will silently be ignored.
             BeanUtils.copyProperties(po,vo);
             loanVOList.add(vo);
         }
@@ -84,13 +86,15 @@ public class OnlineDesignServiceImpl implements OnlineDesignService{
      * @return
      */
     @Override
-    public boolean alterLoan(String username, List<LoanVO> loanVOList) {
+    public boolean alterLoan(String username, String projectName, List<LoanVO> loanVOList) {
         List<LoanPO> poList = new ArrayList<>();
         for (LoanVO vo:loanVOList) {
             LoanPO po = new LoanPO();
-            BeanUtils.copyProperties(vo,po);
+            BeanUtils.copyProperties(vo,po,LoanVO.class);
             poList.add(po);
         }
+        //因为loanvo缺少loanpo的propertyPackageId属性
+        //因此在下面的操作中不要更改propertypackageID这一列属性
         boolean result = loanDataService.alterLoan(username, poList);
         return result;
     }
@@ -230,6 +234,9 @@ public class OnlineDesignServiceImpl implements OnlineDesignService{
      * @param TotalBreakOffRate
      * @param BreakOffCapitalRecoverRate
      * @return
+     *
+     * @deprecated 该接口已移植到 ProductDesgin_ScenarioAnalysisService 中
+     * @see ProductDesgin_ScenarioAnalysisService
      */
     @Override
     public SceneAnalysisVO getSceneAnalysisVO(String username, String pname, String packageNumber, LocalDate assessDate, double TotalBreakOffRate, double BreakOffCapitalRecoverRate) {
@@ -252,8 +259,7 @@ public class OnlineDesignServiceImpl implements OnlineDesignService{
         return null;
     }
 
-    /**
-     * TODO 只保存基本信息？
+     /**
      * 保存产品方案,如果方案名已存在代表修改，如果未存在代表添加
      *
      * @param sname
@@ -262,6 +268,9 @@ public class OnlineDesignServiceImpl implements OnlineDesignService{
      * @param firstPayDate
      * @param lawEndDate
      * @return
+     *
+     * @deprecated 该接口已移植到 ProductDesgin_ConceptualDesignService 中
+     * @see ProductDesgin_ConceptualDesignService
      */
     @Override
     public boolean saveProductStrategy(String username, String sname, LocalDate packageDate, LocalDate startDate, LocalDate firstPayDate, LocalDate lawEndDate) {

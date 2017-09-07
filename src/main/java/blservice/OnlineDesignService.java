@@ -46,7 +46,7 @@ public interface OnlineDesignService {
      * @param loanVOList
      * @return
      */
-    public boolean alterLoan(String username, List<LoanVO> loanVOList);
+    public boolean alterLoan(String username, String projectName, List<LoanVO> loanVOList);
 
     /**
      * 删除一笔贷款信息
