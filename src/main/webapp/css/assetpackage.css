@@ -75,6 +75,7 @@
 .formFont{
     font-size: large;
     font-family: "Poppins", sans-serif;
+    padding-bottom: 20px;
 }
 
 #analysisButton{
@@ -84,6 +85,36 @@
 #analysisButton:hover{
     background-color: #2e363a;
     border-color: #2e363a;
+}
+
+.greenBottomBorder{
+    border-bottom: 1px solid #18ba60;
+}
+
+.cashButton{
+    color: #666;
+    border-color: transparent;
+    height: 45px;
+    font-size: 15px;
+    font-weight: normal;
+    margin-left: 10px;
+    border-radius: 5px 5px 0px 0px ;
+    padding: 0px 10px 0px 10px ;
+    background-color: transparent;
+    -webkit-transition: all 0s ease-in-out;
+    -moz-transition: all 0s ease-in-out;
+    -ms-transition: all 0s ease-in-out;
+    -o-transition: all 0s ease-in-out;
+    transition: all 0s ease-in-out;
+}
+
+.cashClickButton{
+    color: #fff;
+    background-color: #18ba60;
+}
+
+#cashSummary{
+    margin-top: 20px;
 }
 
 
