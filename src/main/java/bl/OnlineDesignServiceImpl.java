@@ -13,7 +13,9 @@ import po.LoanPO;
 import po.PropertyPackagePO;
 import vo.*;
 
+import java.sql.Timestamp;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -139,7 +141,7 @@ public class OnlineDesignServiceImpl implements OnlineDesignService{
     /**
      * TODO
      * 资产包创建,后台自动根据模型筛选基础资产，生成资产包，并自动生成资产包编号、资产数量、封包日期、资产包封包本金金额、封包利率
-     * 每个项目最多只能有5个资产包(交给前端判断)
+     * 每个项目最多只能有5个资产包 后端判断
      * @param pname
      * @return
      */
@@ -148,7 +150,7 @@ public class OnlineDesignServiceImpl implements OnlineDesignService{
         PropertyPackagePO po = new PropertyPackagePO();
         //TODO 生成资产包PropertyPackagePO的各项属性
         //TODO 设置属性
-        //资产包编号在数据库？
+        //资产包编号在数据库生成
         boolean hasSame = propertyPackageDataService.testPropertyPackageName(username,pname);
         if(!hasSame){
             return CreatePropertyPackageResult.HASSAMENAME;
@@ -166,7 +168,10 @@ public class OnlineDesignServiceImpl implements OnlineDesignService{
     public PropertyPackageVO searchPropertyPackage(String username, String packageNumber) {
         PropertyPackagePO po = propertyPackageDataService.searchPropertyPackage(username, packageNumber);
         PropertyPackageVO vo = new PropertyPackageVO();
-        BeanUtils.copyProperties(po,vo);
+        BeanUtils.copyProperties(po,vo,"packageDate");
+        //TODO: 向vo添加PO中类型不同的属性
+        //vo.setPackageDate();
+        //po.getPackageDate().toLocalDateTime().toLocalDate();
         return vo;
     }
 
@@ -178,7 +183,9 @@ public class OnlineDesignServiceImpl implements OnlineDesignService{
     @Override
     public boolean alterPropertyPackage(String username, PropertyPackageVO propertyPackageVO) {
         PropertyPackagePO po = new PropertyPackagePO();
-        BeanUtils.copyProperties(propertyPackageVO,po);
+        BeanUtils.copyProperties(propertyPackageVO,po,"packageDate");
+        //TODO 向po中添加vo中类型不同的属性
+        //注意因为vopo不同 只对PO中的部分属性进行修改 详情参考vo的属性
         boolean result = propertyPackageDataService.alterPropertyPackage(username, po);
         return result;
     }
@@ -239,7 +246,7 @@ public class OnlineDesignServiceImpl implements OnlineDesignService{
      * @return
      *
      * @deprecated 该接口已移植到 ProductDesgin_ScenarioAnalysisService 中
-     * @see ProductDesgin_ScenarioAnalysisService
+     * @see ProductDesign_ScenarioAnalysisServiceImpl
      */
     @Override
     public SceneAnalysisVO getSceneAnalysisVO(String username, String pname, String packageNumber, LocalDate assessDate, double TotalBreakOffRate, double BreakOffCapitalRecoverRate) {
@@ -273,7 +280,7 @@ public class OnlineDesignServiceImpl implements OnlineDesignService{
      * @return
      *
      * @deprecated 该接口已移植到 ProductDesgin_ConceptualDesignService 中
-     * @see ProductDesgin_ConceptualDesignService
+     * @see ProductDesign_ConceptualDesignServiceImpl
      */
     @Override
     public boolean saveProductStrategy(String username, String sname, LocalDate packageDate, LocalDate startDate, LocalDate firstPayDate, LocalDate lawEndDate) {

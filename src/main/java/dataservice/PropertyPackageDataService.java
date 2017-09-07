@@ -12,6 +12,8 @@ public interface PropertyPackageDataService {
     /**
      * 资产包创建,后台自动根据模型筛选基础资产，生成资产包，并自动生成资产包编号、资产数量、封包日期、资产包封包本金金额、封包利率
      * 每个项目最多只能有5个资产包 后端判断
+     * 注意需要数据库自动生成资产包编号
+     *
      * @param po
      * @return
      */
@@ -26,6 +28,7 @@ public interface PropertyPackageDataService {
 
     /**
      * 修改资产包信息
+     //注意因为vopo不同 只对PO中的部分属性进行修改 详情参考vo的属性
      * @param propertyPackagePO
      * @return
      */
