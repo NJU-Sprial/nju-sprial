@@ -1,13 +1,15 @@
 package po;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  * Created by yinywf on 2017/9/7
  */
 @Entity
 @Table(name = "verification_code", schema = "sprial")
-public class VerificationCodePO {
+public class VerificationCodePO implements Serializable {
+    private static final long serialVersionUID = -5025406318716780775L;
     private String email;
     private String code;
 

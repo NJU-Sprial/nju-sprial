@@ -1,6 +1,7 @@
 package po;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 
@@ -9,7 +10,8 @@ import java.time.LocalDateTime;
  */
 @Entity
 @Table(name = "loan", schema = "sprial")
-public class LoanPO {
+public class LoanPO implements Serializable {
+    private static final long serialVersionUID = 8950856623294834521L;
     private String loanCode;
     private Double balance;
     private Double rate;

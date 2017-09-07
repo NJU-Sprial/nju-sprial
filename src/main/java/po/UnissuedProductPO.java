@@ -1,6 +1,7 @@
 package po;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 /**
@@ -8,8 +9,8 @@ import java.time.LocalDateTime;
  */
 @Entity
 @Table(name = "unissued_product", schema = "sprial")
-@IdClass(UnissuedProductPOPK.class)
-public class UnissuedProductPO {
+public class UnissuedProductPO implements Serializable {
+    private static final long serialVersionUID = 2975736321996617316L;
     private int projectId;
     private int propertyPackageId;
     private LocalDateTime packetDate;
@@ -17,8 +18,7 @@ public class UnissuedProductPO {
     private String recommendedLevel;
     private String ratingResult;
 
-    @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @Basic
     @Column(name = "project_id")
     public int getProjectId() {
         return projectId;

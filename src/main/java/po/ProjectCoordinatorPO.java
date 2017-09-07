@@ -1,18 +1,20 @@
 package po;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  * Created by yinywf on 2017/9/7
  */
 @Entity
 @Table(name = "project_coordinator", schema = "sprial")
-@IdClass(ProjectCoordinatorPOPK.class)
-public class ProjectCoordinatorPO {
+public class ProjectCoordinatorPO implements Serializable {
+    private static final long serialVersionUID = 3437823402639962217L;
     private int projectId;
     private String coordinator;
+    private int id;
 
-    @Id
+    @Basic
     @Column(name = "project_id")
     public int getProjectId() {
         return projectId;
@@ -22,7 +24,7 @@ public class ProjectCoordinatorPO {
         this.projectId = projectId;
     }
 
-    @Id
+    @Basic
     @Column(name = "coordinator")
     public String getCoordinator() {
         return coordinator;
@@ -30,6 +32,17 @@ public class ProjectCoordinatorPO {
 
     public void setCoordinator(String coordinator) {
         this.coordinator = coordinator;
+    }
+
+    @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @Column(name = "id")
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     @Override
@@ -40,6 +53,7 @@ public class ProjectCoordinatorPO {
         ProjectCoordinatorPO that = (ProjectCoordinatorPO) o;
 
         if (projectId != that.projectId) return false;
+        if (id != that.id) return false;
         if (coordinator != null ? !coordinator.equals(that.coordinator) : that.coordinator != null) return false;
 
         return true;
@@ -49,6 +63,7 @@ public class ProjectCoordinatorPO {
     public int hashCode() {
         int result = projectId;
         result = 31 * result + (coordinator != null ? coordinator.hashCode() : 0);
+        result = 31 * result + id;
         return result;
     }
 }
