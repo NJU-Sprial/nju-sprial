@@ -2,6 +2,7 @@ package po;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.sql.Timestamp;
 import java.time.LocalDateTime;
 
 
@@ -20,6 +21,8 @@ public class LoanPO implements Serializable {
     private String rateType;
     private String returnWay;
     private Integer propertyPackageId;
+    private Integer projectId;
+
 
     @Id
     @Column(name = "loan_code")
@@ -101,6 +104,16 @@ public class LoanPO implements Serializable {
         this.propertyPackageId = propertyPackageId;
     }
 
+    @Basic
+    @Column(name = "project_id")
+    public Integer getProjectId() {
+        return projectId;
+    }
+
+    public void setProjectId(Integer projectId) {
+        this.projectId = projectId;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -117,8 +130,7 @@ public class LoanPO implements Serializable {
         if (returnWay != null ? !returnWay.equals(loanPO.returnWay) : loanPO.returnWay != null) return false;
         if (propertyPackageId != null ? !propertyPackageId.equals(loanPO.propertyPackageId) : loanPO.propertyPackageId != null)
             return false;
-
-        return true;
+        return projectId != null ? projectId.equals(loanPO.projectId) : loanPO.projectId == null;
     }
 
     @Override
@@ -131,6 +143,7 @@ public class LoanPO implements Serializable {
         result = 31 * result + (rateType != null ? rateType.hashCode() : 0);
         result = 31 * result + (returnWay != null ? returnWay.hashCode() : 0);
         result = 31 * result + (propertyPackageId != null ? propertyPackageId.hashCode() : 0);
+        result = 31 * result + (projectId != null ? projectId.hashCode() : 0);
         return result;
     }
 }
