@@ -2,6 +2,7 @@ package data;
 
 import blservice.ProductDesignService;
 import dataservice.PropertyPackageDataService;
+import enums.CreatePropertyPackageResult;
 import org.springframework.stereotype.Service;
 import po.PropertyPackagePO;
 
@@ -14,14 +15,15 @@ import java.util.List;
 public class PropertyPackageDataServiceImpl implements PropertyPackageDataService {
     /**
      * 资产包创建,后台自动根据模型筛选基础资产，生成资产包，并自动生成资产包编号、资产数量、封包日期、资产包封包本金金额、封包利率
-     * 每个项目最多只能有5个资产包(交给前端判断)
+     * 每个项目最多只能有5个资产包 后端判断
+     * ***需要判断资产包是否超过5个***
      *
      * @param username
      * @param po
      * @return
      */
     @Override
-    public PropertyPackagePO createPropertyPackage(String username, PropertyPackagePO po) {
+    public CreatePropertyPackageResult createPropertyPackage(String username, PropertyPackagePO po) {
         return null;
     }
 

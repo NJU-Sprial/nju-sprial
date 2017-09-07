@@ -5,6 +5,7 @@ import constranst.CashUnit;
 import constranst.CycleUnit;
 import dataservice.LoanDataService;
 import dataservice.PropertyPackageDataService;
+import enums.CreatePropertyPackageResult;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -143,15 +144,17 @@ public class OnlineDesignServiceImpl implements OnlineDesignService{
      * @return
      */
     @Override
-    public PropertyPackageVO createPropertyPackage(String username, String pname) {
+    public CreatePropertyPackageResult createPropertyPackage(String username, String pname) {
         PropertyPackagePO po = new PropertyPackagePO();
         //TODO 生成资产包PropertyPackagePO的各项属性
         //TODO 设置属性
         //资产包编号在数据库？
-        po = propertyPackageDataService.createPropertyPackage(username, po);
-        PropertyPackageVO vo = new PropertyPackageVO();
-        BeanUtils.copyProperties(po,vo);
-        return vo;
+        boolean hasSame = propertyPackageDataService.testPropertyPackageName(username,pname);
+        if(!hasSame){
+            return CreatePropertyPackageResult.HASSAMENAME;
+        }
+        CreatePropertyPackageResult result = propertyPackageDataService.createPropertyPackage(username, po);
+        return result;
     }
 
     /**

@@ -2,6 +2,7 @@ package blservice;
 
 import constranst.CashUnit;
 import constranst.CycleUnit;
+import enums.CreatePropertyPackageResult;
 import vo.*;
 
 import java.time.LocalDate;
@@ -81,7 +82,7 @@ public interface OnlineDesignService {
      * @param pname
      * @return
      */
-    public PropertyPackageVO createPropertyPackage(String username, String pname);
+    public CreatePropertyPackageResult createPropertyPackage(String username, String pname);
 
     /**
      * 根据资产包编号搜索资产包并返回资产包信息
