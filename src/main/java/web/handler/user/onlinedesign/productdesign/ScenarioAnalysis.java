@@ -60,7 +60,7 @@ public class ScenarioAnalysis {
                                  @RequestParam(value = "TotalBreakOffRate", required = true) String TotalBreakOffRate,
                                  @RequestParam(value = "BreakOffCapitalRecoverRate", required = true) String BreakOffCapitalRecoverRate) {
         //日期格式
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MMM-dd");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
         try {
             SceneAnalysisVO sceneAnalysisVO = scenarioAnalysisService.getSceneAnalysisVO(username,pname,packageNumber,LocalDate.parse(assessDate,formatter),
