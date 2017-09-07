@@ -123,6 +123,7 @@
 			<section class="flat-row pd-contact-v1">
 				<div class="container">
 					<div class="row">
+						<div class="col-sm-1"></div>
 						<div class="col-md-10">
 							<form class="form-horizontal formFont" role="form">
 								<div class="form-group">
@@ -177,53 +178,116 @@
 									</div>
 								</div>
 							</form>
+							<div class="greenBottomBorder">
+								<button class="cashButton cashClickButton" id="cashSummaryButton">现金流汇总</button>
+								<button class="cashButton" id="cashDetailButton">各期现金流明细</button>
+							</div>
+							<div id="cashSummary">
+								<table class="table">
+									<thead>
+									<tr>
+										<th>资产包性质</th>
+										<th>封包日期</th>
+										<th>资产数量(笔)</th>
+										<th>加权平均利率</th>
+										<th>加权剩余期限(月)</th>
+										<th>现金流入总额(元)</th>
+										<th>利息总额(元)</th>
+									</tr>
+									</thead>
+									<tbody>
+									<tr>
+										<td>暂定</td>
+										<td>2017-9-7</td>
+										<td>49</td>
+										<td>10.19%</td>
+										<td>5.77</td>
+										<td>12,392,945,05</td>
+										<td>360,237,55</td>
+									</tr>
+									</tbody>
+								</table>
+
+								<!--现金流入金额折线图容器-->
+								<div id="cashSummaryChartContainer" style="height: 400px"></div>
+							</div>
+							<div id="cashDetail" class="displayNone">
+								<table class="table">
+									<thead>
+									<tr>
+										<th>期数</th>
+										<th>日期</th>
+										<th>现金流入金额(元)</th>
+										<th>本金(元)</th>
+										<th>本金占比</th>
+										<th>利息(元)</th>
+									</tr>
+									</thead>
+									<tbody>
+									<tr>
+										<td>1</td>
+										<td>2017-9-7</td>
+										<td>2,065,490,81</td>
+										<td>1,963,298,99</td>
+										<td>95.05%</td>
+										<td>102,191,84</td>
+									</tr>
+									<tr>
+										<td>2</td>
+										<td>2017-9-8</td>
+										<td>2,065,490,81</td>
+										<td>1,963,298,99</td>
+										<td>95.05%</td>
+										<td>102,191,84</td>
+									</tr>
+									<tr>
+										<td>3</td>
+										<td>2017-9-9</td>
+										<td>2,065,490,81</td>
+										<td>1,963,298,99</td>
+										<td>95.05%</td>
+										<td>102,191,84</td>
+									</tr>
+									<tr>
+										<td>4</td>
+										<td>2017-9-9</td>
+										<td>2,065,490,81</td>
+										<td>1,963,298,99</td>
+										<td>95.05%</td>
+										<td>102,191,84</td>
+									</tr>
+									<tr>
+										<td>5</td>
+										<td>2017-9-9</td>
+										<td>2,065,490,81</td>
+										<td>1,963,298,99</td>
+										<td>95.05%</td>
+										<td>102,191,84</td>
+									</tr>
+									<tr>
+										<td>6</td>
+										<td>2017-9-9</td>
+										<td>2,065,490,81</td>
+										<td>1,963,298,99</td>
+										<td>95.05%</td>
+										<td>102,191,84</td>
+									</tr>
+									<tr>
+										<td>7</td>
+										<td>2017-9-9</td>
+										<td>2,065,490,81</td>
+										<td>1,963,298,99</td>
+										<td>95.05%</td>
+										<td>102,191,84</td>
+									</tr>
+									</tbody>
+								</table>
+							</div>
 						</div>
+						<div class="col-sm-1"></div>
 						<!--<div class="col-md-2"></div>-->
 					</div><!-- /.row -->
-					<div class="greenBottomBorder">
-						<button class="cashButton cashClickButton" id="cashSummaryButton">现金流汇总</button>
-						<button class="cashButton" id="cashDetailButton">各期现金流明细</button>
-					</div>
-					<div id="cashSummary">
-						<table class="table">
-							<thead>
-							<tr>
-								<th>期数</th>
-								<th>日期</th>
-								<th>现金流入金额(元)</th>
-								<th>本金(元)</th>
-								<th>本金占比</th>
-								<th>利息(元)</th>
-							</tr>
-							</thead>
-							<tbody>
-							<tr>
-								<td>1</td>
-								<td>2017-9-7</td>
-								<td>2,065,490,81</td>
-								<td>1,963,298,99</td>
-								<td>95.05%</td>
-								<td>102,191,84</td>
-							</tr>
-							<tr>
-								<td>2</td>
-								<td>2017-9-8</td>
-								<td>2,065,490,81</td>
-								<td>1,963,298,99</td>
-								<td>95.05%</td>
-								<td>102,191,84</td>
-							</tr>
-							<tr>
-								<td>3</td>
-								<td>2017-9-9</td>
-								<td>2,065,490,81</td>
-								<td>1,963,298,99</td>
-								<td>95.05%</td>
-								<td>102,191,84</td>
-							</tr>
-							</tbody>
-						</table>
-					</div>
+
 				</div><!-- /.container -->
 			</section><!-- /.flat-row-iconbox -->  
 
@@ -330,6 +394,8 @@
     <script type="text/javascript" src="../../js/waypoints.min.js"></script>
     <script type="text/javascript" src="../../js/main.js"></script>
 	<script type="text/javascript" src="../../js/jquery.easydropdown.min.js"></script>
+	<script type="text/javascript" src="../../js/echarts.min.js"></script>
+	<script type="text/javascript" src="../../charts/cashSummaryLineChart.js"></script>
 	<script type="text/javascript" src="../../js/assetpackage.js"></script>
 	</body>
 </html>

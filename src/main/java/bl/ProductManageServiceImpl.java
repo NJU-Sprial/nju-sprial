@@ -32,7 +32,7 @@ public class ProductManageServiceImpl implements ProductManageService {
      */
     @Override
     public List<ProductVO> getProductList(String username) {
-        List<ProductPO> productPOs = productDataService.getProductList();
+        List<ProductPO> productPOs = productDataService.getProductList(username);
         List<ProductVO> productVOs = new ArrayList<>();
         String ignoreProperty = "serialVersionUID";
         String ignoreProperty2 = "productId";
@@ -53,7 +53,7 @@ public class ProductManageServiceImpl implements ProductManageService {
      */
     @Override
     public List<RecruitmentSituationVO> getRecruitmentSituation(String username, String productID) {
-        List<RecruitmentSituationPO> situationPOs = productDataService.getRecruitmentSituation(productID);
+        List<RecruitmentSituationPO> situationPOs = productDataService.getRecruitmentSituation(username, productID);
         List<RecruitmentSituationVO> situationVOs = new ArrayList<>();
         String ignoreProperty = "serialVersionUID";
         for(RecruitmentSituationPO po : situationPOs) {

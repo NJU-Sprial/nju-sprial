@@ -13,12 +13,12 @@ import java.util.List;
 @Service
 public class ProductDataServiceImpl implements ProductDataService{
     @Override
-    public List<ProductPO> getProductList() {
+    public List<ProductPO> getProductList(String username) {
         return null;
     }
 
     @Override
-    public List<RecruitmentSituationPO> getRecruitmentSituation(String productID) {
+    public List<RecruitmentSituationPO> getRecruitmentSituation(String username, String productID) {
         return null;
     }
 }

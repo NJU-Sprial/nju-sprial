@@ -89,6 +89,7 @@
 
 .greenBottomBorder{
     border-bottom: 1px solid #18ba60;
+    margin-bottom: 20px;
 }
 
 .cashButton{
@@ -113,9 +114,10 @@
     background-color: #18ba60;
 }
 
-#cashSummary{
-    margin-top: 20px;
+.displayNone{
+    display: none;
 }
+
 
 
 

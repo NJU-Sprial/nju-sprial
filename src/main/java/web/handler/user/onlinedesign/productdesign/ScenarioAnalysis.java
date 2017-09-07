@@ -1,9 +1,10 @@
 package web.handler.user.onlinedesign.productdesign;
 
-import blservice.ProductDesginService;
-import blservice.ProductDesgin_ScenarioAnalysisService;
+import blservice.ProductDesignService;
+import blservice.ProductDesign_ScenarioAnalysisService;
 import exception.ErrorParamException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import vo.SceneAnalysisVO;
@@ -18,11 +19,12 @@ import java.util.List;
  * Created by zjy on 2017/9/6.
  * 产品在线设计>产品设计>情景分析 的相关路由
  */
+@Controller
 public class ScenarioAnalysis {
     @Autowired
-    private ProductDesginService productDesginService;
+    private ProductDesignService productDesignService;
     @Autowired
-    private ProductDesgin_ScenarioAnalysisService scenarioAnalysisService;
+    private ProductDesign_ScenarioAnalysisService scenarioAnalysisService;
 
     @RequestMapping(value = "/user/onlineDesign/productDesign/scenarioAnalysis", method= RequestMethod.GET)
     public String scenarioAnalysis(@SessionAttribute(WebSecurityConfig.SESSION_KEY) String username, Model model) {
@@ -45,7 +47,8 @@ public class ScenarioAnalysis {
     @RequestMapping(value = "/user/onlineDesign/productDesign/scenarioAnalysis/packageNumbers", method= RequestMethod.POST)
     public List<String> packageNumbers(@SessionAttribute(WebSecurityConfig.SESSION_KEY) String username,
                                        @RequestParam(value = "pname", required = true) String pname) {
-        return productDesginService.getAllPackageNumber(username, pname);
+//        return productDesignService.getAllPackageNumber(username, pname);
+        return Arrays.asList(pname+"_001",pname+"_002");
     }
 
     @ResponseBody

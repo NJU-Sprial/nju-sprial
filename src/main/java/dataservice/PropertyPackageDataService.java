@@ -2,6 +2,8 @@ package dataservice;
 
 import po.PropertyPackagePO;
 
+import java.util.List;
+
 /**
  * Created by CYF on 2017/9/4.
  */
@@ -35,5 +37,12 @@ public interface PropertyPackageDataService {
      */
     public boolean deletePropertyPackage(String username, String packageNumber);
 
-
+    /**
+     * 获取用户单个项目下的所有资产包，如果不方便的话可以修改接口
+     * @see blservice.ProductDesignService 里的 getAllPackageNumber 方法
+     * @param username
+     * @param pname
+     * @return
+     */
+    List<PropertyPackagePO> findPropertyPackage(String username, String pname);
 }
