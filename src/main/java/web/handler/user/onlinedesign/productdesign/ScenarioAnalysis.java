@@ -4,6 +4,7 @@ import blservice.ProductDesginService;
 import blservice.ProductDesgin_ScenarioAnalysisService;
 import exception.ErrorParamException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import vo.SceneAnalysisVO;
@@ -18,10 +19,11 @@ import java.util.List;
  * Created by zjy on 2017/9/6.
  * 产品在线设计>产品设计>情景分析 的相关路由
  */
+@Controller
 public class ScenarioAnalysis {
-    @Autowired
+//    @Autowired
     private ProductDesginService productDesginService;
-    @Autowired
+//    @Autowired
     private ProductDesgin_ScenarioAnalysisService scenarioAnalysisService;
 
     @RequestMapping(value = "/user/onlineDesign/productDesign/scenarioAnalysis", method= RequestMethod.GET)

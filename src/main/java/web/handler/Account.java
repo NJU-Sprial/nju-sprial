@@ -80,6 +80,7 @@ public class Account {
      */
     @RequestMapping("/logout")
     public String logout(HttpSession session) {
+        loginService.logout((String) session.getAttribute(WebSecurityConfig.SESSION_KEY));
         // 移除session
         session.removeAttribute(WebSecurityConfig.SESSION_KEY);
         return "redirect:/";
