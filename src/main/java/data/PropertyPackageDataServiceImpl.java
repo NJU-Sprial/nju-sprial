@@ -1,8 +1,11 @@
 package data;
 
+import blservice.ProductDesignService;
 import dataservice.PropertyPackageDataService;
 import org.springframework.stereotype.Service;
 import po.PropertyPackagePO;
+
+import java.util.List;
 
 /**
  * Created by Water on 2017/9/5.
@@ -56,5 +59,18 @@ public class PropertyPackageDataServiceImpl implements PropertyPackageDataServic
     @Override
     public boolean deletePropertyPackage(String username, String packageNumber) {
         return false;
+    }
+
+    /**
+     * 获取用户单个项目下的所有资产包，如果不方便的话可以修改接口
+     *
+     * @param username
+     * @param pname
+     * @return
+     * @see ProductDesignService 里的 getAllPackageNumber 方法
+     */
+    @Override
+    public List<PropertyPackagePO> findPropertyPackage(String username, String pname) {
+        return null;
     }
 }
