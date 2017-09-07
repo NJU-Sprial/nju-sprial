@@ -37,7 +37,7 @@
                         <%--</div>--%>
                     <%--</div>--%>
                 <%--</div> <!-- /.col-md-4 -->--%>
-                <div class="col-md-4">
+                <div class="col-md-2">
                     <%--<div class="flat-form-info">--%>
                         <%--<form action="#" method="post" class="form-info">--%>
                             <%--<div class="v3">--%>
@@ -47,13 +47,13 @@
 
                         <%--</form> <!-- /.flat-form-info -->--%>
                     <%--</div>--%>
-                        <div class="dropdown">
-                            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                项目名称
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-primary" id="pname-button">项目名称</button>
+                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="caret"></span>
+                                <span class="sr-only">Toggle Dropdown</span>
                             </button>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                            <ul class="dropdown-menu">
                                 <li><a href="#">项目1</a></li>
                                 <li><a href="#">项目2</a></li>
                                 <li><a href="#">项目3</a></li>
@@ -61,6 +61,20 @@
                                 <%--<li><a href="#">Separated link</a></li>--%>
                             </ul>
                         </div>
+                        <%--<div class="dropdown">--%>
+                            <%--<button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1"--%>
+                                    <%--data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">--%>
+                                <%--项目名称--%>
+                                <%--<span class="caret"></span>--%>
+                            <%--</button>--%>
+                            <%--<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">--%>
+                                <%--<li><a href="#">项目1</a></li>--%>
+                                <%--<li><a href="#">项目2</a></li>--%>
+                                <%--<li><a href="#">项目3</a></li>--%>
+                                <%--&lt;%&ndash;<li role="separator" class="divider"></li>&ndash;%&gt;--%>
+                                <%--&lt;%&ndash;<li><a href="#">Separated link</a></li>&ndash;%&gt;--%>
+                            <%--</ul>--%>
+                        <%--</div>--%>
                 </div>
                 <%--<div class="col-md-1"></div>--%>
                 <%--<div class="col-md-2">--%>
@@ -86,16 +100,17 @@
                             <%--<span class="glyphicon glyphicon-search" aria-hidden="true"></span>--%>
                         </button>
                     </form>
-
-
                 </div>
             </div>
+            <div class="divider"></div>
             <script>
                 //                                $("#input-data-button").css("margin-bottom", "30px").css("font-size", "15px").css("margin-top", "30px");
                 $("#pname-div").css("margin-top", "14px").css("font-size", "22px");
                 $("#search-div").css("margin-top", "14px").css("font-size", "22px");
                 $("#search-icon").css("margin", "10px 0 30px");
                 $(".row").css("height", "14px");
+                $('.dropdown-toggle').dropdown();
+                $(".divider").css("margin", "60px 0");
                 //                                //                                $(".title.name-div");
                 //                                $("#basic-div").css("margin-bottom", "47px");
                 //                                $(".btn.btn-info").css("padding", "10px 12px").css("padding-bottom", "13px").css("font-weight", "600");
@@ -175,11 +190,13 @@
                                 </span>
                             </td>
                         </tr>
-                        <tr>
-                            <button class="cooperationFileButton">数据清空</button>
-                        </tr>
+                        <%--<tr>--%>
+                            <%--<button class="cooperationFileButton">数据清空</button>--%>
+                        <%--</tr>--%>
                         </tbody>
                     </table>
+                    <a type="button" class="btn btn-link" data-toggle="tooltip" data-placement="right" data-html="true"
+                            title="将删除该项目资产池的所有数据信息，请谨慎操作！">数据清空</a>
                     <!--<div class="flat-form-info">-->
                     <!--<form action="#" method="post" class="form-info">-->
                     <!--<div class="one-half v3">-->
