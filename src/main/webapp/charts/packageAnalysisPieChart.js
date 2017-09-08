@@ -2,11 +2,20 @@
  * Created by xiaoJun on 2017/9/8.
  */
 
-function packageAnalysisPieChart(chart) {
+function packageAnalysisPieChart(chart,title, name, data) {
+
+    var seriesData = [];
+    for(var i = 0; i < name.length; i++){
+        var items = {
+            value: data[i],
+            name: name[i]
+        };
+        seriesData.push(items);
+    }
 
     option = {
         title : {
-            text: '资产池五级分类',
+            text: title,
             x:'center'
         },
         tooltip : {
@@ -16,7 +25,7 @@ function packageAnalysisPieChart(chart) {
         legend: {
             bottom: 0,
             left: 'center',
-            data: ['正常','关注','次级','可疑','损失']
+            data: name
         },
         grid:{
             top: '5%',
@@ -26,17 +35,18 @@ function packageAnalysisPieChart(chart) {
         },
         series : [
             {
-                name: '访问来源',
+                name: title,
                 type: 'pie',
                 radius : '55%',
-                center: ['50%', '50%'],
-                data:[
-                    {value:335, name:'正常'},
-                    {value:310, name:'关注'},
-                    {value:234, name:'次级'},
-                    {value:135, name:'可疑'},
-                    {value:1548, name:'损失'}
-                ],
+                center: ['50%', '45%'],
+                data:seriesData,
+                //     [
+                //     {value:335, name:'正常'},
+                //     {value:310, name:'关注'},
+                //     {value:234, name:'次级'},
+                //     {value:135, name:'可疑'},
+                //     {value:1548, name:'损失'}
+                // ],
                 itemStyle: {
                     emphasis: {
                         shadowBlur: 10,
@@ -47,5 +57,6 @@ function packageAnalysisPieChart(chart) {
             }
         ]
     };
+
     chart.setOption(option);
 }
