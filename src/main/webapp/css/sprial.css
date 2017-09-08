@@ -24,3 +24,10 @@
 .alert-dismissible .close {
     top: -10px;
 }
+
+.top-margin{
+    margin-top: 30px;
+}
+.bottom-margin{
+    margin-bottom: 30px;
+}

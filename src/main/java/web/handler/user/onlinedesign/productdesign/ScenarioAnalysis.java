@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import vo.SceneAnalysisVO;
+import vo.*;
 import web.security.WebSecurityConfig;
 
 import java.time.LocalDate;
@@ -65,7 +65,12 @@ public class ScenarioAnalysis {
         try {
             SceneAnalysisVO sceneAnalysisVO = scenarioAnalysisService.getSceneAnalysisVO(username,pname,packageNumber,LocalDate.parse(assessDate,formatter),
                     Double.parseDouble(TotalBreakOffRate),Double.parseDouble(BreakOffCapitalRecoverRate));
-            return sceneAnalysisVO;
+//            return sceneAnalysisVO;
+
+            return new SceneAnalysisVO(Arrays.asList(new CashFlowComparativeAnalysisPoint(2,LocalDate.of(2017,9,8)),new CashFlowComparativeAnalysisPoint(3,LocalDate.of(2017,9,9))),
+                    Arrays.asList(new CapitalCashFlowDetail(2,LocalDate.of(2017,9,8),"本金现金流2"),new CapitalCashFlowDetail(3,LocalDate.of(2017,9,9),"本金现金流3")),
+                    Arrays.asList(new InterestCashFlowDetail(2,LocalDate.of(2017,9,8),"利息现金流2"),new InterestCashFlowDetail(3,LocalDate.of(2017,9,9),"利息现金流3")),
+                    Arrays.asList(new CapitalAndInterestCashFlowDetail(2,LocalDate.of(2017,9,8),"本息现金流2"),new CapitalAndInterestCashFlowDetail(3,LocalDate.of(2017,9,9),"本息现金流3")));
         } catch (ErrorParamException e) {
             return null;
         }
