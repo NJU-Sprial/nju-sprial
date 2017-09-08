@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 /**
  * Created by 铠联 on 2017/9/3.
@@ -17,7 +17,7 @@ public class PropertyPackageVO {
     private String pname;
     private String packageNumber;
     private int propertyNum;
-    private LocalDate packageDate;
+    private LocalDateTime packageDate;
     private double packageCapital;
     private double packageRate;
 }

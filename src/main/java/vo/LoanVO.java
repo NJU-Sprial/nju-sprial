@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 /**
  * Created by 铠联 on 2017/9/2.
@@ -17,8 +17,8 @@ public class LoanVO {
     private String loanCode;
     private double balance;
     private double rate;
-    private LocalDate fetchDate;
-    private LocalDate endDate;
+    private LocalDateTime fetchDate;
+    private LocalDateTime endDate;
     private String rateType;
     private String returnWay;
 }
