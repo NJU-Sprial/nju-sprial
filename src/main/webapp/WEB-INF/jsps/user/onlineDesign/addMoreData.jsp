@@ -7,7 +7,7 @@
 
 <%@ include file="/WEB-INF/jsps/components/head.jsp" %>
 <head>
-    <title>基础资产数据导入</title>
+    <title>资产数据追加</title>
 </head>
 <body>
 <div class="boxed blog">
@@ -19,20 +19,20 @@
     </div>
     <%@ include file="/WEB-INF/jsps/components/top_components.jsp" %>
     <%--<div class="page-title">--%>
-    <%--<div class="container">--%>
-    <%--<div class="row">--%>
-    <%--<div class="col-md-12">--%>
-    <%--<div class="page-title-heading">--%>
-    <%--<h1 class="h1-title">Contact</h1>--%>
-    <%--</div><!-- /.page-title-heading -->--%>
-    <%--<ul class="breadcrumbs">--%>
-    <%--<li><a href="#" title="">Home<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>--%>
-    <%--<li><a href="#" title="">Contact</a></li>--%>
-    <%--</ul><!-- /.breadcrumbs -->--%>
-    <%--<div class="clearfix"></div><!-- /.clearfix -->--%>
-    <%--</div>--%>
-    <%--</div>--%>
-    <%--</div>--%>
+        <%--<div class="container">--%>
+            <%--<div class="row">--%>
+                <%--<div class="col-md-12">--%>
+                    <%--<div class="page-title-heading">--%>
+                        <%--<h1 class="h1-title">Contact</h1>--%>
+                    <%--</div><!-- /.page-title-heading -->--%>
+                    <%--<ul class="breadcrumbs">--%>
+                        <%--<li><a href="#" title="">Home<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>--%>
+                        <%--<li><a href="#" title="">Contact</a></li>--%>
+                    <%--</ul><!-- /.breadcrumbs -->--%>
+                    <%--<div class="clearfix"></div><!-- /.clearfix -->--%>
+                <%--</div>--%>
+            <%--</div>--%>
+        <%--</div>--%>
     <%--</div><!-- /.page-title -->--%>
 
     <section class="flat-row pd-contact-v1">
@@ -64,13 +64,13 @@
                                                              disabled="true"></p>
                                 <p class="input-info"><label>个人消费贷款、信用卡分期付款、国家助学贷款
                                     <input type="radio" name="your-subject" value="" checked="" placeholder="Subject"></label>
-                                </p>
+                                    </p>
                                 <p class="input-info"><label>个人汽车贷款
                                     <input type="radio" name="your-subject" value="" placeholder="Subject"></label>
-                                </p>
+                                    </p>
                                 <p class="input-info"><label>个人住房贷款（包含装修、租借、购买）
                                     <input type="radio" name="your-subject" value="" placeholder="Subject"></label>
-                                </p>
+                                    </p>
                                 <p class="input-info"><input id="input-data-button" type="button" value="下载数据模板"></p>
                                 <!--使用label元素与file控件关联，input被隐藏，用户点的实际上是label-->
                                 <p class="input-info">
@@ -88,7 +88,7 @@
                             <script>
                                 $("#input-data-button").css("margin-bottom", "30px").css("font-size","15px").css("margin-top","30px");
                                 $("#pname-div").css("margin-top", "11px").css("margin-bottom", "56px");
-                                //                                $(".title.name-div");
+//                                $(".title.name-div");
                                 $("#basic-div").css("margin-bottom", "47px");
                                 $(".btn.btn-info").css("padding","10px 12px").css("padding-bottom","13px").css("font-weight","600");
                                 $("#submit-button").css("font-weight","600");

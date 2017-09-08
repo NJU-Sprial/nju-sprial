@@ -31,59 +31,38 @@
         <div class="container">
             <div class="row">
                 <%--<div class="col-md-2">--%>
-                    <%--<div class="contact-info">--%>
-                        <%--<div class="info info-address">--%>
-                            <%--<div class="title name-div" id="pname-div">项目名称</div>--%>
-                        <%--</div>--%>
-                    <%--</div>--%>
+                <%--<div class="contact-info">--%>
+                <%--<div class="info info-address">--%>
+                <%--<div class="title name-div" id="pname-div">项目名称</div>--%>
+                <%--</div>--%>
+                <%--</div>--%>
                 <%--</div> <!-- /.col-md-4 -->--%>
                 <div class="col-md-2">
                     <%--<div class="flat-form-info">--%>
-                        <%--<form action="#" method="post" class="form-info">--%>
-                            <%--<div class="v3">--%>
-                                <%--<p class="input-info"><input type="text" name="your-name" value="" placeholder="项目名称">--%>
-                                <%--</p>--%>
-                            <%--</div>--%>
+                    <%--<form action="#" method="post" class="form-info">--%>
+                    <%--<div class="v3">--%>
+                    <%--<p class="input-info"><input type="text" name="your-name" value="" placeholder="项目名称">--%>
+                    <%--</p>--%>
+                    <%--</div>--%>
 
-                        <%--</form> <!-- /.flat-form-info -->--%>
+                    <%--</form> <!-- /.flat-form-info -->--%>
                     <%--</div>--%>
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-primary" id="pname-button">项目名称</button>
-                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="caret"></span>
-                                <span class="sr-only">Toggle Dropdown</span>
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">项目1</a></li>
-                                <li><a href="#">项目2</a></li>
-                                <li><a href="#">项目3</a></li>
-                                <%--<li role="separator" class="divider"></li>--%>
-                                <%--<li><a href="#">Separated link</a></li>--%>
-                            </ul>
-                        </div>
-                        <%--<div class="dropdown">--%>
-                            <%--<button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1"--%>
-                                    <%--data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">--%>
-                                <%--项目名称--%>
-                                <%--<span class="caret"></span>--%>
-                            <%--</button>--%>
-                            <%--<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">--%>
-                                <%--<li><a href="#">项目1</a></li>--%>
-                                <%--<li><a href="#">项目2</a></li>--%>
-                                <%--<li><a href="#">项目3</a></li>--%>
-                                <%--&lt;%&ndash;<li role="separator" class="divider"></li>&ndash;%&gt;--%>
-                                <%--&lt;%&ndash;<li><a href="#">Separated link</a></li>&ndash;%&gt;--%>
-                            <%--</ul>--%>
-                        <%--</div>--%>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-primary" id="pname-button">项目名称</button>
+                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                            <span class="caret"></span>
+                            <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#" onclick="selectProject(this)">项目1</a></li>
+                            <li><a href="#" onclick="selectProject(this)">项目2</a></li>
+                            <li><a href="#" onclick="selectProject(this)">项目3</a></li>
+                            <%--<li role="separator" class="divider"></li>--%>
+                            <%--<li><a href="#">Separated link</a></li>--%>
+                        </ul>
+                    </div>
                 </div>
-                <%--<div class="col-md-1"></div>--%>
-                <%--<div class="col-md-2">--%>
-                    <%--<div class="contact-info">--%>
-                        <%--<div class="info info-address">--%>
-                            <%--<div class="title name-div" id="search-div">贷款搜索</div>--%>
-                        <%--</div>--%>
-                    <%--</div>--%>
-                <%--</div>--%>
 
                 <div class="col-md-4">
                     <form class="form-inline">
@@ -104,13 +83,15 @@
             </div>
             <div class="divider"></div>
             <script>
-                //                                $("#input-data-button").css("margin-bottom", "30px").css("font-size", "15px").css("margin-top", "30px");
-                $("#pname-div").css("margin-top", "14px").css("font-size", "22px");
-                $("#search-div").css("margin-top", "14px").css("font-size", "22px");
-                $("#search-icon").css("margin", "10px 0 30px");
-                $(".row").css("height", "14px");
-                $('.dropdown-toggle').dropdown();
-                $(".divider").css("margin", "60px 0");
+                $(document).ready(function () {
+                    $("#pname-div").css("margin-top", "14px").css("font-size", "22px");
+                    $("#search-div").css("margin-top", "14px").css("font-size", "22px");
+                    $("#search-icon").css("margin", "10px 0 30px");
+                    $(".row").css("height", "14px");
+                    $('.dropdown-toggle').dropdown();
+                    $(".divider").css("margin", "60px 0");
+                })
+
                 //                                //                                $(".title.name-div");
                 //                                $("#basic-div").css("margin-bottom", "47px");
                 //                                $(".btn.btn-info").css("padding", "10px 12px").css("padding-bottom", "13px").css("font-weight", "600");
@@ -191,12 +172,15 @@
                             </td>
                         </tr>
                         <%--<tr>--%>
-                            <%--<button class="cooperationFileButton">数据清空</button>--%>
+                        <%--<button class="cooperationFileButton">数据清空</button>--%>
                         <%--</tr>--%>
                         </tbody>
                     </table>
                     <a type="button" class="btn btn-link" data-toggle="tooltip" data-placement="right" data-html="true"
-                            title="将删除该项目资产池的所有数据信息，请谨慎操作！">数据清空</a>
+                       title="将删除该项目资产池的所有数据信息，请谨慎操作！">数据清空</a>
+                    <a type="button" class="btn btn-link" data-toggle="tooltip" data-placement="right" data-html="true"
+                       title="向该项目中追加新的资产池数据，需要按照模板导入资产池文件" href="/user/onlineDesign/addMoreData">
+                        数据追加</a>
                     <!--<div class="flat-form-info">-->
                     <!--<form action="#" method="post" class="form-info">-->
                     <!--<div class="one-half v3">-->
@@ -215,27 +199,6 @@
             </div><!-- /.row -->
         </div><!-- /.container -->
     </section><!-- /.flat-row-iconbox -->
-
-    <%--<div class="container search">--%>
-        <%--<div class="search-input">--%>
-            <%--<div class="input-group">--%>
-                <%--<input type="text" class="form-control" id="txtKeyword" placeholder="输入关键字：" value="">--%>
-                <%--<span class="input-group-btn">--%>
-                                <%--<button class="btn btn-default" id="btnSearch" type="button">--%>
-                                    <%--<span class="glyphicon glyphicon-search" aria-hidden="true"></span>--%>
-                                <%--</button>--%>
-                            <%--</span>--%>
-            <%--</div>--%>
-        <%--</div>--%>
-    <%--</div>--%>
-    <!-- map -->
-    <%--<section class="flat-row pdmap">--%>
-    <%--<div class="flat-maps" data-address="Thành phố New York, Tiểu bang New York" data-height="454"--%>
-    <%--data-images="images/map/map-1.png" data-name="Themesflat Map"></div>--%>
-    <%--<div class="gm-map">--%>
-    <%--<div class="map"></div>--%>
-    <%--</div>--%>
-    <%--</section>--%>
 
     <div class="button-go-top">
         <a href="#" title="" class="go-top">
@@ -257,6 +220,10 @@
 <script type="text/javascript" src="../../js/waypoints.min.js"></script>
 <script type="text/javascript" src="../../js/main.js"></script>
 
-
+<script>
+    function selectProject(element) {
+        $("#pname-button").text($(element).text());
+    }
+</script>
 </body>
 </html>
