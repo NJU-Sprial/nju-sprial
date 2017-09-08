@@ -9,10 +9,11 @@ import java.io.Serializable;
 @Entity
 @Table(name = "project", schema = "sprial", uniqueConstraints = {@UniqueConstraint(columnNames={"project_name", "owner"})})
 public class ProjectPO implements Serializable {
-    private static final long serialVersionUID = -2412651312013948793L;
+    private static final long serialVersionUID = -8533293860401888189L;
     private int id;
     private String projectName;
     private String owner;
+    private String projectProgress;
 
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -45,6 +46,16 @@ public class ProjectPO implements Serializable {
         this.owner = owner;
     }
 
+    @Basic
+    @Column(name = "project_progress")
+    public String getProjectProgress() {
+        return projectProgress;
+    }
+
+    public void setProjectProgress(String projectProgress) {
+        this.projectProgress = projectProgress;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -56,8 +67,7 @@ public class ProjectPO implements Serializable {
         if (projectName != null ? !projectName.equals(projectPO.projectName) : projectPO.projectName != null)
             return false;
         if (owner != null ? !owner.equals(projectPO.owner) : projectPO.owner != null) return false;
-
-        return true;
+        return projectProgress != null ? projectProgress.equals(projectPO.projectProgress) : projectPO.projectProgress == null;
     }
 
     @Override
@@ -65,6 +75,7 @@ public class ProjectPO implements Serializable {
         int result = id;
         result = 31 * result + (projectName != null ? projectName.hashCode() : 0);
         result = 31 * result + (owner != null ? owner.hashCode() : 0);
+        result = 31 * result + (projectProgress != null ? projectProgress.hashCode() : 0);
         return result;
     }
 }

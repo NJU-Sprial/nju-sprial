@@ -27,7 +27,7 @@ public class ProductDataTest {
         ProductPO productPO = new ProductPO();
         productPO.setIssuer("yinywf");
         productPO.setTermOfRecruitment(LocalDateTime.now());
-        productDataService.test(productPO);
+       // productDataService.test(productPO);
     }
 
 }
