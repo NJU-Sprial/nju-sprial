@@ -123,7 +123,7 @@
 			<section class="flat-row pd-contact-v1">
 				<div class="container">
 					<div class="row">
-						<div class="col-md-2"></div>
+						<div class="col-md-1"></div>
 						<div class="col-md-8">
 							<form class="form-horizontal formFont" role="form">
 								<div class="form-group">
@@ -158,8 +158,147 @@
 								</div>
 							</form>
 						</div>
-						<div class="col-md-2"></div>
+						<div class="col-md-3"></div>
 					</div><!-- /.row -->
+					<div class="row">
+						<div class="col-md-1"></div>
+						<div class="col-md-10">
+							<div class="greenBottomBorder">
+								<button class="cashButton cashClickButton" id="cashSummaryButton">资产基本情况</button>
+								<button class="cashButton" id="cashDetailButton">资产统计分析</button>
+							</div>
+							<div id="cashSummary" class="displayNone">
+							</div>
+							<div id="cashDetail">
+								<!--资产五级分类start-->
+								<div style="margin-bottom: 50px">
+									<div><p class="headLabel">资产五级分类</p></div>
+									<div class="row">
+										<div class="col-md-7" style="padding-right: 30px">
+											<table class="table table-bordered">
+												<thead>
+												<tr>
+													<th>资产池五级分类</th>
+													<th>总额(万元)</th>
+													<th>金额占比(%)</th>
+													<th>资产个数(个)</th>
+												</tr>
+												</thead>
+												<tbody>
+												<tr>
+													<td>正常</td>
+													<td>1.1</td>
+													<td>18.1</td>
+													<td>6</td>
+												</tr>
+												<tr>
+													<td>关注</td>
+													<td>1.1</td>
+													<td>18.1</td>
+													<td>6</td>
+												</tr>
+												<tr>
+													<td>次级</td>
+													<td>1.1</td>
+													<td>18.1</td>
+													<td>6</td>
+												</tr>
+												<tr>
+													<td>可疑</td>
+													<td>1.1</td>
+													<td>18.1</td>
+													<td>6</td>
+												</tr>
+												<tr>
+													<td>损失</td>
+													<td>1.1</td>
+													<td>18.1</td>
+													<td>6</td>
+												</tr>
+												</tbody>
+											</table>
+										</div>
+										<div class="col-md-5">
+											<div id="fivePieContainer" style="height: 300px"></div>
+										</div>
+									</div>
+								</div>
+								<!--资产五级分类end-->
+								<div>
+									<div><p class="headLabel">贷款剩余期限分析</p></div>
+									<div>
+										<div class="col-md-7" style="padding-right: 30px">
+											<table class="table table-bordered">
+												<thead>
+												<tr>
+													<th>贷款剩余期限(年)</th>
+													<th>总额(万元)</th>
+													<th>金额占比(%)</th>
+													<th>资产个数(个)</th>
+												</tr>
+												</thead>
+												<tbody>
+												<tr>
+													<td>正常</td>
+													<td>1.1</td>
+													<td>18.1</td>
+													<td>6</td>
+												</tr>
+												<tr>
+													<td>0-0.5(含)</td>
+													<td>1.1</td>
+													<td>18.1</td>
+													<td>6</td>
+												</tr>
+												<tr>
+													<td>0.5-1.0(含)</td>
+													<td>1.1</td>
+													<td>18.1</td>
+													<td>6</td>
+												</tr>
+												<tr>
+													<td>1.0-2.0(含)</td>
+													<td>1.1</td>
+													<td>18.1</td>
+													<td>6</td>
+												</tr>
+												<tr>
+													<td>2.0-3.0(含)</td>
+													<td>1.1</td>
+													<td>18.1</td>
+													<td>6</td>
+												</tr>
+												<tr>
+													<td>3.0-4.0(含)</td>
+													<td>1.1</td>
+													<td>18.1</td>
+													<td>6</td>
+												</tr>
+												<tr>
+													<td>4.0-5.0(含)</td>
+													<td>1.1</td>
+													<td>18.1</td>
+													<td>6</td>
+												</tr>
+												<tr>
+													<td>>5.0</td>
+													<td>1.1</td>
+													<td>18.1</td>
+													<td>6</td>
+												</tr>
+												</tbody>
+											</table>
+										</div>
+										<div class="col-md-5" style="vertical-align: middle">
+											<div id="remainPieContainer" style="height: 300px"></div>
+										</div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+
+					</div>
 				</div><!-- /.container -->
 			</section><!-- /.flat-row-iconbox -->  
 
@@ -266,6 +405,8 @@
     <script type="text/javascript" src="../../js/waypoints.min.js"></script>
     <script type="text/javascript" src="../../js/main.js"></script>
 	<script type="text/javascript" src="../../js/jquery.easydropdown.min.js"></script>
-
+	<script type="text/javascript" src="../../js/echarts.min.js"></script>
+	<script type="text/javascript" src="../../charts/packageAnalysisPieChart.js"></script>
+	<script type="text/javascript" src="../../js/assetpackage.js"></script>
 	</body>
 </html>

@@ -2,6 +2,10 @@
  * Created by xiaoJun on 2017/9/6.
  */
 
+var fiveClassPieChart = echarts.init(document.getElementById("fivePieContainer"));
+var remainPieChart = echarts.init(document.getElementById("remainPieContainer"));
+
+
 $(function () {
 
     //资产包管理浏览维护搜索框动画
@@ -33,5 +37,15 @@ $(function () {
         $("#cashSummaryButton").removeClass("cashClickButton");
         $("#cashSummary").addClass("displayNone");
         $("#cashDetail").removeClass("displayNone");
-    })
+    });
+
+    packageAnalysisData();
 })
+
+/**
+ * 资产包分析数据及图表
+ */
+function packageAnalysisData() {
+    packageAnalysisPieChart(fiveClassPieChart);
+    packageAnalysisPieChart(remainPieChart);
+}
