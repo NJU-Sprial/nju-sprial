@@ -2,6 +2,7 @@ package po;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 /**
  * Created by yinywf on 2017/9/7
@@ -12,7 +13,7 @@ public class PropertyPackagePO {
     private int propertyPackageId;
     private Integer projectId;
     private Integer propertyNum;
-    private Timestamp packageDate;
+    private LocalDateTime packageDate;
     private Double packageCapital;
     private Double packageRate;
     private String pname;
@@ -51,11 +52,11 @@ public class PropertyPackagePO {
 
     @Basic
     @Column(name = "package_date")
-    public Timestamp getPackageDate() {
+    public LocalDateTime getPackageDate() {
         return packageDate;
     }
 
-    public void setPackageDate(Timestamp packageDate) {
+    public void setPackageDate(LocalDateTime packageDate) {
         this.packageDate = packageDate;
     }
 

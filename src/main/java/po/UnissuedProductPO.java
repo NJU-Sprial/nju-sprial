@@ -2,21 +2,27 @@ package po;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.sql.Timestamp;
 import java.time.LocalDateTime;
 
 /**
  * Created by yinywf on 2017/9/7
  */
 @Entity
-@Table(name = "unissued_product", schema = "sprial")
+@Table(name = "unissued_product", schema = "sprial", catalog = "")
 public class UnissuedProductPO implements Serializable {
-    private static final long serialVersionUID = 2975736321996617316L;
+    private static final long serialVersionUID = 7544833341521235276L;
     private int projectId;
     private int propertyPackageId;
     private LocalDateTime packetDate;
     private String analysisResult;
     private String recommendedLevel;
     private String ratingResult;
+    private String productName;
+    private LocalDateTime startDate;
+    private LocalDateTime firstPayDate;
+    private LocalDateTime lawEndDate;
+
 
     @Basic
     @Column(name = "project_id")
@@ -78,6 +84,47 @@ public class UnissuedProductPO implements Serializable {
         this.ratingResult = ratingResult;
     }
 
+
+    @Basic
+    @Column(name = "product_name")
+    public String getProductName() {
+        return productName;
+    }
+
+    public void setProductName(String productName) {
+        this.productName = productName;
+    }
+
+    @Basic
+    @Column(name = "start_date")
+    public LocalDateTime getStartDate() {
+        return startDate;
+    }
+
+    public void setStartDate(LocalDateTime startDate) {
+        this.startDate = startDate;
+    }
+
+    @Basic
+    @Column(name = "first_pay_date")
+    public LocalDateTime getFirstPayDate() {
+        return firstPayDate;
+    }
+
+    public void setFirstPayDate(LocalDateTime firstPayDate) {
+        this.firstPayDate = firstPayDate;
+    }
+
+    @Basic
+    @Column(name = "law_end_date")
+    public LocalDateTime getLawEndDate() {
+        return lawEndDate;
+    }
+
+    public void setLawEndDate(LocalDateTime lawEndDate) {
+        this.lawEndDate = lawEndDate;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -93,8 +140,10 @@ public class UnissuedProductPO implements Serializable {
         if (recommendedLevel != null ? !recommendedLevel.equals(that.recommendedLevel) : that.recommendedLevel != null)
             return false;
         if (ratingResult != null ? !ratingResult.equals(that.ratingResult) : that.ratingResult != null) return false;
-
-        return true;
+        if (productName != null ? !productName.equals(that.productName) : that.productName != null) return false;
+        if (startDate != null ? !startDate.equals(that.startDate) : that.startDate != null) return false;
+        if (firstPayDate != null ? !firstPayDate.equals(that.firstPayDate) : that.firstPayDate != null) return false;
+        return lawEndDate != null ? lawEndDate.equals(that.lawEndDate) : that.lawEndDate == null;
     }
 
     @Override
@@ -105,6 +154,10 @@ public class UnissuedProductPO implements Serializable {
         result = 31 * result + (analysisResult != null ? analysisResult.hashCode() : 0);
         result = 31 * result + (recommendedLevel != null ? recommendedLevel.hashCode() : 0);
         result = 31 * result + (ratingResult != null ? ratingResult.hashCode() : 0);
+        result = 31 * result + (productName != null ? productName.hashCode() : 0);
+        result = 31 * result + (startDate != null ? startDate.hashCode() : 0);
+        result = 31 * result + (firstPayDate != null ? firstPayDate.hashCode() : 0);
+        result = 31 * result + (lawEndDate != null ? lawEndDate.hashCode() : 0);
         return result;
     }
 }

@@ -30,7 +30,7 @@ public class UserDataTest {
     }
     @Test
     public void logout(){
-        System.out.println(userDataService.logout("justTest"));
+        System.out.println(userDataService.logout("zhujunyi"));
     }
 
 }
