@@ -147,14 +147,15 @@ public class OnlineDesignServiceImpl implements OnlineDesignService{
      */
     @Override
     public CreatePropertyPackageResult createPropertyPackage(String username, String pname) {
-        PropertyPackagePO po = new PropertyPackagePO();
-        //TODO 生成资产包PropertyPackagePO的各项属性
-        //TODO 设置属性
-        //资产包编号在数据库生成
         boolean hasSame = propertyPackageDataService.testPropertyPackageName(username,pname);
         if(!hasSame){
             return CreatePropertyPackageResult.HASSAMENAME;
         }
+        PropertyPackagePO po = new PropertyPackagePO();
+        //TODO 生成资产包PropertyPackagePO的各项属性
+        //TODO 设置属性
+        //资产包编号在数据库生成
+
         CreatePropertyPackageResult result = propertyPackageDataService.createPropertyPackage(username, po);
         return result;
     }
@@ -168,11 +169,7 @@ public class OnlineDesignServiceImpl implements OnlineDesignService{
     public PropertyPackageVO searchPropertyPackage(String username, String packageNumber) {
         PropertyPackagePO po = propertyPackageDataService.searchPropertyPackage(username, packageNumber);
         PropertyPackageVO vo = new PropertyPackageVO();
-        BeanUtils.copyProperties(po,vo,"packageDate");
-        //TODO: 向vo添加PO中类型不同的属性
-        //vo.setPackageDate();
-        //po.getPackageDate().toLocalDateTime().toLocalDate();
-
+        BeanUtils.copyProperties(po,vo,PropertyPackageVO.class);
         return vo;
     }
 
@@ -184,8 +181,7 @@ public class OnlineDesignServiceImpl implements OnlineDesignService{
     @Override
     public boolean alterPropertyPackage(String username, PropertyPackageVO propertyPackageVO) {
         PropertyPackagePO po = new PropertyPackagePO();
-        BeanUtils.copyProperties(propertyPackageVO,po,"packageDate");
-        //TODO 向po中添加vo中类型不同的属性
+        BeanUtils.copyProperties(propertyPackageVO,po,PropertyPackageVO.class);
         //注意因为vopo不同 只对PO中的部分属性进行修改 详情参考vo的属性
         boolean result = propertyPackageDataService.alterPropertyPackage(username, po);
         return result;
@@ -235,7 +231,6 @@ public class OnlineDesignServiceImpl implements OnlineDesignService{
     }
 
     /**
-     * TODO 算法
      * 根据项目名称、资产包编号、评估日期、累计违约率、违约本金回收率，返回项目情景信息包括现金流对比分析图、本金现金流明细、
      * 利息现金流明细、本息现金流明细
      *
