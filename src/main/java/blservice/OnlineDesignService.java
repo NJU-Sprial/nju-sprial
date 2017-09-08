@@ -174,4 +174,13 @@ public interface OnlineDesignService {
      */
     public boolean saveProductStrategy(String username, String sname, LocalDate packageDate, LocalDate startDate,
                                        LocalDate firstPayDate, LocalDate lawEndDate);
+
+    /**
+     * 判断是否有重复名字的资产包
+     * 如果有该名字的资产包 返回true
+     * @param username
+     * @param packageName
+     * @return
+     */
+    public boolean testPropertyPackageName(String username, String packageName);
 }

@@ -172,6 +172,7 @@ public class OnlineDesignServiceImpl implements OnlineDesignService{
         //TODO: 向vo添加PO中类型不同的属性
         //vo.setPackageDate();
         //po.getPackageDate().toLocalDateTime().toLocalDate();
+
         return vo;
     }
 
@@ -285,5 +286,18 @@ public class OnlineDesignServiceImpl implements OnlineDesignService{
     @Override
     public boolean saveProductStrategy(String username, String sname, LocalDate packageDate, LocalDate startDate, LocalDate firstPayDate, LocalDate lawEndDate) {
         return false;
+    }
+
+    /**
+     * 判断是否有重复名字的资产包
+     * 如果有该名字的资产包 返回true
+     * @param username
+     * @param packageName
+     * @return
+     */
+    @Override
+    public boolean testPropertyPackageName(String username, String packageName){
+        boolean hasPackage = !propertyPackageDataService.testPropertyPackageName(username,packageName);
+        return hasPackage;
     }
 }
