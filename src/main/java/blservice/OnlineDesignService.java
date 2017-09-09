@@ -176,11 +176,11 @@ public interface OnlineDesignService {
                                        LocalDate firstPayDate, LocalDate lawEndDate);
 
     /**
-     * 判断是否有重复名字的资产包
-     * 如果有该名字的资产包 返回true
+     * 判断是否有该项目
+     * 如果有该项目 返回true
      * @param username
-     * @param packageName
+     * @param projectName
      * @return
      */
-    public boolean testPropertyPackageName(String username, String packageName);
+    public boolean testProject(String username, String projectName);
 }

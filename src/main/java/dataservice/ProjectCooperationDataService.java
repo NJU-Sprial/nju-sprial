@@ -15,4 +15,14 @@ public interface ProjectCooperationDataService {
      * @return 项目列表
      */
     List<ProjectCooperationVO> findCooperationProjects(String username);
+
+
+    /**
+     * 判断是否有该项目
+     * 如果有该项目 返回true
+     * @param username
+     * @param projectName
+     * @return
+     */
+    public boolean testProject(String username, String projectName);
 }

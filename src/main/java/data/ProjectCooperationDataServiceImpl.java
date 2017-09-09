@@ -22,4 +22,15 @@ public class ProjectCooperationDataServiceImpl implements ProjectCooperationData
     public List<ProjectCooperationVO> findCooperationProjects(String username) {
         return null;
     }
+
+
+    /**
+     * 判断是否有该项目
+     * 如果有该项目 返回true
+     * @param username
+     * @param projectName
+     * @return
+     */
+    @Override
+    public boolean testProject(String username, String projectName){return false;};
 }

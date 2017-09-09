@@ -4,6 +4,7 @@ import blservice.OnlineDesignService;
 import constranst.CashUnit;
 import constranst.CycleUnit;
 import dataservice.LoanDataService;
+import dataservice.ProjectCooperationDataService;
 import dataservice.PropertyPackageDataService;
 import enums.CreatePropertyPackageResult;
 import org.springframework.beans.BeanUtils;
@@ -26,11 +27,13 @@ import java.util.List;
 public class OnlineDesignServiceImpl implements OnlineDesignService{
     private LoanDataService loanDataService;
     private PropertyPackageDataService propertyPackageDataService;
+    private ProjectCooperationDataService projectCooperationDataService;
 
     @Autowired
-    public OnlineDesignServiceImpl(LoanDataService loanDataService, PropertyPackageDataService propertyPackageDataService){
+    public OnlineDesignServiceImpl(LoanDataService loanDataService, PropertyPackageDataService propertyPackageDataService,ProjectCooperationDataService projectCooperationDataService){
         this.loanDataService = loanDataService;
         this.propertyPackageDataService = propertyPackageDataService;
+        this.projectCooperationDataService = projectCooperationDataService;
     }
 
     /**
@@ -284,15 +287,15 @@ public class OnlineDesignServiceImpl implements OnlineDesignService{
     }
 
     /**
-     * 判断是否有重复名字的资产包
-     * 如果有该名字的资产包 返回true
+     * 判断是否有该项目
+     * 如果有该名字的项目 返回true
      * @param username
-     * @param packageName
+     * @param projectName
      * @return
      */
     @Override
-    public boolean testPropertyPackageName(String username, String packageName){
-        boolean hasPackage = !propertyPackageDataService.testPropertyPackageName(username,packageName);
+    public boolean testProject(String username, String projectName){
+        boolean hasPackage = projectCooperationDataService.testProject(username,projectName);
         return hasPackage;
     }
 }
