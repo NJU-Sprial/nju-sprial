@@ -1,13 +1,18 @@
 package web.handler.user;
 
 import blservice.OnlineDesignService;
+import org.dom4j.DocumentException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 import vo.LoanVO;
+import web.security.WebSecurityConfig;
 
+import javax.servlet.http.HttpSession;
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
 
 /**
@@ -28,12 +33,60 @@ public class OnlineDesign {
         return "user/onlineDesign/browseAndKeep";
     }
 
-    @GetMapping("/user/onlineDesign/browseAndKeep/{username}/{pname}")
-    public String browseAndKeepAfterAddProject(Model model, @PathVariable String username,@PathVariable String pname){
+    @PostMapping("/user/onlineDesign/browseAndKeepAfterAddProject")
+    public String browseAndKeepAfterAddProject(Model model, HttpSession session,
+                                               @SessionAttribute(WebSecurityConfig.SESSION_KEY) String username,
+                                               @RequestParam(value = "pname") String pname,
+                                               @RequestParam(value = "ptype") String ptype,
+                                               @RequestParam(value = "pway") String pway,
+                                               @RequestParam(value = "file", required = true) MultipartFile file){
+        String message="";
+        boolean sucess=false;
         if (onlineDesignService.testProject(username,pname)){
             return "error/error-404";
         }
         else {
+            //向项目中添加数据
+// 获取文件名
+            String fileName = file.hashCode() + file.getOriginalFilename();
+            message+=("上传的文件名为：" + file.getOriginalFilename() + "\n");
+            // 文件上传后的路径
+            String filePath = System.getProperty("user.dir")+"/userFiles/";
+            File dest = new File(filePath + fileName);
+            try {
+                // 解决中文问题，liunx下中文路径，图片显示问题
+                // 检测是否存在目录
+                if (!dest.getParentFile().exists()) {
+                    dest.getParentFile().mkdirs();
+                }
+                file.transferTo(dest);
+
+                //开始处理文书
+                if(session.getAttribute(WebSecurityConfig.SESSION_KEY) != null){
+                    if(onlineDesignService.importBasicPropertyData(username,pname,ptype,pway, dest)){
+                        sucess=true;
+                    }
+                    else{
+                        message+= "文件格式不符合规范！\n";
+                    }
+                }else {
+                    message+="账户已下线，请重新登录！\n";
+                }
+            }
+            catch (IOException e) {
+                e.printStackTrace();
+            } catch (Exception e){
+                message+= "处理文件失败\n";
+                e.printStackTrace();
+            }
+            finally {
+                if (dest.exists() && dest.isFile()) {
+                    dest.delete();
+                }
+            }
+            model.addAttribute("result",message);
+
+            //查看添加数据后的项目
             List<LoanVO> loanVOS = onlineDesignService.browseProject(username, pname);
             model.addAttribute("pname",pname);
             model.addAttribute("loans",loanVOS);

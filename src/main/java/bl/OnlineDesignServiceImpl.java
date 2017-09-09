@@ -14,6 +14,7 @@ import po.LoanPO;
 import po.PropertyPackagePO;
 import vo.*;
 
+import java.io.File;
 import java.sql.Timestamp;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -40,14 +41,16 @@ public class OnlineDesignServiceImpl implements OnlineDesignService{
      * TODO
      * 导入基础资产数据,按照《消费金融资产池管理》中模板批量导入数据。提供下载数据模板，供券商填写后自动导入
      *
-     * @param pname 项目名称
-     * @param ptype 基础资产类型——目前只有“消费金融”一类
-     * @param pway  消费用途，有三类，分为：第一类：个人消费贷款、信用卡分期付款、国家助学贷款；第二类：个人汽车贷款；第三类：
-     *              个人住房贷款（包含装修、租借、购买）
+     * @param username 用户名
+     * @param pname    项目名称
+     * @param ptype    基础资产类型——目前只有“消费金融”一类
+     * @param pway     消费用途，有三类，分为：第一类：个人消费贷款、信用卡分期付款、国家助学贷款；第二类：个人汽车贷款；第三类：
+     *                 个人住房贷款（包含装修、租借、购买）
+     * @param file     数据文件
      * @return
      */
     @Override
-    public boolean importBasicPropertyData(String username, String pname, String ptype, String pway) {
+    public boolean importBasicPropertyData(String username, String pname, String ptype, String pway, File file) {
         return false;
     }
 

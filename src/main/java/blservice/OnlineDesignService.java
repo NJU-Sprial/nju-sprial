@@ -5,6 +5,7 @@ import constranst.CycleUnit;
 import enums.CreatePropertyPackageResult;
 import vo.*;
 
+import java.io.File;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -21,9 +22,10 @@ public interface OnlineDesignService {
      * @param ptype    基础资产类型——目前只有“消费金融”一类
      * @param pway     消费用途，有三类，分为：第一类：个人消费贷款、信用卡分期付款、国家助学贷款；第二类：个人汽车贷款；第三类：
      *                 个人住房贷款（包含装修、租借、购买）
+     * @param file 数据文件
      * @return
      */
-    public boolean importBasicPropertyData(String username, String pname, String ptype, String pway);
+    public boolean importBasicPropertyData(String username, String pname, String ptype, String pway, File file);
 
     /**
      * 浏览某项目的贷款信息，一个项目包含至少一笔贷款
@@ -142,9 +144,8 @@ public interface OnlineDesignService {
      * @param TotalBreakOffRate
      * @param BreakOffCapitalRecoverRate
      * @return
-     *
-     * @deprecated 该接口已移植到 ProductDesgin_ScenarioAnalysisService 中
      * @see ProductDesign_ScenarioAnalysisService
+     * @deprecated 该接口已移植到 ProductDesgin_ScenarioAnalysisService 中
      */
     public SceneAnalysisVO getSceneAnalysisVO(String username, String pname, String packageNumber, LocalDate assessDate,
                                               double TotalBreakOffRate, double BreakOffCapitalRecoverRate);
@@ -168,9 +169,8 @@ public interface OnlineDesignService {
      * @param firstPayDate
      * @param lawEndDate
      * @return
-     *
-     * @deprecated 该接口已移植到 ProductDesgin_ConceptualDesignService 中
      * @see ProductDesign_ConceptualDesignService
+     * @deprecated 该接口已移植到 ProductDesgin_ConceptualDesignService 中
      */
     public boolean saveProductStrategy(String username, String sname, LocalDate packageDate, LocalDate startDate,
                                        LocalDate firstPayDate, LocalDate lawEndDate);
@@ -178,6 +178,7 @@ public interface OnlineDesignService {
     /**
      * 判断是否有该项目
      * 如果有该项目 返回true
+     *
      * @param username
      * @param projectName
      * @return

@@ -56,20 +56,20 @@
 
                 <div class="col-md-10">
                     <div class="flat-form-info">
-                        <form action="/uploadData" method="post" class="form-info">
+                        <form action="/user/onlineDesign/browseAndKeepAfterAddProject" method="post" class="form-info">
                             <div class="v3">
-                                <p class="input-info"><input type="text" name="your-name" value="" placeholder="项目名称">
+                                <p class="input-info"><input type="text" name="pname" value="" placeholder="项目名称">
                                 </p>
-                                <p class="input-info"><input type="email" name="your-email" value="" placeholder="消费金融"
-                                                             disabled="true"></p>
+                                <p class="input-info"><input type="email" name="ptype" value="" placeholder="消费金融"
+                                                             disabled="true" text="消费金融"></p>
                                 <p class="input-info"><label>个人消费贷款、信用卡分期付款、国家助学贷款
-                                    <input type="radio" name="your-subject" value="" checked="" placeholder="Subject"></label>
+                                    <input type="radio" name="pway" value="" checked="" placeholder="Subject"></label>
                                     </p>
                                 <p class="input-info"><label>个人汽车贷款
-                                    <input type="radio" name="your-subject" value="" placeholder="Subject"></label>
+                                    <input type="radio" name="pway" value="" placeholder="Subject"></label>
                                     </p>
                                 <p class="input-info"><label>个人住房贷款（包含装修、租借、购买）
-                                    <input type="radio" name="your-subject" value="" placeholder="Subject"></label>
+                                    <input type="radio" name="pway" value="" placeholder="Subject"></label>
                                     </p>
                                 <p class="input-info"><input id="input-data-button" type="button" value="下载数据模板"></p>
                                 <!--使用label元素与file控件关联，input被隐藏，用户点的实际上是label-->
