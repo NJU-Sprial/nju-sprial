@@ -1,19 +1,34 @@
 package data;
 
 import blservice.ProductDesignService;
+import dao.ProjectDao;
+import dao.PropertyPackageDao;
 import dataservice.PropertyPackageDataService;
 import enums.CreatePropertyPackageResult;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+import po.ProductPO;
+import po.ProjectPO;
 import po.PropertyPackagePO;
 
+import java.util.LinkedList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Created by Water on 2017/9/5.
  */
-@Service
+@Service("PropertyPackageDataService")
+@Transactional
 public class PropertyPackageDataServiceImpl implements PropertyPackageDataService {
+    @Autowired
+    PropertyPackageDao propertyPackageDao;
+
+    @Autowired
+    ProjectDao projectDao;
     /**
+     * TODO
      * 资产包创建,后台自动根据模型筛选基础资产，生成资产包，并自动生成资产包编号、资产数量、封包日期、资产包封包本金金额、封包利率
      * 每个项目最多只能有5个资产包 后端判断
      * ***需要判断资产包是否超过5个***
@@ -37,19 +52,26 @@ public class PropertyPackageDataServiceImpl implements PropertyPackageDataServic
      */
     @Override
     public PropertyPackagePO searchPropertyPackage(String username, String packageNumber) {
-        return null;
+        return propertyPackageDao.get(Integer.parseInt(packageNumber));
     }
 
     /**
      * 修改资产包信息
-     //注意因为vopo不同 只对PO中的部分属性进行修改 详情参考vo的属性
+     * //注意因为vopo不同 只对PO中的部分属性进行修改 详情参考vo的属性
+     *
      * @param username
      * @param propertyPackagePO
      * @return
      */
     @Override
     public boolean alterPropertyPackage(String username, PropertyPackagePO propertyPackagePO) {
-        return false;
+        try {
+            propertyPackageDao.save(propertyPackagePO);
+        }catch (Exception e){
+            e.printStackTrace();
+            return false;
+        }
+        return true;
     }
 
     /**
@@ -61,11 +83,19 @@ public class PropertyPackageDataServiceImpl implements PropertyPackageDataServic
      */
     @Override
     public boolean deletePropertyPackage(String username, String packageNumber) {
-        return false;
+        try {
+            propertyPackageDao.delete(Integer.parseInt(packageNumber));
+        }catch (Exception e){
+            e.printStackTrace();
+            return false;
+        }
+        return true;
     }
 
     /**
      * 获取用户单个项目下的所有资产包，如果不方便的话可以修改接口
+     *
+     * reply to : 方便
      *
      * @param username
      * @param pname
@@ -74,18 +104,32 @@ public class PropertyPackageDataServiceImpl implements PropertyPackageDataServic
      */
     @Override
     public List<PropertyPackagePO> findPropertyPackage(String username, String pname) {
-        return null;
+        int id = ((ProjectPO)projectDao.findUnique("from ProjectPO where owner = ? and projectName=?",username,pname)).getId();
+        List<PropertyPackagePO> result = propertyPackageDao.find("from PropertyPackagePO where projectId = ?",id);
+        return result;
     }
 
     /**
      * 用户创建新的资产包时，判断是否有重复名字的资产包
      * 如果有重复名字 返回false 表示无法创建
+     *
      * @param username
      * @param newPackageName
      * @return
      */
     @Override
     public boolean testPropertyPackageName(String username, String newPackageName) {
-        return false;
+       List<String> result = getAllPackageName(username);
+       return !result.contains(newPackageName);
+    }
+
+   private List<String> getAllPackageName(String username){
+        List<String> result = new LinkedList<>();
+        List<ProjectPO> projectPOS = projectDao.findByProperty("owner", username);
+        for (ProjectPO projectPO:projectPOS ){
+            List<PropertyPackagePO> propertyPackagePOS = propertyPackageDao.find("from PropertyPackagePO where projectId = ? ",projectPO.getId());
+            result.addAll(propertyPackagePOS.stream().map(p-> p.getPackageName()).collect(Collectors.toList()));
+        }
+        return result;
     }
 }

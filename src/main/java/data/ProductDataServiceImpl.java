@@ -18,9 +18,7 @@ import java.util.List;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
-/**
- * TODO
- */
+
 @Service("ProductDataService")
 @Transactional
 public class ProductDataServiceImpl implements ProductDataService{
@@ -36,7 +34,7 @@ public class ProductDataServiceImpl implements ProductDataService{
         List<ProductPO> result = new LinkedList<>();
         List<ProjectPO> projectPOS = projectDao.findByProperty("owner", username);
         for (ProjectPO projectPO:projectPOS ){
-            result.addAll(productDao.findByProperty("productId",projectPO.getId()));
+            result.addAll(productDao.find("from ProjectPO where projectId = ?",projectPO.getId()));
         }
         return result;
     }
@@ -44,7 +42,7 @@ public class ProductDataServiceImpl implements ProductDataService{
     @Override
     public List<RecruitmentSituationPO> getRecruitmentSituation(String username, String productID) {
 
-        List<OrderPO> orderPOS = orderDao.findByProperty("productId",productID);
+        List<OrderPO> orderPOS = orderDao.find("from OrderPO where productId = ?",productID);
         List<RecruitmentSituationPO> result = orderPOS.stream().map(p->{
             RecruitmentSituationPO recruitmentSituationPO = new RecruitmentSituationPO();
             recruitmentSituationPO.setInvestor(p.getUsername());

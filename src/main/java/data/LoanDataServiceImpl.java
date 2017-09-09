@@ -38,7 +38,7 @@ public class LoanDataServiceImpl implements LoanDataService {
     public List<LoanPO> browseProject(String username, String pname) {
         String hql = "from ProjectPO p where p.owner = ? and p.projectName = ?";
         ProjectPO projectPO = projectDao.findUnique(hql,username,pname);
-        List<LoanPO> loanPOS = loanDao.findByProperty("projectId",projectPO.getId());
+        List<LoanPO> loanPOS = loanDao.find("from LoanPO where projectId = ? ",projectPO.getId());
         return loanPOS;
 
     }

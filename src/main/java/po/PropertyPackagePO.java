@@ -1,7 +1,6 @@
 package po;
 
 import javax.persistence.*;
-import java.sql.Timestamp;
 import java.time.LocalDateTime;
 
 /**
@@ -18,6 +17,7 @@ public class PropertyPackagePO {
     private Double packageRate;
     private String pname;
     private String packageNumber;
+    private String packageName;
 
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -100,6 +100,16 @@ public class PropertyPackagePO {
         this.packageNumber = packageNumber;
     }
 
+    @Basic
+    @Column(name = "package_name")
+    public String getPackageName() {
+        return packageName;
+    }
+
+    public void setPackageName(String packageName) {
+        this.packageName = packageName;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -117,8 +127,7 @@ public class PropertyPackagePO {
         if (pname != null ? !pname.equals(that.pname) : that.pname != null) return false;
         if (packageNumber != null ? !packageNumber.equals(that.packageNumber) : that.packageNumber != null)
             return false;
-
-        return true;
+        return packageName != null ? packageName.equals(that.packageName) : that.packageName == null;
     }
 
     @Override
@@ -131,6 +140,7 @@ public class PropertyPackagePO {
         result = 31 * result + (packageRate != null ? packageRate.hashCode() : 0);
         result = 31 * result + (pname != null ? pname.hashCode() : 0);
         result = 31 * result + (packageNumber != null ? packageNumber.hashCode() : 0);
+        result = 31 * result + (packageName != null ? packageName.hashCode() : 0);
         return result;
     }
 }
