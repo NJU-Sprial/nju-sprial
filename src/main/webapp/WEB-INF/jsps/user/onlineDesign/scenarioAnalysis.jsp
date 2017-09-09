@@ -144,6 +144,7 @@
         $("#pname").change(pnameChange);
 
         pnameChange();
+        $(".form_date > input").val((new Date()).Format("yyyy-MM-dd"));
     });
 
     function analysis() {

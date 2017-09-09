@@ -73,6 +73,5 @@ $(document).ready(function () {
             forceParse: true, //当用户在输入框中输入了不正确的日期，选择器将会尽量解析输入的值，并将解析后的正确值按照给定的格式format设置到输入框中
         }).data("datetimepicker");
 
-        $(".form_date > input").val((new Date()).Format("yyyy-MM-dd"));
     }
 });
