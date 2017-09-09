@@ -85,7 +85,51 @@
         </div>
         <!-- 分析结果显示组件块 -->
         <div class="col-md-6">
-
+            <!-- 用户输入套件，用dl包起来，实现纵向对齐 -->
+            <dl class="dl-horizontal">
+                <div class="form-group">
+                    <dt>证券类型：</dt>
+                    <dd>
+                        <span id="securityType"></span>
+                    </dd>
+                </div>
+                <div class="form-group">
+                    <dt>优先级：</dt>
+                    <dd>
+                        <span id="priority"></span>
+                    </dd>
+                </div>
+                <div class="form-group">
+                    <dt>证券简称：</dt>
+                    <dd>
+                        <span id="securityAbbreviation"></span>
+                    </dd>
+                </div>
+                <div class="form-group">
+                    <dt>发行金额占比：</dt>
+                    <dd>
+                        <span id="issueAmountProportion"></span>
+                    </dd>
+                </div>
+                <div class="form-group">
+                    <dt>发行金额：</dt>
+                    <dd>
+                        <span id="issueAmount"></span>
+                    </dd>
+                </div>
+                <div class="form-group">
+                    <dt>付息频率：</dt>
+                    <dd>
+                        <span id="interestPaymentFrequency"></span>
+                    </dd>
+                </div>
+                <div class="form-group">
+                    <dt>利率：</dt>
+                    <dd>
+                        <span id="interestRate"></span>
+                    </dd>
+                </div>
+            </dl>
         </div>
     </div>
 
@@ -95,25 +139,35 @@
 </body>
 
 <script type="text/javascript">
+    function collectData() {
+        return {
+            "pname": "<%=conceptualVO.getPname()%>",
+            "packageNumber": "<%=conceptualVO.getPackageNumber()%>",
+            "sname": $("#sname").val(),
+            "packageDate": $("#packageDate").text(),
+            "startDate": $("#startDate").val(),
+            "firstPayDate": $("#firstPayDate").val(),
+            "lawEndDate": $("#lawEndDate").val(),
+        };
+    }
+
     function analysis() {
-//        $.ajax({
-//            type: "post",
-//            async: true, //异步请求（同步请求将会锁住浏览器，用户其他操作必须等待请求完成才可以执行）
-//            url: "/user/onlineDesign/productDesign/scenarioAnalysis/analysis", //请求发送到TestServlet处
-//            data: {
-//                "pname": $("#pname").val(),
-//                "packageNumber": $("#packageNumber").val(),
-//                "assessDate": $("#assessDate").val(),
-//                "TotalBreakOffRate": $("#TotalBreakOffRate").val(),
-//                "BreakOffCapitalRecoverRate": $("#BreakOffCapitalRecoverRate").val(),
-//            },
-//            dataType: "json", //返回数据形式
-//            success: (result) => {
-//                addRow($("#capitalCashFlowDetail"), result.capitalCashFlowDetailList, "capitalCashFlow");
-//                addRow($("#interestCashFlowDetail"), result.interestCashFlowDetailList, "interestCashFlow");
-//                addRow($("#capitalAndInterestCashFlowDetail"), result.capitalAndInterestCashFlowDetailList, "capitalAndInterestCashFlow");
-//            },
-//        });
+        $.ajax({
+            type: "post",
+            async: true, //异步请求（同步请求将会锁住浏览器，用户其他操作必须等待请求完成才可以执行）
+            url: "/user/onlineDesign/productDesign/conceptualDesign/analysisConceptual", //请求发送到TestServlet处
+            data: collectData(),
+            dataType: "json", //返回数据形式
+            success: (result) => {
+                $("#securityType").text(result.securityType);
+                $("#priority").text(result.priority);
+                $("#securityAbbreviation").text(result.securityAbbreviation);
+                $("#issueAmountProportion").text(result.issueAmountProportion);
+                $("#issueAmount").text(result.issueAmount);
+                $("#interestPaymentFrequency").text(result.interestPaymentFrequency);
+                $("#interestRate").text(result.interestRate);
+            },
+        });
     }
 
     function save() {
@@ -121,15 +175,7 @@
             type: "post",
             async: true, //异步请求（同步请求将会锁住浏览器，用户其他操作必须等待请求完成才可以执行）
             url: "/user/onlineDesign/productDesign/conceptualDesign/saveConceptual", //请求发送到TestServlet处
-            data: {
-                "pname": "<%=conceptualVO.getPname()%>",
-                "packageNumber": "<%=conceptualVO.getPackageNumber()%>",
-                "sname": $("#sname").val(),
-                "packageDate": $("#packageDate").text(),
-                "startDate": $("#startDate").val(),
-                "firstPayDate": $("#firstPayDate").val(),
-                "lawEndDate": $("#lawEndDate").val(),
-            },
+            data: collectData(),
             dataType: "text", //返回数据形式
             success: (result) => {
                 if(result==="SUCESS"){
@@ -137,9 +183,9 @@
                 }else {
                     $('body').after('<div id="bottom-alert" class="text-center alert alert-dismissible alert-danger fade in navbar-fixed-bottom" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button> <strong>'+result+'</strong> </div>');
                 }
-//                window.setTimeout(function () {
-//                    $('#bottom-alert').alert('close');
-//                }, 3000);
+                window.setTimeout(function () {
+                    $('#bottom-alert').alert('close');
+                }, 3000);
             },
         });
     }

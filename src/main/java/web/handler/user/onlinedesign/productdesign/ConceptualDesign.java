@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import vo.ConceptualParameterVO;
 import vo.ConceptualVO;
 import web.security.WebSecurityConfig;
 
@@ -90,5 +91,29 @@ public class ConceptualDesign {
         }
 
         return "保存失败";
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/user/onlineDesign/productDesign/conceptualDesign/analysisConceptual", method= RequestMethod.POST)
+    public ConceptualParameterVO analysisConceptual(@SessionAttribute(WebSecurityConfig.SESSION_KEY) String username,
+                                 @RequestParam(value = "pname", required = true) String pname,
+                                 @RequestParam(value = "packageNumber", required = true) String packageNumber,
+                                 @RequestParam(value = "sname", required = true) String sname,
+                                 @RequestParam(value = "packageDate", required = true) String packageDate,
+                                 @RequestParam(value = "startDate", required = true) String startDate,
+                                 @RequestParam(value = "firstPayDate", required = true) String firstPayDate,
+                                 @RequestParam(value = "lawEndDate", required = true) String lawEndDate) {
+        //日期格式
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+//        ConceptualParameterVO conceptualParameterVO = conceptualDesignService.analysisConceptual(new ConceptualVO(
+//                username,pname,packageNumber,sname,LocalDate.parse(packageDate,formatter),LocalDate.parse(startDate,formatter),
+//                LocalDate.parse(firstPayDate,formatter),LocalDate.parse(lawEndDate,formatter)));
+//        return  conceptualParameterVO;
+
+        //假数据
+        ConceptualParameterVO fakeConceptualParameterVO = new ConceptualParameterVO("证券类型1","优先级1",
+                "证券简称1","35.5%","￥100000",
+                "每月1次","5.6% - 7.9%");
+        return fakeConceptualParameterVO;
     }
 }

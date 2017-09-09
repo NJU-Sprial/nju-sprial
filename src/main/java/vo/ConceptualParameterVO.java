@@ -22,7 +22,7 @@ public class ConceptualParameterVO {
      * @param issueAmountProportion 发行金额占比（%），如"35.5%"
      * @param issueAmount 发行金额，如"￥100000"，或者"5 万元"，格式自定
      * @param interestPaymentFrequency 付息频率，如"每月1次"，格式自定
-     * @param interestRate 试算利率，如"5.6% - 7.9%"，格式自定
+     * @param interestRate 利率，如"5.6% - 7.9%"，格式自定
      */
     public ConceptualParameterVO(String securityType, String priority, String securityAbbreviation, String issueAmountProportion,
                                  String issueAmount, String interestPaymentFrequency, String interestRate) {
