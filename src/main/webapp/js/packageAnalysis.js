@@ -39,4 +39,26 @@ $(function () {
     packageAnalysisPieChart(industryPieChart, '资产池前十大行业分布', industryName, industryData);
     packageAnalysisPieChart(scalePieChart, '贷款规模分布', scaleName, scaleData);
     packageAnalysisPieChart(agePieChart, '贷款账龄分布', ageName, ageData);
+
+    //资产包管理统计分析按钮切换
+    $("#assetsBasicsButton").click(function () {
+        $(this).addClass("cashClickButton");
+        $("#assetsCountButton").removeClass("cashClickButton");
+        $("#assetsBasics").removeClass("displayNone");
+        $("#assetsCount").addClass("displayNone");
+    });
+    $("#assetsCountButton").click(function () {
+        $(this).addClass("cashClickButton");
+        $("#assetsBasicsButton").removeClass("cashClickButton");
+        $("#assetsBasics").addClass("displayNone");
+        $("#assetsCount").removeClass("displayNone");
+        fiveClassPieChart.resize();
+        remainPieChart.resize();
+        contractPieChart.resize();
+        ratePieChart.resize();
+        regionPieChart.resize();
+        industryPieChart.resize();
+        scalePieChart.resize();
+        agePieChart.resize();
+    });
 })
