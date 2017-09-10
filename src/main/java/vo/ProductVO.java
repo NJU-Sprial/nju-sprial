@@ -13,8 +13,8 @@ public class ProductVO {
     private String productID;
     private String productName;//产品名称
     private String quantity;//发行总额
-    private Double interestUpperBound;//利率区间上界
-    private Double interestLowerBound;//利率区间下界
+    private Double interestUpperBound;//利率区间上界,如0.06
+    private Double interestLowerBound;//利率区间下界,如0.03
     private String ratingResult;//评级结果
     private String sponsor;//发起机构
     private String issuer;//发行机构
