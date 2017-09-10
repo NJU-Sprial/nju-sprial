@@ -57,6 +57,8 @@ public class ProjectCooperationDataServiceImpl implements ProjectCooperationData
      * @return
      */
     @Override
-    public List<String> getProjectNameList(String username){
-        return null;};
+    public List<String> getProjectNameList(String username) {
+       List<String> result =  projectDao.find("select projectName from ProjectPO where owner = ?",username);
+        return result;
+    }
 }

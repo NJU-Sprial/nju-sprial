@@ -26,6 +26,8 @@ public class LoanDataServiceImpl implements LoanDataService {
     UnissuedProductDao unissuedProductDao;
     @Autowired
     PropertyPackageDao propertyPackageDao;
+    @Autowired
+    ProjectCoordinatorDao projectCoordinatorDao;
 
     /**
      * 浏览某项目的贷款信息，一个项目包含至少一笔贷款
@@ -114,6 +116,7 @@ public class LoanDataServiceImpl implements LoanDataService {
             unissuedProductDao.batchExecute("delete from UnissuedProductPO where projectId = ?",projectId);
             propertyPackageDao.batchExecute("delete from PropertyPackagePO where projectId = ?",projectId);
             loanDao.batchExecute("delete from LoanPO where projectId = ?",projectId);
+            projectCoordinatorDao.batchExecute("delete from ProjectCoordinatorPO where projectId = ?",projectId);
         }catch (Exception e){
             e.printStackTrace();
             return false;

@@ -21,7 +21,6 @@ public class PropertyPackagePO {
     private Double packageCapital;
     private Double packageRate;
     private String pname;
-    private String packageNumber;
     private String packageName;
 
     @Id
@@ -96,16 +95,6 @@ public class PropertyPackagePO {
     }
 
     @Basic
-    @Column(name = "package_number")
-    public String getPackageNumber() {
-        return packageNumber;
-    }
-
-    public void setPackageNumber(String packageNumber) {
-        this.packageNumber = packageNumber;
-    }
-
-    @Basic
     @Column(name = "package_name")
     public String getPackageName() {
         return packageName;
@@ -130,8 +119,6 @@ public class PropertyPackagePO {
             return false;
         if (packageRate != null ? !packageRate.equals(that.packageRate) : that.packageRate != null) return false;
         if (pname != null ? !pname.equals(that.pname) : that.pname != null) return false;
-        if (packageNumber != null ? !packageNumber.equals(that.packageNumber) : that.packageNumber != null)
-            return false;
         return packageName != null ? packageName.equals(that.packageName) : that.packageName == null;
     }
 
@@ -144,7 +131,6 @@ public class PropertyPackagePO {
         result = 31 * result + (packageCapital != null ? packageCapital.hashCode() : 0);
         result = 31 * result + (packageRate != null ? packageRate.hashCode() : 0);
         result = 31 * result + (pname != null ? pname.hashCode() : 0);
-        result = 31 * result + (packageNumber != null ? packageNumber.hashCode() : 0);
         result = 31 * result + (packageName != null ? packageName.hashCode() : 0);
         return result;
     }
