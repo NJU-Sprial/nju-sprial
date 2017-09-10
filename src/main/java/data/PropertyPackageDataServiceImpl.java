@@ -74,7 +74,7 @@ public class PropertyPackageDataServiceImpl implements PropertyPackageDataServic
     @Override
     public boolean alterPropertyPackage(String username, PropertyPackagePO propertyPackagePO) {
         try {
-            propertyPackageDao.save(propertyPackagePO);
+            propertyPackageDao.merge(propertyPackagePO);
         }catch (Exception e){
             e.printStackTrace();
             return false;

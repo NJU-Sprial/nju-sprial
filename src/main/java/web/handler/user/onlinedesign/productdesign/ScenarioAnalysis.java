@@ -8,10 +8,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import vo.*;
+import web.LineChartMock;
 import web.security.WebSecurityConfig;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -32,6 +34,21 @@ public class ScenarioAnalysis {
 
         //假数据
         List<String> fakeAllProduct = Arrays.asList("示例项目1", "示例项目2");
+//        double[] data1 = {135.60,156.70,159.11,200.88,342.22};
+//        double[] data2 = {166.40,171.74,141.01,230.68,400.21};
+//        LineChartMock lineChartMock1 = new LineChartMock("0.0000%",data1);
+//        LineChartMock lineChartMock2 = new LineChartMock("4.9000%",data2);
+//        List<LineChartMock> cashList = new ArrayList<>();
+//        cashList.add(lineChartMock1);
+//        cashList.add(lineChartMock2);
+//        List<LocalDate> dateList = new ArrayList<>();
+//        dateList.add(LocalDate.of(2016,1,1));
+//        dateList.add(LocalDate.of(2016,2,1));
+//        dateList.add(LocalDate.of(2016,3,1));
+//        dateList.add(LocalDate.of(2016,4,1));
+//        dateList.add(LocalDate.of(2016,5,1));
+//        System.out.println("cashList:"+cashList.get(0).getName());
+        
         model.addAttribute("allProduct", fakeAllProduct);
 
         return "/user/onlineDesign/scenarioAnalysis";
@@ -67,10 +84,21 @@ public class ScenarioAnalysis {
                     Double.parseDouble(TotalBreakOffRate),Double.parseDouble(BreakOffCapitalRecoverRate));
 //            return sceneAnalysisVO;
 
-            return new SceneAnalysisVO(Arrays.asList(new CashFlowComparativeAnalysisPoint(2,LocalDate.of(2017,9,8)),new CashFlowComparativeAnalysisPoint(3,LocalDate.of(2017,9,9))),
-                    Arrays.asList(new CapitalCashFlowDetail(2,LocalDate.of(2017,9,8),"本金现金流2"),new CapitalCashFlowDetail(3,LocalDate.of(2017,9,9),"本金现金流3")),
-                    Arrays.asList(new InterestCashFlowDetail(2,LocalDate.of(2017,9,8),"利息现金流2"),new InterestCashFlowDetail(3,LocalDate.of(2017,9,9),"利息现金流3")),
-                    Arrays.asList(new CapitalAndInterestCashFlowDetail(2,LocalDate.of(2017,9,8),"本息现金流2"),new CapitalAndInterestCashFlowDetail(3,LocalDate.of(2017,9,9),"本息现金流3")));
+            return new SceneAnalysisVO(Arrays.asList(LocalDate.of(2016,1,1).toString(),
+                    LocalDate.of(2016,2,1).toString(),
+                    LocalDate.of(2016,3,1).toString(),
+                    LocalDate.of(2016,4,1).toString(),
+                    LocalDate.of(2016,5,1).toString()),
+                    Arrays.asList(new CashVO("0.0000%",new double[]{135.60,156.70,159.11,200.88,342.22}),
+                            new CashVO("0.0000%",new double[]{166.40,171.74,141.01,230.68,400.21})),
+                    Arrays.asList(new CapitalCashFlowDetail(2,LocalDate.of(2017,9,8),"本金现金流2"),
+                            new CapitalCashFlowDetail(3,LocalDate.of(2017,9,9),"本金现金流3")),
+                    Arrays.asList(new InterestCashFlowDetail(2,LocalDate.of(2017,9,8),
+                            "利息现金流2"),new InterestCashFlowDetail(3,
+                            LocalDate.of(2017,9,9),"利息现金流3")),
+                    Arrays.asList(new CapitalAndInterestCashFlowDetail(2,LocalDate.of(2017,9,8),
+                            "本息现金流2"),new CapitalAndInterestCashFlowDetail(3,
+                            LocalDate.of(2017,9,9),"本息现金流3")));
         } catch (ErrorParamException e) {
             return null;
         }

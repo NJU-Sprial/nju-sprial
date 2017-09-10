@@ -1,5 +1,8 @@
 package po;
 
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -8,6 +11,8 @@ import java.io.Serializable;
  */
 @Entity
 @Table(name = "project", schema = "sprial", uniqueConstraints = {@UniqueConstraint(columnNames={"project_name", "owner"})})
+@DynamicUpdate
+@DynamicInsert
 public class ProjectPO implements Serializable {
     private static final long serialVersionUID = -8533293860401888189L;
     private int id;

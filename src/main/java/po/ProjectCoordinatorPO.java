@@ -1,5 +1,8 @@
 package po;
 
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -8,6 +11,8 @@ import java.io.Serializable;
  */
 @Entity
 @Table(name = "project_coordinator", schema = "sprial")
+@DynamicUpdate
+@DynamicInsert
 public class ProjectCoordinatorPO implements Serializable {
     private static final long serialVersionUID = 3437823402639962217L;
     private int projectId;

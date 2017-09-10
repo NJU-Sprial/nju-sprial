@@ -14,35 +14,59 @@ public class SceneAnalysisVO {
     /**
      * 注意：List<CashFlowComparativeAnalysisPoint> 这个数据的格式将来很有可能会改
      */
-    private List<CashFlowComparativeAnalysisPoint> cashFlowComparativeAnalysisList;
+    private List<String> dateList;
+    private List<CashVO> cashList;
     private List<CapitalCashFlowDetail> capitalCashFlowDetailList;
     private List<InterestCashFlowDetail> interestCashFlowDetailList;
     private List<CapitalAndInterestCashFlowDetail> capitalAndInterestCashFlowDetailList;
 
-    public SceneAnalysisVO(List<CashFlowComparativeAnalysisPoint> cashFlowComparativeAnalysisList,
-                           List<CapitalCashFlowDetail> capitalCashFlowDetailList,
+    public SceneAnalysisVO(List<String> dateList, List<CashVO> cashList, List<CapitalCashFlowDetail> capitalCashFlowDetailList,
                            List<InterestCashFlowDetail> interestCashFlowDetailList,
                            List<CapitalAndInterestCashFlowDetail> capitalAndInterestCashFlowDetailList) {
-        this.cashFlowComparativeAnalysisList = cashFlowComparativeAnalysisList;
+        this.dateList = dateList;
+        this.cashList = cashList;
         this.capitalCashFlowDetailList = capitalCashFlowDetailList;
         this.interestCashFlowDetailList = interestCashFlowDetailList;
         this.capitalAndInterestCashFlowDetailList = capitalAndInterestCashFlowDetailList;
     }
 
-    public List<CashFlowComparativeAnalysisPoint> getCashFlowComparativeAnalysisList() {
-        return cashFlowComparativeAnalysisList;
+    public List<String> getDateList() {
+        return dateList;
+    }
+
+    public void setDateList(List<String> dateList) {
+        this.dateList = dateList;
+    }
+
+    public List<CashVO> getCashList() {
+        return cashList;
+    }
+
+    public void setCashList(List<CashVO> cashList) {
+        this.cashList = cashList;
     }
 
     public List<CapitalCashFlowDetail> getCapitalCashFlowDetailList() {
         return capitalCashFlowDetailList;
     }
 
+    public void setCapitalCashFlowDetailList(List<CapitalCashFlowDetail> capitalCashFlowDetailList) {
+        this.capitalCashFlowDetailList = capitalCashFlowDetailList;
+    }
+
     public List<InterestCashFlowDetail> getInterestCashFlowDetailList() {
         return interestCashFlowDetailList;
+    }
+
+    public void setInterestCashFlowDetailList(List<InterestCashFlowDetail> interestCashFlowDetailList) {
+        this.interestCashFlowDetailList = interestCashFlowDetailList;
     }
 
     public List<CapitalAndInterestCashFlowDetail> getCapitalAndInterestCashFlowDetailList() {
         return capitalAndInterestCashFlowDetailList;
     }
 
+    public void setCapitalAndInterestCashFlowDetailList(List<CapitalAndInterestCashFlowDetail> capitalAndInterestCashFlowDetailList) {
+        this.capitalAndInterestCashFlowDetailList = capitalAndInterestCashFlowDetailList;
+    }
 }

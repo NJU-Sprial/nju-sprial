@@ -1,5 +1,8 @@
 package po;
 
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -8,6 +11,8 @@ import java.io.Serializable;
  */
 @Entity
 @Table(name = "verification_code", schema = "sprial")
+@DynamicUpdate
+@DynamicInsert
 public class VerificationCodePO implements Serializable {
     private static final long serialVersionUID = -5025406318716780775L;
     private String email;

@@ -21,7 +21,7 @@ public class LoanDataTest {
 
     @Test
     public void test(){
-        System.out.println(loanDataService.clearProjectData("yinywf","就是测试一下"));
+        System.out.println(loanDataService.browseProject("yinywf","就是测试一下"));
     }
 
 }

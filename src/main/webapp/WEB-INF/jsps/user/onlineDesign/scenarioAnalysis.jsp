@@ -19,7 +19,7 @@
 <div class="container">
     <div class="top-margin ">
         <!-- 填参组件块 -->
-        <div class="col-md-5 bottom-margin">
+        <div class="col-md-4 bottom-margin">
             <!-- 用户输入套件，用dl包起来，实现纵向对齐 -->
             <dl class="dl-horizontal">
                 <div class="form-group">
@@ -81,106 +81,8 @@
             </div>
         </div>
         <!-- 分析结果显示组件块 -->
-        <div class="col-md-7">
-            <div id="chart" style="width: 650px;height:320px;"></div>
-            <script>
-                // 基于准备好的dom，初始化echarts实例
-                let myChartDom = document.getElementById('chart')
-                //自适应宽高
-//                function myChartPC() {
-//                    myChartDom.style.width = $(window).width() / 2 + 'px';
-//                    myChartDom.style.height = $(window).height() / 3 * 2 + 'px';
-//                };
-//                function myChartMobile() {
-//                    myChartDom.style.width = $(window).width() + 'px';
-//                    myChartDom.style.height = $(window).height() / 9 * 5 + 'px';
-//                }
-//                function myChartContainer() {
-//                    if (isMobileBrowser()) {
-//                        myChartMobile()
-//                    }
-//                    else {
-//                        myChartPC()
-//                    }
-//                }
-//                myChartContainer()
-                let myChart = echarts.init(myChartDom);
-
-                option = {
-                    title: {
-                        text: '现金流对比分析图',
-                        textStyle:{
-                            fontSize: 10
-                        }
-                    },
-                    tooltip: {
-                        trigger: 'axis'
-                    },
-                    legend: {
-                        data: ['邮件营销', '联盟广告', '视频广告', '直接访问', '搜索引擎']
-                    },
-                    grid: {
-                        left: '3%',
-                        right: '4%',
-                        bottom: '3%',
-                        containLabel: true
-                    },
-                    toolbox: {
-                        feature: {
-                            saveAsImage: {}
-                        }
-                    },
-                    xAxis: {
-                        type: 'category',
-                        boundaryGap: false,
-                        data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
-                    },
-                    yAxis: {
-                        name: '金额(万元)',
-                        type: 'value'
-                    },
-                    series: [
-                        {
-                            name: '邮件营销',
-                            type: 'line',
-                            stack: '总量',
-                            data: [120, 132, 101, 134, 90, 230, 210]
-                        },
-                        {
-                            name: '联盟广告',
-                            type: 'line',
-                            stack: '总量',
-                            data: [220, 182, 191, 234, 290, 330, 310]
-                        },
-                        {
-                            name: '视频广告',
-                            type: 'line',
-                            stack: '总量',
-                            data: [150, 232, 201, 154, 190, 330, 410]
-                        },
-                        {
-                            name: '直接访问',
-                            type: 'line',
-                            stack: '总量',
-                            data: [320, 332, 301, 334, 390, 330, 320]
-                        },
-                        {
-                            name: '搜索引擎',
-                            type: 'line',
-                            stack: '总量',
-                            data: [820, 932, 901, 934, 1290, 1330, 1320]
-                        }
-                    ]
-                };
-
-                // 使用刚指定的配置项和数据显示图表。
-                myChart.setOption(option)
-                //浏览器大小改变时重置大小
-                window.onresize = function () {
-                    myChartContainer();
-                    myChart.resize();
-                };
-            </script>
+        <div class="col-md-8">
+            <div id="chart" style="width: 780px;height:320px;"></div>
         </div>
     </div>
 
@@ -224,26 +126,27 @@
 <%@ include file="/WEB-INF/jsps/components/message.jsp" %>
 </body>
 
+<script src="/js/MobileIdentifier.js"></script>
 <script type="text/javascript">
     $(document).ready(function () {
         //每次选中项目名称变更时获取对应的所有资产包编号
         function pnameChange() {
             $.ajax({
-                    type: "post",
-                    async: true, //异步请求（同步请求将会锁住浏览器，用户其他操作必须等待请求完成才可以执行）
-                    url: "/user/onlineDesign/productDesign/scenarioAnalysis/packageNumbers", //请求发送到TestServlet处
-                    data: {
-                        "pname": $("#pname").val()
-                    },
-                    dataType: "json", //返回数据形式
-                    success: (result) = > {
+                type: "post",
+                async: true, //异步请求（同步请求将会锁住浏览器，用户其他操作必须等待请求完成才可以执行）
+                url: "/user/onlineDesign/productDesign/scenarioAnalysis/packageNumbers", //请求发送到TestServlet处
+                data: {
+                    "pname": $("#pname").val()
+                },
+                dataType: "json", //返回数据形式
+                success: (result) => {
                     //修改资产包编号的选项
                     $("#packageNumber").children().remove();
-            for (let index = 0; index < result.length; index++) {
-                $("#packageNumber").append("<option>" + result[index] + "</option>");
-            }
-        },
-        })
+                    for (let index = 0; index < result.length; index++) {
+                        $("#packageNumber").append("<option>" + result[index] + "</option>");
+                    }
+                },
+            })
             ;
         }
 
@@ -255,24 +158,100 @@
 
     function analysis() {
         $.ajax({
-                type: "post",
-                async: true, //异步请求（同步请求将会锁住浏览器，用户其他操作必须等待请求完成才可以执行）
-                url: "/user/onlineDesign/productDesign/scenarioAnalysis/analysis", //请求发送到TestServlet处
-                data: {
-                    "pname": $("#pname").val(),
-                    "packageNumber": $("#packageNumber").val(),
-                    "assessDate": $("#assessDate").val(),
-                    "TotalBreakOffRate": $("#TotalBreakOffRate").val(),
-                    "BreakOffCapitalRecoverRate": $("#BreakOffCapitalRecoverRate").val(),
-                },
-                dataType: "json", //返回数据形式
-                success: (result) = > {
+            type: "post",
+            async: true, //异步请求（同步请求将会锁住浏览器，用户其他操作必须等待请求完成才可以执行）
+            url: "/user/onlineDesign/productDesign/scenarioAnalysis/analysis", //请求发送到TestServlet处
+            data: {
+                "pname": $("#pname").val(),
+                "packageNumber": $("#packageNumber").val(),
+                "assessDate": $("#assessDate").val(),
+                "TotalBreakOffRate": $("#TotalBreakOffRate").val(),
+                "BreakOffCapitalRecoverRate": $("#BreakOffCapitalRecoverRate").val(),
+            },
+            dataType: "json", //返回数据形式
+            success: (result) => {
+                console.log(result);
                 addRow($("#capitalCashFlowDetail"), result.capitalCashFlowDetailList, "capitalCashFlow");
-        addRow($("#interestCashFlowDetail"), result.interestCashFlowDetailList, "interestCashFlow");
-        addRow($("#capitalAndInterestCashFlowDetail"), result.capitalAndInterestCashFlowDetailList, "capitalAndInterestCashFlow");
-    },
-    })
+                addRow($("#interestCashFlowDetail"), result.interestCashFlowDetailList, "interestCashFlow");
+                addRow($("#capitalAndInterestCashFlowDetail"), result.capitalAndInterestCashFlowDetailList, "capitalAndInterestCashFlow");
+                showLineChart(result.dateList, result.cashList);
+            },
+        })
         ;
+    }
+
+    function showLineChart(dateList, cashList) {
+
+        console.log(dateList);
+        console.log(cashList);
+        // 基于准备好的dom，初始化echarts实例
+        let myChartDom = document.getElementById('chart')
+//        自适应宽高
+        function myChartPC() {
+//            myChartDom.style.width = $(window).width() / 12 * 5 + 'px';
+//            myChartDom.style.height = $(window).height() / 3 * 2 + 'px';
+        };
+        function myChartMobile() {
+            myChartDom.style.width = $(window).width() + 'px';
+//            myChartDom.style.height = $(window).height() / 9 * 5 + 'px';
+        }
+
+        function myChartContainer() {
+            if (isMobileBrowser()) {
+                myChartMobile()
+            }
+            else {
+                myChartPC()
+            }
+        }
+
+        myChartContainer()
+        let myChart = echarts.init(myChartDom);
+
+
+        option = {
+            title: {
+                text: '现金流对比分析图',
+                textStyle: {
+                    fontSize: 10
+                }
+            },
+            tooltip: {
+                trigger: 'axis'
+            },
+            legend: {
+                data: ['邮件营销', '联盟广告', '视频广告', '直接访问', '搜索引擎']
+            },
+            grid: {
+                left: '3%',
+                right: '4%',
+                bottom: '3%',
+                containLabel: true
+            },
+            toolbox: {
+                feature: {
+                    saveAsImage: {}
+                }
+            },
+            xAxis: {
+                type: 'category',
+                boundaryGap: false,
+                data: dateList
+            },
+            yAxis: {
+                name: '金额(万元)',
+                type: 'value'
+            },
+            series: cashList
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option)
+        //浏览器大小改变时重置大小
+        window.onresize = function () {
+            myChartContainer();
+            myChart.resize();
+        };
     }
 
     function addRow(tbody, data, messageName) {

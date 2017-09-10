@@ -1,5 +1,8 @@
 package po;
 
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
+
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
@@ -8,6 +11,8 @@ import java.time.LocalDateTime;
  */
 @Entity
 @Table(name = "property_package", schema = "sprial")
+@DynamicUpdate
+@DynamicInsert
 public class PropertyPackagePO {
     private int propertyPackageId;
     private Integer projectId;
