@@ -1,5 +1,6 @@
 package dataservice;
 
+import enums.UserType;
 import po.UserDataPO;
 
 /**
@@ -60,4 +61,11 @@ public interface UserDataService {
      * @return
      */
     boolean checkAuthenticationCode(String email, String authCode);
+
+    /**
+     * 获取用户类型
+     * @param username 用户名
+     * @return 如果该用户不存在，返回null
+     */
+    UserType getUserType(String username);
 }

@@ -5,6 +5,7 @@ import constranst.SignUpCode;
 import dao.UserDao;
 import dataservice.UserDataService;
 import enums.UserState;
+import enums.UserType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -94,5 +95,14 @@ public class UserDataServiceImpl implements UserDataService{
         String md5 = DigestUtils.md5DigestAsHex(base.getBytes());
 
         return md5;
+    }
+
+    /**
+     * 获取用户类型
+     * @param username 用户名
+     * @return 如果该用户不存在，返回null
+     */
+    public UserType getUserType(String username){
+        return null;
     }
 }
