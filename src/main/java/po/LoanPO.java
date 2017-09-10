@@ -95,7 +95,7 @@ public class LoanPO implements Serializable {
     }
 
     @Basic
-    @Column(name = "property_package_id")
+    @Column(name = "property_package_id",updatable = false)
     public Integer getPropertyPackageId() {
         return propertyPackageId;
     }
@@ -105,7 +105,7 @@ public class LoanPO implements Serializable {
     }
 
     @Basic
-    @Column(name = "project_id")
+    @Column(name = "project_id",updatable = false)
     public Integer getProjectId() {
         return projectId;
     }
