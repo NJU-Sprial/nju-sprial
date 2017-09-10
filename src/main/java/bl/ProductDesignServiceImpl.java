@@ -49,7 +49,7 @@ public class ProductDesignServiceImpl implements ProductDesignService {
         List<String> res = new ArrayList<>();
         List<PropertyPackagePO> source = propertyPackageDataService.findPropertyPackage(username, pname);
         for(PropertyPackagePO po : source) {
-            res.add(po.getPackageNumber());
+            res.add(po.getPropertyPackageId()+"");
         }
         return res;
     }
