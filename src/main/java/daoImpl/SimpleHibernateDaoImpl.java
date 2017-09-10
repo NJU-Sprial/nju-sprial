@@ -88,9 +88,18 @@ public class SimpleHibernateDaoImpl<T, PK extends Serializable> implements dao.S
      * 保存新增或修改的对象.
      */
     @Override
-    public void save(final T entity) {;
+    public void save(final T entity) {
         getSession().saveOrUpdate(entity);
         logger.debug("save entity: {}", entity);
+    }
+
+    /**
+     * merge修改对象
+     */
+    @Override
+    public void merge(final T entity) {
+        getSession().merge(entity);
+        logger.debug("merge entity: {}",entity);
     }
 
     /**

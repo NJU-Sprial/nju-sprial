@@ -16,6 +16,8 @@ public interface SimpleHibernateDao<T, PK extends Serializable> {
 
     void save(T entity);
 
+    void merge(T entity);
+
     void delete(T entity);
 
     void delete(PK id);

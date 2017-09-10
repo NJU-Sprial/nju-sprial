@@ -66,7 +66,7 @@ public class LoanDataServiceImpl implements LoanDataService {
     public boolean alterLoan(String username, String projectName, List<LoanPO> loanPOList) {
         try {
             for(LoanPO loanPO:loanPOList){
-                loanDao.save(loanPO);
+                loanDao.merge(loanPO);
             }
         }catch (Exception e){
             return false;
