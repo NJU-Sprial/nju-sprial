@@ -1,16 +1,32 @@
 package data;
 
+import dao.*;
 import dataservice.LoanDataService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import po.LoanPO;
+import po.ProjectPO;
 
 import java.util.List;
 
 /**
  * Created by Water on 2017/9/5.
  */
-@Service
+@Service("LoanDataService")
+@Transactional
 public class LoanDataServiceImpl implements LoanDataService {
+    @Autowired
+    ProjectDao projectDao;
+    @Autowired
+    LoanDao loanDao;
+    @Autowired
+    ProductDao productDao;
+    @Autowired
+    UnissuedProductDao unissuedProductDao;
+    @Autowired
+    PropertyPackageDao propertyPackageDao;
+
     /**
      * 浏览某项目的贷款信息，一个项目包含至少一笔贷款
      *
@@ -20,7 +36,11 @@ public class LoanDataServiceImpl implements LoanDataService {
      */
     @Override
     public List<LoanPO> browseProject(String username, String pname) {
-        return null;
+        String hql = "from ProjectPO p where p.owner = ? and p.projectName = ?";
+        ProjectPO projectPO = projectDao.findUnique(hql,username,pname);
+        List<LoanPO> loanPOS = loanDao.find("from LoanPO where projectId = ? ",projectPO.getId());
+        return loanPOS;
+
     }
 
     /**
@@ -32,7 +52,7 @@ public class LoanDataServiceImpl implements LoanDataService {
      */
     @Override
     public LoanPO searchLoan(String username, String loanCode) {
-        return null;
+        return loanDao.get(loanCode);
     }
 
     /**
@@ -44,7 +64,15 @@ public class LoanDataServiceImpl implements LoanDataService {
      */
     @Override
     public boolean alterLoan(String username, String projectName, List<LoanPO> loanPOList) {
-        return false;
+        try {
+            for(LoanPO loanPO:loanPOList){
+                loanDao.save(loanPO);
+            }
+        }catch (Exception e){
+            return false;
+        }
+
+        return true;
     }
 
     /**
@@ -56,7 +84,13 @@ public class LoanDataServiceImpl implements LoanDataService {
      */
     @Override
     public boolean deleteLoan(String username, String loanCode) {
-        return false;
+        try {
+           loanDao.delete(loanCode);
+        }catch (Exception e){
+            return false;
+        }
+
+        return true;
     }
 
     /**
@@ -68,6 +102,22 @@ public class LoanDataServiceImpl implements LoanDataService {
      */
     @Override
     public boolean clearProjectData(String username, String pname) {
-        return false;
+        String hql = "from ProjectPO p where p.owner = ? and p.projectName = ?";
+        ProjectPO projectPO = projectDao.findUnique(hql,username,pname);
+        if (projectPO==null){
+            return false;
+        }
+        int projectId = projectPO.getId();
+        try {
+            projectDao.delete(projectId);
+            productDao.batchExecute("delete from ProductPO where projectId = ?",projectId);
+            unissuedProductDao.batchExecute("delete from UnissuedProductPO where projectId = ?",projectId);
+            propertyPackageDao.batchExecute("delete from PropertyPackagePO where projectId = ?",projectId);
+            loanDao.batchExecute("delete from LoanPO where projectId = ?",projectId);
+        }catch (Exception e){
+            e.printStackTrace();
+            return false;
+        }
+        return true;
     }
 }

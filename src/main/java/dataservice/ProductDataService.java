@@ -22,5 +22,5 @@ public interface ProductDataService {
      */
     List<RecruitmentSituationPO> getRecruitmentSituation(String username, String productID);
 
-    void test(ProductPO productPO);
+
 }

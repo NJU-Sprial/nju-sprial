@@ -159,7 +159,7 @@ public class SimpleHibernateDaoImpl<T, PK extends Serializable> implements dao.S
     @Override
     public List<T> findByProperty(final String propertyName, final Object value) {
         Assert.hasText(propertyName, "propertyName不能为空");
-        Criterion criterion = Restrictions.like(propertyName, (String) value,
+        Criterion criterion = Restrictions.like(propertyName, value.toString(),
                 MatchMode.ANYWHERE);
         return find(criterion);
     }
