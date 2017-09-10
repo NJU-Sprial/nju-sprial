@@ -207,11 +207,21 @@ public class OnlineDesignServiceImpl implements OnlineDesignService {
         if (propertyPackageVO == null)
             return false;
         PropertyPackagePO po = new PropertyPackagePO();
-        BeanUtils.copyProperties(propertyPackageVO, po, PropertyPackageVO.class);
+        System.out.println(propertyPackageVO.getPropertyPackageId());
+        BeanUtils.copyProperties(propertyPackageVO, po, "propertyNum","packageCapital","packageRate");
+
+        //vo转po的时候要单独设置propertypackageid
+        po.setPropertyPackageId(Integer.parseInt(propertyPackageVO.getPropertyPackageId()));
+
+        po.setPropertyNum(propertyPackageVO.getPropertyNum());
+        po.setPackageCapital(propertyPackageVO.getPackageCapital());
+        po.setPackageRate(propertyPackageVO.getPackageRate());
+
         //注意因为vopo不同 只对PO中的部分属性进行修改 详情参考vo的属性
         boolean result = propertyPackageDataService.alterPropertyPackage(username, po);
         return result;
     }
+
 
     /**
      * 删除一个资产包
@@ -219,6 +229,7 @@ public class OnlineDesignServiceImpl implements OnlineDesignService {
      * @param packageNumber
      * @return
      */
+    //untested 合伙人没删除
     @Override
     public boolean deletePropertyPackage(String username, String packageNumber) {
         return propertyPackageDataService.deletePropertyPackage(username, packageNumber);
@@ -257,25 +268,6 @@ public class OnlineDesignServiceImpl implements OnlineDesignService {
         return null;
     }
 
-    /**
-     * 根据项目名称、资产包编号、评估日期、累计违约率、违约本金回收率，返回项目情景信息包括现金流对比分析图、本金现金流明细、
-     * 利息现金流明细、本息现金流明细
-     *
-     * @param pname
-     * @param packageNumber
-     * @param assessDate
-     * @param TotalBreakOffRate
-     * @param BreakOffCapitalRecoverRate
-     * @return
-     * @see ProductDesign_ScenarioAnalysisServiceImpl
-     * @deprecated 该接口已移植到 ProductDesgin_ScenarioAnalysisService 中
-     */
-    @Override
-    public SceneAnalysisVO getSceneAnalysisVO(String username, String pname, String packageNumber, LocalDate assessDate, double TotalBreakOffRate, double BreakOffCapitalRecoverRate) {
-        PropertyPackagePO po = propertyPackageDataService.searchPropertyPackage(username, packageNumber);
-
-        return null;
-    }
 
     /**
      * TODO 算法
@@ -289,23 +281,6 @@ public class OnlineDesignServiceImpl implements OnlineDesignService {
     @Override
     public ProductStrategyVO getProductStrategy(String username, LocalDate startDate, LocalDate firstPayDate, LocalDate lawEndDate) {
         return null;
-    }
-
-    /**
-     * 保存产品方案,如果方案名已存在代表修改，如果未存在代表添加
-     *
-     * @param sname
-     * @param packageDate  封包日期
-     * @param startDate
-     * @param firstPayDate
-     * @param lawEndDate
-     * @return
-     * @see ProductDesign_ConceptualDesignServiceImpl
-     * @deprecated 该接口已移植到 ProductDesgin_ConceptualDesignService 中
-     */
-    @Override
-    public boolean saveProductStrategy(String username, String sname, LocalDate packageDate, LocalDate startDate, LocalDate firstPayDate, LocalDate lawEndDate) {
-        return false;
     }
 
     /**

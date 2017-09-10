@@ -15,9 +15,13 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 public class PropertyPackageVO {
     private String pname;
-    private String packageNumber;
+    private String propertyPackageId;
     private int propertyNum;
     private LocalDateTime packageDate;
     private double packageCapital;
     private double packageRate;
+
+    public void setPropertyPackageId(int value){
+        propertyPackageId = value+"";
+    }
 }

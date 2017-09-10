@@ -135,22 +135,6 @@ public interface OnlineDesignService {
                                             CycleUnit cycleUnit, int payDay, CashUnit cashUnit);
 
     /**
-     * 根据项目名称、资产包编号、评估日期、累计违约率、违约本金回收率，返回项目情景信息包括现金流对比分析图、本金现金流明细、
-     * 利息现金流明细、本息现金流明细
-     *
-     * @param pname
-     * @param packageNumber
-     * @param assessDate
-     * @param TotalBreakOffRate
-     * @param BreakOffCapitalRecoverRate
-     * @return
-     * @see ProductDesign_ScenarioAnalysisService
-     * @deprecated 该接口已移植到 ProductDesgin_ScenarioAnalysisService 中
-     */
-    public SceneAnalysisVO getSceneAnalysisVO(String username, String pname, String packageNumber, LocalDate assessDate,
-                                              double TotalBreakOffRate, double BreakOffCapitalRecoverRate);
-
-    /**
      * 根据成立日（起息日）、首次兑付日、法定到期日返回证券类型、试算优先级、证券简称、发行金额占比（%）、发行金额、付息频率、试算利率
      *
      * @param startDate
@@ -159,21 +143,6 @@ public interface OnlineDesignService {
      * @return
      */
     public ProductStrategyVO getProductStrategy(String username, LocalDate startDate, LocalDate firstPayDate, LocalDate lawEndDate);
-
-    /**
-     * 保存产品方案,如果方案名已存在代表修改，如果未存在代表添加
-     *
-     * @param sname
-     * @param packageDate  封包日期
-     * @param startDate
-     * @param firstPayDate
-     * @param lawEndDate
-     * @return
-     * @see ProductDesign_ConceptualDesignService
-     * @deprecated 该接口已移植到 ProductDesgin_ConceptualDesignService 中
-     */
-    public boolean saveProductStrategy(String username, String sname, LocalDate packageDate, LocalDate startDate,
-                                       LocalDate firstPayDate, LocalDate lawEndDate);
 
     /**
      * 判断是否有该项目

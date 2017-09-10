@@ -8,6 +8,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import po.LoanPO;
 import vo.LoanVO;
+import vo.PropertyPackageVO;
 
 import java.lang.reflect.Field;
 import java.time.LocalDateTime;
@@ -97,9 +98,46 @@ public class OnlineDesignServiceImplTest {
     @Test
     public void testClearProject() throws Exception{
         System.out.println("====delete project=====");
-        System.out.println("deleteProject:"+onlineDesignService.clearProjectData(username,"1"));
+        System.out.println("deleteProject:"+onlineDesignService.clearProjectData("a","a"));
     }
 
+    @Test
+    public void testSearchPropertyPackage() throws Exception{
+        System.out.println("====Test SearchPropertyPackage====");
+        PropertyPackageVO vo = onlineDesignService.searchPropertyPackage(username,"1");
+        printValues(new ArrayList<Object>(){
+            {
+                add(vo);
+            }
+        });
+    }
+
+    @Test
+    public void testAlterPropertyPackage() throws Exception{
+        System.out.println("====Test AlterPropertyPackage====");
+        PropertyPackageVO vo = onlineDesignService.searchPropertyPackage(username,"1");
+        System.out.println("vo.getPropertyPackageId() = " + vo.getPropertyPackageId());
+        vo.setPropertyNum(10);
+        System.out.println(onlineDesignService.alterPropertyPackage(username,vo));
+        vo = onlineDesignService.searchPropertyPackage(username,"1");
+        System.out.println("vo.getPropertyNum() = " + vo.getPropertyNum());
+    }
+
+    @Test
+    public void testTestProject() throws Exception{
+        System.out.println(onlineDesignService.testProject(username,pname));
+        System.out.println(onlineDesignService.testProject("a",pname));
+        System.out.println(onlineDesignService.testProject(username,"a"));
+    }
+
+    @Test
+    public void testGetProjectNameList()throws Exception{
+        List<String> names = onlineDesignService.getProjectNameList(username);
+        for (String name:names) {
+            System.out.println(name);
+        }
+    }
+//    @Test
     private void printValues(List<Object> oList) throws Exception{
         System.out.println("-----------------Test " + (testNumber++) + "-----------------");
         int position = 0;
