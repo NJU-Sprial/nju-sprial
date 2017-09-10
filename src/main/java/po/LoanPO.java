@@ -1,5 +1,8 @@
 package po;
 
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Timestamp;
@@ -11,6 +14,8 @@ import java.time.LocalDateTime;
  */
 @Entity
 @Table(name = "loan", schema = "sprial")
+@DynamicUpdate
+@DynamicInsert
 public class LoanPO implements Serializable {
     private static final long serialVersionUID = 8950856623294834521L;
     private String loanCode;
@@ -95,7 +100,7 @@ public class LoanPO implements Serializable {
     }
 
     @Basic
-    @Column(name = "property_package_id",updatable = false)
+    @Column(name = "property_package_id")
     public Integer getPropertyPackageId() {
         return propertyPackageId;
     }
@@ -105,7 +110,7 @@ public class LoanPO implements Serializable {
     }
 
     @Basic
-    @Column(name = "project_id",updatable = false)
+    @Column(name = "project_id")
     public Integer getProjectId() {
         return projectId;
     }

@@ -1,5 +1,8 @@
 package po;
 
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Timestamp;
@@ -9,7 +12,9 @@ import java.time.LocalDateTime;
  * Created by yinywf on 2017/9/7
  */
 @Entity
-@Table(name = "unissued_product", schema = "sprial", catalog = "")
+@Table(name = "unissued_product", schema = "sprial")
+@DynamicUpdate
+@DynamicInsert
 public class UnissuedProductPO implements Serializable {
     private static final long serialVersionUID = 7544833341521235276L;
     private int projectId;

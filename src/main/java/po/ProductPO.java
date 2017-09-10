@@ -1,11 +1,16 @@
 package po;
 
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "product", schema = "sprial")
+@DynamicUpdate
+@DynamicInsert
 public class ProductPO implements Serializable {
     private static final long serialVersionUID = 7899450049039588866L;
     private int productId;
