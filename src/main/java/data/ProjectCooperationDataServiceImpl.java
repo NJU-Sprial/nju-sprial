@@ -49,4 +49,14 @@ public class ProjectCooperationDataServiceImpl implements ProjectCooperationData
         }
         return true;
     }
+
+    /**
+     * 获得用户的所有项目名称
+     *
+     * @param username
+     * @return
+     */
+    @Override
+    public List<String> getProjectNameList(String username){
+        return null;};
 }
