@@ -24,14 +24,14 @@ import java.util.List;
 /**
  * Created by CYF on 2017/9/3.
  */
-@Service
-public class OnlineDesignServiceImpl implements OnlineDesignService{
+@Service("OnlineDesignService")
+public class OnlineDesignServiceImpl implements OnlineDesignService {
     private LoanDataService loanDataService;
     private PropertyPackageDataService propertyPackageDataService;
     private ProjectCooperationDataService projectCooperationDataService;
 
     @Autowired
-    public OnlineDesignServiceImpl(LoanDataService loanDataService, PropertyPackageDataService propertyPackageDataService,ProjectCooperationDataService projectCooperationDataService){
+    public OnlineDesignServiceImpl(LoanDataService loanDataService, PropertyPackageDataService propertyPackageDataService, ProjectCooperationDataService projectCooperationDataService) {
         this.loanDataService = loanDataService;
         this.propertyPackageDataService = propertyPackageDataService;
         this.projectCooperationDataService = projectCooperationDataService;
@@ -49,6 +49,7 @@ public class OnlineDesignServiceImpl implements OnlineDesignService{
      * @param file     数据文件
      * @return
      */
+    //untested
     @Override
     public boolean importBasicPropertyData(String username, String pname, String ptype, String pway, File file) {
         return false;
@@ -63,12 +64,15 @@ public class OnlineDesignServiceImpl implements OnlineDesignService{
     @Override
     public List<LoanVO> browseProject(String username, String pname) {
         List<LoanPO> loanPOList = loanDataService.browseProject(username, pname);
+        if (loanPOList == null) {
+            return new ArrayList<LoanVO>();
+        }
         List<LoanVO> loanVOList = new ArrayList<>();
-        for (LoanPO po:loanPOList) {
+        for (LoanPO po : loanPOList) {
             LoanVO vo = new LoanVO();
             //Any bean properties that the source bean exposes but the target bean does not
             // will silently be ignored.
-            BeanUtils.copyProperties(po,vo);
+            BeanUtils.copyProperties(po, vo);
             loanVOList.add(vo);
         }
         return loanVOList;
@@ -84,7 +88,8 @@ public class OnlineDesignServiceImpl implements OnlineDesignService{
     public LoanVO searchLoan(String username, String loanCode) {
         LoanPO po = loanDataService.searchLoan(username, loanCode);
         LoanVO vo = new LoanVO();
-        BeanUtils.copyProperties(po,vo);
+        if (po != null)
+            BeanUtils.copyProperties(po, vo);
         return vo;
     }
 
@@ -96,15 +101,20 @@ public class OnlineDesignServiceImpl implements OnlineDesignService{
      */
     @Override
     public boolean alterLoan(String username, String projectName, List<LoanVO> loanVOList) {
+        if (loanVOList == null) {
+            return true;
+        }
         List<LoanPO> poList = new ArrayList<>();
-        for (LoanVO vo:loanVOList) {
+        for (LoanVO vo : loanVOList) {
             LoanPO po = new LoanPO();
-            BeanUtils.copyProperties(vo,po,LoanVO.class);
+            BeanUtils.copyProperties(vo, po, "balance","rate");
+            po.setBalance(vo.getBalance());
+            po.setRate(vo.getRate());
             poList.add(po);
         }
         //因为loanvo缺少loanpo的propertyPackageId属性
         //因此在下面的操作中不要更改propertypackageID这一列属性
-        boolean result = loanDataService.alterLoan(username,projectName, poList);
+        boolean result = loanDataService.alterLoan(username, projectName, poList);
         return result;
     }
 
@@ -124,10 +134,12 @@ public class OnlineDesignServiceImpl implements OnlineDesignService{
      * TODO
      * 目前待定，需求不明
      * “批量导入”：导入批量文件，提供下载数据模板，供券商填写后批量导入数据
+     *
      * @param pname
      * @param loanVOList
      * @return
      */
+    //untested
     @Override
     public boolean addMultiplePropertyData(String username, String pname, List<LoanVO> loanVOList) {
         return false;
@@ -135,6 +147,7 @@ public class OnlineDesignServiceImpl implements OnlineDesignService{
 
     /**
      * 数据清空，选择项目名称，删除整个项目及该项目资产池所有数据，包括基础资产数据、资产包、产品设计方案等等
+     *
      * @param pname
      * @return
      */
@@ -148,13 +161,15 @@ public class OnlineDesignServiceImpl implements OnlineDesignService{
      * TODO
      * 资产包创建,后台自动根据模型筛选基础资产，生成资产包，并自动生成资产包编号、资产数量、封包日期、资产包封包本金金额、封包利率
      * 每个项目最多只能有5个资产包 后端判断
+     *
      * @param pname
      * @return
      */
+    // untested
     @Override
     public CreatePropertyPackageResult createPropertyPackage(String username, String pname) {
-        boolean hasSame = propertyPackageDataService.testPropertyPackageName(username,pname);
-        if(!hasSame){
+        boolean hasSame = propertyPackageDataService.testPropertyPackageName(username, pname);
+        if (!hasSame) {
             return CreatePropertyPackageResult.HASSAMENAME;
         }
         PropertyPackagePO po = new PropertyPackagePO();
@@ -168,6 +183,7 @@ public class OnlineDesignServiceImpl implements OnlineDesignService{
 
     /**
      * 根据资产包编号搜索资产包并返回资产包信息
+     *
      * @param packageNumber
      * @return
      */
@@ -175,19 +191,23 @@ public class OnlineDesignServiceImpl implements OnlineDesignService{
     public PropertyPackageVO searchPropertyPackage(String username, String packageNumber) {
         PropertyPackagePO po = propertyPackageDataService.searchPropertyPackage(username, packageNumber);
         PropertyPackageVO vo = new PropertyPackageVO();
-        BeanUtils.copyProperties(po,vo,PropertyPackageVO.class);
+        if (po != null)
+            BeanUtils.copyProperties(po, vo, PropertyPackageVO.class);
         return vo;
     }
 
     /**
      * 修改资产包信息
+     *
      * @param propertyPackageVO
      * @return
      */
     @Override
     public boolean alterPropertyPackage(String username, PropertyPackageVO propertyPackageVO) {
+        if (propertyPackageVO == null)
+            return false;
         PropertyPackagePO po = new PropertyPackagePO();
-        BeanUtils.copyProperties(propertyPackageVO,po,PropertyPackageVO.class);
+        BeanUtils.copyProperties(propertyPackageVO, po, PropertyPackageVO.class);
         //注意因为vopo不同 只对PO中的部分属性进行修改 详情参考vo的属性
         boolean result = propertyPackageDataService.alterPropertyPackage(username, po);
         return result;
@@ -195,6 +215,7 @@ public class OnlineDesignServiceImpl implements OnlineDesignService{
 
     /**
      * 删除一个资产包
+     *
      * @param packageNumber
      * @return
      */
@@ -231,7 +252,7 @@ public class OnlineDesignServiceImpl implements OnlineDesignService{
      */
     @Override
     public CashFlowDataVO getCashFlowDataVO(String username, String pname, String packageNumber, int cycle, CycleUnit cycleUnit, int payDay, CashUnit cashUnit) {
-        PropertyPackagePO po = propertyPackageDataService.searchPropertyPackage(username,packageNumber);
+        PropertyPackagePO po = propertyPackageDataService.searchPropertyPackage(username, packageNumber);
 
         return null;
     }
@@ -246,13 +267,12 @@ public class OnlineDesignServiceImpl implements OnlineDesignService{
      * @param TotalBreakOffRate
      * @param BreakOffCapitalRecoverRate
      * @return
-     *
-     * @deprecated 该接口已移植到 ProductDesgin_ScenarioAnalysisService 中
      * @see ProductDesign_ScenarioAnalysisServiceImpl
+     * @deprecated 该接口已移植到 ProductDesgin_ScenarioAnalysisService 中
      */
     @Override
     public SceneAnalysisVO getSceneAnalysisVO(String username, String pname, String packageNumber, LocalDate assessDate, double TotalBreakOffRate, double BreakOffCapitalRecoverRate) {
-        PropertyPackagePO po = propertyPackageDataService.searchPropertyPackage(username,packageNumber);
+        PropertyPackagePO po = propertyPackageDataService.searchPropertyPackage(username, packageNumber);
 
         return null;
     }
@@ -271,7 +291,7 @@ public class OnlineDesignServiceImpl implements OnlineDesignService{
         return null;
     }
 
-     /**
+    /**
      * 保存产品方案,如果方案名已存在代表修改，如果未存在代表添加
      *
      * @param sname
@@ -280,9 +300,8 @@ public class OnlineDesignServiceImpl implements OnlineDesignService{
      * @param firstPayDate
      * @param lawEndDate
      * @return
-     *
-     * @deprecated 该接口已移植到 ProductDesgin_ConceptualDesignService 中
      * @see ProductDesign_ConceptualDesignServiceImpl
+     * @deprecated 该接口已移植到 ProductDesgin_ConceptualDesignService 中
      */
     @Override
     public boolean saveProductStrategy(String username, String sname, LocalDate packageDate, LocalDate startDate, LocalDate firstPayDate, LocalDate lawEndDate) {
@@ -292,13 +311,14 @@ public class OnlineDesignServiceImpl implements OnlineDesignService{
     /**
      * 判断是否有该项目
      * 如果有该名字的项目 返回true
+     *
      * @param username
      * @param projectName
      * @return
      */
     @Override
-    public boolean testProject(String username, String projectName){
-        boolean hasPackage = projectCooperationDataService.testProject(username,projectName);
+    public boolean testProject(String username, String projectName) {
+        boolean hasPackage = projectCooperationDataService.testProject(username, projectName);
         return hasPackage;
     }
 }
