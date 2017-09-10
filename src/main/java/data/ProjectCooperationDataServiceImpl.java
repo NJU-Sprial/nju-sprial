@@ -35,4 +35,15 @@ public class ProjectCooperationDataServiceImpl implements ProjectCooperationData
      */
     @Override
     public boolean testProject(String username, String projectName){return false;};
+
+
+    /**
+     * 获得用户的所有项目名称
+     *
+     * @param username
+     * @return
+     */
+    @Override
+    public List<String> getProjectNameList(String username){
+        return null;};
 }

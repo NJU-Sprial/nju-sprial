@@ -321,4 +321,15 @@ public class OnlineDesignServiceImpl implements OnlineDesignService {
         boolean hasPackage = projectCooperationDataService.testProject(username, projectName);
         return hasPackage;
     }
+
+    /**
+     * 获得用户的所有项目名称
+     *
+     * @param username
+     * @return
+     */
+    @Override
+    public List<String> getProjectNameList(String username){
+        return projectCooperationDataService.getProjectNameList(username);
+    }
 }

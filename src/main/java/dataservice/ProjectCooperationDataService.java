@@ -25,4 +25,12 @@ public interface ProjectCooperationDataService {
      * @return
      */
     public boolean testProject(String username, String projectName);
+
+    /**
+     * 获得用户的所有项目名称
+     *
+     * @param username
+     * @return
+     */
+    public List<String> getProjectNameList(String username);
 }
