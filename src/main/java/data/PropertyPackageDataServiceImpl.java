@@ -28,7 +28,6 @@ public class PropertyPackageDataServiceImpl implements PropertyPackageDataServic
     @Autowired
     ProjectDao projectDao;
     /**
-     * TODO
      * 资产包创建,后台自动根据模型筛选基础资产，生成资产包，并自动生成资产包编号、资产数量、封包日期、资产包封包本金金额、封包利率
      * 每个项目最多只能有5个资产包 后端判断
      * ***需要判断资产包是否超过5个***
@@ -40,7 +39,16 @@ public class PropertyPackageDataServiceImpl implements PropertyPackageDataServic
      */
     @Override
     public CreatePropertyPackageResult createPropertyPackage(String username, PropertyPackagePO po) {
-        return null;
+        if(!testPropertyPackageName(username,po.getPackageName())){
+            return CreatePropertyPackageResult.HASSAMENAME;
+        }
+        List<PropertyPackagePO> propertyPackagePOS = propertyPackageDao.find("from PropertyPackagePO where projectId = ? ",po.getProjectId());
+        if (propertyPackagePOS.size()<5){
+            propertyPackageDao.save(po);
+            return CreatePropertyPackageResult.SUCCESS;
+        }
+
+        return CreatePropertyPackageResult.EXCEEDFIVE;
     }
 
     /**
