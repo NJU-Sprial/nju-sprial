@@ -32,6 +32,7 @@ public class ProductDesign_ConceptualDesignServiceImpl implements ProductDesign_
      */
     @Override
     public ConceptualVO getConceptual(String username, String pname, String packageNumber) {
+        // TODO 改接口
         return unissuedProductDataService.getConceptual(username, pname, packageNumber);
     }
 
@@ -51,6 +52,7 @@ public class ProductDesign_ConceptualDesignServiceImpl implements ProductDesign_
      * @param conceptualVO 方案的信息
      * @return 成功返回true，失败返回false
      * @throws ErrorParamException 有任何参数不正确时
+     *  TODO 改接口
      */
     @Override
     public boolean saveProductStrategy(ConceptualVO conceptualVO) throws ErrorParamException {
