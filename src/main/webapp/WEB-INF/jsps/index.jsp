@@ -19,7 +19,7 @@
             <span></span>
         </div>
     </div>
-    <%@ include file="/WEB-INF/jsps/components/top_components.jsp" %>
+    <%@ include file="/WEB-INF/jsps/components/top_components2.jsp" %>
     <!-- START REVOLUTION SLIDER 5.4.2 auto mode -->
     <div id="banner-container" class="rev_slider_wrapper fullwidthbanner-container" data-alias="classic4export"
          data-source="gallery"

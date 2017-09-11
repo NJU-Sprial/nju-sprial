@@ -706,7 +706,7 @@ h4 { font-size: 14px; line-height: 14px; }
 
 #mainnav .menu > li > a {
 	line-height: 92px;
-	display: inline-block;
+	/*display: inline-block;*/
 	padding: 0 19.5px;
 	color: #424242;
 	font-weight: 600;
@@ -718,7 +718,7 @@ h4 { font-size: 14px; line-height: 14px; }
 }
 
 #mainnav .menu > li:last-child a {
-	padding-right: 0;
+	/*padding-right: 0;*/
 }
 
 #mainnav .menu > li a i.fa {
@@ -3565,4 +3565,20 @@ article.post .content-post {
 
 .sw-odd .sw-image .sw-buy:hover {
 	background: #2e363a;
+}
+
+.main-header {
+	min-height: 86px;
+	z-index: 9999;
+	width: 100%;
+	position: relative;
+	background:#323B44;
+	-webkit-box-shadow: 0 3px 3px -3px rgba(0,0,0,0.2);
+	box-shadow: 0 3px 3px -3px rgba(0,0,0,0.2);
+}
+
+.main-header {
+	display: block;
+	position: relative;
+	text-align: left;
 }
