@@ -30,6 +30,8 @@
 
     <link rel="stylesheet" type="text/css" href="/css/sprial.css"/>
 
+    <link rel="stylesheet" type="text/css" href="/css/superfish.css"/>
+
     <script src="/js/jquery.min.js" type="text/javascript"></script>
     <script src="/js/jquery.cookie.js" type="text/javascript"></script>
     <script src="/js/jquery.easing.js" type="text/javascript"></script>
@@ -40,5 +42,6 @@
     <script src="/js/owl.carousel.js" type="text/javascript"></script>
     <script src="/js/waypoints.min.js" type="text/javascript"></script>
     <script src="/js/sprial.js" type="text/javascript"></script>
+    <script src="/js/superfish.js" type="text/javascript"></script>
     <%--<script src="/js/main.js" type="text/javascript"></script>--%>
 </head>
