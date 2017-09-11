@@ -33,4 +33,6 @@ public interface ProjectCooperationDataService {
      * @return
      */
     public List<String> getProjectNameList(String username);
+
+    String getProjectId(String username, String pname);
 }
