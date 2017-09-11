@@ -52,10 +52,11 @@ public class ProductDesign_ConceptualDesignServiceImpl implements ProductDesign_
      * @param conceptualVO 方案的信息
      * @return 成功返回true，失败返回false
      * @throws ErrorParamException 有任何参数不正确时
+     * @see po.UnissuedProductPO
      *  TODO 改接口
      */
     @Override
     public boolean saveProductStrategy(ConceptualVO conceptualVO) throws ErrorParamException {
-        return unissuedProductDataService.saveProductStrategy(conceptualVO);
+        return false;
     }
 }

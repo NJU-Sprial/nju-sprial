@@ -1,18 +1,24 @@
 package vo;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 /**
  * Created by zjy on 2017/9/5.
  * 产品在线设计>产品设计>方案设计 的一个方案的信息
  */
+@Data
+@NoArgsConstructor
 public class ConceptualVO {
 
     private String username;
     private String pname;
     private String packageNumber;
     private String sname;
-    private LocalDate packageDate;
+    private LocalDateTime packageDate;
     private LocalDate startDate;
     private LocalDate firstPayDate;
     private LocalDate lawEndDate;
@@ -29,7 +35,7 @@ public class ConceptualVO {
      * @param lawEndDate 法定到期日
      */
     public ConceptualVO(String username, String pname, String packageNumber, String sname,
-                        LocalDate packageDate, LocalDate startDate, LocalDate firstPayDate, LocalDate lawEndDate) {
+                        LocalDateTime packageDate, LocalDate startDate, LocalDate firstPayDate, LocalDate lawEndDate) {
         this.username = username;
         this.pname = pname;
         this.packageNumber = packageNumber;
@@ -56,7 +62,7 @@ public class ConceptualVO {
         return sname;
     }
 
-    public LocalDate getPackageDate() {
+    public LocalDateTime getPackageDate() {
         return packageDate;
     }
 
