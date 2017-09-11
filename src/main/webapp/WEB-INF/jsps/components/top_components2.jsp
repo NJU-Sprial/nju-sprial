@@ -44,7 +44,7 @@
                         <nav id="mainnav" class="collapse navbar-collapse menu">
                             <ul class="nav navbar-nav sf-menu menu">
                                 <li>
-                                    <a id="current" href="index-2.html">
+                                    <a id="current" href="/">
                                         首页
                                     </a>
                                 </li>
@@ -53,8 +53,8 @@
                                         产品在线设计
                                     </a>
                                     <ul>
-                                        <li><a href="shortcodes.html" class="sf-with-ul">数据导入</a></li>
-                                        <li><a href="icons.html" class="sf-with-ul">浏览维护</a></li>
+                                        <li><a href="/user/onlineDesign/importData" class="sf-with-ul">数据导入</a></li>
+                                        <li><a href="/user/onlineDesign/browseAndKeep" class="sf-with-ul">浏览维护</a></li>
 
                                     </ul>
                                 </li>
@@ -65,7 +65,7 @@
                                         </span>
                                     </a>
                                     <ul>
-                                        <li><a href="about.html" class="sf-with-ul">项目列表</a></li>
+                                        <li><a href="#" class="sf-with-ul">项目列表</a></li>
 
                                     </ul>
                                 </li>
@@ -76,7 +76,7 @@
                                         </span>
                                     </a>
                                     <ul>
-                                        <li><a href="portfolio-two.html" class="sf-with-ul">管理产品列表</a></li>
+                                        <li><a href="/user/ManagementPlatform" class="sf-with-ul">管理产品列表</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="contact.html">注销</a></li>
