@@ -107,7 +107,7 @@
                                         <li><a href="/user/ManagementPlatform" class="sf-with-ul">管理产品列表</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="contact.html">注销</a></li>
+                                <li><a href="/logout">注销</a></li>
                                 <% } %>
                             </ul>
                         </nav>
