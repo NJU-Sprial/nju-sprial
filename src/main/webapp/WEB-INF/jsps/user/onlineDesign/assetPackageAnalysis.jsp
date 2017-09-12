@@ -5,7 +5,7 @@
   Time: 11:27
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <!--[if IE 8 ]><html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US"> <![endif]-->
 <!--[if (gte IE 9)|!(IE)]><!-->
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US"><!--<![endif]-->
@@ -13,9 +13,9 @@
 <%@ include file="/WEB-INF/jsps/components/head.jsp" %>
 
 <head>
-    <link rel="stylesheet" type="text/css" href="../../css/demo.css">
+    <link rel="stylesheet" type="text/css" href="/css/demo.css">
 
-    <link rel="stylesheet" type="text/css" href="../../css/assetpackage.css">
+    <link rel="stylesheet" type="text/css" href="/css/assetpackage.css">
 </head>
 <body>
 <%@ include file="/WEB-INF/jsps/components/top_components.jsp" %>
@@ -1069,12 +1069,11 @@
 </div> <!-- /.boxed -->
 
 <!-- Javascript -->
-<script type="text/javascript" src="../../js/main.js"></script>
-<script type="text/javascript" src="../../js/jquery.easydropdown.min.js"></script>
-<script type="text/javascript" src="../../js/echarts.min.js"></script>
-<script type="text/javascript" src="../../charts/packageAnalysisPieChart.js"></script>
-<script type="text/javascript" src="../../js/assetpackage.js"></script>
-<script type="text/javascript" src="../../js/packageAnalysis.js"></script>
+<script type="text/javascript" src="/js/jquery.easydropdown.min.js"></script>
+<script type="text/javascript" src="/js/echarts.min.js"></script>
+<script type="text/javascript" src="/charts/packageAnalysisPieChart.js"></script>
+<script type="text/javascript" src="/js/assetpackage.js"></script>
+<script type="text/javascript" src="/js/packageAnalysis.js"></script>
 </body>
 </html>
 

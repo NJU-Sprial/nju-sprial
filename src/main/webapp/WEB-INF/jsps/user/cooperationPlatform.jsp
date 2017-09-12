@@ -63,28 +63,6 @@
                                 </span></td>
                             </tr>
                         </c:forEach>
-
-                        <%--<tr>--%>
-                            <%--<td class="contentFontSize">源计划</td>--%>
-                            <%--<td class="contentFontSize">基础资产导入</td>--%>
-                            <%--<td class="contentFontSize">--%>
-                                <%--<div>刘某 男 工商银行 保安</div><div>刘某 男 工商银行 保安</div><div>刘某 男 工商银行 保安</div><div>刘某 男 工商银行 保安</div></td>--%>
-                            <%--<td><button class="cooperationConfirmButton">确认发行</button></td>--%>
-                            <%--<td><span>--%>
-                                        <%--<button class="cooperationFileButton">文件下载</button>--%>
-                                        <%--<button class="cooperationFileButton">文件上传</button>--%>
-                                <%--</span></td>--%>
-                        <%--</tr>--%>
-                        <%--<tr>--%>
-                            <%--<td class="contentFontSize">源计划</td>--%>
-                            <%--<td class="contentFontSize">基础资产导入</td>--%>
-                            <%--<td class="contentFontSize">刘某 男 工商银行 保安</td>--%>
-                            <%--<td><button class="cooperationConfirmButton">确认发行</button></td>--%>
-                            <%--<td><span>--%>
-                                        <%--<button class="cooperationFileButton">文件下载</button>--%>
-                                        <%--<button class="cooperationFileButton">文件上传</button>--%>
-                                <%--</span></td>--%>
-                        <%--</tr>--%>
                         </tbody>
                     </table>
                 </div> <!-- /.col-md-10 -->

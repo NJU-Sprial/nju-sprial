@@ -72,10 +72,10 @@
                                                 资产包管理
                                             </a>
                                             <ul>
-                                                <li><a href="#" class="sf-with-ul">资产包创建</a></li>
-                                                <li><a href="#" class="sf-with-ul">浏览维护</a></li>
-                                                <li><a href="#" class="sf-with-ul">统计分析</a></li>
-                                                <li><a href="#" class="sf-with-ul">现金流测算</a></li>
+                                                <li><a href="/user/onlineDesign/packageManage/packageCreate" class="sf-with-ul">资产包创建</a></li>
+                                                <li><a href="/user/onlineDesign/packageManage/packageBrowse" class="sf-with-ul">浏览维护</a></li>
+                                                <li><a href="/user/onlineDesign/packageManage/packageAnalysis" class="sf-with-ul">统计分析</a></li>
+                                                <li><a href="/user/onlineDesign/packageManage/packageMeasure" class="sf-with-ul">现金流测算</a></li>
                                             </ul>
                                         </li>
                                         <li>
