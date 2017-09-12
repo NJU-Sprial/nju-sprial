@@ -1,11 +1,15 @@
 package bl;
 
-import blservice.PackageCreateService;
-import vo.AssetPackageVO;
+import blservice.PackageMeasureService;
+import org.springframework.stereotype.Service;
+import vo.CashFlowDataVO;
 
-public class PackageMeasureServiceImpl implements PackageCreateService{
+import java.util.Date;
+
+@Service
+public class PackageMeasureServiceImpl implements PackageMeasureService {
     @Override
-    public AssetPackageVO createPackage(String username, String projectName) {
+    public CashFlowDataVO getCashFlowData(String username, String projectName, String packageId, String cycle, Date pay, String unit) {
         return null;
     }
 }
