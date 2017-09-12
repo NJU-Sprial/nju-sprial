@@ -64,7 +64,7 @@
                                             <ul>
                                                 <li><a href="/user/onlineDesign/importData" class="sf-with-ul">数据导入</a></li>
                                                 <li><a href="/user/onlineDesign/browseAndKeep" class="sf-with-ul">浏览维护</a></li>
-                                                <li><a href="/user/onlineDesign/importData" class="sf-with-ul">数据追加</a></li>
+                                                <li><a href="/user/onlineDesign/addMoreData" class="sf-with-ul">数据追加</a></li>
                                             </ul>
                                         </li>
                                         <li>
