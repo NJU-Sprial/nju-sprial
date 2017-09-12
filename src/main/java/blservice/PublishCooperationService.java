@@ -1,5 +1,7 @@
 package blservice;
 
+import enums.LoanType;
+import enums.UploadResult;
 import vo.ProjectCooperationVO;
 
 import java.io.File;
@@ -26,8 +28,8 @@ public interface PublishCooperationService {
 
     /**
      * 上传项目文件
-     * @return 上传是否成功
+     * @return 上传是否成功,如果失败将返回失败原因
      */
-    public boolean uploadProjectFile(String projectID, File file);
+    public UploadResult uploadProjectFile(String projectID, File file, LoanType loanType);
 
 }
