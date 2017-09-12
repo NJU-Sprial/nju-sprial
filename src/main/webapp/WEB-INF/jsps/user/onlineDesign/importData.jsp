@@ -56,7 +56,7 @@
 
                 <div class="col-md-10">
                     <div class="flat-form-info">
-                        <form action="/user/onlineDesign/browseAndKeepAfterAddProject" method="post" class="form-info">
+                        <form id="form" action="/user/onlineDesign/browseAndKeepAfterAddProject" method="post" class="form-info">
                             <div class="v3">
                                 <p class="input-info"><input type="text" name="pname" value="" placeholder="项目名称">
                                 </p>
@@ -139,10 +139,10 @@
     function fileChange() {
         if ($("#input-file").val() === '') {
             $("#form .help-block").text('添加一个XML文件');
-            $("#form > div > button").attr('disabled', true);
+            $("#submit-button").attr('disabled', true);
         } else {
             $("#form .help-block").text($("#input-file").get(0).files[0].name);
-            $("#form > div > button").attr('disabled', false);
+            $("#submit-button").attr('disabled', false);
         }
     }
 

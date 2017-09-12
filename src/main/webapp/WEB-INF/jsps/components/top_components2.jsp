@@ -48,6 +48,10 @@
                                         首页
                                     </a>
                                 </li>
+                                <% if (session.getAttribute(WebSecurityConfig.SESSION_KEY)==null) { %>
+                                <li><a href="/login" title="">登录</a></li>
+
+                                <% } else { %>
                                 <li>
                                     <a href="#" class="sf-with-ul">
                                         产品在线设计
@@ -80,6 +84,7 @@
                                     </ul>
                                 </li>
                                 <li><a href="contact.html">注销</a></li>
+                                <% } %>
                             </ul>
                         </nav>
 
