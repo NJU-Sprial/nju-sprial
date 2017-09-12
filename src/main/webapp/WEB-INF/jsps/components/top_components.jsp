@@ -57,8 +57,36 @@
                                         产品在线设计
                                     </a>
                                     <ul>
-                                        <li><a href="/user/onlineDesign/importData" class="sf-with-ul">数据导入</a></li>
-                                        <li><a href="/user/onlineDesign/browseAndKeep" class="sf-with-ul">浏览维护</a></li>
+                                        <li>
+                                            <a href="#" class="sf-with-ul">
+                                                资产池管理
+                                            </a>
+                                            <ul>
+                                                <li><a href="/user/onlineDesign/importData" class="sf-with-ul">数据导入</a></li>
+                                                <li><a href="/user/onlineDesign/browseAndKeep" class="sf-with-ul">浏览维护</a></li>
+                                                <li><a href="/user/onlineDesign/importData" class="sf-with-ul">数据追加</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="sf-with-ul">
+                                                资产包管理
+                                            </a>
+                                            <ul>
+                                                <li><a href="#" class="sf-with-ul">资产包创建</a></li>
+                                                <li><a href="#" class="sf-with-ul">浏览维护</a></li>
+                                                <li><a href="#" class="sf-with-ul">统计分析</a></li>
+                                                <li><a href="#" class="sf-with-ul">现金流测算</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="sf-with-ul">
+                                                产品设计
+                                            </a>
+                                            <ul>
+                                                <li><a href="#" class="sf-with-ul">项目情景</a></li>
+                                                <li><a href="#" class="sf-with-ul">方案设计</a></li>
+                                            </ul>
+                                        </li>
 
                                     </ul>
                                 </li>
