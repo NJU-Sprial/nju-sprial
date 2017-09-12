@@ -1,12 +1,12 @@
 <%@ page import="web.security.WebSecurityConfig" %><%--
   Created by IntelliJ IDEA.
   User: 铠联
-  Date: 2017/9/10
-  Time: 16:56
+  Date: 2017/9/5
+  Time: 16:33
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8" %>
+         pageEncoding="UTF-8"%>
 <div class="top">
     <div class="container">
         <div class="row">
@@ -23,8 +23,7 @@
             </div>
         </div>
     </div>
-</div>
-<!-- /.top -->
+</div><!-- /.top -->
 <header id="header" class="header bg-color">
     <div class="container">
         <div class="row">
@@ -37,89 +36,42 @@
                     </div><!-- /#logo -->
                 </div><!-- /.col-md-2 -->
                 <div class="col-md-10">
+                    <div class="flat-show-search">
+                        <div class="show-search">
+                            <a href="#"><i class="fa fa-search"></i></a>
+                        </div>
+                        <div class="top-search">
+                            <form action="#" id="searchform-all" method="get">
+                                <div>
+                                    <input type="text" id="s" class="sss" placeholder="Search..."/>
+                                    <input type="submit" value="" id="searchsubmit"/>
+                                </div>
+                            </form>
+                        </div> <!-- /.top-search -->
+                    </div>    <!-- /.flat-show-search -->
                     <div class="nav-wrap">
                         <div class="btn-menu">
                             <span></span>
                         </div><!-- //mobile menu button -->
-                        <nav id="mainnav" class="collapse navbar-collapse menu">
-                            <ul class="nav navbar-nav sf-menu menu">
-                                <li>
-                                    <a id="current" href="/">
-                                        首页
-                                    </a>
-                                </li>
+                        <nav id="mainnav" class="mainnav">
+                            <ul class="menu">
+                                <li><a href="/" title="">首页</a></li>
+
                                 <% if (session.getAttribute(WebSecurityConfig.SESSION_KEY)==null) { %>
                                 <li><a href="/login" title="">登录</a></li>
 
                                 <% } else { %>
-                                <li>
-                                    <a href="#" class="sf-with-ul">
-                                        产品在线设计
-                                    </a>
-                                    <ul>
-                                        <li><a href="/user/onlineDesign/importData" class="sf-with-ul">数据导入</a></li>
-                                        <li><a href="/user/onlineDesign/browseAndKeep" class="sf-with-ul">浏览维护</a></li>
-
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#" class="sf-with-ul">
-                                        发行协作平台
-                                        <i class="icon-angle-down "></i>
-                                        </span>
-                                    </a>
-                                    <ul>
-                                        <li><a href="#" class="sf-with-ul">项目列表</a></li>
-
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#" class="sf-with-ul">
-                                        募集期管理平台
-                                        <i class="icon-angle-down "></i>
-                                        </span>
-                                    </a>
-                                    <ul>
-                                        <li><a href="/user/ManagementPlatform" class="sf-with-ul">管理产品列表</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="contact.html">注销</a></li>
+                                <li><a href="/user/onlineDesign/importData" title="">产品在线设计</a></li>
+                                <li><a href="#" title="">发行协作平台</a></li>
+                                <li><a href="/user/ManagementPlatform" title="">募集期管理平台</a></li>
+                                <li><a href="/logout" title="">注销</a></li>
                                 <% } %>
-                            </ul>
-                        </nav>
 
-                        <%--<nav id="mainnav" class="mainnav">--%>
-                        <%--<ul class="nav navbar-nav sf-menu">--%>
-                        <%--<li><a href="/" title="">首页</a></li>--%>
-
-                        <%--<% if (session.getAttribute(WebSecurityConfig.SESSION_KEY) == null) { %>--%>
-                        <%--<li><a href="/login" title="">登录</a></li>--%>
-
-                        <%--<% } else { %>--%>
-                        <%--<li>--%>
-                        <%--<a href="/user/onlineDesign/importData" title="" class="sf-with-ul">产品在线设计--%>
-                        <%--<span class="sf-sub-indicator">--%>
-                        <%--<i class="icon-angle-down "></i>--%>
-                        <%--</span>--%>
-                        <%--</a>--%>
-                        <%--<ul>--%>
-                        <%--<li><a href="index-3.html" class="sf-with-ul">Home 2</a></li>--%>
-                        <%--<li><a href="index-4.html" class="sf-with-ul">Home 3</a></li>--%>
-                        <%--<li><a href="index-nivo.html" class="sf-with-ul">Nivo Slider</a></li>--%>
-                        <%--</ul>--%>
-                        <%--</li>--%>
-                        <%--<li><a href="#" title="">发行协作平台</a></li>--%>
-                        <%--<li><a href="/user/ManagementPlatform" title="">募集期管理平台</a></li>--%>
-                        <%--<li><a href="/logout" title="">注销</a></li>--%>
-                        <%--<% } %>--%>
-
-                        <%--</ul><!-- /.menu -->--%>
-                        <%--</nav><!-- /#mainnav -->--%>
+                            </ul><!-- /.menu -->
+                        </nav><!-- /#mainnav -->
                     </div><!-- /.nav-wrap -->
                 </div><!-- /.col-md-9 -->
             </div><!-- /.header-wrap -->
         </div><!-- /.row -->
     </div><!-- /.container -->
-</header>
-<!-- /header -->
-
+</header><!-- /header -->
