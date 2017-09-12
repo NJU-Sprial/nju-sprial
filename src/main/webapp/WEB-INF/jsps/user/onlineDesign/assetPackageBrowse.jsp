@@ -93,7 +93,7 @@
         </div><!-- /.container -->
     </section><!-- /.flat-row-iconbox -->
 
-    <%@ include file="/WEB-INF/jsps/components/message.jsp" %>
+<%@ include file="/WEB-INF/jsps/components/message.jsp" %>
 
 </div> <!-- /.boxed -->
 

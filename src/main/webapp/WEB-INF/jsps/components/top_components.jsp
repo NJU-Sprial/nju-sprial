@@ -95,7 +95,7 @@
                                         发行协作平台
                                     </a>
                                     <ul>
-                                        <li><a href="#" class="sf-with-ul">项目列表</a></li>
+                                        <li><a href="/user/cooperationPlatform" class="sf-with-ul">项目列表</a></li>
 
                                     </ul>
                                 </li>

@@ -1,11 +1,11 @@
 <%--
   Created by IntelliJ IDEA.
-  User: LENOVO
+  User: xiaoJun
   Date: 2017/9/12
   Time: 12:00
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!--[if IE 8 ]><html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US"> <![endif]-->
 <!--[if (gte IE 9)|!(IE)]><!-->
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US"><!--<![endif]-->
