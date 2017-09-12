@@ -93,8 +93,6 @@
                                 <li>
                                     <a href="#" class="sf-with-ul">
                                         发行协作平台
-                                        <i class="icon-angle-down "></i>
-                                        </span>
                                     </a>
                                     <ul>
                                         <li><a href="#" class="sf-with-ul">项目列表</a></li>
@@ -104,8 +102,6 @@
                                 <li>
                                     <a href="#" class="sf-with-ul">
                                         募集期管理平台
-                                        <i class="icon-angle-down "></i>
-                                        </span>
                                     </a>
                                     <ul>
                                         <li><a href="/user/ManagementPlatform" class="sf-with-ul">管理产品列表</a></li>
@@ -115,34 +111,6 @@
                                 <% } %>
                             </ul>
                         </nav>
-
-                        <%--<nav id="mainnav" class="mainnav">--%>
-                        <%--<ul class="nav navbar-nav sf-menu">--%>
-                        <%--<li><a href="/" title="">首页</a></li>--%>
-
-                        <%--<% if (session.getAttribute(WebSecurityConfig.SESSION_KEY) == null) { %>--%>
-                        <%--<li><a href="/login" title="">登录</a></li>--%>
-
-                        <%--<% } else { %>--%>
-                        <%--<li>--%>
-                        <%--<a href="/user/onlineDesign/importData" title="" class="sf-with-ul">产品在线设计--%>
-                        <%--<span class="sf-sub-indicator">--%>
-                        <%--<i class="icon-angle-down "></i>--%>
-                        <%--</span>--%>
-                        <%--</a>--%>
-                        <%--<ul>--%>
-                        <%--<li><a href="index-3.html" class="sf-with-ul">Home 2</a></li>--%>
-                        <%--<li><a href="index-4.html" class="sf-with-ul">Home 3</a></li>--%>
-                        <%--<li><a href="index-nivo.html" class="sf-with-ul">Nivo Slider</a></li>--%>
-                        <%--</ul>--%>
-                        <%--</li>--%>
-                        <%--<li><a href="#" title="">发行协作平台</a></li>--%>
-                        <%--<li><a href="/user/ManagementPlatform" title="">募集期管理平台</a></li>--%>
-                        <%--<li><a href="/logout" title="">注销</a></li>--%>
-                        <%--<% } %>--%>
-
-                        <%--</ul><!-- /.menu -->--%>
-                        <%--</nav><!-- /#mainnav -->--%>
                     </div><!-- /.nav-wrap -->
                 </div><!-- /.col-md-9 -->
             </div><!-- /.header-wrap -->
