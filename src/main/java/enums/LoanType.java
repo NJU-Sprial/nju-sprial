@@ -11,9 +11,9 @@ public enum  LoanType {
     //个人消费信贷
     PersonalConsumption,
 
-    //个人住房信贷
+    //个人住房贷款
     PersonalHousing,
 
-    //个人汽车抵押信贷
+    //个人汽车抵押贷款
     PersonalCarMortgare
 }
