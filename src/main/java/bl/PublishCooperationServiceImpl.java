@@ -20,6 +20,7 @@ import java.util.List;
  */
 @Service
 public class PublishCooperationServiceImpl implements PublishCooperationService {
+
     private ProjectCooperationDataService projectCooperationDataService;
 
     @Autowired
@@ -117,7 +118,7 @@ public class PublishCooperationServiceImpl implements PublishCooperationService 
 
     //转换数据格式
     private String getValueOf(XSSFCell xssfRow) {
-        
+
         if (xssfRow.getCellType() == xssfRow.CELL_TYPE_BOOLEAN) {
             return String.valueOf(xssfRow.getBooleanCellValue());
         } else if (xssfRow.getCellType() == xssfRow.CELL_TYPE_NUMERIC) {
