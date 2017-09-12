@@ -91,26 +91,33 @@ public class PublishCooperationServiceImpl implements PublishCooperationService 
 
     //解析个人消费信贷表格
     private UploadResult handlePersonalConsumptionLoan(XSSFWorkbook xssfWorkbook) {
+        final int first = 0;
+        final int totalRowNum = 4;
+
         try {
-            // 获取每一个工作薄
-            for (int numSheet = 0; numSheet < xssfWorkbook.getNumberOfSheets(); numSheet++) {
-                XSSFSheet xssfSheet = xssfWorkbook.getSheetAt(numSheet);
-                if (xssfSheet == null) {
-                    continue;
-                }
-                // 获取当前工作薄的每一行
-                for (int rowNum = 1; rowNum <= xssfSheet.getLastRowNum(); rowNum++) {
-                    XSSFRow xssfRow = xssfSheet.getRow(rowNum);
-                    if (xssfRow != null) {
-                        XSSFCell one = xssfRow.getCell(0);
-                        //读取第一列数据
-                        XSSFCell two = xssfRow.getCell(1);
-                        //读取第二列数据
-                        XSSFCell three = xssfRow.getCell(2);
-                        //读取第三列数据
-                    }
+            // 取得工作薄
+            XSSFSheet xssfSheet = xssfWorkbook.getSheetAt(first);
+
+            // 如果拿不到工作薄，返回格式错误
+            if (xssfSheet == null) {
+                return UploadResult.FORMAT_ERROR;
+            }
+
+            // 获取当前工作薄的每一行
+            for (int rowNum = 1; rowNum <= totalRowNum; rowNum ++) {
+                XSSFRow xssfRow = xssfSheet.getRow(rowNum);
+                if (xssfRow != null) {
+                    XSSFCell one = xssfRow.getCell(0);
+                    //读取第一列数据
+                    XSSFCell two = xssfRow.getCell(1);
+                    //读取第二列数据
+                    XSSFCell three = xssfRow.getCell(2);
+                    //读取第三列数据
+                } else {
+                    return UploadResult.FORMAT_ERROR;
                 }
             }
+
         } catch (Exception e) {
             return UploadResult.FORMAT_ERROR;
         }
