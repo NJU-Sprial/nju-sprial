@@ -43,5 +43,8 @@
 	<!--扫描web相关的bean-->
 	<!-- 扫描Controller -->
 	<context:component-scan base-package="web.handler"></context:component-scan>
-	
+
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver" >
+		<property name="maxUploadSize" value="500000" />
+	</bean>
 </beans>

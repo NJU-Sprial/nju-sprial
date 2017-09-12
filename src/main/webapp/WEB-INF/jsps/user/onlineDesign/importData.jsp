@@ -57,7 +57,7 @@
                 <div class="col-md-10">
                     <div class="flat-form-info">
                         <form id="form" action="/user/onlineDesign/browseAndKeepAfterAddProject" method="post"
-                              class="form-info">
+                              class="form-info" enctype="multipart/form-data">
                             <div class="v3">
                                 <p class="input-info"><input id="pname-input" type="text" name="pname" value=""
                                                              placeholder="项目名称" oninput="dataChange()">
@@ -65,17 +65,15 @@
                                 <p class="input-info"><input id="type-input" type="text" name="ptype" value="消费金融" placeholder="消费金融"
                                                              readonly="value"></p>
                                 <p class="input-info"><label>个人消费贷款、信用卡分期付款、国家助学贷款
-                                    <input type="radio" name="pway" value="PersonConsumption" checked=""
-                                           placeholder="Subject"></label>
+                                    <input type="radio" name="pway" value="PersonConsumption" checked=""></label>
                                 </p>
                                 <p class="input-info"><label>个人汽车贷款
-                                    <input type="radio" name="pway" value="PersonHousing" placeholder="Subject"></label>
+                                    <input type="radio" name="pway" value="PersonHousing"></label>
                                 </p>
                                 <p class="input-info"><label>个人住房贷款（包含装修、租借、购买）
-                                    <input type="radio" name="pway" value="PersonalCarMortgare"
-                                           placeholder="Subject"></label>
+                                    <input type="radio" name="pway" value="PersonalCarMortgare"></label>
                                 </p>
-                                <p class="input-info"><input id="i" type="button" value="下载数据模板"></p>
+                                <p class="input-info"><input id="input-data-button" type="button" value="下载数据模板"></p>
                                 <!--使用label元素与file控件关联，input被隐藏，用户点的实际上是label-->
                                 <p class="input-info">
                                     <label for="input-file" class="btn btn-info one-half">导入数据</label>
@@ -152,26 +150,31 @@
         }
     }
 
+//    function toSubmit() {
+//        sessionStorage.setItem("pname", $("#pname-input").val());
+//        sessionStorage.setItem("ptype", $("#type-input").val());
+//        var radios = document.getElementsByName("radioname");
+//        for (var i = 0; i < radios.length; i++) {
+//            if (radios[i].checked) {
+//                sessionStorage.setItem("pway", radios[i].value);
+//                break;
+//            }
+//        }
+//    }
+//
+//    function selectWay(radio){
+//        if(radio.checked) {
+//            alert(radio.getAttribute("value"));
+//            sessionStorage.setItem("pway",radio.getAttribute("value"));
+//        }
+//    }
+
     $(document).ready(function () {
         $("#input-data-button").click(function () {
             window.location.href = "http://localhost:8080/example.xlsx";
         });
-    });
+    })
 
-//    $('#pname-input').on('input',dataChange());
-//    //for ie
-//    if(document.all){
-//        $('input[type="text"]').each(function() {
-//            var that=this;
-//
-//            if(this.attachEvent) {
-//                this.attachEvent('onpropertychange',function(e) {
-//                    if(e.propertyName!='value') return;
-//                    $(that).trigger('input');
-//                });
-//            }
-//        })
-//    }
 </script>
 
 </body>

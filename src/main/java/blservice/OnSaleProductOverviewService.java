@@ -40,6 +40,7 @@ public interface OnSaleProductOverviewService {
     public List<ProductStrategyVO> getSecurityList(String productID);
 
     /**
+     * 增信的相关信息
      * 待定
      * @param productID 产品ID
      * @return 如果产品不存在，返回null
