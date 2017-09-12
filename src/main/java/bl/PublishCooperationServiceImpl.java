@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 import vo.ProjectCooperationVO;
 
 import java.io.*;
+import java.lang.reflect.Method;
 import java.util.List;
 
 /**
@@ -74,7 +75,18 @@ public class PublishCooperationServiceImpl implements PublishCooperationService 
             return UploadResult.IO_ERROR;
         }
 
-        return null;
+        Method getStockListMethod;
+        UploadResult result;
+
+        try {
+            getStockListMethod = this.getClass().getMethod( "handle" + loanType.toString() + "Loan", XSSFWorkbook.class);
+            result = (UploadResult) getStockListMethod.invoke(xssfWorkbook);
+        } catch ( Exception e ) {
+            e.printStackTrace();
+            return UploadResult.IO_ERROR;
+        }
+
+        return result;
     }
 
     //解析个人消费信贷表格
