@@ -1,13 +1,24 @@
 package bl;
 
+import blservice.OnlineDesignService;
 import blservice.PackageCreateService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import vo.AssetPackageVO;
+import vo.PropertyPackageVO;
 
 @Service
 public class PackageCreateServiceImpl implements PackageCreateService{
+    @Autowired
+    private OnlineDesignService onlineDesignService;
     @Override
     public AssetPackageVO createPackage(String username, String projectName) {
-        return null;
+        onlineDesignService.createPropertyPackage(username,projectName);
+        PropertyPackageVO propertyPackageVO = onlineDesignService.searchPropertyPackage(username,projectName);
+        if (propertyPackageVO==null){
+            return null;
+        }
+        AssetPackageVO result = new AssetPackageVO(propertyPackageVO,username);
+        return result;
     }
 }

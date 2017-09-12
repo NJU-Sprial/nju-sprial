@@ -24,4 +24,16 @@ public class PropertyPackageVO {
     public void setPropertyPackageId(int value){
         propertyPackageId = value+"";
     }
+
+    public PropertyPackageVO(AssetPackageVO vo){
+        if (vo == null){
+            return;
+        }
+        this.pname = vo.getProjectName();
+        this.propertyPackageId = vo.getPackageId();
+        this.propertyNum = vo.getAssetNumber();
+        this.packageDate = vo.getPacketData();
+        this.packageCapital = vo.getPrincipal();
+        this.packageRate = vo.getRate();
+    }
 }
