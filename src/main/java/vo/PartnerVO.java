@@ -11,4 +11,27 @@ public class PartnerVO {
     String gender;  //协作方性别
     String workUnit;    //协作方工作单位
     String position;    //协作方职位
+
+    public PartnerVO(String name, String gender, String workUnit, String position) {
+        this.name = name;
+        this.gender = gender;
+        this.workUnit = workUnit;
+        this.position = position;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public String getWorkUnit() {
+        return workUnit;
+    }
+
+    public String getPosition() {
+        return position;
+    }
 }

@@ -32,6 +32,13 @@
 .table tbody tr td{
     vertical-align:middle;
     text-align: center;
+    font-size: medium;
+}
+
+.table thead tr th{
+    font-size: large;
+    vertical-align:middle;
+    text-align: center;
 }
 
 .packageCreateFont{
