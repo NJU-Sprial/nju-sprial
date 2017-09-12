@@ -12,6 +12,7 @@ import vo.ConceptualVO;
 import web.security.WebSecurityConfig;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 import java.util.List;
@@ -54,7 +55,7 @@ public class ConceptualDesign {
 //        model.addAttribute("conceptualVO", conceptualVO);
 
         //假数据
-        ConceptualVO fakeConceptualVO = new ConceptualVO(username,pname,packageNumber,"示例方案名称", LocalDate.of(2017,9,8), LocalDate.of(2017,9,10), LocalDate.of(2017,9,20), LocalDate.of(2017,12,8));
+        ConceptualVO fakeConceptualVO = new ConceptualVO(username,pname,packageNumber,"示例方案名称", LocalDateTime.of(2017,9,9,21,15,3), LocalDate.of(2017,9,10), LocalDate.of(2017,9,20), LocalDate.of(2017,12,8));
         model.addAttribute("conceptualVO", fakeConceptualVO);
         return "/user/onlineDesign/conceptualDesign";
     }
