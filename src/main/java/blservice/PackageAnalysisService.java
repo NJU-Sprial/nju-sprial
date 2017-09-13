@@ -13,6 +13,14 @@ import java.util.List;
 public interface PackageAnalysisService {
 
     /**
+     * 获取对应项目下所有资产包编号
+     * @param username 用户名
+     * @param projectName 项目名
+     * @return 资产包编号列表
+     */
+    public List<String> getPackageNameList(String username, String projectName);
+
+    /**
      * 获取资产基本情况
      * @param username 用户名
      * @param projectName 项目名
