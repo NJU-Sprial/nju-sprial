@@ -23,7 +23,7 @@ public class SecuritiesRepaymentVO {
      * @param initialPrincipal 本金期初金额（元）
      * @param paidPrincipal 支付本金（元）
      * @param paidInterest 支付利息（元）
-     * @param couponRate 票面利率
+     * @param couponRate 票面利率(0-1),如0.03
      */
     public SecuritiesRepaymentVO(LocalDate payDate, LocalDate interestStartDate, LocalDate interestEndDate, double initialPrincipal,
                                  double paidPrincipal, double paidInterest, double couponRate) {

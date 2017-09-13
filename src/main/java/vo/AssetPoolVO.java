@@ -21,8 +21,8 @@ public class AssetPoolVO {
     /**
      *
      * @param productID 产品ID
-     * @param quantity 发行总额（元），如10000
-     * @param leftQuantity 剩余额度（元），如5000
+     * @param quantity 发行总额（元），如"￥10000"
+     * @param leftQuantity 剩余额度（元），如"￥5000"
      * @param numOfBorrowers 借款人数量，如48
      * @param numOfLoan 交易场所贷款笔数，如116
      * @param highestAmount 单笔贷款最高金额（元），如2000
