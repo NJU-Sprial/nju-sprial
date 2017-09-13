@@ -3,6 +3,7 @@ package data;
 import constranst.LoginCode;
 import constranst.SignUpCode;
 import dao.UserDao;
+import dao.VerificationCodeDao;
 import dataservice.UserDataService;
 import enums.UserState;
 import enums.UserType;
@@ -11,6 +12,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.DigestUtils;
 import po.UserDataPO;
+import po.VerificationCodePO;
 
 
 @Service("UserDataService")
@@ -19,6 +21,8 @@ public class UserDataServiceImpl implements UserDataService{
 
     @Autowired
     private UserDao userdao;
+    @Autowired
+    private VerificationCodeDao verificationCodeDao;
 
     //md5盐值字符串
     private static final String salt = "fdsgewr6t87349n#^R(*WFJ";
@@ -68,25 +72,36 @@ public class UserDataServiceImpl implements UserDataService{
 
     /**
      * 保存邮箱和验证码
-     * TODO
      * @param email    邮箱
      * @param authCode 验证码
      * @return
      */
     @Override
     public boolean saveAuthenticationCode(String email, String authCode) {
-        return false;
+        try {
+            VerificationCodePO po = new VerificationCodePO();
+            po.setEmail(email);
+            po.setCode(authCode);
+            verificationCodeDao.save(po);
+        }catch (Exception e){
+            e.printStackTrace();
+            return false;
+        }
+        return true;
     }
 
     /**
      * 验证邮箱和验证码
-     * TODO
      * @param email    邮箱
      * @param authCode 验证码
      * @return
      */
     @Override
     public boolean checkAuthenticationCode(String email, String authCode) {
+        String result = verificationCodeDao.get(email).getCode();
+        if (result.equals(authCode)){
+            return true;
+        }
         return false;
     }
 
