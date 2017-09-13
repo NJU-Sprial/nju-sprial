@@ -7,10 +7,18 @@ import org.springframework.stereotype.Service;
 import vo.AssetPackageVO;
 import vo.PropertyPackageVO;
 
+import java.util.List;
+
 @Service
 public class PackageBrowseServiceImpl implements PackageBrowseService{
     @Autowired
     OnlineDesignService onlineDesignService;
+
+    @Override
+    public List<AssetPackageVO> getPackageVOList(String username) {
+        return null;
+    }
+
     @Override
     public AssetPackageVO getPackageVO(String username, String packageId) {
         PropertyPackageVO propertyPackageVO = onlineDesignService.searchPropertyPackage(username,packageId);

@@ -2,11 +2,20 @@ package blservice;
 
 import vo.AssetPackageVO;
 
+import java.util.List;
+
 /**
  * Created by xiaoJun on 2017/9/10.
  */
 //TODO cyf
 public interface PackageBrowseService {
+
+    /**
+     * 获取资产包信息列表
+     * @param username 用户名
+     * @return 资产包VO列表
+     */
+    public List<AssetPackageVO> getPackageVOList(String username);
 
     /**
      * 获取资产包信息
