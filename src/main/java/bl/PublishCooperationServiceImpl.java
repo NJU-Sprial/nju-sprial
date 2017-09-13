@@ -41,12 +41,11 @@ public class PublishCooperationServiceImpl implements PublishCooperationService 
 
     /**
      * 获取项目的文件
-     * TODO
-     * @param projectID
+     * @param loanType
      * @return 返回项目文件
      */
     @Override
-    public File getProjectFile(String projectID) {
+    public File getLoanFile(LoanType loanType) {
         return null;
     }
 
@@ -59,7 +58,7 @@ public class PublishCooperationServiceImpl implements PublishCooperationService 
      * @return 上传是否成功,如果失败将返回失败原因
      */
     @Override
-    public UploadResult uploadProjectFile(String projectID, File file, LoanType loanType) {
+    public UploadResult uploadLoanFile(String projectID, File file, LoanType loanType) {
 
         InputStream inputStream;
         XSSFWorkbook xssfWorkbook;

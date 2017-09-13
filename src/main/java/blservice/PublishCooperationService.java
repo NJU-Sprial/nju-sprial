@@ -19,17 +19,16 @@ public interface PublishCooperationService {
      */
     public List<ProjectCooperationVO> getCooperationProjectList(String username);
 
-
     /**
-     * 获取项目的文件
-     * @return 返回项目文件
+     * 获取贷款表格
+     * @return 返回贷款表格
      */
-    public File getProjectFile(String projectID);
+    public File getLoanFile(LoanType loanType);
 
     /**
-     * 上传项目文件
+     * 上传贷款文件
      * @return 上传是否成功,如果失败将返回失败原因
      */
-    public UploadResult uploadProjectFile(String projectID, File file, LoanType loanType);
+    public UploadResult uploadLoanFile(String projectID, File file, LoanType loanType);
 
 }
