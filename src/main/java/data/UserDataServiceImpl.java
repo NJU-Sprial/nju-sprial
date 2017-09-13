@@ -103,6 +103,11 @@ public class UserDataServiceImpl implements UserDataService{
      * @return 如果该用户不存在，返回null
      */
     public UserType getUserType(String username){
-        return null;
+        return getUserData(username).getUserType();
+    }
+
+
+    private UserDataPO getUserData(String username){
+        return userdao.get(username);
     }
 }
