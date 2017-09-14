@@ -99,7 +99,7 @@ public class UserDataServiceImpl implements UserDataService{
     @Override
     public boolean checkAuthenticationCode(String email, String authCode) {
         String result = verificationCodeDao.get(email).getCode();
-        if (result.equals(authCode)){
+        if (result!=null&&result.equals(authCode)){
             return true;
         }
         return false;
