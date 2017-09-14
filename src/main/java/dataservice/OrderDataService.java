@@ -1,19 +1,18 @@
-package blservice;
+package dataservice;
 
 import exception.ErrorParamException;
-import vo.SubmitOrderVO;
+import po.OrderPO;
 
 /**
- * Created by zjy on 2017/9/10.
- * 投资者下单相关接口
+ * Created by Water on 2017/9/14.
  */
-public interface OrderService {
-    
+public interface OrderDataService {
     /**
      * 投资者提交订单，如果下单成功，系统为该订单生成订单号
-     * @param submitOrderVO 订单信息
+     *
+     * @param orderPO 订单信息
      * @return 下单成功返回true，下单失败返回false
      * @throws ErrorParamException 订单信息中有任何参数不正确
      */
-    public boolean submitOrder(SubmitOrderVO submitOrderVO) throws ErrorParamException;
+    boolean saveOrder(OrderPO orderPO) throws ErrorParamException;
 }
