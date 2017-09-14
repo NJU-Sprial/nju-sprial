@@ -32,7 +32,7 @@
                 <div class="col-md-2">
                     <div id="logo" class="logo">
                         <a href="#" title="">
-                            <img src="/images/logo-blog.png" alt="logo Finance Business"/>
+                            <img src="/images/log.gif" alt="logo sec"/>
                         </a>
                     </div><!-- /#logo -->
                 </div><!-- /.col-md-2 -->
@@ -117,5 +117,8 @@
         </div><!-- /.row -->
     </div><!-- /.container -->
 </header>
+<script>
+    $("#logo img" ).css("max-width","43%");
+</script>
 <!-- /header -->
 

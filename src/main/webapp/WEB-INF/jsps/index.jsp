@@ -1,6 +1,6 @@
 <%--<%@ page import="web.security.WebSecurityConfig" %>--%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8"%>
+         pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <!--[if IE 8 ]>
 <html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US"/> <![endif]-->
@@ -34,8 +34,10 @@
                 <!-- SLIDE 3 -->
                 <li data-index="rs-3049" data-transition="slideremovedown" data-slotamount="7" data-hideafterloop="0"
                     data-hideslideonmobile="off" data-easein="Power4.easeInOut" data-easeout="Power4.easeInOut"
-                    data-masterspeed="2000" data-rotate="0" data-saveperformance="off" data-title="Ken Burns" data-param1=""
-                    data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8=""
+                    data-masterspeed="2000" data-rotate="0" data-saveperformance="off" data-title="Ken Burns"
+                    data-param1=""
+                    data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7=""
+                    data-param8=""
                     data-param9="" data-param10="" data-description="">
 
                     <!-- MAIN IMAGE -->
@@ -68,7 +70,8 @@
                          data-paddingbottom="[0,0,0,0"
                          data-paddingleft="[0,0,0,0]"
 
-                         style="z-index: 16; white-space: nowrap;text-transform:left;">We help businesses<br/>innovate and
+                         style="z-index: 16; white-space: nowrap;text-transform:left;">We help businesses<br/>innovate
+                        and
                         grow
                     </div>
 
@@ -122,10 +125,12 @@
                 </li>
 
                 <!-- SLIDE 2 -->
-                <li data-index="rs-3048" data-transition="random-static" data-slotamount="default" data-hideafterloop="0"
+                <li data-index="rs-3048" data-transition="random-static" data-slotamount="default"
+                    data-hideafterloop="0"
                     data-hideslideonmobile="off" data-easein="Power4.easeInOut" data-easeout="Power4.easeInOut"
                     data-masterspeed="2000" data-rotate="0" data-saveperformance="off" data-title="HTML5 Video"
-                    data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7=""
+                    data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6=""
+                    data-param7=""
                     data-param8="" data-param9="" data-param10="" data-description="">
                     <!-- MAIN IMAGE -->
                     <img src="/images/mainPic.jpg" alt="" data-bgposition="center center" data-bgfit="cover"
@@ -172,7 +177,7 @@
                          data-paddingbottom="[0,0,0,0"
                          data-paddingleft="[0,0,0,0]"
 
-                         style="z-index: 16; white-space: nowrap;text-transform:left;">FINANCE WORDPRESS THEME
+                         style="z-index: 16; white-space: nowrap;text-transform:left;">SEC ABS云平台
                     </div>
 
                     <!-- LAYER NR. 13 -->
@@ -197,11 +202,10 @@
                          data-paddingbottom="[0,0,0,0]"
                          data-paddingleft="[0,0,0,0]"
 
-                         style="z-index: 17; white-space: nowrap;text-transform:left;">With over 10 years of experience
-                        helping businesses to find<br/>comprehensive solutions
+                         style="z-index: 17; white-space: nowrap;text-transform:left;">经营自己的未来资产<br/>由此起步
                     </div>
 
-                    <a href="#" target="_self" class="tp-caption flat-button-slider bg-transparent"
+                    <a id="start-button" href="#" target="_self" class="tp-caption flat-button-slider bg-transparent"
 
                        data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","speed":2000,"to":"o:1;","delay":2000,"ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
 
@@ -209,12 +213,18 @@
                        data-y="['middle','middle','middle','middle']" data-voffset="['100','100','100','70']"
                        data-fontsize="['14',14','14','14']"
                        data-width="['188']"
-                       data-height="['auto']">Purchase Theme
+                       data-height="['auto']"
+                       data-textAlign="['center','center','center','center']">现在开始
                     </a><!-- END LAYER LINK -->
                 </li>
             </ul>
         </div>
     </div><!-- END REVOLUTION SLIDER -->
+    <script>
+    $(document).ready(function () {
+        $("#start-button").css("text-align", "center");
+    });
+</script>
 
     <section class="flat-row pd-imagebox">
         <div class="container">
@@ -729,7 +739,8 @@
                             <ul class="infomation-footer">
                                 <li><i class="fa fa-envelope" aria-hidden="true"></i><a href="#" title="">support@themesflat.com</a>
                                 </li>
-                                <li><i class="fa fa-phone" aria-hidden="true"></i><a href="#" title="">+61 3 8376 6284</a>
+                                <li><i class="fa fa-phone" aria-hidden="true"></i><a href="#" title="">+61 3 8376
+                                    6284</a>
                                 </li>
                                 <li><i class="fa fa-map-marker" aria-hidden="true"></i><a href="#" title="">PO Box 16122
                                     Collins Street West Victoria 8007 Australia</a></li>
@@ -832,7 +843,8 @@
 <script type="text/javascript" src="/revolution/js/jquery.themepunch.revolution.min.js"></script>
 <script type="text/javascript" src="/revolution/js/slider_v1.js"></script>
 
-SLIDER REVOLUTION 5.0 EXTENSIONS  (Load Extensions only on Local File Systems !  The following part can be removed on Server for On Demand Loading)
+SLIDER REVOLUTION 5.0 EXTENSIONS (Load Extensions only on Local File Systems ! The following part can be removed on
+Server for On Demand Loading)
 <script type="text/javascript" src="/revolution/js/extensions/revolution.extension.actions.min.js"></script>
 <script type="text/javascript" src="/revolution/js/extensions/revolution.extension.carousel.min.js"></script>
 <script type="text/javascript" src="/revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
