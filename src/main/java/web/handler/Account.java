@@ -87,6 +87,7 @@ public class Account {
         loginService.logout((String) session.getAttribute(WebSecurityConfig.SESSION_KEY));
         // 移除session
         session.removeAttribute(WebSecurityConfig.SESSION_KEY);
+        session.removeAttribute(WebSecurityConfig.KEY_TYPE);
         return "redirect:/";
     }
 
