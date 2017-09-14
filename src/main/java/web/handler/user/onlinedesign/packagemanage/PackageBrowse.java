@@ -21,7 +21,7 @@ import java.util.List;
 public class PackageBrowse {
 
 
-    @RequestMapping(value = "/user/onlineDesign/packageManage/PackageBrowse", method= RequestMethod.GET)
+    @RequestMapping(value = "/user/onlineDesign/packageManage/packageBrowse", method= RequestMethod.GET)
     public String toPackageBrowse(@SessionAttribute(WebSecurityConfig.SESSION_KEY) String username, Model model){
 
         List<AssetPackageVO> allPackageVOList = Arrays.asList(
