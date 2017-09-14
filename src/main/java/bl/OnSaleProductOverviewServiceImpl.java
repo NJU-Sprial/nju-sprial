@@ -1,7 +1,11 @@
 package bl;
 
 import blservice.OnSaleProductOverviewService;
+import dataservice.ProductDataService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import po.ProductPO;
+import util.PO2VOUtil;
 import vo.AssetPoolVO;
 import vo.IncreasingVO;
 import vo.ProductStrategyVO;
@@ -14,30 +18,36 @@ import java.util.List;
  */
 @Service
 public class OnSaleProductOverviewServiceImpl implements OnSaleProductOverviewService {
+    private ProductDataService productDataService;
+
+    @Autowired
+    public OnSaleProductOverviewServiceImpl(ProductDataService productDataService) {
+        this.productDataService = productDataService;
+    }
     /**
      * 获取所有在售产品的产品信息
-     * TODO
      * @return
      */
     @Override
     public List<ProductVO> getOnSaleProductList() {
-        return null;
+        List<ProductPO> productPOs = productDataService.getOnSaleProductList();
+        return PO2VOUtil.productPOs2VOs(productPOs);
     }
 
     /**
      * 获取单个在售产品的产品信息
-     * TODO
      * @param productID 产品ID
      * @return 如果产品不存在，返回null
      */
     @Override
     public ProductVO getProductInfo(String productID) {
-        return null;
+        ProductPO productPO = productDataService.getProductInfo(Integer.valueOf(productID));
+        return PO2VOUtil.productPO2VO(productPO);
     }
 
     /**
      * 获取单个在售产品的资产池信息
-     * TODO
+     * TODO 要加PO
      * @param productID 产品ID
      * @return 如果产品不存在，返回null
      */
@@ -48,7 +58,7 @@ public class OnSaleProductOverviewServiceImpl implements OnSaleProductOverviewSe
 
     /**
      * 获取单个在售产品的证券信息
-     * TODO
+     * TODO 要加PO
      * @param productID 产品ID
      * @return 如果产品不存在，返回null
      */
@@ -60,7 +70,7 @@ public class OnSaleProductOverviewServiceImpl implements OnSaleProductOverviewSe
     /**
      * 增信的相关信息
      * 待定
-     * TODO
+     * TODO VO是空的
      * @param productID 产品ID
      * @return 如果产品不存在，返回null
      */
@@ -68,4 +78,6 @@ public class OnSaleProductOverviewServiceImpl implements OnSaleProductOverviewSe
     public IncreasingVO getIncreasingMessage(String productID) {
         return null;
     }
+
+
 }

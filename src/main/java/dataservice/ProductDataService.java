@@ -22,5 +22,18 @@ public interface ProductDataService {
      */
     List<RecruitmentSituationPO> getRecruitmentSituation(String username, String productID);
 
+    /**
+     * 获取所有在售产品的产品信息
+     * TODO
+     * @return
+     */
+    List<ProductPO> getOnSaleProductList();
+
+    /**
+     * 获取单个在售产品的产品信息
+     * @param productID 产品ID
+     * @return 如果产品不存在，返回null
+     */
+    ProductPO getProductInfo(int productID);
 
 }
