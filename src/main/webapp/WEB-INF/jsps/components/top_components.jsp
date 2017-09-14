@@ -1,4 +1,5 @@
-<%@ page import="web.security.WebSecurityConfig" %><%--
+<%@ page import="web.security.WebSecurityConfig" %>
+<%@ page import="enums.UserType" %><%--
   Created by IntelliJ IDEA.
   User: 铠联
   Date: 2017/9/10
@@ -32,7 +33,7 @@
                 <div class="col-md-2">
                     <div id="logo" class="logo">
                         <a href="#" title="">
-                            <img src="/images/logo-blog.png" alt="logo Finance Business"/>
+                            <img src="/images/logo.gif" alt="logo sec"/>
                         </a>
                     </div><!-- /#logo -->
                 </div><!-- /.col-md-2 -->
@@ -44,14 +45,14 @@
                         <nav id="mainnav" class="collapse navbar-collapse menu">
                             <ul class="nav navbar-nav sf-menu menu">
                                 <li>
-                                    <a id="current" href="/">
+                                    <a href="/">
                                         首页
                                     </a>
                                 </li>
-                                <% if (session.getAttribute(WebSecurityConfig.SESSION_KEY)==null) { %>
+                                <% if (session.getAttribute(WebSecurityConfig.KEY_TYPE)==null) { %>
                                 <li><a href="/login" title="">登录</a></li>
 
-                                <% } else { %>
+                                <% } else if (session.getAttribute(WebSecurityConfig.KEY_TYPE).equals(UserType.SecuritiesTrader)) { %>
                                 <li>
                                     <a href="#" class="sf-with-ul">
                                         产品在线设计
@@ -83,8 +84,8 @@
                                                 产品设计
                                             </a>
                                             <ul>
-                                                <li><a href="#" class="sf-with-ul">项目情景</a></li>
-                                                <li><a href="#" class="sf-with-ul">方案设计</a></li>
+                                                <li><a href="/user/onlineDesign/productDesign/scenarioAnalysis" class="sf-with-ul">情景分析</a></li>
+                                                <li><a href="/user/onlineDesign/productDesign/chooseConceptual" class="sf-with-ul">方案设计</a></li>
                                             </ul>
                                         </li>
 
@@ -108,6 +109,38 @@
                                     </ul>
                                 </li>
                                 <li><a href="/logout">注销</a></li>
+
+                                <% } else if (session.getAttribute(WebSecurityConfig.KEY_TYPE).equals(UserType.Investor)) { %>
+                                <li>
+                                    <a href="#" class="sf-with-ul">
+                                        在售商品
+                                    </a>
+                                    <ul>
+                                        <li>
+                                            <a href="/user/productList" class="sf-with-ul">
+                                                商品列表
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#" class="sf-with-ul">
+                                        我的订单
+                                    </a>
+                                    <ul>
+                                        <li>
+                                            <a href="#" class="sf-with-ul">
+                                                订单列表
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><a href="/logout">注销</a></li>
+
+                                <% } else if (session.getAttribute(WebSecurityConfig.KEY_TYPE).equals(UserType.Intermediary)) { %>
+
+                                <% } else if (session.getAttribute(WebSecurityConfig.KEY_TYPE).equals(UserType.Manager)) { %>
+
                                 <% } %>
                             </ul>
                         </nav>
@@ -117,5 +150,8 @@
         </div><!-- /.row -->
     </div><!-- /.container -->
 </header>
+<script>
+    $("#logo img" ).css("max-width","43%");
+</script>
 <!-- /header -->
 

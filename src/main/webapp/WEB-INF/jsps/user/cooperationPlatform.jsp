@@ -81,5 +81,8 @@
 <!-- Javascript -->
 <script type="text/javascript" src="/js/waypoints.min.js"></script>
 </body>
+<script type="text/javascript">
+    $("#mainnav a:contains('发行协作平台')").attr("id","current");
+</script>
 </html>
 

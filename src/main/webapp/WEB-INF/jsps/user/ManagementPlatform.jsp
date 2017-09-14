@@ -93,4 +93,7 @@
 
 <%@ include file="/WEB-INF/jsps/components/message.jsp" %>
 </body>
+<script type="text/javascript">
+    $("#mainnav a:contains('募集期管理平台')").attr("id","current");
+</script>
 </html>

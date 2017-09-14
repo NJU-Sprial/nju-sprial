@@ -221,8 +221,6 @@
 <script type="text/javascript" src="../../js/main.js"></script>
 
 <script>
-    $("#mainnav a:contains('产品在线设计')").attr("id","current");
-
     function selectProject(element) {
         $("#pname-button").text($(element).text());
     }

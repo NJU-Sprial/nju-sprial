@@ -43,7 +43,7 @@ public class Order {
                               @RequestParam(value = "interestRate", required = true) String interestRate,
                               @RequestParam(value = "amount", required = true) String amount,
                               RedirectAttributesModelMap modelMap) {
-//        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd hh:mm");
+//        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 //        try {
 //            if(orderService.submitOrder(new SubmitOrderVO(
 //                    LocalDateTime.parse(orderTime,formatter),productID,username,Double.parseDouble(interestRate), Double.parseDouble(amount)))

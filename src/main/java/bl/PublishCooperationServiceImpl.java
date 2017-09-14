@@ -40,9 +40,9 @@ public class PublishCooperationServiceImpl implements PublishCooperationService 
     }
 
     /**
-     * 获取项目的文件
+     * 获取贷款表格
      * @param loanType
-     * @return 返回项目文件
+     * @return 返回贷款表格
      */
     @Override
     public File getLoanFile(LoanType loanType) {
@@ -50,8 +50,7 @@ public class PublishCooperationServiceImpl implements PublishCooperationService 
     }
 
     /**
-     * 上传项目文件
-     * TODO
+     * 上传贷款文件
      * @param projectID
      * @param file
      * @param loanType
