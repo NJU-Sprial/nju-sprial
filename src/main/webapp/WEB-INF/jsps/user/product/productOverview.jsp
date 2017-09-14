@@ -1,7 +1,8 @@
-<%--
+<%@ page import="java.util.List" %>
+<%@ page import="vo.ProductVO" %><%--
   Created by IntelliJ IDEA.
   User: zjy
-  Date: 2017/9/13
+  Date: 2017/9/14
   Time: 19:58
   To change this template use File | Settings | File Templates.
 --%>
@@ -11,12 +12,15 @@
 <%@ include file="/WEB-INF/jsps/components/head.jsp" %>
 
 <head>
-    <title>购买产品</title>
+    <title>产品概览</title>
 </head>
 <body>
 <%@ include file="/WEB-INF/jsps/components/top_components.jsp" %>
 
 <div class="container">
+    <p>
+            <%= ((ProductVO)request.getAttribute("productInfo")).getProductName() %>
+    </p>
 </div>
 
 <%@ include file="/WEB-INF/jsps/components/message.jsp" %>

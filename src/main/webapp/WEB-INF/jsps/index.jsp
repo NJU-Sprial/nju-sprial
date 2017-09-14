@@ -856,6 +856,8 @@ Server for On Demand Loading)
 <script type="text/javascript" src="/revolution/js/extensions/revolution.extension.video.min.js"></script>
 
 </body>
-
+<script type="text/javascript">
+    $("#mainnav a:contains('首页')").attr("id","current");
+</script>
 
 </html>

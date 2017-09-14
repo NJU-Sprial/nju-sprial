@@ -27,7 +27,7 @@ public class Account {
     private LoginService loginService;
     @Autowired
     private SignUpService signUpService;
-//    @Autowired
+    @Autowired
     private AccountService accountService;
 
 
@@ -62,7 +62,7 @@ public class Account {
             if (loginService.login(username,password)) {
                 // 设置session
                 session.setAttribute(WebSecurityConfig.SESSION_KEY, username);
-//                session.setAttribute(WebSecurityConfig.KEY_TYPE, accountService.getUserType(username));
+                session.setAttribute(WebSecurityConfig.KEY_TYPE, accountService.getUserType(username));
 
                 modelMap.addFlashAttribute("alertType","alert-success");
                 modelMap.addFlashAttribute("alertMessage","登录成功");
@@ -87,6 +87,7 @@ public class Account {
         loginService.logout((String) session.getAttribute(WebSecurityConfig.SESSION_KEY));
         // 移除session
         session.removeAttribute(WebSecurityConfig.SESSION_KEY);
+        session.removeAttribute(WebSecurityConfig.KEY_TYPE);
         return "redirect:/";
     }
 
