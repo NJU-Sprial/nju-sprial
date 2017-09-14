@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: xiaoJun
@@ -42,19 +43,22 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td>项目1</td>
-                            <td>0001</td>
-                            <td>5</td>
-                            <td>2017-9-6</td>
-                            <td>10000</td>
-                            <td>5.5</td>
-                            <td><span>
-											<button class="packageInfoButton">详情</button>
-											<button class="packageInfoButton">修改</button>
-											<button class="packageDeleteButton">删除</button>
-										</span></td>
-                        </tr>
+
+                        <%--<c:forEach var="packageVO" items="allPackageVOList">--%>
+                            <%--<tr>--%>
+                                <%--<td>${packageVO.getProjectName()}</td>--%>
+                                <%--<td>${packageVO.getPackageId()}</td>--%>
+                                <%--<td>${packageVO.getAssetNumber()}</td>--%>
+                                <%--<td>2017-9-6</td>--%>
+                                <%--<td>${packageVO.getPrincipal()}</td>--%>
+                                <%--<td>${packageVO.getRate()}</td>--%>
+                                <%--<td><span>--%>
+											<%--<button class="packageInfoButton">详情</button>--%>
+											<%--<button class="packageInfoButton">修改</button>--%>
+											<%--<button class="packageDeleteButton">删除</button>--%>
+										<%--</span></td>--%>
+                            <%--</tr>--%>
+                        <%--</c:forEach>--%>
                         <tr>
                             <td>项目2</td>
                             <td>0002</td>
@@ -99,9 +103,6 @@
 
 <!-- Javascript -->
 <script type="text/javascript" src="/js/jquery.easydropdown.min.js"></script>
-<script type="text/javascript" src="/js/echarts.min.js"></script>
-<script type="text/javascript" src="/charts/packageAnalysisPieChart.js"></script>
 <script type="text/javascript" src="/js/assetpackage.js"></script>
-<script type="text/javascript" src="/js/packageAnalysis.js"></script>
 </body>
 </html>

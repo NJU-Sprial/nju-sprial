@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: xiaoJun
@@ -33,17 +34,13 @@
                             <label class="control-label col-sm-5" for="projectName">项目名称：</label>
                             <div class="col-sm-7">
                                 <select class="dropdown" tabindex="9" data-settings='{"wrapperClass":"flat"}' id="projectName">
-
-                                    <option value="1">项目1</option>
-
-                                    <option value="2">项目2</option>
-
-                                    <option value="3">项目3</option>
-
-                                    <option value="4">项目4</option>
-
-                                    <option value="5">项目5</option>
-
+                                    <c:forEach var="projectName" items="${projectNameList}">
+                                        <option>${projectName}</option>
+                                    </c:forEach>
+                                        <%--<option>projectName1</option>--%>
+                                        <%--<option>projectName2</option>--%>
+                                        <%--<option>projectName3</option>--%>
+                                        <%--<option>projectName4</option>--%>
                                 </select>
 
                                 <!--<select class="form-control projectSelect" id="projectName">-->
@@ -105,5 +102,27 @@
 
 <!-- Javascript -->
 <script type="text/javascript" src="/js/jquery.easydropdown.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $("#submit").click(function () {
+            $.ajax({
+                type: 'post',
+                async: true,   //异步请求
+                url: '/user/onlineDesign/packageManage/packageCreate/packageVO',
+                data:{
+                    "projectName": $("#projectName").val()
+                },
+                dataType: 'json',
+                success:function (result) {
+                    $("#assetPackageId").text(result.packageId);
+                    $("#assetNumber").text(result.assetNumber);
+                    $("#packageDate").text(result.packageData);
+                    $("#principal").text(result.principal);
+                    $('#rate').text(result.rate);
+                }
+            })
+        })
+    })
+</script>
 </body>
 </html>
