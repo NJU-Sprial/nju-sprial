@@ -102,6 +102,7 @@
 
 <!-- Javascript -->
 <script type="text/javascript" src="/js/jquery.easydropdown.min.js"></script>
+<script type="text/javascript" src="/js/ItemSelect.js"></script>
 <script type="text/javascript">
     $(function () {
         $("#submit").click(function () {
@@ -125,7 +126,4 @@
     })
 </script>
 </body>
-<script type="text/javascript">
-    $("#mainnav a:contains('产品在线设计')").attr("id","current");
-</script>
 </html>

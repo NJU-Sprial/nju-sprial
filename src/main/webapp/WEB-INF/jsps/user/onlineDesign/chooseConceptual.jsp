@@ -30,8 +30,6 @@
 </div>
 
 <%@ include file="/WEB-INF/jsps/components/message.jsp" %>
+<script type="text/javascript" src="/js/ItemSelect.js"></script>
 </body>
-<script type="text/javascript">
-    $("#mainnav a:contains('产品在线设计')").attr("id","current");
-</script>
 </html>

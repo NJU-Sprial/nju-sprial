@@ -219,10 +219,8 @@
 <script type="text/javascript" src="http://ditu.google.cn/maps/api/js?key=AIzaSyAcNjdyQ_xJKXqTnbGIhw7jlls3idn9rZM"></script>-->
 <script type="text/javascript" src="../../js/waypoints.min.js"></script>
 <script type="text/javascript" src="../../js/main.js"></script>
-
+<script type="text/javascript" src="/js/ItemSelect.js"></script>
 <script>
-    $("#mainnav a:contains('产品在线设计')").attr("id","current");
-
     function selectProject(element) {
         $("#pname-button").text($(element).text());
     }

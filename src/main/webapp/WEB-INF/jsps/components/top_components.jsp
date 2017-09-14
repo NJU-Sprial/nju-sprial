@@ -33,7 +33,7 @@
                 <div class="col-md-2">
                     <div id="logo" class="logo">
                         <a href="#" title="">
-                            <img src="/images/logo.gif" alt="logo sec"/>
+                            <img src="/images/logo.png" alt="logo sec"/>
                         </a>
                     </div><!-- /#logo -->
                 </div><!-- /.col-md-2 -->
@@ -150,8 +150,8 @@
         </div><!-- /.row -->
     </div><!-- /.container -->
 </header>
-<script>
-    $("#logo img" ).css("max-width","43%");
-</script>
+<%--<script>--%>
+    <%--$("#logo img" ).css("max-width","43%");--%>
+<%--</script>--%>
 <!-- /header -->
 

@@ -124,11 +124,11 @@
 </div>
 
 <%@ include file="/WEB-INF/jsps/components/message.jsp" %>
+<script type="text/javascript" src="/js/ItemSelect.js"></script>
 </body>
 
 <script src="/js/MobileIdentifier.js"></script>
 <script type="text/javascript">
-    $("#mainnav a:contains('产品在线设计')").attr("id","current");
 
     $(document).ready(function () {
         //每次选中项目名称变更时获取对应的所有资产包编号

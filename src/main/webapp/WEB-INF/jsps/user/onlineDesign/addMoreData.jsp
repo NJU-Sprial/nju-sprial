@@ -133,6 +133,7 @@
 <script type="text/javascript" src="/js/jquery.cookie.js"></script>
 <script type="text/javascript" src="/js/waypoints.min.js"></script>
 <script type="text/javascript" src="/js/main.js"></script>
+<script type="text/javascript" src="/js/ItemSelect.js"></script>
 <script type="text/javascript">
     $("#mainnav a:contains('产品在线设计')").attr("id","current");
     // 文件上传的监听

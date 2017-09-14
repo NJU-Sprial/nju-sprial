@@ -202,7 +202,4 @@
 <script type="text/javascript" src="/charts/cashSummaryLineChart.js"></script>
 <script type="text/javascript" src="/js/assetpackage.js"></script>
 </body>
-<script type="text/javascript">
-    $("#mainnav a:contains('产品在线设计')").attr("id","current");
-</script>
 </html>
