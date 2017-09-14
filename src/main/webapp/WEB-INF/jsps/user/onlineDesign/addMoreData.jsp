@@ -56,44 +56,48 @@
 
                 <div class="col-md-10">
                     <div class="flat-form-info">
-                        <form action="/user/onlineDesign/browseAndKeepAfterAddProject" method="post" class="form-info">
+                        <form id="form" action="/user/onlineDesign/browseAndKeepAfterAddProject" method="post"
+                              class="form-info" enctype="multipart/form-data">
                             <div class="v3">
-                                <p class="input-info"><input type="text" name="pname" value="" placeholder="项目名称">
+                                <p class="input-info"><input id="pname-input" type="text" name="pname" value=""
+                                                             placeholder="项目名称" oninput="dataChange()">
                                 </p>
-                                <p class="input-info"><input type="email" name="ptype" value="" placeholder="消费金融"
-                                                             disabled="true" text="消费金融"></p>
+                                <p class="input-info"><input id="type-input" type="text" name="ptype" value="消费金融" placeholder="消费金融"
+                                                             readonly="value"></p>
                                 <p class="input-info"><label>个人消费贷款、信用卡分期付款、国家助学贷款
-                                    <input type="radio" name="pway" value="" checked="" placeholder="Subject"></label>
-                                    </p>
+                                    <input type="radio" name="pway" value="PersonConsumption" checked=""></label>
+                                </p>
                                 <p class="input-info"><label>个人汽车贷款
-                                    <input type="radio" name="pway" value="" placeholder="Subject"></label>
-                                    </p>
+                                    <input type="radio" name="pway" value="PersonHousing"></label>
+                                </p>
                                 <p class="input-info"><label>个人住房贷款（包含装修、租借、购买）
-                                    <input type="radio" name="pway" value="" placeholder="Subject"></label>
-                                    </p>
+                                    <input type="radio" name="pway" value="PersonalCarMortgare"></label>
+                                </p>
                                 <p class="input-info"><input id="input-data-button" type="button" value="下载数据模板"></p>
                                 <!--使用label元素与file控件关联，input被隐藏，用户点的实际上是label-->
                                 <p class="input-info">
                                     <label for="input-file" class="btn btn-info one-half">导入数据</label>
-                                    <input type="file" name="file" id="input-file" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
-                                           style="position:absolute;clip:rect(0 0 0 0);" onchange="fileChange()"/>
-                                    <button id="submit-button" type="submit" disabled="disabled" class="btn btn-special btn-success one-half">
+                                    <input type="file" name="file" id="input-file"
+                                           accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+                                           style="position:absolute;clip:rect(0 0 0 0);" onchange="dataChange()"/>
+                                    <button id="submit-button" type="submit" disabled="disabled"
+                                            class="btn btn-special btn-success one-half">
                                         上传
                                     </button>
                                 </p>
-                                <p class="help-block">添加一个XML文件</p>
+                                <p class="help-block">请填写项目名称并添加一个填好的模板文件</p>
 
                                 <%--</div>--%>
                             </div>
                             <script>
-                                $("#input-data-button").css("margin-bottom", "30px").css("font-size","15px").css("margin-top","30px");
+                                $("#input-data-button").css("margin-bottom", "30px").css("font-size", "15px").css("margin-top", "30px");
                                 $("#pname-div").css("margin-top", "11px").css("margin-bottom", "56px");
-//                                $(".title.name-div");
+                                //                                $(".title.name-div");
                                 $("#basic-div").css("margin-bottom", "47px");
-                                $(".btn.btn-info").css("padding","10px 12px").css("padding-bottom","13px").css("font-weight","600");
-                                $("#submit-button").css("font-weight","600");
-                                $(".form-info label input").css("height","inherit").css("width","inherit");
-                                $(".input-info label").css("font-weight","bold");
+                                $(".btn.btn-info").css("padding", "10px 12px").css("padding-bottom", "13px").css("font-weight", "600");
+                                $("#submit-button").css("font-weight", "600");
+                                $(".form-info label input").css("height", "inherit").css("width", "inherit");
+                                $(".input-info label").css("font-weight", "bold");
                             </script>
                         </form> <!-- /.flat-form-info -->
                     </div>
@@ -135,15 +139,14 @@
 <script type="text/javascript" src="/js/main.js"></script>
 <script type="text/javascript" src="/js/ItemSelect.js"></script>
 <script type="text/javascript">
-    $("#mainnav a:contains('产品在线设计')").attr("id","current");
     // 文件上传的监听
-    function fileChange() {
-        if ($("#input-file").val() === '') {
-            $("#form .help-block").text('添加一个XML文件');
-            $("#form > div > button").attr('disabled', true);
+    function dataChange() {
+        if ($("#input-file").val() === '' || $("#pname-input").val() === '') {
+            $("#form .help-block").text('请填写项目名称并添加一个填好的模板文件');
+            $("#submit-button").attr('disabled', true);
         } else {
-            $("#form .help-block").text($("#input-file").get(0).files[0].name);
-            $("#form > div > button").attr('disabled', false);
+            $("#form .help-block").text($("#input-file").get(0).files[0].name + "——" + $("#pname-input").val());
+            $("#submit-button").attr('disabled', false);
         }
     }
 
