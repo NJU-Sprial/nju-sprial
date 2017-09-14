@@ -71,10 +71,10 @@ public class ConceptualDesign {
                                  @RequestParam(value = "firstPayDate", required = true) String firstPayDate,
                                  @RequestParam(value = "lawEndDate", required = true) String lawEndDate) {
         //日期格式
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 //        try {
 //            if(conceptualDesignService.saveProductStrategy(new ConceptualVO(
-//                    username,pname,packageNumber,sname,LocalDate.parse(packageDate,formatter),LocalDate.parse(startDate,formatter),
+//                    username,pname,packageNumber,sname,LocalDateTime.parse(packageDate,formatter),LocalDate.parse(startDate,formatter),
 //                    LocalDate.parse(firstPayDate,formatter),LocalDate.parse(lawEndDate,formatter)))){
 //                return "SUCESS";
 //            }
@@ -84,7 +84,7 @@ public class ConceptualDesign {
 
         //假数据
         if(!"".equals(pname) && !"".equals(packageNumber) && !"".equals(sname) &&
-                LocalDate.parse(packageDate,formatter) instanceof LocalDate &&
+                LocalDateTime.parse(packageDate,formatter) instanceof LocalDateTime &&
                 LocalDate.parse(startDate,formatter) instanceof LocalDate &&
                 LocalDate.parse(firstPayDate,formatter) instanceof LocalDate &&
                 LocalDate.parse(lawEndDate,formatter) instanceof LocalDate){
@@ -105,9 +105,9 @@ public class ConceptualDesign {
                                  @RequestParam(value = "firstPayDate", required = true) String firstPayDate,
                                  @RequestParam(value = "lawEndDate", required = true) String lawEndDate) {
         //日期格式
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 //        ConceptualParameterVO conceptualParameterVO = conceptualDesignService.analysisConceptual(new ConceptualVO(
-//                username,pname,packageNumber,sname,LocalDate.parse(packageDate,formatter),LocalDate.parse(startDate,formatter),
+//                username,pname,packageNumber,sname,LocalDateTime.parse(packageDate,formatter),LocalDate.parse(startDate,formatter),
 //                LocalDate.parse(firstPayDate,formatter),LocalDate.parse(lawEndDate,formatter)));
 //        return  conceptualParameterVO;
 

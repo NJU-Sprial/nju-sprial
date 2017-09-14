@@ -1,5 +1,6 @@
 <%@ page import="java.util.List" %>
-<%@ page import="vo.ConceptualVO" %><%--
+<%@ page import="vo.ConceptualVO" %>
+<%@ page import="java.time.format.DateTimeFormatter" %><%--
   Created by IntelliJ IDEA.
   User: zjy
   Date: 2017/9/9
@@ -33,7 +34,7 @@
                 <div class="form-group">
                     <dt>封包日期</dt>
                     <dd>
-                        <span id="packageDate"><%=conceptualVO.getPackageDate()%></span>
+                        <span id="packageDate"><%=conceptualVO.getPackageDate().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"))%></span>
                     </dd>
                 </div>
                 <div class="form-group">
@@ -139,6 +140,8 @@
 </body>
 
 <script type="text/javascript">
+    $("#mainnav a:contains('产品在线设计')").attr("id","current");
+
     function collectData() {
         return {
             "pname": "<%=conceptualVO.getPname()%>",

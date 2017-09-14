@@ -161,4 +161,7 @@
 
 <%@ include file="/WEB-INF/jsps/components/message.jsp" %>
 </body>
+<script type="text/javascript">
+    $("#mainnav a:contains('登录')").attr("id","current");
+</script>
 </html>

@@ -21,4 +21,7 @@
 
 <%@ include file="/WEB-INF/jsps/components/message.jsp" %>
 </body>
+<script type="text/javascript">
+    $("#mainnav a:contains('在售商品')").attr("id","current");
+</script>
 </html>

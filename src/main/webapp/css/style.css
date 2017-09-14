@@ -705,7 +705,7 @@ h4 { font-size: 14px; line-height: 14px; }
 }
 
 #mainnav .menu > li > a {
-	line-height: 92px;
+	line-height: 75px;
 	/*display: inline-block;*/
 	padding: 0 19.5px;
 	color: #424242;
