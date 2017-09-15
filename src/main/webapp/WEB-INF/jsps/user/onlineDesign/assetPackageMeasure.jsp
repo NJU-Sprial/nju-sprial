@@ -199,7 +199,7 @@
 <!-- Javascript -->
 <script type="text/javascript" src="/js/jquery.easydropdown.min.js"></script>
 <script type="text/javascript" src="/js/echarts.min.js"></script>
-<script type="text/javascript" src="/charts/cashSummaryLineChart.js"></script>
+<script type="text/javascript" src="/js/charts/cashSummaryLineChart.js"></script>
 <script type="text/javascript" src="/js/assetpackage.js"></script>
 </body>
 </html>

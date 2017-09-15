@@ -1071,7 +1071,7 @@
 <!-- Javascript -->
 <script type="text/javascript" src="/js/jquery.easydropdown.min.js"></script>
 <script type="text/javascript" src="/js/echarts.min.js"></script>
-<script type="text/javascript" src="/charts/packageAnalysisPieChart.js"></script>
+<script type="text/javascript" src="/js/charts/packageAnalysisPieChart.js"></script>
 <script type="text/javascript" src="/js/assetpackage.js"></script>
 <script type="text/javascript" src="/js/packageAnalysis.js"></script>
 <script type="text/javascript" src="/js/ItemSelect.js"></script>
