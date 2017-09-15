@@ -25,12 +25,12 @@ import java.util.List;
 @Controller
 public class Agency {
 //    @Autowired
-    AgencyService agencyService;
+//    AgencyService agencyService;
 
     @GetMapping("/user/agency/viewProjectList")
     public String onlineDesign(Model model) {
-        List<ProjectVO> projectVOList = agencyService.getProjectList();
-        model.addAttribute("projectList",projectVOList);
+//        List<ProjectVO> projectVOList = agencyService.getProjectList();
+//        model.addAttribute("projectList",projectVOList);
         return "user/agency/viewProjectList";
     }
 //

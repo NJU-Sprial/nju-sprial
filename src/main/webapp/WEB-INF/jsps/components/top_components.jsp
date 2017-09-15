@@ -138,7 +138,17 @@
                                 <li><a href="/logout">注销</a></li>
 
                                 <% } else if (session.getAttribute(WebSecurityConfig.KEY_TYPE).equals(UserType.Intermediary)) { %>
-
+                                <li>
+                                    <a href="/user/agency/viewProjectList" class="sf-with-ul">
+                                        我的项目
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="sf-with-ul">
+                                        数据编辑
+                                    </a>
+                                </li>
+                                <li><a href="/logout">注销</a></li>
                                 <% } else if (session.getAttribute(WebSecurityConfig.KEY_TYPE).equals(UserType.Manager)) { %>
 
                                 <% } %>
