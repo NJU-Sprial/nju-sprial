@@ -53,5 +53,16 @@ public class ProductDataServiceImpl implements ProductDataService{
         return result;
     }
 
+    @Override
+    public List<ProductPO> getOnSaleProductList() {
+        List<ProductPO> productPOS = orderDao.find("from ProductPO where finished = ?",false);
+        return productPOS==null?new ArrayList<>():productPOS;
+    }
+
+    @Override
+    public ProductPO getProductInfo(int productID) {
+        return productDao.get(productID);
+    }
+
 
 }

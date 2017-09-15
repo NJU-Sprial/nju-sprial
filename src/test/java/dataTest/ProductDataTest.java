@@ -24,10 +24,7 @@ public class ProductDataTest {
 
     @Test
     public void test() {
-        ProductPO productPO = new ProductPO();
-        productPO.setIssuer("yinywf");
-        productPO.setTermOfRecruitment(LocalDateTime.now());
-       // productDataService.test(productPO);
+        System.out.println(productDataService.getOnSaleProductList());
     }
 
 }
