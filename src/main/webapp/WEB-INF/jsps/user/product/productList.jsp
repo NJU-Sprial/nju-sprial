@@ -21,62 +21,72 @@
 <div class="container">
     <div class="top-margin ">
         <% for(ProductVO productVO:(List<ProductVO>) request.getAttribute("productList")){ %>
-        <a style="padding-left: 45px;" href="/user/product/<%=productVO.getProductID()%>/overview"><%=productVO.getProductName()%></a>
-        <div>
-            <div>
-                <p><%=productVO.getQuantity()%></p>
-                <p>发行总额</p>
-            </div>
-            <div>
-                <span>利率区间</span>
-                <span><%=productVO.getInterestLowerBound()*100%>%-<%=productVO.getInterestUpperBound()*100%></span>
-            </div>
-            <div>
-                <!-- 用户输入套件，用dl包起来，实现纵向对齐 -->
-                <dl class="dl-horizontal">
-                    <div class="form-group">
-                        <dt>评级结果：</dt>
-                        <dd>
-                            <span><%=productVO.getRatingResult()%></span>
-                        </dd>
+        <div class="col-md-4 col-sm-6">
+            <div class="bottom-margin content-box big ch-item">
+                <div class="content-box-info">
+                    <a class="center-block text-center" href="/user/product/<%=productVO.getProductID()%>/overview"><%=productVO.getProductName()%></a>
+                    <div>
+                        <blockquote>
+                            <p><%=productVO.getQuantity()%></p>
+                            <footer>发行总额</footer>
+                        </blockquote>
+                        <div class="text-center" style="color: #04d203;">
+                            <span>利率区间：</span>
+                            <span><%=productVO.getInterestLowerBound()*100%>%-<%=productVO.getInterestUpperBound()*100%>%</span>
+                        </div>
+                        <div class="top-margin bottom-margin">
+                            <!-- 用户输入套件，用dl包起来，实现纵向对齐 -->
+                            <dl class="dl-horizontal">
+                                <div>
+                                    <dt>评级结果：</dt>
+                                    <dd>
+                                        <span><%=productVO.getRatingResult()%></span>
+                                    </dd>
+                                </div>
+                                <div>
+                                    <dt>发起机构：</dt>
+                                    <dd>
+                                        <span><%=productVO.getSponsor()%></span>
+                                    </dd>
+                                </div>
+                                <div>
+                                    <dt>发行机构：</dt>
+                                    <dd>
+                                        <span><%=productVO.getIssuer()%></span>
+                                    </dd>
+                                </div>
+                                <div>
+                                    <dt>资产类型：</dt>
+                                    <dd>
+                                        <span><%=productVO.getAssetType()%></span>
+                                    </dd>
+                                </div>
+                                <div>
+                                    <dt>交易场所：</dt>
+                                    <dd>
+                                        <span><%=productVO.getTradingPlace()%></span>
+                                    </dd>
+                                </div>
+                                <div>
+                                    <dt>预计到期日：</dt>
+                                    <dd>
+                                        <span><%=productVO.getEstimatedMaturityDate().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"))%></span>
+                                    </dd>
+                                </div>
+                                <div>
+                                    <dt>募集期限：</dt>
+                                    <dd>
+                                        <span><%=productVO.getTermOfRecruitment().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"))%></span>
+                                    </dd>
+                                </div>
+                            </dl>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <dt>发起机构：</dt>
-                        <dd>
-                            <span><%=productVO.getSponsor()%></span>
-                        </dd>
-                    </div>
-                    <div class="form-group">
-                        <dt>发行机构：</dt>
-                        <dd>
-                            <span><%=productVO.getIssuer()%></span>
-                        </dd>
-                    </div>
-                    <div class="form-group">
-                        <dt>资产类型：</dt>
-                        <dd>
-                            <span><%=productVO.getAssetType()%></span>
-                        </dd>
-                    </div>
-                    <div class="form-group">
-                        <dt>交易场所：</dt>
-                        <dd>
-                            <span><%=productVO.getTradingPlace()%></span>
-                        </dd>
-                    </div>
-                    <div class="form-group">
-                        <dt>预计到期日：</dt>
-                        <dd>
-                            <span><%=productVO.getEstimatedMaturityDate().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"))%></span>
-                        </dd>
-                    </div>
-                    <div class="form-group">
-                        <dt>募集期限：</dt>
-                        <dd>
-                            <span><%=productVO.getTermOfRecruitment().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"))%></span>
-                        </dd>
-                    </div>
-                </dl>
+                    <a class="learn-more center-block text-center" href="/user/product/<%=productVO.getProductID()%>/overview">
+                        查看详情
+                        <span class="glyphicon glyphicon-menu-right"></span>
+                    </a>
+                </div>
             </div>
         </div>
         <% } %>
