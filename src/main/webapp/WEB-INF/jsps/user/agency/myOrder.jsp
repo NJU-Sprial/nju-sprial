@@ -76,5 +76,8 @@
     <%@ include file="/WEB-INF/jsps/components/message.jsp" %>
 
 </div> <!-- /.boxed -->
+<script type="text/javascript">
+    $(".nav.navbar-nav.sf-menu.menu li a:contains('我的订单')").attr("id", "current");
+</script>
 </body>
 </html>

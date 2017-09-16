@@ -129,12 +129,18 @@
                                     </a>
                                     <ul>
                                         <li>
-                                            <a href="#" class="sf-with-ul">
+                                            <a href="/user/agency/myOrder" class="sf-with-ul">
                                                 订单列表
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="/user/agency/investProject" class="sf-with-ul">
+                                                已投资项目
                                             </a>
                                         </li>
                                     </ul>
                                 </li>
+
                                 <li><a href="/logout">注销</a></li>
 
                                 <% } else if (session.getAttribute(WebSecurityConfig.KEY_TYPE).equals(UserType.Intermediary)) { %>

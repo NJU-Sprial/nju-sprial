@@ -18,6 +18,7 @@
     <link rel="stylesheet" type="text/css" href="/css/assetpackage.css">
 </head>
 <body>
+<%@ include file="/WEB-INF/jsps/components/top_components.jsp" %>
 <div class="boxed blog">
 
     <section class="flat-row pd-contact-v1">
