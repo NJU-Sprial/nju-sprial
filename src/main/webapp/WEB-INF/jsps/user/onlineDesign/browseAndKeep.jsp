@@ -67,10 +67,10 @@
                 <div class="col-md-4">
                     <form class="form-inline">
                         <div class="form-group">
-                            <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
+                            <%--<label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>--%>
                             <div class="input-group">
                                 <div class="input-group-addon">贷款搜索</div>
-                                <input type="text" class="form-control" id="exampleInputAmount" placeholder="Amount">
+                                <input type="text" class="form-control" id="exampleInputAmount" placeholder="贷款编号">
                                 <%--<div class="input-group-addon"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></div>--%>
                             </div>
                         </div>

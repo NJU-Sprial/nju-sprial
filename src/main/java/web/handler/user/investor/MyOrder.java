@@ -1,4 +1,4 @@
-package web.handler.user.Agency;
+package web.handler.user.investor;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,6 +12,6 @@ public class MyOrder {
 
     @GetMapping("/user/agency/myOrder")
     public String toMyOrder(Model model) {
-        return "user/agency/myOrder";
+        return "user/investor/myOrder";
     }
 }

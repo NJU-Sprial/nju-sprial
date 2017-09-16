@@ -223,6 +223,9 @@
 <!-- Javascript -->
 <script type="text/javascript" src="/js/jquery.easydropdown.min.js"></script>
 <script type="text/javascript" src="/js/echarts.min.js"></script>
+<script type="text/javascript">
+    $("#mainnav a:contains('我的项目')").attr("id","current");
+</script>
 </body>
 </html>
 
