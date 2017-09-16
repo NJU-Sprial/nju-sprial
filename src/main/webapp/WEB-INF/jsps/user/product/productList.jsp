@@ -24,6 +24,11 @@
         <div class="col-md-4 col-sm-6">
             <div class="bottom-margin content-box big ch-item">
                 <div class="content-box-info">
+                    <div class="ch-info" style="top: 8px;right: 10px;">
+                        <div class="ch-info-front ch-img-1"></div>
+                        <div class="ch-info-back">
+                        </div>
+                    </div>
                     <a class="center-block text-center" href="/user/product/<%=productVO.getProductID()%>/overview"><%=productVO.getProductName()%></a>
                     <div>
                         <blockquote>
