@@ -2,8 +2,6 @@ package web.handler.user.product;
 
 import blservice.OnSaleProductOverviewService;
 import blservice.OnSaleProductTrackService;
-import constranst.BondType;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -74,7 +72,7 @@ public class BrowseProduct {
     @RequestMapping(value = "/user/product/{productID}/assetPool", method= RequestMethod.GET)
     public String productAssetPool(@SessionAttribute(WebSecurityConfig.SESSION_KEY) String username, Model model,
                                   @PathVariable String productID) {
-        return "/user/product/assetPool";
+        return "user/product/assetPoolAnalysis";
     }
 
     @RequestMapping(value = "/user/product/{productID}/track", method= RequestMethod.GET)

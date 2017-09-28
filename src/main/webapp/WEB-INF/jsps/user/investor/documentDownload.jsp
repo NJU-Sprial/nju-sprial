@@ -1,22 +1,12 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8" %>
-<!DOCTYPE html>
-<!--[if IE 8 ]>
-<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!-->
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US"><!--<![endif]-->
+<%@ page language="java" contentType="text/html; charset=UTF-8" %>
 
-<!--[if IE 8 ]>
-<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US"/> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!-->
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US"><!--<![endif]-->
-
+<html>
+<%@ include file="/WEB-INF/jsps/components/head.jsp" %>
 <head>
     <title>浏览维护</title>
-    <link rel="stylesheet" type="text/css" href="/css/cooperation.css">
+    <%--<link rel="stylesheet" type="text/css" href="/css/cooperation.css">--%>
     <%--<link rel="stylesheet" type="text/css" href="/css/glyphicon.css">--%>
 </head>
-<%@ include file="/WEB-INF/jsps/components/head.jsp" %>
 <body>
 <div class="boxed blog">
     <!-- Preloader -->

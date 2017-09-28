@@ -121,6 +121,16 @@
                                                 商品列表
                                             </a>
                                         </li>
+                                        <li>
+                                            <a href="/user/investor/assetPoolAnalysis" class="sf-with-ul">
+                                                资产池分析
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="/user/investor/downloadDocument" class="sf-with-ul">
+                                                相关文档下载
+                                            </a>
+                                        </li>
                                     </ul>
                                 </li>
                                 <li>
