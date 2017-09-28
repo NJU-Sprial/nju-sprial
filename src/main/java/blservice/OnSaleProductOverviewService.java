@@ -42,9 +42,10 @@ public interface OnSaleProductOverviewService {
 
     /**
      * 增信的相关信息
-     * 待定
+     * <strong>此功能已删!!!!</strong>
      * @param productID 产品ID
      * @return 如果产品不存在，返回null
      */
+    @Deprecated
     public IncreasingVO getIncreasingMessage(String productID);
 }

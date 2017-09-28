@@ -16,6 +16,9 @@
 .table-text-center > thead th{
     text-align: center;
 }
+.table-text-center > tbody td{
+    text-align: center;
+}
 
 .alert {
     bottom: -20px;

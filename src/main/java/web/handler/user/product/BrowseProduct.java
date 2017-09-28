@@ -47,7 +47,6 @@ public class BrowseProduct {
 //        model.addAttribute("productInfo",onSaleProductOverviewService.getProductInfo(productID));
 //        model.addAttribute("assetPool",onSaleProductOverviewService.getAssetPool(productID));
 //        model.addAttribute("securityList",onSaleProductOverviewService.getSecurityList(productID));
-//        model.addAttribute("increasingMessage",onSaleProductOverviewService.getIncreasingMessage(productID));
 
         //假数据
         ProductVO fakeProductVO = new ProductVO("productID1","示例产品1","￥10000",0.4,
@@ -60,11 +59,9 @@ public class BrowseProduct {
                 new ProductStrategyVO(null,2,"简称1",35.5,10000,2,5.3),
                 new ProductStrategyVO(null,3,"简称2",37.5,20000,3,4.3)
         );
-        IncreasingVO fakeIncreasingVO = new IncreasingVO();
         model.addAttribute("productInfo", fakeProductVO);
         model.addAttribute("assetPool", fakeAssetPoolVO);
         model.addAttribute("securityList", fakeSecurityList);
-        model.addAttribute("increasingMessage", fakeIncreasingVO);
 
         return "/user/product/productOverview";
     }

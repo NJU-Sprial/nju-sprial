@@ -49,4 +49,52 @@ public class AssetPoolVO {
         this.aveMonth = aveMonth;
         this.aveLeftMonth = aveLeftMonth;
     }
+
+    public String getProductID() {
+        return productID;
+    }
+
+    public String getQuantity() {
+        return quantity;
+    }
+
+    public String getLeftQuantity() {
+        return leftQuantity;
+    }
+
+    public int getNumOfBorrowers() {
+        return numOfBorrowers;
+    }
+
+    public int getNumOfLoan() {
+        return numOfLoan;
+    }
+
+    public double getHighestAmount() {
+        return highestAmount;
+    }
+
+    public double getAveAmount() {
+        return aveAmount;
+    }
+
+    public double getHighestRate() {
+        return highestRate;
+    }
+
+    public double getAveRate() {
+        return aveRate;
+    }
+
+    public double getHighestLeftMonth() {
+        return highestLeftMonth;
+    }
+
+    public double getAveMonth() {
+        return aveMonth;
+    }
+
+    public double getAveLeftMonth() {
+        return aveLeftMonth;
+    }
 }
