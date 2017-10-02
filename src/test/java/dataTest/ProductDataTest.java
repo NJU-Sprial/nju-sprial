@@ -24,6 +24,7 @@ public class ProductDataTest {
 
     @Test
     public void test() {
+
         System.out.println(productDataService.getOnSaleProductList());
     }
 
