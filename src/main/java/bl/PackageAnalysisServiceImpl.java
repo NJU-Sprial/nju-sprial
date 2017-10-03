@@ -2,6 +2,7 @@ package bl;
 
 import blservice.OnlineDesignService;
 import blservice.PackageAnalysisService;
+import dataservice.PropertyPackageDataService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import vo.AssetBasicInfoVO;
@@ -14,10 +15,11 @@ import java.util.List;
 public class PackageAnalysisServiceImpl implements PackageAnalysisService{
     @Autowired
     OnlineDesignService onlineDesignService;
+    PropertyPackageDataService propertyPackageDataService;
 
     @Override
     public List<String> getPackageNameList(String username, String projectName) {
-        return null;
+        return propertyPackageDataService.getPackageNameList(username,projectName);
     }
 
     @Override
