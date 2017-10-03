@@ -2,8 +2,10 @@ package bl;
 
 import blservice.OnSaleProductTrackService;
 import dataservice.AssetPoolChangeLogDataService;
+import dataservice.SecuritiesRepaymentDataService;
 import org.springframework.beans.factory.annotation.Autowired;
 import po.AssetPoolChangeLogPO;
+import po.SecuritiesRepaymentPO;
 import util.PO2VOUtil;
 import vo.AssetPoolChangeLogVO;
 import vo.SecuritiesMessageVO;
@@ -17,9 +19,12 @@ import java.util.List;
 public class OnSaleProductTrackServiceImpl implements OnSaleProductTrackService {
 
     private AssetPoolChangeLogDataService assetPoolChangeLogDataService;
+    private SecuritiesRepaymentDataService securitiesRepaymentDataService;
     @Autowired
-    public OnSaleProductTrackServiceImpl(AssetPoolChangeLogDataService assetPoolChangeLogDataService) {
+    public OnSaleProductTrackServiceImpl(AssetPoolChangeLogDataService assetPoolChangeLogDataService,
+                                         SecuritiesRepaymentDataService securitiesRepaymentDataService) {
         this.assetPoolChangeLogDataService = assetPoolChangeLogDataService;
+        this.securitiesRepaymentDataService = securitiesRepaymentDataService;
     }
     /**
      * 获取资产池变动情况
@@ -35,13 +40,14 @@ public class OnSaleProductTrackServiceImpl implements OnSaleProductTrackService 
 
     /**
      * 获取证券偿付情况
-     * TODO wz
+     * @see po.SecuritiesRepaymentPO
      * @param productID 产品ID
      * @return 如果产品不存在，返回null
      */
     @Override
     public List<SecuritiesRepaymentVO> getSecuritiesRepayment(String productID) {
-        return null;
+        List<SecuritiesRepaymentPO> securitiesRepaymentPOs = securitiesRepaymentDataService.getSecuritiesRepayment(productID);
+        return PO2VOUtil.securitiesRepaymentPOs2VOs(securitiesRepaymentPOs);
     }
 
     /**
