@@ -20,6 +20,17 @@ public class OrderServiceImpl implements OrderService {
     public OrderServiceImpl(OrderDataService orderDataService) {
         this.orderDataService = orderDataService;
     }
+
+    @Override
+    public String getProductName(String productID) {
+        return null;
+    }
+
+    @Override
+    public String getInterestRange(String productID) {
+        return null;
+    }
+
     /**
      * 投资者提交订单，如果下单成功，系统为该订单生成订单号
      * @param submitOrderVO 订单信息

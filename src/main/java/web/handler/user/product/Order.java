@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributesModelMap;
+import util.FormatUtil;
 import vo.SubmitOrderVO;
 import web.security.WebSecurityConfig;
 import java.time.LocalDateTime;
@@ -25,10 +26,15 @@ public class Order {
     public String placeOrder(@SessionAttribute(WebSecurityConfig.SESSION_KEY) String username,
                              @PathVariable String productID,
                               Model model) {
-        model.addAttribute("orderTime", LocalDateTime.now());
+        model.addAttribute("orderTime", LocalDateTime.now().format(FormatUtil.DATE_TIME_FORMATTER));
         model.addAttribute("productID", productID);
-        model.addAttribute("pname", LocalDateTime.now());
         model.addAttribute("username", username);
+
+//        model.addAttribute("pname", orderService.getProductName(productID));
+//        model.addAttribute("interestRange", orderService.getInterestRange(productID));
+        model.addAttribute("pname", "示例产品");
+        model.addAttribute("interestRange", "5.3% - 10.3%");
+
         return "/user/product/placeOrder";
     }
 
@@ -36,14 +42,13 @@ public class Order {
     public String productList(@SessionAttribute(WebSecurityConfig.SESSION_KEY) String username,
                               @RequestParam(value = "orderTime", required = true) String orderTime,
                               @RequestParam(value = "productID", required = true) String productID,
-                              @RequestParam(value = "pname", required = true) String pname,
                               @RequestParam(value = "interestRate", required = true) String interestRate,
                               @RequestParam(value = "amount", required = true) String amount,
                               RedirectAttributesModelMap modelMap) {
 //        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 //        try {
 //            if(orderService.submitOrder(new SubmitOrderVO(
-//                    LocalDateTime.parse(orderTime,formatter),productID,username,Double.parseDouble(interestRate), Double.parseDouble(amount)))
+//                    LocalDateTime.parse(orderTime,formatter),productID,username,Double.parseDouble(interestRate)/100, Double.parseDouble(amount)))
 //                    ){
 //                modelMap.addFlashAttribute("alertType","alert-success");
 //                modelMap.addFlashAttribute("alertMessage","购买成功");
