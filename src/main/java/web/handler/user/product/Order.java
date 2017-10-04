@@ -5,10 +5,7 @@ import exception.ErrorParamException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.SessionAttribute;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributesModelMap;
 import vo.SubmitOrderVO;
 import web.security.WebSecurityConfig;
@@ -24,9 +21,9 @@ public class Order {
 //    @Autowired
     private OrderService orderService;
 
-    @RequestMapping(value = "/user/placeOrder", method= RequestMethod.POST)
+    @RequestMapping(value = "/user/placeOrder/{productID}", method= RequestMethod.GET)
     public String placeOrder(@SessionAttribute(WebSecurityConfig.SESSION_KEY) String username,
-                              @RequestParam(value = "productID", required = true) String productID,
+                             @PathVariable String productID,
                               Model model) {
         model.addAttribute("orderTime", LocalDateTime.now());
         model.addAttribute("productID", productID);

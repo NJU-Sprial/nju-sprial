@@ -21,6 +21,19 @@
 <%@ include file="/WEB-INF/jsps/components/top_components.jsp" %>
 
 <div class="container">
+    <div class="top-margin">
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="/user/product/<%= ((ProductVO)request.getAttribute("productInfo")).getProductID() %>/overview" role="tab">产品概览</a></li>
+            <li role="presentation"><a href="/user/product/<%= ((ProductVO)request.getAttribute("productInfo")).getProductID() %>/assetPool" role="tab">资产池分析</a></li>
+            <li role="presentation"><a href="#"role="tab">相关文档下载</a></li>
+
+            <a class="btn btn-lg btn-green animated bounceIn pull-right" href="/user/placeOrder/<%= ((ProductVO)request.getAttribute("productInfo")).getProductID() %>">
+                立即购买
+            </a>
+        </ul>
+
+    </div>
     <!-- 产品信息 -->
     <div class="panel panel-info top-margin">
         <div class="panel-heading">

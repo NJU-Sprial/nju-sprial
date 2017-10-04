@@ -219,6 +219,15 @@ a.learn-more:hover {
 }
 
 
+.btn-green {
+    background-color: #35da5e;
+    color: white;
+}
+.btn-green:hover {
+    background-color: #0cc1be;
+    color: white;
+}
+
 @media (min-width: 768px){
     .dl-horizontal dt{
         width: 100px;
