@@ -196,11 +196,40 @@ a.learn-more:hover {
     /*background-color: yellow;*/
 /*}*/
 
+/* tag-list */
+.tag-list {
+    padding: 15px;
+}
+.tag-list .tag-item {
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+.tag-list .tag-item span.glyphicon{
+    font-size: 14px;
+    color: #30a0e3;
+}
+.tag-list .tag-item span.tag-title{
+    margin-left: 10px;
+    color: #1f98c9;
+}
+.tag-list .tag-item span.tag-message{
+    display: inline-block;
+}
+
+
 @media (min-width: 768px){
     .dl-horizontal dt{
         width: 100px;
     }
     .dl-horizontal dd {
         margin-left: 100px;
+    }
+}
+
+@media (max-width: 768px){
+    .tag-list .tag-item {
+        font-size: 14px;
     }
 }
