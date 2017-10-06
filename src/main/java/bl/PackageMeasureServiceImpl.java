@@ -13,10 +13,10 @@ public class PackageMeasureServiceImpl implements PackageMeasureService {
     @Autowired
     OnlineDesignService onlineDesignService;
     @Override
+    //TODO
+    //算法相关
     public CashFlowDataVO getCashFlowData(String username, String projectName, String packageId, String cycle, Date pay, String unit) {
-        int cycleNumber = Integer.parseInt(cycle);
-        //查询跟之前接口不对等
-//        onlineDesignService.getCashFlowDataVO(username,projectName,packageId,cycleNumber,pay,unit);
+
         return null;
     }
 }

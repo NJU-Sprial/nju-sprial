@@ -61,6 +61,9 @@ public class AssetBasicInfoVO {
     private int totalCar;                   //抵押车辆初始合同价值合计(万元)
     private double loanValueRate;           //加权平均初始贷款价值比(LTV)
 
+    public AssetBasicInfoVO(){
+    }
+
     public AssetBasicInfoVO(int outstandingPrincipal, int totalSecurity, int totalContract, int brrowerNumeber,
                             int loanNumber, int maxPrincipal, int avgPrincipal, int borrowerAvgPrincipal, int maxContract,
                             int avgContract, int avgLoanContract, int avgLoanRemain, int avgLoanAge, int maxRemain, int minRemain,

@@ -52,7 +52,7 @@ public class OnSaleProductTrackServiceImpl implements OnSaleProductTrackService 
 
     /**
      * 获取证券信息
-     * TODO cyf
+     * TODO 前端说删掉了=。=
      * @param productID 产品ID
      * @return 至少包含一条信息（标题是评级变化情况），如果产品不存在，返回null
      */

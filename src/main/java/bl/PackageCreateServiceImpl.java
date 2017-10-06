@@ -15,7 +15,7 @@ public class PackageCreateServiceImpl implements PackageCreateService{
     public AssetPackageVO createPackage(String username, String projectName) {
         onlineDesignService.createPropertyPackage(username,projectName);
         PropertyPackageVO propertyPackageVO = onlineDesignService.searchPropertyPackage(username,projectName);
-        if (propertyPackageVO==null){
+        if (propertyPackageVO.getPropertyPackageId()==""){
             return null;
         }
         AssetPackageVO result = new AssetPackageVO(propertyPackageVO,username);
