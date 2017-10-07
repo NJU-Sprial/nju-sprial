@@ -70,37 +70,10 @@
                          data-paddingbottom="[0,0,0,0"
                          data-paddingleft="[0,0,0,0]"
 
-                         style="z-index: 16; white-space: nowrap;text-transform:left;">We help businesses<br/>innovate
-                        and
-                        grow
+                         style="z-index: 16; white-space: nowrap;text-transform:left;">让投资不再麻烦<br/>Simplify investment
                     </div>
 
                     <!-- LAYER NR. 13 -->
-                    <div class="tp-caption sub-title color-white"
-                         id="slide-3049-layer-4"
-                         data-x="['left','left','left','left']" data-hoffset="['37','37','37','37']"
-                         data-y="['middle','middle','middle','middle']" data-voffset="['30','30','30','0']"
-                         data-fontsize="['20',18','18','14']"
-                         data-lineheight="['30','28','28','24']"
-                         data-fontweight="['400','400','400','400']"
-                         data-width="none"
-                         data-height="none"
-                         data-whitespace="nowrap"
-
-                         data-type="text"
-                         data-responsive_offset="on"
-
-                         data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","speed":2000,"to":"o:1;","delay":1500,"ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
-                         data-textAlign="['left','left','left','left']"
-                         data-paddingtop="[0,0,0,0]"
-                         data-paddingright="[0,0,0,0]"
-                         data-paddingbottom="[0,0,0,0]"
-                         data-paddingleft="[0,0,0,0]"
-
-                         style="z-index: 17; white-space: nowrap;text-transform:left;">With over 10 years of experience
-                        helping businesses to find<br/>comprehensive solutions
-                    </div>
-
                     <a href="#" target="_self" class="tp-caption flat-button-slider bg-blue"
 
                        data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","speed":2000,"to":"o:1;","delay":2000,"ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
@@ -109,7 +82,7 @@
                        data-y="['middle','middle','middle','middle']" data-voffset="['140','140','140','80']"
                        data-fontsize="['14','14','14','14']"
                        data-width="['auto']"
-                       data-height="['auto']">Our Company
+                       data-height="['auto']">关于我们(About Us)
                     </a><!-- END LAYER LINK -->
 
                     <a href="#" target="_self" class="tp-caption flat-button-slider bg-transparent"
@@ -120,7 +93,7 @@
                        data-y="['middle','middle','middle','middle']" data-voffset="['140','140','140','80']"
                        data-fontsize="['14',14','14','14']"
                        data-width="['auto']"
-                       data-height="['auto']">Get in Touch
+                       data-height="['auto']">联系我们（Contact Us）
                     </a><!-- END LAYER LINK -->
                 </li>
 
@@ -238,15 +211,15 @@
                             </div><!-- /.imagebox-image -->
 
                             <div class="imagebox-title">
-                                <h3><a href="#" title="">Business Ideas And Innovation</a></h3>
+                                <h3><a href="#" title="">券商（the needs of securities traders）</a></h3>
                             </div><!-- /.iamgebox-title -->
                             <div class="imagebox-content">
                                 <div class="imagebox-desc">
-                                    Sed ut perspiciatis unde omnis iste error sit voluptatem accusantium doloremque lau
-                                    dantium, rem aperiam eaque ipsa ab illo inventore veritatis
+                                    本平台为证券公司人员提供丰富服务，包括资产池管理、资产包管理、和产品设计，并且搭建了发行
+                                    协作和募集期管理平台，让券商的工作更加快捷高效
                                 </div>
                                 <div class="imagebox-button">
-                                    <a href="#" title="">read more</a>
+                                    <a href="#" title="">了解更多（read more）</a>
                                 </div>
                             </div><!-- /.imagebox-content -->
                         </div><!-- /.imagebox -->
@@ -260,15 +233,15 @@
                                 <img src="/images/imagebox/002.jpg" alt=""/>
                             </div><!-- /.imagebox-image -->
                             <div class="imagebox-title">
-                                <h3><a href="#" title="">Business Ideas And Innovation</a></h3>
+                                <h3><a href="#" title="">投资者（the needs of investors）</a></h3>
                             </div><!-- /.imagebox-title -->
                             <div class="imagebox-content">
                                 <div class="imagebox-desc">
-                                    Sed ut perspiciatis unde omnis iste error sit voluptatem accusantium doloremque lau
-                                    dantium, rem aperiam eaque ipsa ab illo inventore veritatis
+                                    本平台为投资者提供人性化服务，您可以浏览ABS产品并在线下单购买，并可以在线获取资产池分析
+                                    信息，还可以获得一线金融资产文档资料
                                 </div>
                                 <div class="imagebox-button">
-                                    <a href="#" title="">read more</a>
+                                    <a href="#" title="">了解更多（read more）</a>
                                 </div>
                             </div><!-- /.imagebox-content -->
                         </div><!-- /.imagebox -->
@@ -282,15 +255,15 @@
                                 <img src="/images/imagebox/003.jpg" alt=""/>
                             </div><!-- /.imagebox-image -->
                             <div class="imagebox-title">
-                                <h3><a href="#" title="">Directory Of Finance Businesses</a></h3>
+                                <h3><a href="#" title="">中介（the needs of agencies）</a></h3>
                             </div><!-- /.imagebox-title -->
                             <div class="imagebox-content">
                                 <div class="imagebox-desc">
-                                    Sed ut perspiciatis unde omnis iste error sit voluptatem accusantium doloremque lau
-                                    dantium, rem aperiam eaque ipsa ab illo inventore veritatis
+                                    本平台也为中介提供适当的服务，您可以浏览基础资产数据、资产池数据、资产包、产品设计数据，并
+                                    可获取一线金融资产文档资料，也可以上传资料进行分享
                                 </div>
                                 <div class="imagebox-button">
-                                    <a href="#" title="">learn more</a>
+                                    <a href="#" title="">了解更多（read more）</a>
                                 </div>
                             </div><!-- /.imagebox-content -->
                         </div><!-- /.imagebox -->
@@ -301,158 +274,12 @@
         </div><!-- /.container -->
     </section><!-- /.flat-row-imagebox -->
 
-    <section class="flat-row flat-iconbox bg-theme">
-        <div class="container">
-
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="title-section left">
-                        <h2>Our Services</h2>
-                    </div><!-- /.title-section -->
-                </div>
-            </div><!-- /.row -->
-
-            <div class="row">
-
-                <div class="col-md-4">
-                    <div class="iconbox-item">
-                        <div class="iconbox style1">
-                            <div class="box-header">
-                                <div class="icon-rounded ion-clipboard">
-
-                                </div><!-- /.icon-rounded -->
-                                <div class="box-title">
-                                    <a href="'#" title="">Accumulation</a>
-                                </div><!-- /.box-title -->
-                            </div><!-- /.box-header -->
-                            <div class="box-content">
-                                Donec lacinia mi rutrum sagittis
-                                consequat. Donec sagittis, tellus sodales
-                                sollicitudin commodo
-                            </div><!-- /.box-content -->
-                        </div><!-- /.iconbox -->
-                    </div><!-- /.iconbox-item -->
-                </div><!-- /.col-md-4 -->
-
-                <div class="col-md-4">
-                    <div class="iconbox-item">
-                        <div class="iconbox style1">
-                            <div class="box-header">
-                                <div class="icon-rounded line-chart">
-
-                                </div>
-                                <div class="box-title">
-                                    <a href="'#" title="">Mutual Funds</a>
-                                </div>
-                            </div><!-- /.box-header -->
-                            <div class="box-content">
-                                Donec lacinia mi rutrum sagittis
-                                consequat. Donec sagittis, tellus sodales
-                                sollicitudin commodo
-                            </div><!-- /.box-content -->
-                        </div><!-- /.iconbox -->
-                    </div><!-- /.iconbox-item -->
-                </div><!-- /.col-md-4 -->
-
-                <div class="col-md-4">
-                    <div class="iconbox-item">
-                        <div class="iconbox style1">
-                            <div class="box-header">
-                                <div class="icon-rounded clock">
-
-                                </div>
-                                <div class="box-title">
-                                    <a href="'#" title="">Risk Management</a>
-                                </div>
-                            </div><!-- /.box-header -->
-                            <div class="box-content">
-                                Donec lacinia mi rutrum sagittis
-                                consequat. Donec sagittis, tellus sodales
-                                sollicitudin commodo
-                            </div><!-- /.box-content -->
-                        </div><!-- /.iconbox -->
-                    </div><!-- /.iconbox-item -->
-                </div><!-- /.col-md-4 -->
-
-            </div><!-- /.row -->
-
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="height80"></div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="iconbox-item">
-                        <div class="iconbox style1">
-                            <div class="box-header">
-                                <div class="icon-rounded magic">
-
-                                </div>
-                                <div class="box-title">
-                                    <a href="'#" title="">Estate Planning</a>
-                                </div>
-                            </div><!-- /.box-header -->
-                            <div class="box-content">
-                                Donec lacinia mi rutrum sagittis
-                                consequat. Donec sagittis, tellus sodales
-                                sollicitudin commodo
-                            </div><!-- /.box-content -->
-                        </div><!-- /.iconbox -->
-                    </div><!-- /.iconbox-item -->
-                </div><!-- /.col-md-4 -->
-
-                <div class="col-md-4">
-                    <div class="iconbox-item">
-                        <div class="iconbox style1">
-                            <div class="box-header">
-                                <div class="icon-rounded artboard">
-
-                                </div>
-                                <div class="box-title">
-                                    <a href="'#" title="">Retirement Planning</a>
-                                </div>
-                            </div><!-- /.box-header -->
-                            <div class="box-content">
-                                Donec lacinia mi rutrum sagittis
-                                consequat. Donec sagittis, tellus sodales
-                                sollicitudin commodo
-                            </div><!-- /.box-content -->
-                        </div><!-- /.iconbox -->
-                    </div><!-- /.iconbox-item -->
-                </div><!-- /.col-md-4 -->
-
-                <div class="col-md-4">
-                    <div class="iconbox-item">
-                        <div class="iconbox style1">
-                            <div class="box-header">
-                                <div class="icon-rounded global">
-
-                                </div>
-                                <div class="box-title">
-                                    <a href="'#" title="">Business Planning</a>
-                                </div>
-                            </div><!-- /.box-header -->
-                            <div class="box-content">
-                                Donec lacinia mi rutrum sagittis
-                                consequat. Donec sagittis, tellus sodales
-                                sollicitudin commodo
-                            </div><!-- /.box-content -->
-                        </div><!-- /.iconbox -->
-                    </div><!-- /.iconbox-item -->
-                </div><!-- /.col-md-4 -->
-            </div><!-- /.row -->
-
-        </div><!-- /.container -->
-    </section><!-- /.flat-row-iconbox -->
-
     <section class="flat-row flat-owl-stage">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <div class="title-section left">
-                        <h2>Our Projects</h2>
+                        <h2>市场资讯（Market News）</h2>
                     </div><!-- /.title-section -->
                 </div>
             </div><!-- /.row -->
@@ -509,54 +336,6 @@
             </div><!-- /.row -->
         </div><!-- /.container -->
     </section><!-- /.flat-owl-stage -->
-
-    <section class="flat-row flat-callback">
-        <div class="container">
-            <div class="row">
-
-                <div class="col-md-4">
-                    <div class="text-block-callback">
-                        <h2>Get a Call Back</h2>
-                        <div class="text-callback-content">
-                            If you need to speak to us about a general query fill
-                            in the form below and we will call you back within
-                            the same working day.
-                        </div>
-                    </div><!-- /.text-block-callback -->
-                </div><!-- /.col-md-4 -->
-
-                <div class="col-md-8">
-                    <div class="flat-callback-form">
-                        <form action="#" method="post">
-                            <div class="flat-field">
-                                <div class="field-one-half">
-                                    <label>How can we help? *</label>
-                                    <select name="discuss">
-                                        <option value="I would like to discuss:">I would like to discuss:</option>
-                                        <option value="I would like to discuss:">I would like to discuss:</option>
-                                        <option value="I would like to discuss:">I would like to discuss:</option>
-                                    </select>
-                                </div><!-- /.field-one-half -->
-                                <div class="field-one-half field-email">
-                                    <input type="email" name="field-email" placeholder="You Email"/>
-                                </div><!-- /.field-one-half -->
-                                <div class="clearfix"></div>
-                            </div>
-                            <div class="flat-field">
-                                <div class="field-one-half field-phone">
-                                    <input type="text" name="field-phone" placeholder="You phone number"/>
-                                </div>
-                                <div class="field-one-half field-submit">
-                                    <button type="button" class="button-submit-field">Submit Now</button>
-                                </div>
-                            </div><!-- /.flat-field -->
-                        </form><!-- /.form -->
-                    </div><!-- /.callback-form -->
-                </div><!-- /.col-md-8 -->
-
-            </div><!-- /.row -->
-        </div><!-- /.container -->
-    </section><!-- /.flat-callback -->
 
     <section class="flat-row flat-news">
         <div class="container">
@@ -730,92 +509,6 @@
         </div> <!-- /.container -->
     </section> <!-- /.flat-row -->
 
-    <footer id="footer">
-        <div class="footer-widgets">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="widget-infomation">
-                            <ul class="infomation-footer">
-                                <li><i class="fa fa-envelope" aria-hidden="true"></i><a href="#" title="">support@themesflat.com</a>
-                                </li>
-                                <li><i class="fa fa-phone" aria-hidden="true"></i><a href="#" title="">+61 3 8376
-                                    6284</a>
-                                </li>
-                                <li><i class="fa fa-map-marker" aria-hidden="true"></i><a href="#" title="">PO Box 16122
-                                    Collins Street West Victoria 8007 Australia</a></li>
-                            </ul><!-- /.infomation-footer -->
-                        </div><!-- /.widget-infomation -->
-                    </div><!-- /.col-md-12 -->
-                </div><!-- /.row -->
-                <div class="row widget-box">
-                    <div class="col-md-4">
-                        <div class="widget widget-text">
-                            <p>Lorem ipsum dolor sit consectetur adipiscing elit sed
-                                do eiusmod tempor incididunt ut labore et dolore
-                                magna veniam aliqua.Ut enim ad minim veniam
-                            </p>
-                            <p>
-                                Ut enim ad minim veniam, quis nostrud exercitation
-                                ullamco laboris nisi ut aliquip ex ea commodo
-                                consequat. Duis aute irure dolor in reprehenderit in
-                                voluptate
-                            </p>
-                        </div><!-- /.widget-text -->
-                    </div><!-- /.col-md-4 -->
-                    <div class="col-md-4">
-                        <div class="widget widget-services">
-                            <ul class="one-half first">
-                                <li><a href="#" title="">About Us</a></li>
-                                <li><a href="#" title="">Advertise</a></li>
-                                <li><a href="#" title="">Terms Conditions</a></li>
-                                <li><a href="#" title="">Privacy Policy</a></li>
-                                <li><a href="#" title="">Careers</a></li>
-                                <li><a href="#" title="">Shop</a></li>
-                            </ul><!-- /.one-half -->
-                            <ul class="one-half">
-                                <li><a href="#" title="">Home</a></li>
-                                <li><a href="#" title="">Testimonials</a></li>
-                                <li><a href="#" title="">News</a></li>
-                                <li><a href="#" title="">Services</a></li>
-                                <li><a href="#" title="">Corporate Client</a></li>
-                            </ul><!-- /.one-half -->
-                        </div><!-- /.widget-services -->
-                    </div><!-- /.col-md-4 -->
-                    <div class="col-md-4">
-                        <div class="widget widget-subscribe">
-                            <form action="#" method="post" accept-charset="utf-8">
-                                <label for="form-email-footer">Email address:</label>
-                                <div class="input-email">
-                                    <input type="email" name="email-form" id="form-email-footer"
-                                           placeholder="Your email address"/>
-                                </div>
-                                <button type="button" class="button-subscribe">SUBMIT</button>
-                            </form>
-                        </div><!-- /.widget-subscribe -->
-
-                    </div><!-- /.col-md-4 -->
-                </div><!-- /.row .widget-box -->
-            </div><!-- /.container -->
-        </div><!-- /.footer-widgets -->
-        <div class="footer-bottom">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="copyright">
-                            <p>Copyright &copy; 2017.Company name All rights reserved.</p>
-                        </div>
-                        <ul class="menu-footer">
-                            <li><a href="#" title="">Home</a></li>
-                            <li><a href="#" title="">My Blog</a></li>
-                            <li><a href="#" title="">My Home</a></li>
-                            <li><a href="#" title="">Sample Page</a></li>
-                        </ul><!-- /.menu-footer -->
-                    </div>
-                </div>
-            </div>
-        </div><!-- /.footer-bottom -->
-    </footer><!-- /#footer -->
     <div class="button-go-top">
         <a href="#" title="" class="go-top">
             <i class="fa fa-chevron-up"></i>
