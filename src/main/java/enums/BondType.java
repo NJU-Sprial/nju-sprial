@@ -1,4 +1,4 @@
-package constranst;
+package enums;
 
 /**
  * Created by 铠联 on 2017/9/3.

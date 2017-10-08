@@ -1,6 +1,6 @@
 package vo;
 
-import constranst.BondType;
+import enums.BondType;
 
 /**
  * Created by 铠联 on 2017/9/3.
