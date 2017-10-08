@@ -1,11 +1,16 @@
 package vo;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.time.LocalDate;
 
 /**
  * Created by zjy on 2017/9/12.
  * 资产池变动情况的一条记录
  */
+@Data
+@NoArgsConstructor
 public class AssetPoolChangeLogVO {
     private LocalDate announcementDate;
     private LocalDate receiptStartDate;

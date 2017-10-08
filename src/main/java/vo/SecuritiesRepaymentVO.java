@@ -1,11 +1,16 @@
 package vo;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.time.LocalDate;
 
 /**
  * Created by zjy on 2017/9/12.
  * 证券偿付情况的一条记录
  */
+@Data
+@NoArgsConstructor
 public class SecuritiesRepaymentVO {
     private LocalDate payDate;
     private LocalDate interestStartDate;

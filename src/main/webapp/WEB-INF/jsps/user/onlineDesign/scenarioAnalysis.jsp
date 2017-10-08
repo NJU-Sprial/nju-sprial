@@ -272,7 +272,7 @@
      * @param defaultval （可选） 如果内容非法，则改成此值
      */
     function number_validate(obj, lowval, hival, defaultval) {
-        if (/^-?([1-9]\d*\.\d*|0\.\d*[1-9]\d*|0?\.0+|0)$/.test($(obj).val()) && (($(obj).val() >= lowval) && ($(obj).val() <= hival))) {
+        if (/^-?([1-9]\d*\.?\d*|0\.\d*[1-9]\d*|0?\.0+|0)$/.test($(obj).val()) && (($(obj).val() >= lowval) && ($(obj).val() <= hival))) {
             $(obj).css("background-color", "white");//将背景恢复成白色
         } else {
             $(obj).val(defaultval);

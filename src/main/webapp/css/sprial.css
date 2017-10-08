@@ -196,11 +196,65 @@ a.learn-more:hover {
     /*background-color: yellow;*/
 /*}*/
 
+/* tag-list */
+.tag-list {
+    padding: 15px;
+}
+.tag-list .tag-item {
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+.tag-list .tag-item span.glyphicon{
+    font-size: 14px;
+    color: #30a0e3;
+}
+.tag-list .tag-item span.tag-title{
+    margin-left: 10px;
+    color: #1f98c9;
+}
+.tag-list .tag-item span.tag-message{
+    display: inline-block;
+}
+
+/* form-container */
+.form-container {
+    font-size: 16px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 400px;
+}
+.form-container input{
+    height: 30px;
+    max-width: 200px;
+}
+.form-container .input-group-addon{
+    width: initial;
+}
+
+.btn-green {
+    background-color: #35da5e;
+    color: white;
+}
+.btn-green:hover {
+    background-color: #0cc1be;
+    color: white;
+}
+
+
+
 @media (min-width: 768px){
     .dl-horizontal dt{
         width: 100px;
     }
     .dl-horizontal dd {
         margin-left: 100px;
+    }
+}
+
+@media (max-width: 768px){
+    .tag-list .tag-item {
+        font-size: 14px;
     }
 }

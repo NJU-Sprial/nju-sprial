@@ -8,6 +8,20 @@ import vo.SubmitOrderVO;
  * 投资者下单相关接口
  */
 public interface OrderService {
+
+    /**
+     * 获取产品的名称
+     * @param productID 产品ID
+     * @return 如果产品不存在，返回null
+     */
+    public String getProductName(String productID);
+
+    /**
+     * 获取产品的利率区间
+     * @param productID 产品ID
+     * @return 如"5.3% - 10.3%"。如果产品不存在，返回null
+     */
+    public String getInterestRange(String productID);
     
     /**
      * 投资者提交订单，如果下单成功，系统为该订单生成订单号
