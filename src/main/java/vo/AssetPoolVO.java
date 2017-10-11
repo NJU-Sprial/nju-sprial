@@ -1,9 +1,14 @@
 package vo;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 /**
  * Created by zjy on 2017/9/10.
  * 投资者 > 浏览产品 > 资产池信息的内容
  */
+@Data
+@NoArgsConstructor
 public class AssetPoolVO {
     private String productID;
     private String quantity;//发行总额

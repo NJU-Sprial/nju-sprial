@@ -1,10 +1,15 @@
 package bl;
 
 import blservice.OnSaleProductOverviewService;
+import dataservice.AssetPoolDataService;
 import dataservice.ProductDataService;
+import dataservice.ProjectDataService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import po.AssetPoolPO;
 import po.ProductPO;
+import po.ProductStrategyPO;
+import po.ProjectPO;
 import util.PO2VOUtil;
 import vo.AssetPoolVO;
 import vo.IncreasingVO;
@@ -19,10 +24,15 @@ import java.util.List;
 @Service
 public class OnSaleProductOverviewServiceImpl implements OnSaleProductOverviewService {
     private ProductDataService productDataService;
-
+    private AssetPoolDataService assetPoolDataService;
+    private ProjectDataService projectDataService;
     @Autowired
-    public OnSaleProductOverviewServiceImpl(ProductDataService productDataService) {
+    public OnSaleProductOverviewServiceImpl(ProductDataService productDataService,
+                                            AssetPoolDataService assetPoolDataService,
+                                            ProjectDataService projectDataService) {
         this.productDataService = productDataService;
+        this.assetPoolDataService = assetPoolDataService;
+        this.projectDataService = projectDataService;
     }
     /**
      * 获取所有在售产品的产品信息
@@ -47,24 +57,25 @@ public class OnSaleProductOverviewServiceImpl implements OnSaleProductOverviewSe
 
     /**
      * 获取单个在售产品的资产池信息
-     * TODO 要加PO   wz
      * @param productID 产品ID
      * @return 如果产品不存在，返回null
      */
     @Override
     public AssetPoolVO getAssetPool(String productID) {
-        return null;
+        AssetPoolPO assetPoolPO = assetPoolDataService.getAssetPool(productID);
+        return PO2VOUtil.assetPoolPO2VO(assetPoolPO);
     }
 
     /**
      * 获取单个在售产品的证券信息
-     * TODO 要加PO   wz
      * @param productID 产品ID
      * @return 如果产品不存在，返回null
      */
     @Override
     public List<ProductStrategyVO> getSecurityList(String productID) {
-        return null;
+        ProjectPO projectPO = projectDataService.getProjectByProduct(productID);
+        List<ProductStrategyPO> productStrategyPOs = productDataService.getProductStrategys(projectPO.getId());
+        return PO2VOUtil.ProductStrategyPOs2VOs(productStrategyPOs);
     }
 
     /**

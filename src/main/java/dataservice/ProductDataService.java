@@ -1,6 +1,7 @@
 package dataservice;
 
 import po.ProductPO;
+import po.ProductStrategyPO;
 import po.RecruitmentSituationPO;
 
 import java.util.List;
@@ -35,5 +36,12 @@ public interface ProductDataService {
      * @return 如果产品不存在，返回null
      */
     ProductPO getProductInfo(int productID);
+
+    /**
+     * 通过project的id去查所有的ProductStrategyPO
+     * @param projectID
+     * @return
+     */
+    List<ProductStrategyPO> getProductStrategys(int projectID);
 
 }

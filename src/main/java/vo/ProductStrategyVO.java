@@ -1,11 +1,15 @@
 package vo;
 
 import enums.BondType;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * Created by 铠联 on 2017/9/3.
  * 分档证券信息包括证券类型、试算优先级、证券简称、发行金额占比（%）、发行金额、付息频率、试算利率
  */
+@Data
+@NoArgsConstructor
 public class ProductStrategyVO {
     private BondType bondType;
     private int priority;
