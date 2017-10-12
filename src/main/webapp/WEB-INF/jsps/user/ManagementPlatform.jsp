@@ -1,6 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="util.FormatUtil"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 
@@ -11,7 +12,7 @@
 </head>
 <body>
 <%@ include file="/WEB-INF/jsps/components/top_components.jsp" %>
-<div class="container">
+<div class="container table-responsive top-margin">
 	<table class="table table-bordered table-text-center" style="font-size: 10px;">
 		<thead>
 		<tr>
@@ -53,8 +54,8 @@
 							<td>${productVO.getIssuer()}</td>
 							<td>${productVO.getAssetType()}</td>
 							<td>${productVO.getTradingPlace()}</td>
-							<td>${productVO.getEstimatedMaturityDate()}</td>
-							<td>${productVO.getTermOfRecruitment()}</td>
+							<td>${productVO.getEstimatedMaturityDate().format(FormatUtil.DATE_TIME_FORMATTER)}</td>
+							<td>${productVO.getTermOfRecruitment().format(FormatUtil.DATE_TIME_FORMATTER)}</td>
 						</tr>
 						</tbody>
 					</table>
