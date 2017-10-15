@@ -6,7 +6,14 @@ import constranst.CycleUnit;
 import dataservice.LoanDataService;
 import dataservice.ProjectCooperationDataService;
 import dataservice.PropertyPackageDataService;
+import enums.AssetType;
 import enums.CreatePropertyPackageResult;
+import enums.LoanType;
+import enums.UploadResult;
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,10 +21,9 @@ import po.LoanPO;
 import po.PropertyPackagePO;
 import vo.*;
 
-import java.io.File;
-import java.sql.Timestamp;
+import java.io.*;
+import java.lang.reflect.Method;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -37,23 +43,98 @@ public class OnlineDesignServiceImpl implements OnlineDesignService {
         this.projectCooperationDataService = projectCooperationDataService;
     }
 
-    /**
-     * TODO
-     * 导入基础资产数据,按照《消费金融资产池管理》中模板批量导入数据。提供下载数据模板，供券商填写后自动导入
-     *
-     * @param username 用户名
-     * @param pname    项目名称
-     * @param ptype    基础资产类型——目前只有“消费金融”一类
-     * @param pway     消费用途，有三类，分为：第一类：个人消费贷款、信用卡分期付款、国家助学贷款；第二类：个人汽车贷款；第三类：
-     *                 个人住房贷款（包含装修、租借、购买）
-     * @param file     数据文件
-     * @return
-     */
-    //untested
     @Override
-    public boolean importBasicPropertyData(String username, String pname, String ptype, String pway, File file) {
-        return false;
+    public UploadResult importBasicPropertyData(String username, String projectID, AssetType assetType, LoanType loanType, File file) {
+        InputStream inputStream;
+        XSSFWorkbook xssfWorkbook;
+
+        try {
+            inputStream = new FileInputStream(file);
+            xssfWorkbook = new XSSFWorkbook(inputStream);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+            return UploadResult.IO_ERROR;
+        } catch (IOException e) {
+            e.printStackTrace();
+            return UploadResult.IO_ERROR;
+        }
+
+        Method getStockListMethod;
+        UploadResult result;
+
+        try {
+            getStockListMethod = this.getClass().getDeclaredMethod( "handle" + loanType.toString() + "Loan", XSSFWorkbook.class);
+            result = (UploadResult) getStockListMethod.invoke(this, xssfWorkbook);
+        } catch ( Exception e ) {
+            e.printStackTrace();
+            return UploadResult.IO_ERROR;
+        }
+
+        return result;
     }
+
+    //解析个人消费信贷表格
+    private UploadResult handlePersonalConsumptionLoan(XSSFWorkbook xssfWorkbook) {
+        final int second = 1;
+        final int fourth = 3;
+        final int totalRowNum = 19;
+
+        try {
+            // 取得工作薄
+            XSSFSheet xssfSheet = xssfWorkbook.getSheetAt(second);
+
+            // 如果拿不到工作薄，返回格式错误
+            if (xssfSheet == null) {
+                return UploadResult.FORMAT_ERROR;
+            }
+
+            // 获取当前工作薄的每一行
+            for (int rowNum = 0; rowNum < totalRowNum; rowNum ++) {
+                XSSFRow xssfRow = xssfSheet.getRow(rowNum);
+                if (xssfRow != null) {
+                    //读取该行第二列数据
+                    XSSFCell secondCell = xssfRow.getCell(second);
+                    //读取该行第四列数据
+                    XSSFCell fourthCell = xssfRow.getCell(fourth);
+                    System.out.println(getValueOf(secondCell) + getValueOf(fourthCell));
+                } else {
+                    return UploadResult.FORMAT_ERROR;
+                }
+            }
+
+        } catch (Exception e) {
+            return UploadResult.FORMAT_ERROR;
+        }
+
+
+        return UploadResult.SUCCESS;
+    }
+
+    //解析个人住房贷款表格
+    private UploadResult handlePersonalHousingLoan(XSSFWorkbook xssfWorkbook){
+        return null;
+    }
+
+    //解析个人汽车抵押贷款表格
+    private UploadResult handlePersonalCarMortgareLoan(XSSFWorkbook xssfWorkbook) {
+        return null;
+    }
+
+    //转换数据格式
+    private String getValueOf(XSSFCell xssfRow) {
+
+        if (xssfRow.getCellType() == xssfRow.CELL_TYPE_BOOLEAN) {
+            return String.valueOf(xssfRow.getBooleanCellValue());
+        } else if (xssfRow.getCellType() == xssfRow.CELL_TYPE_NUMERIC) {
+            return String.valueOf(xssfRow.getNumericCellValue());
+        } else {
+            return String.valueOf(xssfRow.getStringCellValue());
+        }
+
+    }
+
+
+
 
     /**
      * 浏览某项目的贷款信息，一个项目包含至少一笔贷款

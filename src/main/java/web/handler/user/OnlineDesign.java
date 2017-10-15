@@ -1,12 +1,16 @@
 package web.handler.user;
 
 import blservice.OnlineDesignService;
-import constranst.ProjectSession;
-import org.dom4j.DocumentException;
+import enums.AssetType;
+import enums.LoanType;
+import enums.UploadResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttribute;
 import org.springframework.web.multipart.MultipartFile;
 import vo.LoanVO;
 import web.security.WebSecurityConfig;
@@ -38,8 +42,8 @@ public class OnlineDesign {
     public String browseAndKeepAfterAddProject(Model model, HttpSession session,
                                                @SessionAttribute(WebSecurityConfig.SESSION_KEY) String username,
                                                @RequestParam(value = "pname", required = true) String pname,
-                                               @RequestParam(value = "ptype", required = true) String ptype,
-                                               @RequestParam(value = "pway", required = true) String pway,
+                                               @RequestParam(value = "ptype", required = true) AssetType ptype,
+                                               @RequestParam(value = "pway", required = true) LoanType pway,
                                                @RequestParam(value = "file", required = true) MultipartFile file) {
         String message = "";
         boolean sucess = false;
@@ -65,7 +69,7 @@ public class OnlineDesign {
 
                 //开始处理文书
                 if (session.getAttribute(WebSecurityConfig.SESSION_KEY) != null) {
-                    if (onlineDesignService.importBasicPropertyData(username, pname, ptype, pway, dest)) {
+                    if (onlineDesignService.importBasicPropertyData(username, pname, ptype, pway, dest) == UploadResult.SUCCESS) {
                         sucess = true;
                     } else {
                         message += "文件格式不符合规范！\n";

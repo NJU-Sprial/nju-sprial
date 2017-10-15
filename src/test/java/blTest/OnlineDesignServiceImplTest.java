@@ -1,17 +1,18 @@
 package blTest;
 
 import blservice.OnlineDesignService;
-import javafx.application.Application;
+import enums.AssetType;
+import enums.LoanType;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import po.LoanPO;
 import vo.LoanVO;
 import vo.PropertyPackageVO;
 
+import java.io.File;
+import java.io.IOException;
 import java.lang.reflect.Field;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -154,4 +155,8 @@ public class OnlineDesignServiceImplTest {
         return;
     }
 
+    @Test
+    public void testHandlePersonalConsumptionLoan() throws IOException {
+        onlineDesignService.importBasicPropertyData(username, pname, AssetType.ConsumerFinance, LoanType.PersonalConsumption, new File("src/main/webapp/PersonalConsumption.xlsx"));
+    }
 }

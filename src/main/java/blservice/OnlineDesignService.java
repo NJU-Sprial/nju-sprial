@@ -2,7 +2,10 @@ package blservice;
 
 import constranst.CashUnit;
 import constranst.CycleUnit;
+import enums.AssetType;
 import enums.CreatePropertyPackageResult;
+import enums.LoanType;
+import enums.UploadResult;
 import vo.*;
 
 import java.io.File;
@@ -18,14 +21,14 @@ public interface OnlineDesignService {
      * 导入基础资产数据,按照《消费金融资产池管理》中模板批量导入数据。提供下载数据模板，供券商填写后自动导入
      *
      * @param username 用户名
-     * @param pname    项目名称
-     * @param ptype    基础资产类型——目前只有“消费金融”一类
-     * @param pway     消费用途，有三类，分为：第一类：个人消费贷款、信用卡分期付款、国家助学贷款；第二类：个人汽车贷款；第三类：
+     * @param projectID    项目ID
+     * @param assetType    基础资产类型——目前只有“消费金融”一类
+     * @param loanType     消费用途，有三类，分为：第一类：个人消费贷款、信用卡分期付款、国家助学贷款；第二类：个人汽车贷款；第三类：
      *                 个人住房贷款（包含装修、租借、购买）
      * @param file 数据文件
      * @return
      */
-    public boolean importBasicPropertyData(String username, String pname, String ptype, String pway, File file);
+    public UploadResult importBasicPropertyData(String username, String projectID, AssetType assetType, LoanType loanType, File file);
 
     /**
      * 浏览某项目的贷款信息，一个项目包含至少一笔贷款

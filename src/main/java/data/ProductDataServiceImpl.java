@@ -7,15 +7,11 @@ import dataservice.ProductDataService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import po.OrderPO;
-import po.ProductPO;
-import po.ProjectPO;
-import po.RecruitmentSituationPO;
+import po.*;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 
@@ -62,6 +58,11 @@ public class ProductDataServiceImpl implements ProductDataService{
     @Override
     public ProductPO getProductInfo(int productID) {
         return productDao.get(productID);
+    }
+
+    @Override
+    public List<ProductStrategyPO> getProductStrategys(int projectID) {
+        return null;
     }
 
 
