@@ -8,23 +8,23 @@
 --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
-<div class="top">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <ul class="flat-infomation">
-                    <li class="phone">Call us: <a href="+61383766284" title="phone">+61 3 8376 6284</a></li>
-                    <li class="email">Email: <a href="mailto:support24-7@gmail.com"
-                                                title="email">support24-7@gmail.com</a></li>
-                </ul><!-- /flat-infomation -->
-                <div class="flat-questions">
-                    <a href="#" title="" class="appointment">获得帮助</a>
-                </div><!-- /.flat-questions -->
-                <div class="clearfix"></div><!-- /.clearfix -->
-            </div>
-        </div>
-    </div>
-</div>
+<%--<div class="top">--%>
+    <%--<div class="container">--%>
+        <%--<div class="row">--%>
+            <%--<div class="col-md-12">--%>
+                <%--<ul class="flat-infomation">--%>
+                    <%--<li class="phone">Call us: <a href="+61383766284" title="phone">+61 3 8376 6284</a></li>--%>
+                    <%--<li class="email">Email: <a href="mailto:support24-7@gmail.com"--%>
+                                                <%--title="email">support24-7@gmail.com</a></li>--%>
+                <%--</ul><!-- /flat-infomation -->--%>
+                <%--<div class="flat-questions">--%>
+                    <%--<a href="#" title="" class="appointment">获得帮助</a>--%>
+                <%--</div><!-- /.flat-questions -->--%>
+                <%--<div class="clearfix"></div><!-- /.clearfix -->--%>
+            <%--</div>--%>
+        <%--</div>--%>
+    <%--</div>--%>
+<%--</div>--%>
 <!-- /.top -->
 <header id="header" class="header bg-color">
     <div class="container">

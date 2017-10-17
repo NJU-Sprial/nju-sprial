@@ -70,7 +70,7 @@
                          data-paddingbottom="[0,0,0,0"
                          data-paddingleft="[0,0,0,0]"
 
-                         style="z-index: 16; white-space: nowrap;text-transform:left;">让投资不再麻烦<br/>Simplify investment
+                         style="z-index: 16; white-space: nowrap;text-transform:left;">让投资不再麻烦<br/>Simplify<br/>Investment
                     </div>
 
                     <!-- LAYER NR. 13 -->
@@ -201,6 +201,13 @@
 
     <section class="flat-row pd-imagebox">
         <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="title-section left">
+                        <h2>功能概要（Function Introduction）</h2>
+                    </div><!-- /.title-section -->
+                </div>
+            </div>
             <div class="row">
 
                 <div class="col-md-4">
@@ -508,6 +515,10 @@
             </div> <!-- /.row -->
         </div> <!-- /.container -->
     </section> <!-- /.flat-row -->
+
+    <footer id="footer">
+        <%@ include file="/WEB-INF/jsps/components/bottom.jsp" %>
+    </footer>
 
     <div class="button-go-top">
         <a href="#" title="" class="go-top">
