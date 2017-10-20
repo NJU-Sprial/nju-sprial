@@ -122,4 +122,20 @@ public class PO2VOUtil {
         return result;
     }
 
+    @Contract("null -> null")
+    public static List<ProjectVO> projectPOs2VOs(List<ProjectPO> projectPOs) {
+        List<ProjectVO> result = new ArrayList<>();
+        for(ProjectPO po : projectPOs) {
+            result.add(ProjectPO2VO(po));
+        }
+        return result;
+    }
+
+    @Contract("null -> null")
+    private static ProjectVO ProjectPO2VO(ProjectPO po) {
+        ProjectVO vo = new ProjectVO();
+        vo.setPname(po.getProjectName());
+        vo.setUsername(po.getOwner());
+        return vo;
+    }
 }
