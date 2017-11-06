@@ -18,11 +18,14 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import po.LoanPO;
+import po.PersonalConsumptionLoanPO;
 import po.PropertyPackagePO;
 import vo.*;
 
 import java.io.*;
+import java.lang.reflect.Field;
 import java.lang.reflect.Method;
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -75,13 +78,20 @@ public class OnlineDesignServiceImpl implements OnlineDesignService {
 
     //解析个人消费信贷表格
     private UploadResult handlePersonalConsumptionLoan(XSSFWorkbook xssfWorkbook) {
-        final int second = 1;
-        final int fourth = 3;
+        final int sheetOne = 0;
         final int totalRowNum = 19;
+        boolean[] invalid = {false, true, true, true, true, true, true, true,
+                true, false, false, true, true, true, true, true,
+                true, true, true, false, false, true, true, true,
+                true, true, true, false, false, false, true, true,
+                true, true, true, true, true, false};
 
-        try {
+        PersonalConsumptionLoanPO personalConsumptionLoanPO = new PersonalConsumptionLoanPO();
+        Field[] field = PersonalConsumptionLoanPO.class.getDeclaredFields();
+
+//        try {
             // 取得工作薄
-            XSSFSheet xssfSheet = xssfWorkbook.getSheetAt(second);
+            XSSFSheet xssfSheet = xssfWorkbook.getSheetAt(sheetOne);
 
             // 如果拿不到工作薄，返回格式错误
             if (xssfSheet == null) {
@@ -89,23 +99,53 @@ public class OnlineDesignServiceImpl implements OnlineDesignService {
             }
 
             // 获取当前工作薄的每一行
-            for (int rowNum = 0; rowNum < totalRowNum; rowNum ++) {
+            for (int rowNum = 0, i = 3, tag = 0; rowNum < totalRowNum; rowNum++) {
                 XSSFRow xssfRow = xssfSheet.getRow(rowNum);
-                if (xssfRow != null) {
-                    //读取该行第二列数据
-                    XSSFCell secondCell = xssfRow.getCell(second);
-                    //读取该行第四列数据
-                    XSSFCell fourthCell = xssfRow.getCell(fourth);
-                    System.out.println(getValueOf(secondCell) + getValueOf(fourthCell));
-                } else {
-                    return UploadResult.FORMAT_ERROR;
+
+                for (int colNum = 1; colNum < 4; colNum = colNum + 2) {
+
+                    if (invalid[tag] == false) {
+                        tag ++;
+                        continue;
+                    }
+
+                    if (xssfRow != null) {
+                        //读取该列数据
+                        XSSFCell xssfCell = xssfRow.getCell(colNum);
+
+                        String name = field[i].getName();
+                        Class type = field[i].getType();
+                        field[rowNum].setAccessible(true);
+//                        Method method = PersonalConsumptionLoanPO.class.getDeclaredMethod("set" + name, type);
+
+                        String value = getValueOf(xssfCell);
+
+                        System.out.println(type);
+                        if (type.equals(String.class)) {
+                            System.out.println("str" + value);
+                        } else if (type.equals(LocalDate.class)) {
+                            System.out.println("date" + value);
+                        } else if (type.equals(Integer.class)) {
+                            System.out.println("int" + value);
+                        } else if (type.equals(BigDecimal.class)) {
+                            System.out.println("big" + value);
+                        } else if (type.equals(Double.class)) {
+                            System.out.println("double" + value);
+                        }
+
+                        // 调用setter方法设置属性值
+//                        method.invoke(personalConsumptionLoanPO, getValueOf(xssfCell));
+
+                        i++;
+                    } else {
+                        return UploadResult.FORMAT_ERROR;
+                    }
                 }
             }
 
-        } catch (Exception e) {
-            return UploadResult.FORMAT_ERROR;
-        }
-
+//        } catch (Exception e) {
+//            return UploadResult.FORMAT_ERROR;
+//        }
 
         return UploadResult.SUCCESS;
     }
@@ -132,9 +172,6 @@ public class OnlineDesignServiceImpl implements OnlineDesignService {
         }
 
     }
-
-
-
 
     /**
      * 浏览某项目的贷款信息，一个项目包含至少一笔贷款
