@@ -5,7 +5,6 @@ import blservice.PackageCreateService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import vo.AssetPackageVO;
-import vo.PropertyPackageVO;
 
 @Service
 public class PackageCreateServiceImpl implements PackageCreateService{
