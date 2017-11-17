@@ -140,7 +140,10 @@ public class PropertyPackageDataServiceImpl implements PropertyPackageDataServic
      */
     @Override
     public List<String> getPackageNameList(String username, String projectName) {
-        return null;
+        int id = ((ProjectPO)projectDao.findUnique("from ProjectPO where owner = ? and projectName=?",username,projectName)).getId();
+        List<Integer> result = propertyPackageDao.find("select propertyPackageId from PropertyPackagePO where projectId = ?",id);
+
+        return result.stream().map(p->p.toString()).collect(Collectors.toList());
     }
 
     private List<String> getAllPackageName(String username){

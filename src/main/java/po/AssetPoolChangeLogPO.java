@@ -4,6 +4,7 @@ import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.sql.Timestamp;
 
 /**
@@ -13,7 +14,8 @@ import java.sql.Timestamp;
 @Table(name = "asset_pool_change_log", schema = "sprial")
 @DynamicUpdate
 @DynamicInsert
-public class AssetPoolChangeLogPO {
+public class AssetPoolChangeLogPO implements Serializable {
+    private static final long serialVersionUID = 8310836198389153347L;
     private int id;
     private Integer productId;
     private Timestamp announcementDate;

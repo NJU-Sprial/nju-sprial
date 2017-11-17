@@ -22,7 +22,7 @@ public class PersonalConsumptionLoanPO {
     private String profitType;
     private Integer repayDay;
     private String repayMethod;
-    private String RepayFrequency;
+    private String repayFrequency;
     private BigDecimal contractAmount;
     private Double contractAnnualizedRate;
     private LocalDate extractionDate;
