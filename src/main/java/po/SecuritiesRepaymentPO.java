@@ -4,6 +4,7 @@ import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.sql.Timestamp;
 
 /**
@@ -13,7 +14,8 @@ import java.sql.Timestamp;
 @Table(name = "securities_repayment", schema = "sprial")
 @DynamicUpdate
 @DynamicInsert
-public class SecuritiesRepaymentPO {
+public class SecuritiesRepaymentPO implements Serializable {
+    private static final long serialVersionUID = 938126664142627864L;
     private int id;
     private Integer productId;
     private Timestamp payDate;

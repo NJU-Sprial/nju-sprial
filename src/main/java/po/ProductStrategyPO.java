@@ -5,6 +5,7 @@ import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  * Created by yinywf on 2017/10/8
@@ -14,7 +15,8 @@ import javax.persistence.*;
 
 @DynamicUpdate
 @DynamicInsert
-public class ProductStrategyPO {
+public class ProductStrategyPO implements Serializable {
+    private static final long serialVersionUID = -4959343057865943465L;
     private int productId;
     private BondType bondType;
     private Integer priority;

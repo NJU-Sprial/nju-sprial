@@ -26,18 +26,6 @@ public class AssetPackageVO {
         this.rate = rate;
     }
 
-    public AssetPackageVO(PropertyPackageVO vo,String username){
-        if (vo == null){
-            return;
-        }
-        this.username = username;
-        this.projectName = vo.getPname();
-        this.packageId = vo.getPropertyPackageId();
-        this.assetNumber = vo.getPropertyNum();
-        this.packetData = vo.getPackageDate();
-        this.principal = vo.getPackageCapital();
-        this.rate = vo.getPackageRate();
-    }
 
     public String getUsername() {
         return username;

@@ -10,7 +10,6 @@ import org.springframework.stereotype.Service;
 import po.AssetBasicInfoPO;
 import vo.AssetBasicInfoVO;
 import vo.AssetStatisticsInfoVO;
-import vo.PropertyPackageVO;
 
 import java.util.List;
 

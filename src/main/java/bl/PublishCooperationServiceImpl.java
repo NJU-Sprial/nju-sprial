@@ -34,19 +34,13 @@ public class PublishCooperationServiceImpl implements PublishCooperationService 
         return projectCooperationDataService.findCooperationProjects(username);
     }
 
-    /**
-     * 获取贷款表格
-     * @param loanType
-     * @return 返回贷款表格
-     */
     @Override
-    public File getLoanFile(LoanType loanType) {
+    public File getProjectFile(String projectID) {
         return null;
     }
 
     @Override
-    public UploadResult uploadLoanFile(String projectID, File file, LoanType loanType) {
+    public UploadResult uploadProjectFile(String projectID, File file, LoanType loanType) {
         return null;
     }
-
 }

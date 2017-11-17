@@ -4,16 +4,19 @@ import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 /**
  * Created by yinywf on 2017/9/7
+ * @author 凡
  */
 @Entity
 @Table(name = "property_package", schema = "sprial")
 @DynamicUpdate
 @DynamicInsert
-public class PropertyPackagePO {
+public class PropertyPackagePO implements Serializable {
+    private static final long serialVersionUID = -9086466693313733723L;
     private int propertyPackageId;
     private Integer projectId;
     private Integer propertyNum;
