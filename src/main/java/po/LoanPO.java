@@ -26,15 +26,15 @@ public class LoanPO implements Serializable {
     @Id
     private String loanId;
     private String purpose;
-    private LocalDate releaseDate;
-    private LocalDate expirationDate;
+    private LocalDateTime releaseDate;
+    private LocalDateTime expirationDate;
     private String profitType;
     private Integer repayDay;
     private String repayMethod;
     private String repayFrequency;
     private BigDecimal contractAmount;
     private Double contractAnnualizedRate;
-    private LocalDate extractionDate;
+    private LocalDateTime extractionDate;
     private Integer leftMonth;
     private BigDecimal currentBalance;
     private Double currentAnnualizedRate;
@@ -43,6 +43,21 @@ public class LoanPO implements Serializable {
     private Integer projectId;
     @Enumerated(EnumType.ORDINAL)
     private LoanType loanType;
+
+    private String borrowerName;
+    private String certificateType;
+    private String certificateNumber;
+    private String nationality;
+    private String location;
+    private String gender;
+    private LocalDateTime birthday;
+    private String maritalStatus;
+    private Integer age;
+    private String occupation;
+    private BigDecimal annualIncome;
+    private Double creditLevel;
+    private Double incomeDebtRatio;
+    private String address;
 
 
 }
