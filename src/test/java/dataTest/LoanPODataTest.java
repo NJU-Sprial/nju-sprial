@@ -10,7 +10,7 @@ import po.UserDataPO;
 /**
  * Created by yinywf on 2017/9/9
  */
-public class LoanDataTest {
+public class LoanPODataTest {
 
     private static LoanDataService loanDataService;
     @BeforeClass

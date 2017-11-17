@@ -5,7 +5,7 @@ import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 /**
  * Created by yinywf on 2017/10/3
@@ -18,9 +18,9 @@ public class AssetPoolChangeLogPO implements Serializable {
     private static final long serialVersionUID = 8310836198389153347L;
     private int id;
     private Integer productId;
-    private Timestamp announcementDate;
-    private Timestamp receiptStartDate;
-    private Timestamp receiptEndDate;
+    private LocalDateTime announcementDate;
+    private LocalDateTime receiptStartDate;
+    private LocalDateTime receiptEndDate;
     private Double initialPrincipalBalance;
     private Double finalPrincipalBalance;
     private Integer loanNum;
@@ -53,31 +53,31 @@ public class AssetPoolChangeLogPO implements Serializable {
 
     @Basic
     @Column(name = "announcement_date")
-    public Timestamp getAnnouncementDate() {
+    public LocalDateTime getAnnouncementDate() {
         return announcementDate;
     }
 
-    public void setAnnouncementDate(Timestamp announcementDate) {
+    public void setAnnouncementDate(LocalDateTime announcementDate) {
         this.announcementDate = announcementDate;
     }
 
     @Basic
     @Column(name = "receipt_start_date")
-    public Timestamp getReceiptStartDate() {
+    public LocalDateTime getReceiptStartDate() {
         return receiptStartDate;
     }
 
-    public void setReceiptStartDate(Timestamp receiptStartDate) {
+    public void setReceiptStartDate(LocalDateTime receiptStartDate) {
         this.receiptStartDate = receiptStartDate;
     }
 
     @Basic
     @Column(name = "receipt_end_date")
-    public Timestamp getReceiptEndDate() {
+    public LocalDateTime getReceiptEndDate() {
         return receiptEndDate;
     }
 
-    public void setReceiptEndDate(Timestamp receiptEndDate) {
+    public void setReceiptEndDate(LocalDateTime receiptEndDate) {
         this.receiptEndDate = receiptEndDate;
     }
 

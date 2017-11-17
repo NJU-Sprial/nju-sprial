@@ -5,7 +5,7 @@ import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 /**
  * Created by yinywf on 2017/10/3
@@ -18,9 +18,9 @@ public class SecuritiesRepaymentPO implements Serializable {
     private static final long serialVersionUID = 938126664142627864L;
     private int id;
     private Integer productId;
-    private Timestamp payDate;
-    private Timestamp interestStartDate;
-    private Timestamp interestEndDate;
+    private LocalDateTime payDate;
+    private LocalDateTime interestStartDate;
+    private LocalDateTime interestEndDate;
     private Double initialPrincipal;
     private Double paidPrincipal;
     private Double paidInterest;
@@ -49,31 +49,31 @@ public class SecuritiesRepaymentPO implements Serializable {
 
     @Basic
     @Column(name = "pay_date")
-    public Timestamp getPayDate() {
+    public LocalDateTime getPayDate() {
         return payDate;
     }
 
-    public void setPayDate(Timestamp payDate) {
+    public void setPayDate(LocalDateTime payDate) {
         this.payDate = payDate;
     }
 
     @Basic
     @Column(name = "interest_start_date")
-    public Timestamp getInterestStartDate() {
+    public LocalDateTime getInterestStartDate() {
         return interestStartDate;
     }
 
-    public void setInterestStartDate(Timestamp interestStartDate) {
+    public void setInterestStartDate(LocalDateTime interestStartDate) {
         this.interestStartDate = interestStartDate;
     }
 
     @Basic
     @Column(name = "interest_end_date")
-    public Timestamp getInterestEndDate() {
+    public LocalDateTime getInterestEndDate() {
         return interestEndDate;
     }
 
-    public void setInterestEndDate(Timestamp interestEndDate) {
+    public void setInterestEndDate(LocalDateTime interestEndDate) {
         this.interestEndDate = interestEndDate;
     }
 

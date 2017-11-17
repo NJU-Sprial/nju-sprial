@@ -7,13 +7,11 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import po.LoanPO;
 
-import static org.junit.Assert.*;
-
 /**
  * @author yinywf
  * Created on 2017/11/17
  */
-public class LoanDaoImplTest {
+public class LoanPODaoImplTest {
 
     private static LoanDao loanDao;
     @BeforeClass
