@@ -1,6 +1,9 @@
 package po;
 
 import enums.LoanType;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
@@ -17,6 +20,9 @@ import java.time.LocalDateTime;
 @Table(name = "loan", schema = "sprial")
 @DynamicUpdate
 @DynamicInsert
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class LoanPO implements Serializable{
     private static final long serialVersionUID = -4228830630350579111L;
     private String loanId;
