@@ -1,6 +1,5 @@
 package data;
 
-import blservice.ProductDesignService;
 import dao.ProjectDao;
 import dao.PropertyPackageDao;
 import dataservice.PropertyPackageDataService;
@@ -8,7 +7,6 @@ import enums.CreatePropertyPackageResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import po.ProductPO;
 import po.ProjectPO;
 import po.PropertyPackagePO;
 
@@ -108,7 +106,6 @@ public class PropertyPackageDataServiceImpl implements PropertyPackageDataServic
      * @param username
      * @param pname
      * @return
-     * @see ProductDesignService 里的 getAllPackageNumber 方法
      */
     @Override
     public List<PropertyPackagePO> findPropertyPackage(String username, String pname) {
