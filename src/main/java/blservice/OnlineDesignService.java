@@ -95,7 +95,7 @@ public interface OnlineDesignService {
      * @param packageNumber
      * @return
      */
-    public PropertyPackageVO searchPropertyPackage(String username, String packageNumber);
+    public AssetPackageVO searchPropertyPackage(String username, String packageNumber);
 
     /**
      * 修改资产包信息
@@ -103,7 +103,7 @@ public interface OnlineDesignService {
      * @param propertyPackageVO
      * @return
      */
-    public boolean alterPropertyPackage(String username, PropertyPackageVO propertyPackageVO);
+    public boolean alterPropertyPackage(String username, AssetPackageVO propertyPackageVO);
 
     /**
      * 删除一个资产包

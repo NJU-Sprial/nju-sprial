@@ -1,12 +1,16 @@
 package vo;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.time.LocalDateTime;
-import java.util.Date;
 
 /**
  * Created by xiaoJun on 2017/9/10.
  * 资产包信息
  */
+@Data
+@NoArgsConstructor
 public class AssetPackageVO {
     String username;        //用户名
     String projectName;     //项目名

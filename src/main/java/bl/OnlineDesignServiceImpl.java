@@ -306,12 +306,25 @@ public class OnlineDesignServiceImpl implements OnlineDesignService {
      * @return
      */
     @Override
-    public PropertyPackageVO searchPropertyPackage(String username, String packageNumber) {
+    public AssetPackageVO searchPropertyPackage(String username, String packageNumber) {
         PropertyPackagePO po = propertyPackageDataService.searchPropertyPackage(username, packageNumber);
-        PropertyPackageVO vo = new PropertyPackageVO();
-        if (po != null)
-            BeanUtils.copyProperties(po, vo, PropertyPackageVO.class);
+        AssetPackageVO vo = new AssetPackageVO();
+        if (po != null) {
+            BeanUtils.copyProperties(po, vo, AssetPackageVO.class);
+        }
         return vo;
+    }
+
+    /**
+     * 修改资产包信息
+     *
+     * @param username
+     * @param propertyPackageVO
+     * @return
+     */
+    @Override
+    public boolean alterPropertyPackage(String username, AssetPackageVO propertyPackageVO) {
+        return false;
     }
 
     /**
