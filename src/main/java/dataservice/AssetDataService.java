@@ -2,8 +2,6 @@ package dataservice;
 
 import po.AssetBasicInfoPO;
 
-import java.util.List;
-
 public interface AssetDataService {
     /**
      * 获取资产基本情况
@@ -17,12 +15,4 @@ public interface AssetDataService {
      * @return 资产基本情况数据
      */
     public AssetBasicInfoPO getAssetBasicInfo(String username, String projectName, String packageId, int type);
-
-    /**
-     * 获取对应项目下所有资产包编号
-     * @param username 用户名
-     * @param projectName 项目名
-     * @return 资产包列表
-     */
-    List<AssetBasicInfoPO> getAssetBasicInfo(String username, String projectName);
 }

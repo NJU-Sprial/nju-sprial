@@ -3,7 +3,6 @@ package bl;
 import blservice.OnlineDesignService;
 import blservice.PackageAnalysisService;
 import dataservice.AssetDataService;
-import dataservice.PropertyPackageDataService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,12 +16,12 @@ import java.util.List;
 public class PackageAnalysisServiceImpl implements PackageAnalysisService{
     @Autowired
     OnlineDesignService onlineDesignService;
-    PropertyPackageDataService propertyPackageDataService;
     AssetDataService assetDataService;
 
     @Override
     public List<String> getPackageNameList(String username, String projectName) {
-        return propertyPackageDataService.getPackageNameList(username,projectName);
+       // TODO
+        return null;
     }
     /**
      * 获取资产基本情况
