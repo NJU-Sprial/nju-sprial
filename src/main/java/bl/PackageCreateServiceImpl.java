@@ -13,11 +13,10 @@ public class PackageCreateServiceImpl implements PackageCreateService{
     @Override
     public AssetPackageVO createPackage(String username, String projectName) {
         onlineDesignService.createPropertyPackage(username,projectName);
-        PropertyPackageVO propertyPackageVO = onlineDesignService.searchPropertyPackage(username,projectName);
-        if (propertyPackageVO.getPropertyPackageId()==""){
+        AssetPackageVO assetPackageVO = onlineDesignService.searchPropertyPackage(username,projectName);
+        if ("".equals(assetPackageVO.getPackageId())){
             return null;
         }
-        AssetPackageVO result = new AssetPackageVO(propertyPackageVO,username);
-        return result;
+        return assetPackageVO;
     }
 }
