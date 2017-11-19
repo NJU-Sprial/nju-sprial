@@ -226,8 +226,9 @@ public class OnlineDesignServiceImpl implements OnlineDesignService {
         for (LoanVO vo : loanVOList) {
             LoanPO po = new LoanPO();
             BeanUtils.copyProperties(vo, po, "balance","rate");
-            po.setBalance(vo.getBalance());
-            po.setRate(vo.getRate());
+            //TODO 下面两个类型不确定
+            po.setCurrentBalance(new BigDecimal(vo.getBalance()));
+            po.setCurrentAnnualizedRate(vo.getRate());
             poList.add(po);
         }
         //因为loanvo缺少loanpo的propertyPackageId属性
@@ -327,31 +328,31 @@ public class OnlineDesignServiceImpl implements OnlineDesignService {
         return false;
     }
 
-    /**
-     * 修改资产包信息
-     *
-     * @param propertyPackageVO
-     * @return
-     */
-    @Override
-    public boolean alterPropertyPackage(String username, PropertyPackageVO propertyPackageVO) {
-        if (propertyPackageVO == null)
-            return false;
-        PropertyPackagePO po = new PropertyPackagePO();
-        System.out.println(propertyPackageVO.getPropertyPackageId());
-        BeanUtils.copyProperties(propertyPackageVO, po, "propertyNum","packageCapital","packageRate");
-
-        //vo转po的时候要单独设置propertypackageid
-        po.setPropertyPackageId(Integer.parseInt(propertyPackageVO.getPropertyPackageId()));
-
-        po.setPropertyNum(propertyPackageVO.getPropertyNum());
-        po.setPackageCapital(propertyPackageVO.getPackageCapital());
-        po.setPackageRate(propertyPackageVO.getPackageRate());
-
-        //注意因为vopo不同 只对PO中的部分属性进行修改 详情参考vo的属性
-        boolean result = propertyPackageDataService.alterPropertyPackage(username, po);
-        return result;
-    }
+//    /**
+//     * 修改资产包信息
+//     *
+//     * @param propertyPackageVO
+//     * @return
+//     */
+//    @Override
+//    public boolean alterPropertyPackage(String username, AssetPackageVO propertyPackageVO) {
+////        if (propertyPackageVO == null)
+////            return false;
+////        PropertyPackagePO po = new PropertyPackagePO();
+////        System.out.println(propertyPackageVO.getPropertyPackageId());
+////        BeanUtils.copyProperties(propertyPackageVO, po, "propertyNum","packageCapital","packageRate");
+////
+////        //vo转po的时候要单独设置propertypackageid
+////        po.setPropertyPackageId(Integer.parseInt(propertyPackageVO.getPropertyPackageId()));
+////
+////        po.setPropertyNum(propertyPackageVO.getPropertyNum());
+////        po.setPackageCapital(propertyPackageVO.getPackageCapital());
+////        po.setPackageRate(propertyPackageVO.getPackageRate());
+////
+////        //注意因为vopo不同 只对PO中的部分属性进行修改 详情参考vo的属性
+////        boolean result = propertyPackageDataService.alterPropertyPackage(username, po);
+////        return result;
+//    }
 
 
     /**
