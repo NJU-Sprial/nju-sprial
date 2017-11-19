@@ -9,7 +9,7 @@ import vo.AssetPackageVO;
 import java.util.List;
 
 @Service
-public class PackageBrowseServiceImpl implements PackageBrowseService{
+public class PackageBrowseServiceImpl implements PackageBrowseService {
     @Autowired
     OnlineDesignService onlineDesignService;
 
@@ -20,23 +20,18 @@ public class PackageBrowseServiceImpl implements PackageBrowseService{
 
     @Override
     public AssetPackageVO getPackageVO(String username, String packageId) {
-        PropertyPackageVO propertyPackageVO = onlineDesignService.searchPropertyPackage(username,packageId);
-        if (propertyPackageVO == null){
-            return null;
-        }
-        return new AssetPackageVO(propertyPackageVO,username);
+        return onlineDesignService.searchPropertyPackage(username, packageId);
     }
 
     @Override
-    public boolean modifyPackageVO(AssetPackageVO packageVO) {
-        PropertyPackageVO propertyPackageVO = new PropertyPackageVO(packageVO);
-        boolean result = onlineDesignService.alterPropertyPackage(packageVO.getUsername(),propertyPackageVO);
+    public boolean modifyPackageVO(AssetPackageVO assetPackageVO) {
+        boolean result = onlineDesignService.alterPropertyPackage(assetPackageVO.getUsername(), assetPackageVO);
         return result;
     }
 
     @Override
     public boolean deletePackageVO(String username, String packageId) {
-        boolean result = onlineDesignService.deletePropertyPackage(username,packageId);
+        boolean result = onlineDesignService.deletePropertyPackage(username, packageId);
         return result;
     }
 }
