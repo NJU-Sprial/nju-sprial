@@ -11,43 +11,41 @@ import java.time.LocalDate;
  * Created by Guo on 2017/9/12.
  */
 public class PersonalConsumptionLoanPO {
-    String username;
-    String projectID;
-    AssetType assetType;
+    private String username;
+    private String projectID;
+    private AssetType assetType;
 
     /**贷款情况*/
-    String purpose;
-    LocalDate releaseDate;
-    LocalDate expirationDate;
-    String profitType;
-    LocalDate repayDay;
-    String repayMethod;
-    String RepayFrequency;
-    BigDecimal contractAmount;
-    double contractAnnualizedRate;
-    LocalDate extractionDate;
-    int leftMonth;
-    BigDecimal currentBalance;
-    double currentAnnualizedRate;
-    String loanQuality;
+    private String purpose;
+    private LocalDate releaseDate;
+    private LocalDate expirationDate;
+    private String profitType;
+    private Integer repayDay;
+    private String repayMethod;
+    private String repayFrequency;
+    private BigDecimal contractAmount;
+    private Double contractAnnualizedRate;
+    private LocalDate extractionDate;
+    private Integer leftMonth;
+    private BigDecimal currentBalance;
+    private Double currentAnnualizedRate;
+    private String loanQuality;
 
     /**贷款情况*/
-    LoanType loanType = LoanType.PersonalConsumption;
-    String borrowerName;
-    String certificateType;
-    String certificateNumber;
-    String nationality;
-    String location;
-    String sex;
-    LocalDate birthday;
-    String maritalStatus;
-    int age;
-    String occupation;
-    BigDecimal annualIncome;
-    double creditLevel;
-    double incomeDebtRatio;
-    String address;
-
-
+    private  LoanType loanType = LoanType.PersonalConsumption;
+    private String borrowerName;
+    private  String certificateType;
+    private String certificateNumber;
+    private String nationality;
+    private String location;
+    private String sex;
+    private  LocalDate birthday;
+    private String maritalStatus;
+    private Integer age;
+    private String occupation;
+    private BigDecimal annualIncome;
+    private Double creditLevel;
+    private Double incomeDebtRatio;
+    private String address;
 
 }

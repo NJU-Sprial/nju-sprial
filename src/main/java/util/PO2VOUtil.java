@@ -36,9 +36,9 @@ public class PO2VOUtil {
     @Contract("null -> null")
     private static AssetPoolChangeLogVO assetPoolChangeLogPO2VO(AssetPoolChangeLogPO assetPoolChangeLogPO) {
         AssetPoolChangeLogVO assetPoolChangeLogVO = new AssetPoolChangeLogVO();
-        assetPoolChangeLogVO.setAnnouncementDate(assetPoolChangeLogPO.getAnnouncementDate().toLocalDateTime().toLocalDate());
-        assetPoolChangeLogVO.setReceiptStartDate(assetPoolChangeLogPO.getReceiptStartDate().toLocalDateTime().toLocalDate());
-        assetPoolChangeLogVO.setReceiptEndDate(assetPoolChangeLogPO.getReceiptEndDate().toLocalDateTime().toLocalDate());
+        assetPoolChangeLogVO.setAnnouncementDate(assetPoolChangeLogPO.getAnnouncementDate().toLocalDate());
+        assetPoolChangeLogVO.setReceiptStartDate(assetPoolChangeLogPO.getReceiptStartDate().toLocalDate());
+        assetPoolChangeLogVO.setReceiptEndDate(assetPoolChangeLogPO.getReceiptEndDate().toLocalDate());
         assetPoolChangeLogVO.setInitialPrincipalBalance(assetPoolChangeLogPO.getInitialPrincipalBalance());
         assetPoolChangeLogVO.setFinalPrincipalBalance(assetPoolChangeLogPO.getFinalPrincipalBalance());
         assetPoolChangeLogVO.setPrincipalRecoveryBalance(assetPoolChangeLogPO.getPrincipalRecoveryBalance());
@@ -62,9 +62,9 @@ public class PO2VOUtil {
     @Contract("null -> null")
     private static SecuritiesRepaymentVO securitiesRepaymentPO2VO(SecuritiesRepaymentPO po) {
         SecuritiesRepaymentVO vo = new SecuritiesRepaymentVO();
-        vo.setPayDate(po.getPayDate().toLocalDateTime().toLocalDate());
-        vo.setInterestStartDate(po.getInterestStartDate().toLocalDateTime().toLocalDate());
-        vo.setInterestEndDate(po.getInterestEndDate().toLocalDateTime().toLocalDate());
+        vo.setPayDate(po.getPayDate().toLocalDate());
+        vo.setInterestStartDate(po.getInterestStartDate().toLocalDate());
+        vo.setInterestEndDate(po.getInterestEndDate().toLocalDate());
         vo.setInitialPrincipal(po.getInitialPrincipal());
         vo.setPaidPrincipal(po.getPaidPrincipal());
         vo.setPaidInterest(po.getPaidInterest());
@@ -122,4 +122,20 @@ public class PO2VOUtil {
         return result;
     }
 
+    @Contract("null -> null")
+    public static List<ProjectVO> projectPOs2VOs(List<ProjectPO> projectPOs) {
+        List<ProjectVO> result = new ArrayList<>();
+        for(ProjectPO po : projectPOs) {
+            result.add(ProjectPO2VO(po));
+        }
+        return result;
+    }
+
+    @Contract("null -> null")
+    private static ProjectVO ProjectPO2VO(ProjectPO po) {
+        ProjectVO vo = new ProjectVO();
+        vo.setPname(po.getProjectName());
+        vo.setUsername(po.getOwner());
+        return vo;
+    }
 }

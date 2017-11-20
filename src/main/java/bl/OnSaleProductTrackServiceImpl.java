@@ -28,7 +28,7 @@ public class OnSaleProductTrackServiceImpl implements OnSaleProductTrackService 
     }
     /**
      * 获取资产池变动情况
-     * @see po.AssetPoolChangeLogPO
+     * @see AssetPoolChangeLogPO
      * @param productID 产品ID
      * @return 如果产品不存在，返回null
      */
@@ -40,7 +40,7 @@ public class OnSaleProductTrackServiceImpl implements OnSaleProductTrackService 
 
     /**
      * 获取证券偿付情况
-     * @see po.SecuritiesRepaymentPO
+     * @see SecuritiesRepaymentPO
      * @param productID 产品ID
      * @return 如果产品不存在，返回null
      */

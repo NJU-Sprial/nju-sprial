@@ -25,7 +25,6 @@ public interface ProductDataService {
 
     /**
      * 获取所有在售产品的产品信息
-     * TODO
      * @return
      */
     List<ProductPO> getOnSaleProductList();

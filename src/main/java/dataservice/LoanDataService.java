@@ -50,4 +50,6 @@ public interface LoanDataService {
      * @return
      */
     public boolean clearProjectData(String username, String pname);
+
+    public boolean addLoan(LoanPO loanPO);
 }

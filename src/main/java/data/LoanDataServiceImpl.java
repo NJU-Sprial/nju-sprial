@@ -123,4 +123,15 @@ public class LoanDataServiceImpl implements LoanDataService {
         }
         return true;
     }
+
+    @Override
+    public boolean addLoan(LoanPO loanPO) {
+        try {
+            loanDao.save(loanPO);
+        }catch (Exception e){
+            e.printStackTrace();
+            return false;
+        }
+        return true;
+    }
 }

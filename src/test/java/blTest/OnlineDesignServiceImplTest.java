@@ -157,6 +157,6 @@ public class OnlineDesignServiceImplTest {
 
     @Test
     public void testHandlePersonalConsumptionLoan() throws IOException {
-        onlineDesignService.importBasicPropertyData(username, pname, AssetType.ConsumerFinance, LoanType.PersonalConsumption, new File("src/main/webapp/PersonalConsumption.xlsx"));
+        onlineDesignService.importBasicPropertyData(username, pname, AssetType.ConsumerFinance, LoanType.PersonalConsumption, new File("src/main/webapp/pctest1.xlsx"));
     }
 }

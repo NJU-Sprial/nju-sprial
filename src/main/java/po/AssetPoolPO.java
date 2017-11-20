@@ -4,6 +4,7 @@ import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  * Created by yinywf on 2017/10/8
@@ -13,7 +14,8 @@ import javax.persistence.*;
 
 @DynamicUpdate
 @DynamicInsert
-public class AssetPoolPO {
+public class AssetPoolPO implements Serializable {
+    private static final long serialVersionUID = -8439227786193996607L;
     private int productId;
     private String quantity;
     private String leftQuantity;

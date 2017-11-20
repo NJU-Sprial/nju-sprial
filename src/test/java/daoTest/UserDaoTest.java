@@ -1,13 +1,11 @@
 package daoTest;
 
-import dao.UserDao;
 import daoImpl.UserTest;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-
-import javax.transaction.Transactional;
+import po.LoanPO;
 
 public class UserDaoTest {
 
@@ -26,6 +24,13 @@ public class UserDaoTest {
     public void test2() {
         System.out.println(userDao.getAProduct(1));
     }
+    @Test
+	public void test3(){
+		LoanPO loanPO = new LoanPO();
+		loanPO.setLoanId("1234");
+		loanPO.setPurpose("个人短期信用贷款");
+		userDao.addLoan(loanPO);
+	}
 
 
 }

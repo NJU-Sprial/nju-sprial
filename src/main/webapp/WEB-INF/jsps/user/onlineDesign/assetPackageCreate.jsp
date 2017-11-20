@@ -76,7 +76,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-sm-5" for="rate">分包利率：</label>
+                            <label class="control-label col-sm-5" for="rate">封包利率：</label>
                             <div class="col-sm-7">
                                 <p class="form-control-static" id="rate">（自动生成）</p>
                             </div>

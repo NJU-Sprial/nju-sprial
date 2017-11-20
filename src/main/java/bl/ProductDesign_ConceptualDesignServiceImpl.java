@@ -41,7 +41,7 @@ public class ProductDesign_ConceptualDesignServiceImpl implements ProductDesign_
      * @param pname         项目名称
      * @param packageNumber 资产包编号
      * @return 如果这个资产包没有方案，则返回 sname为""，startDate,firstPayDate,lawEndDate为null，其它值均正常的 ConceptualVO
-     * @see po.UnissuedProductPO
+     * @see UnissuedProductPO
      */
     @Override
     public ConceptualVO getConceptual(String username, String pname, String packageNumber) {
@@ -88,7 +88,7 @@ public class ProductDesign_ConceptualDesignServiceImpl implements ProductDesign_
      * @param conceptualVO 方案的信息
      * @return 成功返回true，失败返回false
      * @throws ErrorParamException 有任何参数不正确时
-     * @see po.UnissuedProductPO
+     * @see UnissuedProductPO
      */
     @Override
     public boolean saveProductStrategy(ConceptualVO conceptualVO) throws ErrorParamException {

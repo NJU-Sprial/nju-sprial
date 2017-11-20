@@ -1,8 +1,13 @@
 package vo;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 /**
  * Created by 铠联 on 2017/9/13.
  */
+@Data
+@NoArgsConstructor
 public class ProjectVO {
     private String username;
     private String pname;
