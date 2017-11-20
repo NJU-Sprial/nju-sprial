@@ -70,7 +70,7 @@
                          data-paddingbottom="[0,0,0,0"
                          data-paddingleft="[0,0,0,0]"
 
-                         style="z-index: 16; white-space: nowrap;text-transform:left;">让投资不再麻烦<br/>Simplify<br/>Investment
+                         style="z-index: 16; white-space: nowrap;text-transform:left;">让融资不再困难<br/>Simplify<br/>Financing
                     </div>
 
                     <!-- LAYER NR. 13 -->
@@ -83,17 +83,6 @@
                        data-fontsize="['14','14','14','14']"
                        data-width="['auto']"
                        data-height="['auto']">关于我们(About Us)
-                    </a><!-- END LAYER LINK -->
-
-                    <a href="#" target="_self" class="tp-caption flat-button-slider bg-transparent"
-
-                       data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","speed":2000,"to":"o:1;","delay":2000,"ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
-
-                       data-x="['left','left','left','left']" data-hoffset="['205','205','205','205']"
-                       data-y="['middle','middle','middle','middle']" data-voffset="['140','140','140','80']"
-                       data-fontsize="['14',14','14','14']"
-                       data-width="['auto']"
-                       data-height="['auto']">联系我们（Contact Us）
                     </a><!-- END LAYER LINK -->
                 </li>
 
@@ -351,7 +340,7 @@
                 <div class="col-md-12">
                     <div class="title-section left">
                         <h2>
-                            Latest news
+                            最新消息
                         </h2>
                     </div><!-- /.title-section -->
                 </div>
